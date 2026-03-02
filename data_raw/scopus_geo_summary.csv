@@ -1,0 +1,239 @@
+primary_country,period,paper_count,avg_citations
+China,post_chatgpt,5590,13.31
+United States,post_chatgpt,4310,18.09
+India,post_chatgpt,2457,13.83
+United States,pre_chatgpt,1817,91.05
+United Kingdom,post_chatgpt,1503,24.78
+Saudi Arabia,post_chatgpt,1020,15.38
+Germany,post_chatgpt,959,17.33
+Italy,post_chatgpt,957,16.65
+South Korea,post_chatgpt,937,14.25
+Australia,post_chatgpt,890,27.77
+Spain,post_chatgpt,832,13.51
+Turkey,post_chatgpt,791,10.83
+Canada,post_chatgpt,777,16.69
+China,pre_chatgpt,740,65.64
+India,pre_chatgpt,680,24.87
+Malaysia,post_chatgpt,673,12.33
+Iran,post_chatgpt,644,13.54
+United Kingdom,pre_chatgpt,554,99.75
+Brazil,post_chatgpt,495,8.92
+Indonesia,post_chatgpt,481,6.57
+Japan,post_chatgpt,417,10.69
+Hong Kong,post_chatgpt,376,33.22
+Netherlands,post_chatgpt,368,20.85
+South Africa,post_chatgpt,348,15.13
+Taiwan,post_chatgpt,346,21.29
+France,post_chatgpt,331,17.64
+Germany,pre_chatgpt,329,81.74
+Poland,post_chatgpt,316,11.89
+South Korea,pre_chatgpt,307,52.21
+Morocco,post_chatgpt,292,12.5
+Thailand,post_chatgpt,289,6.7
+Canada,pre_chatgpt,276,81.67
+Jordan,post_chatgpt,271,9.8
+Pakistan,post_chatgpt,271,11.11
+Australia,pre_chatgpt,250,96.79
+Sweden,post_chatgpt,248,22.77
+United Arab Emirates,post_chatgpt,246,24.35
+Italy,pre_chatgpt,238,59.93
+Switzerland,post_chatgpt,231,22.07
+Spain,pre_chatgpt,229,48.55
+Russian Federation,post_chatgpt,226,5.75
+Portugal,post_chatgpt,220,10.05
+Egypt,post_chatgpt,212,12.79
+Ukraine,post_chatgpt,212,4.95
+Singapore,post_chatgpt,199,20.93
+Viet Nam,post_chatgpt,195,11.94
+Bangladesh,post_chatgpt,186,14.97
+Romania,post_chatgpt,185,14.92
+Greece,post_chatgpt,181,16.79
+Iraq,post_chatgpt,173,5.62
+Belgium,post_chatgpt,173,16.9
+Japan,pre_chatgpt,172,44.59
+Denmark,post_chatgpt,165,23.36
+Finland,post_chatgpt,162,44.93
+Norway,post_chatgpt,149,29.67
+Colombia,post_chatgpt,143,8.92
+Hungary,post_chatgpt,143,6.36
+Mexico,post_chatgpt,136,11.87
+Peru,post_chatgpt,130,7.23
+Brazil,pre_chatgpt,126,47.67
+Nigeria,post_chatgpt,123,11.41
+Israel,post_chatgpt,120,13.58
+Netherlands,pre_chatgpt,119,90.04
+France,pre_chatgpt,117,78.89
+Czech Republic,post_chatgpt,113,7.44
+Malaysia,pre_chatgpt,110,42.12
+Iran,pre_chatgpt,107,50.59
+Ireland,post_chatgpt,107,15.93
+Taiwan,pre_chatgpt,105,59.93
+Austria,post_chatgpt,101,13.26
+Switzerland,pre_chatgpt,98,70.0
+Sweden,pre_chatgpt,87,108.02
+Russian Federation,pre_chatgpt,87,22.84
+Saudi Arabia,pre_chatgpt,84,45.8
+Kazakhstan,post_chatgpt,84,8.73
+Turkey,pre_chatgpt,81,55.67
+Ethiopia,post_chatgpt,79,16.28
+Chile,post_chatgpt,79,8.34
+Slovakia,post_chatgpt,78,14.56
+Ecuador,post_chatgpt,77,5.05
+Poland,pre_chatgpt,76,32.46
+Ghana,post_chatgpt,72,16.0
+Philippines,post_chatgpt,71,7.18
+New Zealand,post_chatgpt,71,14.7
+Hong Kong,pre_chatgpt,69,94.06
+Tunisia,post_chatgpt,68,14.47
+Serbia,post_chatgpt,66,4.64
+Finland,pre_chatgpt,61,47.44
+Belgium,pre_chatgpt,59,50.08
+Qatar,post_chatgpt,59,19.44
+Singapore,pre_chatgpt,58,105.05
+Slovenia,post_chatgpt,58,11.33
+Cyprus,post_chatgpt,57,42.65
+Greece,pre_chatgpt,56,77.36
+Croatia,post_chatgpt,55,10.45
+Denmark,pre_chatgpt,55,49.11
+Oman,post_chatgpt,55,11.75
+Macao,post_chatgpt,53,14.42
+Portugal,pre_chatgpt,52,52.17
+South Africa,pre_chatgpt,52,81.81
+Lebanon,post_chatgpt,47,14.04
+Austria,pre_chatgpt,47,64.26
+Norway,pre_chatgpt,45,103.56
+Czech Republic,pre_chatgpt,43,32.93
+Algeria,post_chatgpt,43,9.26
+Romania,pre_chatgpt,40,51.18
+Lithuania,post_chatgpt,39,10.33
+Kuwait,post_chatgpt,38,8.76
+Ireland,pre_chatgpt,38,56.79
+Bangladesh,pre_chatgpt,36,69.97
+Bulgaria,post_chatgpt,35,9.91
+United Arab Emirates,pre_chatgpt,34,82.38
+Indonesia,pre_chatgpt,33,21.7
+Estonia,post_chatgpt,33,18.39
+Morocco,pre_chatgpt,33,29.67
+Israel,pre_chatgpt,33,104.94
+Sri Lanka,post_chatgpt,32,11.84
+Argentina,post_chatgpt,32,5.75
+Palestine,post_chatgpt,32,6.97
+Pakistan,pre_chatgpt,32,57.88
+Kenya,post_chatgpt,32,6.47
+Iraq,pre_chatgpt,28,41.61
+Bahrain,post_chatgpt,28,18.04
+New Zealand,pre_chatgpt,27,75.37
+Jordan,pre_chatgpt,26,26.38
+Ukraine,pre_chatgpt,26,20.04
+Slovakia,pre_chatgpt,25,65.36
+Mexico,pre_chatgpt,25,26.88
+Hungary,pre_chatgpt,24,23.79
+Colombia,pre_chatgpt,24,28.17
+Thailand,pre_chatgpt,22,23.23
+Albania,post_chatgpt,20,2.5
+Azerbaijan,post_chatgpt,19,6.37
+Nigeria,pre_chatgpt,19,44.26
+Egypt,pre_chatgpt,19,50.47
+Viet Nam,pre_chatgpt,19,66.68
+Lithuania,pre_chatgpt,16,44.62
+Latvia,post_chatgpt,16,7.69
+Luxembourg,post_chatgpt,16,16.81
+Uganda,post_chatgpt,16,8.31
+Chile,pre_chatgpt,15,27.8
+Uzbekistan,post_chatgpt,15,1.13
+North Macedonia,post_chatgpt,14,5.07
+Croatia,pre_chatgpt,14,49.29
+Bosnia and Herzegovina,post_chatgpt,14,2.36
+Slovenia,pre_chatgpt,13,83.46
+Tanzania,post_chatgpt,13,4.92
+Brunei Darussalam,post_chatgpt,12,14.33
+Venezuela,post_chatgpt,11,7.36
+Serbia,pre_chatgpt,11,40.0
+Cyprus,pre_chatgpt,10,179.8
+Zimbabwe,post_chatgpt,10,7.5
+Bulgaria,pre_chatgpt,10,11.2
+Nepal,post_chatgpt,10,5.1
+Rwanda,post_chatgpt,10,5.2
+Argentina,pre_chatgpt,10,43.9
+Tunisia,pre_chatgpt,9,57.0
+Cameroon,post_chatgpt,9,8.67
+Qatar,pre_chatgpt,9,79.78
+Estonia,pre_chatgpt,8,24.5
+Puerto Rico,post_chatgpt,8,15.12
+Georgia,post_chatgpt,8,1.75
+Ghana,pre_chatgpt,8,18.25
+Mauritius,post_chatgpt,8,10.62
+Algeria,pre_chatgpt,8,10.5
+Kuwait,pre_chatgpt,7,47.0
+Ethiopia,pre_chatgpt,7,30.86
+Philippines,pre_chatgpt,7,16.29
+Kyrgyzstan,post_chatgpt,6,2.5
+Bahrain,pre_chatgpt,6,44.67
+Somalia,post_chatgpt,6,1.5
+Lebanon,pre_chatgpt,5,34.2
+Kazakhstan,pre_chatgpt,5,9.0
+Bosnia and Herzegovina,pre_chatgpt,5,25.2
+Syrian Arab Republic,post_chatgpt,5,33.0
+Botswana,post_chatgpt,4,3.75
+Bolivia,post_chatgpt,4,38.0
+Benin,post_chatgpt,4,11.75
+Peru,pre_chatgpt,4,22.75
+Oman,pre_chatgpt,4,97.75
+Montenegro,post_chatgpt,4,2.5
+Mongolia,post_chatgpt,4,3.0
+Latvia,pre_chatgpt,4,22.5
+Armenia,post_chatgpt,3,1.67
+Kenya,pre_chatgpt,3,0.67
+North Macedonia,pre_chatgpt,3,13.67
+Botswana,pre_chatgpt,3,292.67
+Syrian Arab Republic,pre_chatgpt,3,195.67
+Iceland,post_chatgpt,3,15.33
+Trinidad and Tobago,post_chatgpt,3,1.0
+Macao,pre_chatgpt,3,47.67
+Luxembourg,pre_chatgpt,3,7.0
+Uganda,pre_chatgpt,3,103.33
+Swaziland,post_chatgpt,3,14.67
+Zambia,post_chatgpt,2,0.5
+Yemen,post_chatgpt,2,16.5
+Uruguay,pre_chatgpt,2,47.5
+Uruguay,post_chatgpt,2,46.5
+Afghanistan,post_chatgpt,2,14.5
+Sri Lanka,pre_chatgpt,2,19.5
+Mauritius,pre_chatgpt,2,21.5
+Ecuador,pre_chatgpt,2,65.5
+Iceland,pre_chatgpt,2,38.5
+Cote d'Ivoire,post_chatgpt,2,0.0
+Malta,post_chatgpt,2,12.5
+Fiji,post_chatgpt,2,33.0
+Mauritania,post_chatgpt,2,10.0
+Malta,pre_chatgpt,2,17.0
+Moldova,post_chatgpt,2,0.5
+Monaco,pre_chatgpt,2,29.0
+Nepal,pre_chatgpt,2,5.0
+Panama,post_chatgpt,2,0.5
+Costa Rica,post_chatgpt,1,1.0
+Yemen,pre_chatgpt,1,200.0
+Cayman Islands,post_chatgpt,1,0.0
+Costa Rica,pre_chatgpt,1,22.0
+Venezuela,pre_chatgpt,1,23.0
+Cuba,post_chatgpt,1,0.0
+Uzbekistan,pre_chatgpt,1,2.0
+Democratic Republic Congo,post_chatgpt,1,1.0
+Cambodia,post_chatgpt,1,5.0
+Dominican Republic,post_chatgpt,1,1.0
+Federated States of Micronesia,post_chatgpt,1,0.0
+Jamaica,post_chatgpt,1,5.0
+Fiji,pre_chatgpt,1,46.0
+Georgia,pre_chatgpt,1,11.0
+Grenada,post_chatgpt,1,1.0
+Senegal,post_chatgpt,1,0.0
+Jamaica,pre_chatgpt,1,21.0
+Lesotho,post_chatgpt,1,57.0
+Liberia,post_chatgpt,1,1.0
+Libya,post_chatgpt,1,1.0
+Liechtenstein,post_chatgpt,1,170.0
+Togo,pre_chatgpt,1,17.0
+Moldova,pre_chatgpt,1,2.0
+Mozambique,post_chatgpt,1,0.0
+Nicaragua,post_chatgpt,1,0.0
+Zimbabwe,pre_chatgpt,1,23.0

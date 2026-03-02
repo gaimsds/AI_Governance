@@ -6,7 +6,7 @@
   Date:    February 2026
 
    This script connects to the Scopus database using the API key, searches for academic papers about AI governance
-   published between 2015 and 2025, and saves the results to your data_raw/ folder.
+   published between 2015 and 2025, and saves the results to data_raw/ folder.
 
    OUTPUT FILES (saved to data_raw/ folder):
 
@@ -25,9 +25,11 @@ from pathlib import Path
 from datetime import datetime
 from dotenv import load_dotenv
 from pybliometrics.scopus import ScopusSearch, AbstractRetrieval
+from pybliometrics.scopus import init
 
 load_dotenv()
 API_KEY = os.getenv("SCOPUS_API_KEY")
+init(keys=[API_KEY])
 DATA_RAW = Path(__file__).parent.parent / "data_raw"
 DATA_RAW.mkdir(parents=True, exist_ok=True)
 
@@ -54,15 +56,27 @@ log = logging.getLogger(__name__)                                # Creating a lo
 #  AND                 = both terms must appear
 #  OR                  = either term can appear
 #  W/3                 = words must appear within 3 words of each other
-# The main search query — finds papers about AI + governance themes
+#  Cross-disciplinary coverage across:
+#  SOCI                = Social Sciences   COMP = Computer Science
+#  MULT                = Multidisciplinary BUSI = Business & Management
+#  ARTS                = Arts & Humanities DECI = Decision Sciences
+#  This prevents the results being dominated by one field.
+#  English only — as stated in proposal's language filtering step.
+#  Acknowledging this as a limitation (non-English discourse excluded).
+#  he main search query — finds papers about AI + governance themes
 # ======================================================================================================================
 SEARCH_QUERY = (
-    'TITLE-ABS-KEY('
-    '("artificial intelligence" OR "machine learning" OR "algorithmic system*")'
-    ' AND '
-    '("governance" OR "regulation" OR "policy" OR "ethics" OR '
-    '"accountability" OR "oversight" OR "AI governance" OR "AI ethics")'
+    # AI must appear in the title — ensures the paper is fundamentally about AI
+    # Not just mentioning AI in passing in the abstract
+    'TITLE('
+    '"artificial intelligence" OR "machine learning" OR '
+    '"algorithmic system*" OR "automated decision*" OR "AI system*"'
     ')'
+    
+    ' AND SUBJAREA('
+    'SOCI OR LAWS OR MULT OR BUSI OR ARTS OR DECI OR ECON OR PSYC'
+    ')'
+    ' AND LANGUAGE(english)'
 )
 DATE_RANGES = {                                                     # Date ranges — ChatGPT launch (November 2022)
     "pre_chatgpt": {
@@ -74,9 +88,10 @@ DATE_RANGES = {                                                     # Date range
         "date_range": "PUBYEAR > 2021 AND PUBYEAR < 2026",           # 2022 to 2025
     },
 }
+
 DOCTYPE_FILTER = "DOCTYPE(ar) OR DOCTYPE(re)"                        # Document types (ar = article, re = review paper)
                                                                      # Excluded book chapters, editorials, letters etc.
-MAX_RESULTS = 2000                                                   # Maximum to collect per period to stay within rate limits
+MAX_RESULTS = 99999                                                  # Maximum to collect per period to stay within rate limits
 
 # ======================================================================================================================
 #  SECTION 3: THE SEARCH FUNCTION
@@ -101,17 +116,35 @@ def search_scopus(period_key: str, config: dict) -> list:
     try:
         results = ScopusSearch(
             query=full_query,
-            view="STANDARD",
-            count=MAX_RESULTS,
+            view="COMPLETE",
+            count=25,  # COMPLETE view hard limit per request
+            cursor=True,  # enables automatic pagination through all results
             download=True,
         )
+        # ── Check remaining quota ────────────────────────────────
+        import requests
+        r = requests.get(
+            "https://api.elsevier.com/content/search/scopus",
+            params={"query": "test", "count": "1"},
+            headers={"X-ELS-APIKey": API_KEY}
+        )
+        log.info(f"   📊 Quota Limit:     {r.headers.get('X-RateLimit-Limit', 'N/A')}")
+        log.info(f"   📊 Quota Remaining: {r.headers.get('X-RateLimit-Remaining', 'N/A')}")
+        log.info(f"   📊 Quota Resets:    {r.headers.get('X-RateLimit-Reset', 'N/A')}")
+        # ────────────────────────────────────────────────────────
+
         papers = results.results
 
         if papers is None:
             log.warning(f"   No results returned for {config['label']}")
             return []
 
-        log.info(f"   Found {len(papers):,} papers")
+        if len(papers) > MAX_RESULTS:
+            log.info(f"   Found {len(papers):,} papers — capping at {MAX_RESULTS:,}")
+            papers = papers[:MAX_RESULTS]
+        else:
+            log.info(f"   Found {len(papers):,} papers")
+
         return papers
 
     except Exception as e:
@@ -141,40 +174,82 @@ def parse_paper(paper, period: str) -> dict:
     all_countries = []
     primary_country = ""
 
+    # Affiliation fields are flat on the paper object directly
+    # e.g. paper.affilname, paper.affiliation_country, paper.affiliation_city
     try:
-        if paper.affiliation:
-            affil_parts = []
-            for affil in paper.affiliation:
-                name    = getattr(affil, "affilname",      "") or ""
-                country = getattr(affil, "affiliation_country", "") or ""
+        raw_name = getattr(paper, "affilname", None)
+        raw_country = getattr(paper, "affiliation_country", None)
+        raw_city = getattr(paper, "affiliation_city", None)
 
-                if name:
-                    affil_parts.append(name)
-                if country and country not in all_countries:
-                    all_countries.append(country)
+        # These fields can be a single string OR a semicolon-separated list
+        # when a paper has multiple affiliations — split and clean both cases
+        if raw_name:
+            affiliations_text = str(raw_name).strip()
 
-            affiliations_text = "; ".join(affil_parts)
-            if all_countries:
-                primary_country = all_countries[0]
+        if raw_country:
+            # Split on semicolons in case multiple countries are listed
+            countries = [c.strip() for c in str(raw_country).split(";") if c.strip()]
+            all_countries = list(dict.fromkeys(countries))  # deduplicate, preserve order
+            primary_country = all_countries[0] if all_countries else ""
 
-    except Exception:
+    except Exception as e:
+        log.debug(f"Affiliation parsing error for {getattr(paper, 'eid', 'unknown')}: {e}")
         pass
+
     return {
-        "scopus_id":       safe(paper.eid),                             # Scopus unique ID
-        "doi":             safe(paper.doi),                             # Digital Object Identifier
-        "title":           safe(paper.title),                           # Paper title
-        "abstract":        safe(paper.description),                     # Abstract text
-        "authors":         safe(paper.author_names),                    # All author names
-        "affiliations":    affiliations_text,                           # Institution names
-        "primary_country": primary_country,                             # First author's country ← key field
-        "all_countries":   "; ".join(all_countries),                    # All countries in paper
-        "journal":         safe(paper.publicationName),                 # Journal name
-        "year":            safe(paper.coverDate[:4]) if paper.coverDate else "",
-        "cited_by_count":  safe(paper.citedby_count),                   # Number of citations
-        "keywords":        safe(paper.authkeywords),                    # Author-assigned keywords
-        "document_type":   safe(paper.subtypeDescription),              # Article, Review, etc.
-        "period":          period,                                      # "pre_chatgpt" or "post_chatgpt"
-        "source":          "Scopus",                                    # which database this came from
+        # ── Identifiers ───────────────────────────────────────────
+        "scopus_id": safe(paper.eid),
+        "doi": safe(paper.doi),
+        "pubmed_id": safe(paper.pubmed_id),
+        "source_id": safe(paper.source_id),
+
+        # ── Content ───────────────────────────────────────────────
+        "title": safe(paper.title),
+        "abstract": safe(paper.description),
+        "keywords": safe(paper.authkeywords),
+
+        # ── Authors ───────────────────────────────────────────────
+        "creator": safe(paper.creator),  # first author
+        "authors": safe(paper.author_names),  # all authors
+        "author_count": safe(paper.author_count),
+        "author_ids": safe(paper.author_ids),
+        "author_afids": safe(paper.author_afids),  # per-author affiliation IDs
+
+        # ── Geography & Affiliation ────────────────────────────────
+        "afid": safe(paper.afid),  # institution ID
+        "affiliations": affiliations_text,
+        "affiliation_city": safe(paper.affiliation_city),
+        "primary_country": primary_country,
+        "all_countries": "; ".join(all_countries),
+
+        # ── Publication ───────────────────────────────────────────
+        "journal": safe(paper.publicationName),
+        "issn": safe(paper.issn),
+        "eissn": safe(paper.eIssn),
+        "volume": safe(paper.volume),
+        "issue": safe(paper.issueIdentifier),
+        "page_range": safe(paper.pageRange),
+        "cover_date": safe(paper.coverDate),
+        "year": safe(paper.coverDate[:4]) if paper.coverDate else "",
+        "aggregation_type": safe(paper.aggregationType),  # Journal vs Book Series
+
+        # ── Impact & Access ───────────────────────────────────────
+        "cited_by_count": safe(paper.citedby_count),
+        "open_access": safe(paper.openaccess),
+        "open_access_label": safe(paper.freetoreadLabel),
+
+        # ── Funding ───────────────────────────────────────────────
+        "fund_sponsor": safe(paper.fund_sponsor),
+        "fund_acronym": safe(paper.fund_acr),
+        "fund_number": safe(paper.fund_no),
+
+        # ── Document Type ─────────────────────────────────────────
+        "subtype": safe(paper.subtype),
+        "document_type": safe(paper.subtypeDescription),
+
+        # ── Research Metadata ─────────────────────────────────────
+        "period": period,
+        "source": "Scopus",
     }
 
 # ======================================================================================================================
@@ -204,6 +279,9 @@ def deduplicate(df: pd.DataFrame) -> pd.DataFrame:
     return result
 # ======================================================================================================================
 #  SECTION 6: THE SUMMARY FUNCTION
+#  ── Regional Audit ────────────────────────────────────────────────────
+#  Stratification by region with minimum thresholds. This maps each country to a broad region so we can check coverage.
+#  Any region showing LOW or VERY LOW needs is flagged in methodology section as a known limitation.
 #  After collecting data, this prints a readable summary in the console to immediately verify output
 # ======================================================================================================================
 def print_summary(df: pd.DataFrame):
@@ -232,11 +310,89 @@ def print_summary(df: pd.DataFrame):
     )
     if not top_countries.empty:
         log.info("")
-        log.info("   Top 10 countries (by first-author affiliation):")
+        log.info("  Top 10 countries (by first-author affiliation):")
         for country, count in top_countries.items():
-
             bar = "█" * min(int(count * 25 / top_countries.iloc[0]), 25)
             log.info(f"    {country:<25} {count:>5,}  {bar}")
+
+    region_map = {
+        "United States": "North America", "Canada": "North America",                              # North America
+
+        "United Kingdom": "Europe", "Germany": "Europe", "France": "Europe",                      # Europe
+        "Netherlands": "Europe", "Italy": "Europe", "Spain": "Europe",
+        "Sweden": "Europe", "Switzerland": "Europe", "Norway": "Europe",
+        "Denmark": "Europe", "Finland": "Europe", "Belgium": "Europe",
+        "Austria": "Europe", "Poland": "Europe", "Portugal": "Europe",
+        "Ireland": "Europe", "Greece": "Europe", "Czech Republic": "Europe",
+        "Hungary": "Europe", "Romania": "Europe",
+
+        "China": "Asia-Pacific", "India": "Asia-Pacific",                                        # Asia-Pacific
+        "Japan": "Asia-Pacific", "South Korea": "Asia-Pacific",
+        "Australia": "Asia-Pacific", "Singapore": "Asia-Pacific",
+        "New Zealand": "Asia-Pacific", "Taiwan": "Asia-Pacific",
+        "Hong Kong": "Asia-Pacific", "Malaysia": "Asia-Pacific",
+        "Indonesia": "Asia-Pacific", "Thailand": "Asia-Pacific",
+        "Vietnam": "Asia-Pacific", "Philippines": "Asia-Pacific",
+        "Pakistan": "Asia-Pacific", "Bangladesh": "Asia-Pacific",
+        "Sri Lanka": "Asia-Pacific",
+
+        "Brazil": "Latin America", "Mexico": "Latin America",                                    # Latin America
+        "Argentina": "Latin America", "Colombia": "Latin America",
+        "Chile": "Latin America", "Peru": "Latin America",
+        "Venezuela": "Latin America", "Ecuador": "Latin America",
+        "Bolivia": "Latin America", "Uruguay": "Latin America",
+        "Costa Rica": "Latin America",
+
+        "South Africa": "Africa & Middle East",                                                 # Africa & Middle East
+        "Nigeria": "Africa & Middle East",
+        "Kenya": "Africa & Middle East",
+        "Egypt": "Africa & Middle East",
+        "Ethiopia": "Africa & Middle East",
+        "Ghana": "Africa & Middle East",
+        "Tanzania": "Africa & Middle East",
+        "Uganda": "Africa & Middle East",
+        "Rwanda": "Africa & Middle East",
+        "Cameroon": "Africa & Middle East",
+        "Tunisia": "Africa & Middle East",
+        "Morocco": "Africa & Middle East",
+        "Israel": "Africa & Middle East",
+        "Saudi Arabia": "Africa & Middle East",
+        "UAE": "Africa & Middle East",
+        "Qatar": "Africa & Middle East",
+        "Jordan": "Africa & Middle East",
+        "Lebanon": "Africa & Middle East",
+    }
+
+    df_with_country = df[df["primary_country"] != ""].copy()
+    df_with_country["region"] = df_with_country["primary_country"].map(
+        region_map
+    ).fillna("Other / Unclassified")
+
+    region_counts = df_with_country["region"].value_counts()
+
+    log.info("")
+    log.info(" Regional Coverage Audit (per stratification):")
+    log.info("  " + "-" * 45)
+
+    for region in ["North America", "Europe", "Asia-Pacific",
+                   "Latin America", "Africa & Middle East",
+                   "Other / Unclassified"]:
+        count = region_counts.get(region, 0)
+        total = len(df_with_country)
+        pct = (count / total * 100) if total > 0 else 0
+
+        if pct < 2:                                                           # Flag low-representation regions
+            flag = " VERY LOW — flag as limitation"
+        elif pct < 5:
+            flag = "  LOW — note in methodology"
+        else:
+            flag = ""
+
+        log.info(f"    {region:<25} {count:>5,}  ({pct:4.1f}%){flag}")
+
+    log.info("  " + "-" * 45)
+    log.info("      Regions below 5% should be discussed as limitations.")
+    log.info("      This is expected — it is itself a key finding for the project.")
     log.info("=" * 55)
     log.info("")
 
@@ -258,8 +414,8 @@ def run_pipeline():
     log.info("=" * 55)
 
     if not API_KEY:
-        log.error(" SCOPUS_API_KEY not found in your .env file.")
-        log.error("   Open your .env file and add:  SCOPUS_API_KEY=your_key_here")
+        log.error(" SCOPUS_API_KEY not found in .env file.")
+        log.error("   Open .env file and add:  SCOPUS_API_KEY=put_key_here")
         return
 
     log.info(f"   API key loaded successfully")
@@ -302,7 +458,7 @@ def run_pipeline():
         time.sleep(2)
 
     if not all_dataframes:
-        log.error(" No data collected from any period. Check your query and API key.")
+        log.error(" No data collected from any period. Check query and API key.")
         return
 
     log.info("")
@@ -335,7 +491,7 @@ def run_pipeline():
     log.info(f" Geo summary saved:    {geo_path.name}")
 
     log.info("")
-    log.info(" Pipeline complete! Open your data_raw/ folder to see the results.")
+    log.info(" Pipeline complete! Open data_raw/ folder to see the results.")
     log.info("")
 
     return df_combined
