@@ -5,3 +5,6 @@ __pycache__/
 *.pyc
 .DS_Store
 .ipynb_checkpoints
+data_raw/open_alex_abs_data.parquet
+data_raw/open_alex_metadata.json
+oa_checkpoint.json
