@@ -7,4 +7,5 @@ __pycache__/
 .ipynb_checkpoints
 data_raw/open_alex_abs_data.parquet
 data_raw/open_alex_metadata.json
+data_raw/institution_geo.parquets
 oa_checkpoint.json

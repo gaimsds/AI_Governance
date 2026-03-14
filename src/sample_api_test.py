@@ -4,7 +4,7 @@ import json
 # ==========================
 # Configuration
 # ==========================
-API_KEY = "8bbae266b21f6a115f07c05b085c0371b9e7f53b"  # <-- replace this
+API_KEY = "8bbae266b21f6a115f07c05b085c0371b9e7f53b"
 BASE_URL = "https://api.clarivate.com/apis/wos-starter/v1"
 
 headers = {
