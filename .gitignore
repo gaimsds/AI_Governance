@@ -8,4 +8,7 @@ __pycache__/
 data_raw/open_alex_abs_data.parquet
 data_raw/open_alex_metadata.json
 data_raw/institution_geo.parquets
+data_raw/open_alex_abs_data_pt2.parquet
+data_raw/open_alex_metadata_pt2.json
+data_raw/fuzzy_checkpoint.json
 oa_checkpoint.json
