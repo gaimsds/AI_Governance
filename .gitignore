@@ -12,3 +12,10 @@ data_raw/open_alex_abs_data_pt2.parquet
 data_raw/open_alex_metadata_pt2.json
 data_raw/fuzzy_checkpoint.json
 oa_checkpoint.json
+
+data_raw/*.csv
+data_raw/*.xlsx
+data_clean/*.csv
+data_clean/*.xlsx
+data_clean/*.log
+data_clean/*.txt
