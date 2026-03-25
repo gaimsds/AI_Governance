@@ -1,0 +1,36 @@
+SCOPUS DATA CLEANING REPORT
+Generated: 2026-03-25 10:43
+============================================================
+
+METHODOLOGICAL NOTE:
+Quality-only filtering was applied. No thematic or keyword-based
+filtering was used, in order to preserve the unsupervised nature
+of the BERTopic analysis that follows.
+
+FILTERING STEPS:
+  Original corpus size:     41,893
+  Removed (Duplicate DOIs): 0
+  Removed (Duplicate titles): 34
+  Removed (Missing abstracts): 676
+  Removed (Abstracts under 50 words): 100
+  Removed (Likely non-English abstracts): 16
+  Final corpus size:        41,067
+  Retention rate:           98.0%
+
+REGIONAL DISTRIBUTION:
+  North America              6,954  (16.9%)
+  Europe                    11,544  (28.1%)
+  Asia-Pacific              16,062  (39.1%)
+  Latin America              1,311  (3.2%)
+  Africa & Middle East       4,507  (11.0%)
+  Other / Unclassified         689  (1.7%)
+
+TEXT PREPROCESSING APPLIED:
+  - Encoding artifact removal
+  - Lowercase conversion
+  - URL and email removal
+  - Special character removal
+  - Stopword removal (NLTK English + domain-specific)
+  - Lemmatization (NLTK WordNetLemmatizer)
+  - Results stored in 'abstract_clean' column
+  - Original abstract preserved in 'abstract' column

@@ -1,0 +1,67 @@
+10:43:01  ============================================================
+10:43:01    DATA CLEANING PIPELINE STARTING
+10:43:01    Run time: 2026-03-25 10:43
+10:43:01  ============================================================
+10:43:01  📂 Loading: scopus_combined.csv
+10:43:01     Loaded 41,893 papers with 36 columns
+10:43:01  
+10:43:01  🔍 Filter 1: Removing duplicate DOIs...
+10:43:01     Removed 0 duplicate DOIs
+10:43:01  🔍 Filter 2: Removing duplicate titles...
+10:43:01     Removed 34 duplicate titles
+10:43:01  🔍 Filter 3: Removing papers with missing abstracts...
+10:43:01     Removed 676 papers with no abstract
+10:43:01  🔍 Filter 4: Removing abstracts under 50 words...
+10:43:02     Removed 100 papers with abstracts under 50 words
+10:43:02  🔍 Filter 5: Flagging likely non-English abstracts...
+10:43:02     Removed 16 likely non-English abstracts
+10:43:02  
+10:43:02  🌍 Standardising country names...
+10:43:02     Country names standardised
+10:43:02  📅 Standardising year column...
+10:43:02  🗺️  Adding region column...
+10:43:02  
+10:43:02  🔤 Running full text preprocessing on abstracts...
+10:43:02     (lowercase → remove special chars → remove stopwords → lemmatize)
+10:43:02     This may take a few minutes for 40,000+ papers...
+10:43:21     Text preprocessing complete
+10:43:21  
+10:43:21  ============================================================
+10:43:21    CLEANING SUMMARY
+10:43:21  ============================================================
+10:43:21    Original papers:     41,893
+10:43:21    Papers removed:      826
+10:43:21    Papers retained:     41,067  (98.0%)
+10:43:21  
+10:43:21    Removal breakdown:
+10:43:21      Duplicate DOIs                           0
+10:43:21      Duplicate titles                        34
+10:43:21      Missing abstracts                      676
+10:43:21      Abstracts under 50 words               100
+10:43:21      Likely non-English abstracts            16
+10:43:21  
+10:43:21    Pre-ChatGPT  (2015–2021): 8,088
+10:43:21    Post-ChatGPT (2022–2025): 32,979
+10:43:21    Unique countries:          138
+10:43:21    Unique regions:            6
+10:43:21  
+10:43:21    Regional distribution after cleaning:
+10:43:21    ---------------------------------------------
+10:43:21      North America              6,954  (16.9%)
+10:43:21      Europe                    11,544  (28.1%)
+10:43:21      Asia-Pacific              16,062  (39.1%)
+10:43:21      Latin America              1,311  ( 3.2%)  ⚠️  LOW
+10:43:21      Africa & Middle East       4,507  (11.0%)
+10:43:21      Other / Unclassified         689  ( 1.7%)  ⚠️  LOW
+10:43:21    ---------------------------------------------
+10:43:21  ============================================================
+10:43:21  
+10:43:21  💾 Saving outputs...
+10:43:22     ✅ Full cleaned CSV:      scopus_cleaned.csv
+10:43:33     ✅ Full cleaned Excel:    scopus_cleaned.xlsx
+10:43:34     ✅ Abstracts NLP CSV:     scopus_abstracts_nlp.csv
+10:43:34     ✅ Cleaning report:       scopus_cleaning_report.txt
+10:43:34  
+10:43:34  🎉 Cleaning pipeline complete!
+10:43:34     Open your data_clean/ folder to see the results.
+10:43:34  
