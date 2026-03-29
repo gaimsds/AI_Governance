@@ -244,11 +244,11 @@ DOCUMENTS = [
     {
         "region": "Latin America", "country": "Brazil",
         "issuer": "Ministry of Science Technology and Innovation",
-        "doc_name": "Brazilian AI Strategy EBIA 2021",
-        "doc_type": "National Strategy", "year": 2021,
-        "url": "https://www.gov.br/mcti/pt-br/acompanhe-o-mcti/transformacaodigital/arquivosinteligenciaartificial/ebia-ingles_final.pdf",
-        "filename": "Brazil_AI_Strategy_EBIA_2021.pdf",
-        "notes": "National strategy covering investment, ethics, governance and inclusion",
+        "doc_name": "Brazilian AI Plan PBIA 2024",  # ← updated
+        "doc_type": "National Strategy", "year": 2024,  # ← updated
+        "url": "https://www.gov.br/mcti/pt-br/acompanhe-o-mcti/noticias/2024/07/plano-brasileiro-de-ia-tera-supercomputador-e-investimento-de-r-23-bilhoes-em-quatro-anos/ia_para_o_bem_de_todos.pdf/@@download/file",
+        "filename": "Brazil_National_AI_Plan_PBIA_2024.pdf",  # ← must match your actual filename
+        "notes": "AI for the Good of All; R$23bn investment plan 2024-2028; Portuguese",
     },
     {
         "region": "Latin America", "country": "Chile",

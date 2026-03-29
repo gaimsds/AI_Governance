@@ -193,3 +193,411 @@
 00:34:49    🌐 Additional documents: https://oecd.ai/en/dashboards/policy-initiatives
 00:34:49  =================================================================
 00:34:49  
+17:09:46  =================================================================
+17:09:46    NATIONAL AI FRAMEWORKS COLLECTION PIPELINE v2
+17:09:46    Run time: 2026-03-29 17:09
+17:09:46    Documents to collect: 35
+17:09:46    Reference: OECD AI Policy Observatory (oecd.ai)
+17:09:46  =================================================================
+17:09:46  
+17:09:46  [01/35] United States — National AI R&D Strategic Plan 2023 Update
+17:09:46     ✅ Already downloaded — skipping
+17:09:46  
+17:09:46  [02/35] United States — AI Risk Management Framework 1.0
+17:09:46     ✅ Already downloaded — skipping
+17:09:46  
+17:09:46  [03/35] United States — OMB M-25-21 Accelerating Federal Use of AI 2025
+17:09:46     ✅ Already downloaded — skipping
+17:09:46  
+17:09:46  [04/35] Canada — Directive on Automated Decision-Making
+17:09:46     ✅ Already downloaded — skipping
+17:09:46  
+17:09:46  [05/35] European Union — EU Artificial Intelligence Act Regulation 2024/1689
+17:09:46     ✅ Already downloaded — skipping
+17:09:46  
+17:09:46  [06/35] United Kingdom — UK National AI Strategy 2021
+17:09:46     ✅ Already downloaded — skipping
+17:09:46  
+17:09:46  [07/35] United Kingdom — UK AI Opportunities Action Plan 2025
+17:09:46     ✅ Already downloaded — skipping
+17:09:46  
+17:09:46  [08/35] Germany — Germany AI Strategy Update 2023
+17:09:46     ✅ Already downloaded — skipping
+17:09:46  
+17:09:46  [09/35] France — France AI for Humanity Strategy 2021
+17:09:46     ✅ Already downloaded — skipping
+17:09:46  
+17:09:46  [10/35] Singapore — Model AI Governance Framework Second Edition 2020
+17:09:46     ✅ Already downloaded — skipping
+17:09:46  
+17:09:46  [11/35] Singapore — Model AI Governance Framework for Generative AI 2024
+17:09:46     ✅ Already downloaded — skipping
+17:09:46  
+17:09:46  [12/35] India — National Strategy for Artificial Intelligence 2021
+17:09:46     ✅ Already downloaded — skipping
+17:09:46  
+17:09:46  [13/35] Australia — Australia AI Ethics Framework 2019
+17:09:46     ✅ Already downloaded — skipping
+17:09:46  
+17:09:46  [14/35] Japan — Japan AI Strategy 2022
+17:09:46     ✅ Already downloaded — skipping
+17:09:46  
+17:09:46  [15/35] China — New Generation AI Development Plan 2017
+17:09:46     ✅ Already downloaded — skipping
+17:09:46  
+17:09:46  [16/35] China — China Interim Measures Generative AI Services 2023
+17:09:46     ✅ Already downloaded — skipping
+17:09:46  
+17:09:46  [17/35] South Korea — South Korea AI Basic Act Framework Act 2025
+17:09:46     ✅ Already downloaded — skipping
+17:09:46  
+17:09:46  [18/35] Brazil — Brazilian AI Strategy EBIA 2021
+17:09:46     ⬇️  Downloading...
+17:09:46     HTTP 404 for Brazilian AI Strategy EBIA 2021
+17:09:46     ❌ Auto-download failed — manual download required
+17:09:46     URL: https://www.gov.br/mcti/pt-br/acompanhe-o-mcti/transformacaodigital/arquivosinteligenciaartificial/ebia-ingles_final.pdf
+17:09:48  
+17:09:48  [19/35] Chile — Chile National AI Policy 2021
+17:09:48     ✅ Already downloaded — skipping
+17:09:48  
+17:09:48  [20/35] Colombia — Colombia National AI Policy CONPES 4144 2025
+17:09:48     ✅ Already downloaded — skipping
+17:09:48  
+17:09:48  [21/35] Mexico — Mexico Towards an AI National Agenda 2018
+17:09:48     ✅ Already downloaded — skipping
+17:09:48  
+17:09:48  [22/35] Rwanda — National AI Policy Rwanda 2023
+17:09:48     ✅ Already downloaded — skipping
+17:09:48  
+17:09:48  [23/35] Kenya — Kenya National AI Strategy Draft 2025
+17:09:48     ✅ Already downloaded — skipping
+17:09:48  
+17:09:48  [24/35] Egypt — Egypt National AI Strategy 2021
+17:09:48     ✅ Already downloaded — skipping
+17:09:48  
+17:09:48  [25/35] UAE — UAE National AI Strategy 2031
+17:09:48     ✅ Already downloaded — skipping
+17:09:48  
+17:09:48  [26/35] South Africa — South Africa National AI Policy Framework 2023
+17:09:48     ✅ Already downloaded — skipping
+17:09:48  
+17:09:48  [27/35] Zimbabwe — Zimbabwe National AI Strategy
+17:09:48     ✅ Already downloaded — skipping
+17:09:48  
+17:09:48  [28/35] Nigeria — Nigeria National AI Strategy Draft 2024
+17:09:48     ✅ Already downloaded — skipping
+17:09:48  
+17:09:48  [29/35] UNESCO — UNESCO Recommendation on the Ethics of AI 2021
+17:09:48     ✅ Already downloaded — skipping
+17:09:48  
+17:09:48  [30/35] OECD — OECD AI Principles 2023
+17:09:48     ✅ Already downloaded — skipping
+17:09:48  
+17:09:48  [31/35] G7 — G7 Hiroshima AI Process Guiding Principles 2023
+17:09:48     ✅ Already downloaded — skipping
+17:09:48  
+17:09:48  [32/35] Council of Europe — Framework Convention on AI Human Rights Democracy Rule of Law CETS 225
+17:09:48     ✅ Already downloaded — skipping
+17:09:48  
+17:09:48  [33/35] African Union — AU Continental AI Strategy for Africa 2024
+17:09:48     ✅ Already downloaded — skipping
+17:09:48  
+17:09:48  [34/35] ASEAN — ASEAN Guide on AI Governance and Ethics 2024
+17:09:48     ✅ Already downloaded — skipping
+17:09:48  
+17:09:48  [35/35] ASEAN — ASEAN Expanded Guide AI Governance Generative AI 2025
+17:09:48     ✅ Already downloaded — skipping
+17:09:48  
+✅ Manifest saved: policy_manifest.csv
+17:09:48  ✅ Report saved:   download_report.txt
+17:09:48  
+17:09:48  =================================================================
+17:09:48    COLLECTION SUMMARY
+17:09:48  =================================================================
+17:09:48    Total documents:          35
+17:09:48    Successfully downloaded:  34
+17:09:48    Manual download needed:   1
+17:09:48  
+17:09:48      Africa & Middle East      7 documents
+17:09:48      Asia-Pacific              8 documents
+17:09:48      Europe                    5 documents
+17:09:48      International             7 documents
+17:09:48      Latin America             4 documents
+17:09:48      North America             4 documents
+17:09:48  
+17:09:48    📁 Files saved to: /Users/tg.charumbira/PycharmProjects/AI-Research-Analysis-Capstone/data_raw/policy_frameworks
+17:09:48    📋 Check download_report.txt for manual download instructions
+17:09:48    🌐 Additional documents: https://oecd.ai/en/dashboards/policy-initiatives
+17:09:48  =================================================================
+17:09:48  
+17:12:01  =================================================================
+17:12:01    NATIONAL AI FRAMEWORKS COLLECTION PIPELINE v2
+17:12:01    Run time: 2026-03-29 17:12
+17:12:01    Documents to collect: 35
+17:12:01    Reference: OECD AI Policy Observatory (oecd.ai)
+17:12:01  =================================================================
+17:12:01  
+17:12:01  [01/35] United States — National AI R&D Strategic Plan 2023 Update
+17:12:01     ✅ Already downloaded — skipping
+17:12:01  
+17:12:01  [02/35] United States — AI Risk Management Framework 1.0
+17:12:01     ✅ Already downloaded — skipping
+17:12:01  
+17:12:01  [03/35] United States — OMB M-25-21 Accelerating Federal Use of AI 2025
+17:12:01     ✅ Already downloaded — skipping
+17:12:01  
+17:12:01  [04/35] Canada — Directive on Automated Decision-Making
+17:12:01     ✅ Already downloaded — skipping
+17:12:01  
+17:12:01  [05/35] European Union — EU Artificial Intelligence Act Regulation 2024/1689
+17:12:01     ✅ Already downloaded — skipping
+17:12:01  
+17:12:01  [06/35] United Kingdom — UK National AI Strategy 2021
+17:12:01     ✅ Already downloaded — skipping
+17:12:01  
+17:12:01  [07/35] United Kingdom — UK AI Opportunities Action Plan 2025
+17:12:01     ✅ Already downloaded — skipping
+17:12:01  
+17:12:01  [08/35] Germany — Germany AI Strategy Update 2023
+17:12:01     ✅ Already downloaded — skipping
+17:12:01  
+17:12:01  [09/35] France — France AI for Humanity Strategy 2021
+17:12:01     ✅ Already downloaded — skipping
+17:12:01  
+17:12:01  [10/35] Singapore — Model AI Governance Framework Second Edition 2020
+17:12:01     ✅ Already downloaded — skipping
+17:12:01  
+17:12:01  [11/35] Singapore — Model AI Governance Framework for Generative AI 2024
+17:12:01     ✅ Already downloaded — skipping
+17:12:01  
+17:12:01  [12/35] India — National Strategy for Artificial Intelligence 2021
+17:12:01     ✅ Already downloaded — skipping
+17:12:01  
+17:12:01  [13/35] Australia — Australia AI Ethics Framework 2019
+17:12:01     ✅ Already downloaded — skipping
+17:12:01  
+17:12:01  [14/35] Japan — Japan AI Strategy 2022
+17:12:01     ✅ Already downloaded — skipping
+17:12:01  
+17:12:01  [15/35] China — New Generation AI Development Plan 2017
+17:12:01     ✅ Already downloaded — skipping
+17:12:01  
+17:12:01  [16/35] China — China Interim Measures Generative AI Services 2023
+17:12:01     ✅ Already downloaded — skipping
+17:12:01  
+17:12:01  [17/35] South Korea — South Korea AI Basic Act Framework Act 2025
+17:12:01     ✅ Already downloaded — skipping
+17:12:01  
+17:12:01  [18/35] Brazil — Brazilian AI Strategy EBIA 2021
+17:12:01     ⬇️  Downloading...
+17:12:01     HTTP 404 for Brazilian AI Strategy EBIA 2021
+17:12:01     ❌ Auto-download failed — manual download required
+17:12:01     URL: https://www.gov.br/mcti/pt-br/acompanhe-o-mcti/transformacaodigital/arquivosinteligenciaartificial/ebia-ingles_final.pdf
+17:12:03  
+17:12:03  [19/35] Chile — Chile National AI Policy 2021
+17:12:03     ✅ Already downloaded — skipping
+17:12:03  
+17:12:03  [20/35] Colombia — Colombia National AI Policy CONPES 4144 2025
+17:12:03     ✅ Already downloaded — skipping
+17:12:03  
+17:12:03  [21/35] Mexico — Mexico Towards an AI National Agenda 2018
+17:12:03     ✅ Already downloaded — skipping
+17:12:03  
+17:12:03  [22/35] Rwanda — National AI Policy Rwanda 2023
+17:12:03     ✅ Already downloaded — skipping
+17:12:03  
+17:12:03  [23/35] Kenya — Kenya National AI Strategy Draft 2025
+17:12:03     ✅ Already downloaded — skipping
+17:12:03  
+17:12:03  [24/35] Egypt — Egypt National AI Strategy 2021
+17:12:03     ✅ Already downloaded — skipping
+17:12:03  
+17:12:03  [25/35] UAE — UAE National AI Strategy 2031
+17:12:03     ✅ Already downloaded — skipping
+17:12:03  
+17:12:03  [26/35] South Africa — South Africa National AI Policy Framework 2023
+17:12:03     ✅ Already downloaded — skipping
+17:12:03  
+17:12:03  [27/35] Zimbabwe — Zimbabwe National AI Strategy
+17:12:03     ✅ Already downloaded — skipping
+17:12:03  
+17:12:03  [28/35] Nigeria — Nigeria National AI Strategy Draft 2024
+17:12:03     ✅ Already downloaded — skipping
+17:12:03  
+17:12:03  [29/35] UNESCO — UNESCO Recommendation on the Ethics of AI 2021
+17:12:03     ✅ Already downloaded — skipping
+17:12:03  
+17:12:03  [30/35] OECD — OECD AI Principles 2023
+17:12:03     ✅ Already downloaded — skipping
+17:12:03  
+17:12:03  [31/35] G7 — G7 Hiroshima AI Process Guiding Principles 2023
+17:12:03     ✅ Already downloaded — skipping
+17:12:03  
+17:12:03  [32/35] Council of Europe — Framework Convention on AI Human Rights Democracy Rule of Law CETS 225
+17:12:03     ✅ Already downloaded — skipping
+17:12:03  
+17:12:03  [33/35] African Union — AU Continental AI Strategy for Africa 2024
+17:12:03     ✅ Already downloaded — skipping
+17:12:03  
+17:12:03  [34/35] ASEAN — ASEAN Guide on AI Governance and Ethics 2024
+17:12:03     ✅ Already downloaded — skipping
+17:12:03  
+17:12:03  [35/35] ASEAN — ASEAN Expanded Guide AI Governance Generative AI 2025
+17:12:03     ✅ Already downloaded — skipping
+17:12:03  
+✅ Manifest saved: policy_manifest.csv
+17:12:03  ✅ Report saved:   download_report.txt
+17:12:03  
+17:12:03  =================================================================
+17:12:03    COLLECTION SUMMARY
+17:12:03  =================================================================
+17:12:03    Total documents:          35
+17:12:03    Successfully downloaded:  34
+17:12:03    Manual download needed:   1
+17:12:03  
+17:12:03      Africa & Middle East      7 documents
+17:12:03      Asia-Pacific              8 documents
+17:12:03      Europe                    5 documents
+17:12:03      International             7 documents
+17:12:03      Latin America             4 documents
+17:12:03      North America             4 documents
+17:12:03  
+17:12:03    📁 Files saved to: /Users/tg.charumbira/PycharmProjects/AI-Research-Analysis-Capstone/data_raw/policy_frameworks
+17:12:03    📋 Check download_report.txt for manual download instructions
+17:12:03    🌐 Additional documents: https://oecd.ai/en/dashboards/policy-initiatives
+17:12:03  =================================================================
+17:12:03  
+17:14:30  =================================================================
+17:14:30    NATIONAL AI FRAMEWORKS COLLECTION PIPELINE v2
+17:14:30    Run time: 2026-03-29 17:14
+17:14:30    Documents to collect: 35
+17:14:30    Reference: OECD AI Policy Observatory (oecd.ai)
+17:14:30  =================================================================
+17:14:30  
+17:14:30  [01/35] United States — National AI R&D Strategic Plan 2023 Update
+17:14:30     ✅ Already downloaded — skipping
+17:14:30  
+17:14:30  [02/35] United States — AI Risk Management Framework 1.0
+17:14:30     ✅ Already downloaded — skipping
+17:14:30  
+17:14:30  [03/35] United States — OMB M-25-21 Accelerating Federal Use of AI 2025
+17:14:30     ✅ Already downloaded — skipping
+17:14:30  
+17:14:30  [04/35] Canada — Directive on Automated Decision-Making
+17:14:30     ✅ Already downloaded — skipping
+17:14:30  
+17:14:30  [05/35] European Union — EU Artificial Intelligence Act Regulation 2024/1689
+17:14:30     ✅ Already downloaded — skipping
+17:14:30  
+17:14:30  [06/35] United Kingdom — UK National AI Strategy 2021
+17:14:30     ✅ Already downloaded — skipping
+17:14:30  
+17:14:30  [07/35] United Kingdom — UK AI Opportunities Action Plan 2025
+17:14:30     ✅ Already downloaded — skipping
+17:14:30  
+17:14:30  [08/35] Germany — Germany AI Strategy Update 2023
+17:14:30     ✅ Already downloaded — skipping
+17:14:30  
+17:14:30  [09/35] France — France AI for Humanity Strategy 2021
+17:14:30     ✅ Already downloaded — skipping
+17:14:30  
+17:14:30  [10/35] Singapore — Model AI Governance Framework Second Edition 2020
+17:14:30     ✅ Already downloaded — skipping
+17:14:30  
+17:14:30  [11/35] Singapore — Model AI Governance Framework for Generative AI 2024
+17:14:30     ✅ Already downloaded — skipping
+17:14:30  
+17:14:30  [12/35] India — National Strategy for Artificial Intelligence 2021
+17:14:30     ✅ Already downloaded — skipping
+17:14:30  
+17:14:30  [13/35] Australia — Australia AI Ethics Framework 2019
+17:14:30     ✅ Already downloaded — skipping
+17:14:30  
+17:14:30  [14/35] Japan — Japan AI Strategy 2022
+17:14:30     ✅ Already downloaded — skipping
+17:14:30  
+17:14:30  [15/35] China — New Generation AI Development Plan 2017
+17:14:30     ✅ Already downloaded — skipping
+17:14:30  
+17:14:30  [16/35] China — China Interim Measures Generative AI Services 2023
+17:14:30     ✅ Already downloaded — skipping
+17:14:30  
+17:14:30  [17/35] South Korea — South Korea AI Basic Act Framework Act 2025
+17:14:30     ✅ Already downloaded — skipping
+17:14:30  
+17:14:30  [18/35] Brazil — Brazilian AI Plan PBIA 2024
+17:14:30     ✅ Already downloaded — skipping
+17:14:30  
+17:14:30  [19/35] Chile — Chile National AI Policy 2021
+17:14:30     ✅ Already downloaded — skipping
+17:14:30  
+17:14:30  [20/35] Colombia — Colombia National AI Policy CONPES 4144 2025
+17:14:30     ✅ Already downloaded — skipping
+17:14:30  
+17:14:30  [21/35] Mexico — Mexico Towards an AI National Agenda 2018
+17:14:30     ✅ Already downloaded — skipping
+17:14:30  
+17:14:30  [22/35] Rwanda — National AI Policy Rwanda 2023
+17:14:30     ✅ Already downloaded — skipping
+17:14:30  
+17:14:30  [23/35] Kenya — Kenya National AI Strategy Draft 2025
+17:14:30     ✅ Already downloaded — skipping
+17:14:30  
+17:14:30  [24/35] Egypt — Egypt National AI Strategy 2021
+17:14:30     ✅ Already downloaded — skipping
+17:14:30  
+17:14:30  [25/35] UAE — UAE National AI Strategy 2031
+17:14:30     ✅ Already downloaded — skipping
+17:14:30  
+17:14:30  [26/35] South Africa — South Africa National AI Policy Framework 2023
+17:14:30     ✅ Already downloaded — skipping
+17:14:30  
+17:14:30  [27/35] Zimbabwe — Zimbabwe National AI Strategy
+17:14:30     ✅ Already downloaded — skipping
+17:14:30  
+17:14:30  [28/35] Nigeria — Nigeria National AI Strategy Draft 2024
+17:14:30     ✅ Already downloaded — skipping
+17:14:30  
+17:14:30  [29/35] UNESCO — UNESCO Recommendation on the Ethics of AI 2021
+17:14:30     ✅ Already downloaded — skipping
+17:14:30  
+17:14:30  [30/35] OECD — OECD AI Principles 2023
+17:14:30     ✅ Already downloaded — skipping
+17:14:30  
+17:14:30  [31/35] G7 — G7 Hiroshima AI Process Guiding Principles 2023
+17:14:30     ✅ Already downloaded — skipping
+17:14:30  
+17:14:30  [32/35] Council of Europe — Framework Convention on AI Human Rights Democracy Rule of Law CETS 225
+17:14:30     ✅ Already downloaded — skipping
+17:14:30  
+17:14:30  [33/35] African Union — AU Continental AI Strategy for Africa 2024
+17:14:30     ✅ Already downloaded — skipping
+17:14:30  
+17:14:30  [34/35] ASEAN — ASEAN Guide on AI Governance and Ethics 2024
+17:14:30     ✅ Already downloaded — skipping
+17:14:30  
+17:14:30  [35/35] ASEAN — ASEAN Expanded Guide AI Governance Generative AI 2025
+17:14:30     ✅ Already downloaded — skipping
+17:14:30  
+✅ Manifest saved: policy_manifest.csv
+17:14:30  ✅ Report saved:   download_report.txt
+17:14:30  
+17:14:30  =================================================================
+17:14:30    COLLECTION SUMMARY
+17:14:30  =================================================================
+17:14:30    Total documents:          35
+17:14:30    Successfully downloaded:  35
+17:14:30    Manual download needed:   0
+17:14:30  
+17:14:30      Africa & Middle East      7 documents
+17:14:30      Asia-Pacific              8 documents
+17:14:30      Europe                    5 documents
+17:14:30      International             7 documents
+17:14:30      Latin America             4 documents
+17:14:30      North America             4 documents
+17:14:30  
+17:14:30    📁 Files saved to: /Users/tg.charumbira/PycharmProjects/AI-Research-Analysis-Capstone/data_raw/policy_frameworks
+17:14:30    📋 Check download_report.txt for manual download instructions
+17:14:30    🌐 Additional documents: https://oecd.ai/en/dashboards/policy-initiatives
+17:14:30  =================================================================
+17:14:30  

@@ -1,92 +1,12 @@
 NATIONAL AI FRAMEWORKS — DOWNLOAD REPORT v2
-Generated: 2026-03-29 00:34
+Generated: 2026-03-29 17:14
 Reference: OECD AI Policy Observatory (oecd.ai)
 =================================================================
 
-Total documents:          34
-Successfully downloaded:  19
-Manual download required: 15
+Total documents:          35
+Successfully downloaded:  35
+Manual download required: 0
 
-DOCUMENTS REQUIRING MANUAL DOWNLOAD:
------------------------------------------------------------------
-
-Country:  United States
-Document: OMB M-25-21 Accelerating Federal Use of AI 2025
-Save as:  USA_OMB_M2521_Federal_AI_Governance_2025.pdf
-URL:      https://www.whitehouse.gov/wp-content/uploads/2025/04/M-25-21-Accelerating-Federal-Use-of-AI-through-Innovation-Governance-and-Public-Trust.pdf
-Note:     If URL fails search 'OMB M-25-21' on whitehouse.gov
-
-Country:  Canada
-Document: Directive on Automated Decision-Making
-Save as:  Canada_Directive_Automated_Decision_Making_2023.pdf
-URL:      https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32592
-Note:     HTML page — save as PDF from browser at the URL above
-
-Country:  France
-Document: France AI for Humanity Strategy 2021
-Save as:  France_AI_Strategy_2021.pdf
-URL:      https://www.gouvernement.fr/upload/media/default/0001/01/2021_10_ia-rapport-bericht-complet.pdf
-
-Country:  Australia
-Document: Australia AI Ethics Framework 2019
-Save as:  Australia_AI_Ethics_Framework_2019.pdf
-URL:      https://www.industry.gov.au/sites/default/files/2019-11/australias-artificial-intelligence-ethics-framework.pdf
-
-Country:  China
-Document: New Generation AI Development Plan 2017
-Save as:  China_New_Generation_AI_Development_Plan_2017.pdf
-URL:      https://cset.georgetown.edu/wp-content/uploads/t0112_next_gen_ai_development_plan_EN.pdf
-
-Country:  Brazil
-Document: Brazilian AI Strategy EBIA 2021
-Save as:  Brazil_AI_Strategy_EBIA_2021.pdf
-URL:      https://www.gov.br/mcti/pt-br/acompanhe-o-mcti/transformacaodigital/arquivosinteligenciaartificial/ebia-ingles_final.pdf
-
-Country:  Chile
-Document: Chile National AI Policy 2021
-Save as:  Chile_National_AI_Policy_2021.pdf
-URL:      https://minciencia.gob.cl/uploads/filer_public/7d/e3/7de3f3a4-f43d-4568-b7de-a037269e234b/politica_nacional_de_inteligencia_artificial_version_en.pdf
-
-Country:  Colombia
-Document: Colombia National AI Policy CONPES 4144 2025
-Save as:  Colombia_National_AI_Policy_CONPES4144_2025.pdf
-URL:      https://colaboracion.dnp.gov.co/CDT/Conpes/Econ%C3%B3micos/4144.pdf
-
-Country:  Kenya
-Document: Kenya National AI Strategy Draft 2025
-Save as:  Kenya_National_AI_Strategy_Draft_2025.pdf
-URL:      https://ict.go.ke/sites/default/files/2025-01/Kenya%20National%20AI%20Strategy%20(Draft)%20for%20Public%20Validation%20%20%5B14-01-2025%5D.pdf
-
-Country:  UAE
-Document: UAE National AI Strategy 2031
-Save as:  UAE_National_AI_Strategy_2031.pdf
-URL:      https://ai.gov.ae/wp-content/uploads/2022/07/UAE-National-Strategy-for-Artificial-Intelligence-2031.pdf
-
-Country:  South Africa
-Document: South Africa National AI Policy Framework 2023
-Save as:  SouthAfrica_National_AI_Policy_Framework_2023.pdf
-URL:      https://www.dcdt.gov.za/images/phocadownload/2024/DCDT%20AI%20Policy%20Framework%20August%202023.pdf
-
-Country:  UNESCO
-Document: UNESCO Recommendation on the Ethics of AI 2021
-Save as:  UNESCO_Recommendation_Ethics_AI_2021.pdf
-URL:      https://unesdoc.unesco.org/ark:/48223/pf0000381137
-Note:     Download PDF from UNESCO digital library at the URL above
-
-Country:  OECD
-Document: OECD AI Principles 2023
-Save as:  OECD_AI_Principles_2023.pdf
-URL:      https://legalinstruments.oecd.org/api/download/?uri=/instruments/OECD-LEGAL-0449.pdf
-
-Country:  G7
-Document: G7 Hiroshima AI Process Guiding Principles 2023
-Save as:  G7_Hiroshima_AI_Process_Guiding_Principles_2023.pdf
-URL:      https://www.meti.go.jp/press/2023/10/20231030002/20231030002-1.pdf
-
-Country:  African Union
-Document: AU Continental AI Strategy for Africa 2024
-Save as:  AfricanUnion_Continental_AI_Strategy_2024.pdf
-URL:      https://au.int/sites/default/files/documents/43626-doc-AU_AI_Continental_Strategy_For_Africa_draft_April2024.pdf
 
 
 METHODOLOGY NOTE:
