@@ -19,7 +19,7 @@
 #  "OECD AI Policy Observatory (oecd.ai) was used to identify and verify
 #  national AI policy documents as of March 2026."
 #
-#  DOCUMENT COUNT: 27 documents across 6 regions + international bodies
+#  DOCUMENT COUNT: 29 documents across 6 regions + international bodies
 #
 #  CHANGES FROM VERSION 1:
 #  ------------------------
@@ -260,6 +260,15 @@ DOCUMENTS = [
         "notes": "First Latin American country with a national AI strategy",
     },
     {
+        "region": "Latin America", "country": "Colombia",
+        "issuer": "Departamento Nacional de Planeacion",
+        "doc_name": "Colombia National AI Policy CONPES 4144 2025",
+        "doc_type": "National Policy", "year": 2025,
+        "url": "https://colaboracion.dnp.gov.co/CDT/Conpes/Econ%C3%B3micos/4144.pdf",
+        "filename": "Colombia_National_AI_Policy_CONPES4144_2025.pdf",
+        "notes": "Approved February 2025; 106 actions to 2030; ethics, data, R&D, talent, risk mitigation — written in Spanish",
+    },
+    {
         "region": "Latin America", "country": "Mexico",
         "issuer": "Government of Mexico",
         "doc_name": "Mexico Towards an AI National Agenda 2018",
@@ -315,6 +324,24 @@ DOCUMENTS = [
         "url": "https://www.dcdt.gov.za/images/phocadownload/2024/DCDT%20AI%20Policy%20Framework%20August%202023.pdf",
         "filename": "SouthAfrica_National_AI_Policy_Framework_2023.pdf",
         "notes": "Inclusive AI framework; addresses digital divide and developmental priorities",
+    },
+    {
+        "region": "Africa & Middle East", "country": "Zimbabwe",
+        "issuer": "Government of Zimbabwe",
+        "doc_name": "Zimbabwe National AI Strategy",
+        "doc_type": "National Strategy", "year": 2024,
+        "url": "https://veritaszim.net/sites/veritas_d/files/Zimbabwe%20National%20Artificial%20Intelligence%20Strategy.pdf",
+        "filename": "Zimbabwe_National_AI_Strategy.pdf",
+        "notes": "National AI strategy covering economic development, ethics, governance and digital transformation",
+    },
+    {
+        "region": "Africa & Middle East", "country": "Nigeria",
+        "issuer": "NCAIR / NITDA",
+        "doc_name": "Nigeria National AI Strategy Draft 2024",
+        "doc_type": "National Strategy", "year": 2024,
+        "url": "https://ncair.nitda.gov.ng/wp-content/uploads/2024/08/National-AI-Strategy_01082024-copy.pdf",
+        "filename": "Nigeria_National_AI_Strategy_2024.pdf",
+        "notes": "Draft released August 2024; most populous African nation; 5 strategic pillars covering innovation, ethics, infrastructure",
     },
 
     # ── INTERNATIONAL BODIES ──────────────────────────────────────────────────
