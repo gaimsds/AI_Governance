@@ -78,10 +78,10 @@ for _, row in institution_counts.iterrows():
 
 # Populate dataframe and save
 institution_df = pd.DataFrame(rows, columns=institution_df.columns)
-institution_df.to_parquet("../data_raw/institution_geo.parquet", index=False)
+institution_df.to_parquet("../data_raw/openalex_institution_geo.parquet", index=False)
 print(f"Done. {len(institution_df)} unique institutions saved.")
 
 #%%
-df = pd.read_parquet("data_raw/institution_geo.parquet")
+df = pd.read_parquet("data_raw/openalex_institution_geo.parquet")
 df.replace('', np.nan, inplace=True)
 print(df.info())
