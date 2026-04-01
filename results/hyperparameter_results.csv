@@ -1,0 +1,6 @@
+min_cluster_size,n_neighbors,n_components,n_topics,outlier_rate,coherence_cv,diversity,score,best
+50,15,10,46,0.3215,0.6637,0.7652,0.3446,True
+50,20,5,82,0.3802,0.7072,0.7793,0.3416,False
+30,15,5,131,0.3867,0.7159,0.7466,0.3278,False
+30,10,10,67,0.3922,0.6732,0.7821,0.32,False
+20,10,5,15,0.3989,0.512,0.7333,0.2257,False

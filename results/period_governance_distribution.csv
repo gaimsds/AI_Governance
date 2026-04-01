@@ -1,0 +1,43 @@
+period,topic_id_finetuned,topic_label_finetuned,count,total,proportion
+post_chatgpt,2,AI Cybersecurity & IoT Threats,338,32979,0.0102
+post_chatgpt,8,"AI, Journalism & Media",145,32979,0.0044
+post_chatgpt,15,Predictive Policing & Criminal Justice AI,88,32979,0.0027
+post_chatgpt,17,AI Ethics from Islamic/Religious Perspective,92,32979,0.0028
+post_chatgpt,21,Trust & Trustworthiness in AI,86,32979,0.0026
+post_chatgpt,24,"AI, Fake News & Disinformation",65,32979,0.002
+post_chatgpt,31,Algorithmic Fairness & Bias,59,32979,0.0018
+post_chatgpt,34,Autonomous Weapons & Military AI,52,32979,0.0016
+post_chatgpt,35,Gender Bias & AI Representation,56,32979,0.0017
+post_chatgpt,42,AI Accessibility & Disability Inclusion,46,32979,0.0014
+post_chatgpt,103,"AI Law, Ethics & Human Rights",701,32979,0.0213
+post_chatgpt,114,Generative AI & Creative Ethics,270,32979,0.0082
+post_chatgpt,124,AI Research Landscape (Bibliometrics),135,32979,0.0041
+post_chatgpt,129,AI in Public Administration & Governance,97,32979,0.0029
+post_chatgpt,135,EU AI Regulation & Regulatory Frameworks,78,32979,0.0024
+post_chatgpt,148,Smart City & Urban AI Governance,50,32979,0.0015
+post_chatgpt,151,AI Governance during COVID-19,39,32979,0.0012
+post_chatgpt,168,Digital Transformation & AI Adoption,27,32979,0.0008
+post_chatgpt,177,Explainable AI & Transparency,22,32979,0.0007
+post_chatgpt,181,AI Patent Law & Intellectual Property,13,32979,0.0004
+post_chatgpt,183,UAV & Drone Governance,16,32979,0.0005
+pre_chatgpt,2,AI Cybersecurity & IoT Threats,91,8088,0.0113
+pre_chatgpt,8,"AI, Journalism & Media",18,8088,0.0022
+pre_chatgpt,15,Predictive Policing & Criminal Justice AI,36,8088,0.0045
+pre_chatgpt,17,AI Ethics from Islamic/Religious Perspective,28,8088,0.0035
+pre_chatgpt,21,Trust & Trustworthiness in AI,12,8088,0.0015
+pre_chatgpt,24,"AI, Fake News & Disinformation",22,8088,0.0027
+pre_chatgpt,31,Algorithmic Fairness & Bias,13,8088,0.0016
+pre_chatgpt,34,Autonomous Weapons & Military AI,18,8088,0.0022
+pre_chatgpt,35,Gender Bias & AI Representation,12,8088,0.0015
+pre_chatgpt,42,AI Accessibility & Disability Inclusion,6,8088,0.0007
+pre_chatgpt,103,"AI Law, Ethics & Human Rights",285,8088,0.0352
+pre_chatgpt,114,Generative AI & Creative Ethics,32,8088,0.004
+pre_chatgpt,124,AI Research Landscape (Bibliometrics),45,8088,0.0056
+pre_chatgpt,129,AI in Public Administration & Governance,25,8088,0.0031
+pre_chatgpt,135,EU AI Regulation & Regulatory Frameworks,22,8088,0.0027
+pre_chatgpt,148,Smart City & Urban AI Governance,13,8088,0.0016
+pre_chatgpt,151,AI Governance during COVID-19,18,8088,0.0022
+pre_chatgpt,168,Digital Transformation & AI Adoption,4,8088,0.0005
+pre_chatgpt,177,Explainable AI & Transparency,2,8088,0.0002
+pre_chatgpt,181,AI Patent Law & Intellectual Property,6,8088,0.0007
+pre_chatgpt,183,UAV & Drone Governance,3,8088,0.0004

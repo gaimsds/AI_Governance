@@ -1,0 +1,224 @@
+21:55:47  ============================================================
+21:55:47    DATA INTEGRITY FIX PIPELINE — 4c
+21:55:47    Run time: 2026-03-31 21:55
+21:55:47  ============================================================
+21:55:47  
+21:55:47  ============================================================
+21:55:47    FIX 1 — COUNTRY + COVERDATE
+21:55:47  ============================================================
+21:55:47    Loading scopus_cleaned.csv...
+21:55:48    Paper ID column: scopus_id
+21:55:48    Country column found: None
+21:55:48    Date column found:    cover_date
+21:55:48    Unique countries in cleaned: N/A
+21:55:48    Updating scopus_topics_finetuned.csv...
+21:55:48    Papers with real country: 0 / 41,067
+21:55:48    Updating governance_papers.csv...
+21:55:48    Governance papers with real country: 0 / 3,186
+21:55:48  
+21:55:48  ============================================================
+21:55:48    FIX 2 — GOVERNANCE SCORES IN scopus_topics_finetuned
+21:55:48  ============================================================
+21:55:48    Papers with score >= 0.5 before fix: 1,283
+21:55:48    Papers with score >= 0.5 after fix:  3,186
+21:55:48    ✅ scopus_topics_finetuned.csv saved
+21:55:48    ✅ governance_papers.csv saved
+21:55:48  
+21:55:48  ============================================================
+21:55:48    FIX 3 — POLICY CHUNK RE-ASSIGNMENT
+21:55:48  ============================================================
+21:55:48    Governance topics for matching: 21
+21:55:48    Re-assigning Topic 0 and -1 policy chunks...
+21:55:48    Originally Topic 0:     898
+21:55:48    Originally -1:          641
+21:55:48    Successfully re-assigned: 0
+21:55:48    Still unassigned (-1):  1,539
+21:55:48    Governance chunks (>=0.5): 13
+21:55:48    ✅ policy_topic_assignments_v2.csv saved
+21:55:48  
+21:55:48  ============================================================
+21:55:48    FIX 4 — CROSS-CORPUS ALIGNMENT (FINETUNED)
+21:55:48  ============================================================
+21:55:48    Shared topics:         4
+21:55:48    Academic-only topics:  17
+21:55:48    Policy-only topics:    0
+21:55:48  
+21:55:48    Shared topics (finetuned):
+21:55:48      [  2] scopus=429 policy=6  AI Cybersecurity & IoT Threats
+21:55:48      [ 15] scopus=124 policy=3  Predictive Policing & Criminal Justice AI
+21:55:48      [ 31] scopus=72 policy=2  Algorithmic Fairness & Bias
+21:55:48      [ 35] scopus=68 policy=2  Gender Bias & AI Representation
+21:55:48    ✅ cross_corpus_alignment_v2.csv saved
+21:55:48  
+21:55:48    Rebuilding policy_document_topics_v2.csv...
+21:55:48    ✅ policy_document_topics_v2.csv saved
+21:55:48    ✅ integrity_report.txt saved
+21:55:48  
+21:55:48  ============================================================
+21:55:48    4c COMPLETE — ALL FIXES APPLIED
+21:55:48  ============================================================
+21:55:48    Updated files in results/:
+21:55:48      scopus_topics_finetuned.csv     — country + scores fixed
+21:55:48      governance_papers.csv           — country fixed
+21:55:48      policy_topic_assignments_v2.csv — finetuned topic IDs
+21:55:48      policy_document_topics_v2.csv   — document-level topics
+21:55:48      cross_corpus_alignment_v2.csv   — rebuilt with 133 topics
+21:55:48      integrity_report.txt            — summary of all fixes
+21:55:48    Ready for 5_streamlit_dashboard.py
+21:55:48  ============================================================
+22:47:43  ============================================================
+22:47:43    DATA INTEGRITY FIX PIPELINE — 4c
+22:47:43    Run time: 2026-03-31 22:47
+22:47:43  ============================================================
+22:47:43  
+22:47:43  ============================================================
+22:47:43    FIX 1 + FIX 2 — COUNTRY + DATE + GOVERNANCE SCORES
+22:47:43  ============================================================
+22:47:43    Loading scopus_cleaned.csv...
+22:47:43    Rows loaded: 41,067
+22:47:43    Unique countries: 138
+22:47:43    Top 8 countries in full corpus:
+22:47:43      China                          6,262
+22:47:43      United States                  5,926
+22:47:43      India                          3,104
+22:47:43      United Kingdom                 2,010
+22:47:43      Germany                        1,274
+22:47:43      South Korea                    1,236
+22:47:43      Italy                          1,146
+22:47:43      Australia                      1,125
+22:47:43  
+22:47:43    Updating scopus_topics_finetuned.csv...
+22:47:43    Papers with real country:    40,753 / 41,067
+22:47:43    Papers with score >= 0.5:    3,186 (expected: 3,186)
+22:47:43    ✅ scopus_topics_finetuned.csv saved
+22:47:43  
+22:47:43    Updating governance_papers.csv...
+22:47:43    Governance papers with real country: 3,116 / 3,186
+22:47:43    Top 8 countries in governance corpus:
+22:47:43      United States                  432
+22:47:43      China                          229
+22:47:43      India                          220
+22:47:43      United Kingdom                 219
+22:47:43      Spain                          136
+22:47:43      Germany                        114
+22:47:43      Australia                      112
+22:47:43      Italy                          109
+22:47:43    ✅ governance_papers.csv saved
+22:47:43  
+22:47:43  ============================================================
+22:47:43    FIX 3 — POLICY CHUNK RE-ASSIGNMENT
+22:47:43  ============================================================
+22:47:43    Policy corpus columns: ['doc_id', 'filename', 'country', 'region', 'issuer', 'doc_name', 'doc_type', 'year', 'language', 'word_count', 'page_count', 'extraction_method', 'extraction_quality', 'text_raw', 'text_clean', 'notes']
+22:47:43    Rows: 35  |  Text column: text_clean
+22:47:43    Sample doc_ids: ['USA_National_AI_RD_Strategic_Plan_2023', 'USA_NIST_AI_RMF_1_0_2023', 'USA_OMB_M2521_Federal_AI_Governance_2025']
+22:47:43    Documents in lookup: 35
+22:47:43    Governance topics for matching: 21
+22:47:43    Total chunks: 1,557
+22:47:43    Topic  0: 898
+22:47:43    Topic -1: 641
+22:47:43    Other:    18
+22:47:43    Running keyword-based reassignment...
+22:47:49    Topic 0 reassigned:        154
+22:47:49    Topic -1 reassigned:       620
+22:47:49    Governance chunks (>=0.5): 787
+22:47:49    Still unassigned (-1):     765
+22:47:49  
+22:47:49    Assigned chunk distribution:
+22:47:49      [135]   407 chunks  EU AI Regulation & Regulatory Frameworks
+22:47:49      [103]   186 chunks  AI Law, Ethics & Human Rights
+22:47:49      [148]   123 chunks  Smart City & Urban AI Governance
+22:47:49      [124]    29 chunks  AI Research Landscape (Bibliometrics)
+22:47:49      [129]    22 chunks  AI in Public Administration & Governance
+22:47:49      [168]     7 chunks  Digital Transformation & AI Adoption
+22:47:49      [  2]     6 chunks  AI Cybersecurity & IoT Threats
+22:47:49      [ 15]     3 chunks  Predictive Policing & Criminal Justice AI
+22:47:49      [ 12]     2 chunks  Computer Vision & Face Recognition
+22:47:49      [ 31]     2 chunks  Algorithmic Fairness & Bias
+22:47:49      [ 35]     2 chunks  Gender Bias & AI Representation
+22:47:49      [  4]     1 chunks  Sentiment & Emotion Analysis
+22:47:49      [  9]     1 chunks  AI in Academic Libraries
+22:47:49      [ 25]     1 chunks  AI in Cell Biology & Microscopy
+22:47:49    ✅ policy_topic_assignments_v2.csv saved
+22:47:49  
+22:47:49  ============================================================
+22:47:49    FIX 4 — CROSS-CORPUS ALIGNMENT
+22:47:49  ============================================================
+22:47:49    Shared governance topics:        10
+22:47:49    Academic-only governance topics: 11
+22:47:49    Policy-only governance topics:   0
+22:47:49  
+22:47:49    Shared governance topics:
+22:47:49      [103]  scopus=986  policy=186  AI Law, Ethics & Human Rights
+22:47:49      [  2]  scopus=429  policy=6  AI Cybersecurity & IoT Threats
+22:47:49      [124]  scopus=180  policy=29  AI Research Landscape (Bibliometrics)
+22:47:49      [ 15]  scopus=124  policy=3  Predictive Policing & Criminal Justice AI
+22:47:49      [129]  scopus=122  policy=22  AI in Public Administration & Governance
+22:47:49      [135]  scopus=100  policy=407  EU AI Regulation & Regulatory Frameworks
+22:47:49      [ 31]  scopus=72  policy=2  Algorithmic Fairness & Bias
+22:47:49      [ 35]  scopus=68  policy=2  Gender Bias & AI Representation
+22:47:49      [148]  scopus=63  policy=123  Smart City & Urban AI Governance
+22:47:49      [168]  scopus=31  policy=7  Digital Transformation & AI Adoption
+22:47:49  
+22:47:49    Academic-only governance topics:
+22:47:49      [114]  scopus=302  Generative AI & Creative Ethics
+22:47:49      [  8]  scopus=163  AI, Journalism & Media
+22:47:49      [ 17]  scopus=120  AI Ethics from Islamic/Religious Perspective
+22:47:49      [ 21]  scopus=98  Trust & Trustworthiness in AI
+22:47:49      [ 24]  scopus=87  AI, Fake News & Disinformation
+22:47:49      [ 34]  scopus=70  Autonomous Weapons & Military AI
+22:47:49      [151]  scopus=57  AI Governance during COVID-19
+22:47:49      [ 42]  scopus=52  AI Accessibility & Disability Inclusion
+22:47:49      [177]  scopus=24  Explainable AI & Transparency
+22:47:49      [183]  scopus=19  UAV & Drone Governance
+22:47:49      [181]  scopus=19  AI Patent Law & Intellectual Property
+22:47:49    ✅ cross_corpus_alignment_v2.csv saved
+22:47:49  
+22:47:49  ============================================================
+22:47:49    FIX 5 — POLICY DOCUMENT TOPICS
+22:47:49  ============================================================
+22:47:49    Documents with topic assignments: 33 / 35
+22:47:49    Total topic-document rows:        48
+22:47:49  
+22:47:49    Per-document breakdown (top 25 by chunk count):
+22:47:49      Colombia                [148]  107 chunks (99%)  Smart City & Urban AI Governance
+22:47:49      European Union          [135]   92 chunks (96%)  EU AI Regulation & Regulatory Frameworks
+22:47:49      India                   [135]   53 chunks (100%)  EU AI Regulation & Regulatory Frameworks
+22:47:49      Australia               [103]   41 chunks (91%)  AI Law, Ethics & Human Rights
+22:47:49      ASEAN                   [135]   34 chunks (100%)  EU AI Regulation & Regulatory Frameworks
+22:47:49      Kenya                   [135]   33 chunks (97%)  EU AI Regulation & Regulatory Frameworks
+22:47:49      United States           [135]   32 chunks (97%)  EU AI Regulation & Regulatory Frameworks
+22:47:49      Zimbabwe                [135]   30 chunks (100%)  EU AI Regulation & Regulatory Frameworks
+22:47:49      African Union           [135]   29 chunks (100%)  EU AI Regulation & Regulatory Frameworks
+22:47:49      Egypt                   [124]   29 chunks (100%)  AI Research Landscape (Bibliometrics)
+22:47:49      Nigeria                 [103]   27 chunks (100%)  AI Law, Ethics & Human Rights
+22:47:49      Chile                   [103]   25 chunks (89%)  AI Law, Ethics & Human Rights
+22:47:49      France                  [135]   22 chunks (100%)  EU AI Regulation & Regulatory Frameworks
+22:47:49      Singapore               [135]   20 chunks (100%)  EU AI Regulation & Regulatory Frameworks
+22:47:49      China                   [103]   19 chunks (100%)  AI Law, Ethics & Human Rights
+22:47:49      ASEAN                   [135]   18 chunks (95%)  EU AI Regulation & Regulatory Frameworks
+22:47:49      UNESCO                  [103]   17 chunks (94%)  AI Law, Ethics & Human Rights
+22:47:49      United States           [103]   16 chunks (100%)  AI Law, Ethics & Human Rights
+22:47:49      Japan                   [148]   16 chunks (100%)  Smart City & Urban AI Governance
+22:47:49      Germany                 [135]   15 chunks (100%)  EU AI Regulation & Regulatory Frameworks
+22:47:49      UAE                     [135]   13 chunks (100%)  EU AI Regulation & Regulatory Frameworks
+22:47:49      United States           [103]   12 chunks (100%)  AI Law, Ethics & Human Rights
+22:47:49      Singapore               [129]   11 chunks (92%)  AI in Public Administration & Governance
+22:47:49      United Kingdom          [129]   11 chunks (100%)  AI in Public Administration & Governance
+22:47:49      United Kingdom          [135]   11 chunks (100%)  EU AI Regulation & Regulatory Frameworks
+22:47:49    ✅ policy_document_topics_v2.csv saved
+22:47:49  
+22:47:49    Writing integrity_report.txt...
+22:47:49    ✅ integrity_report.txt saved
+22:47:49  
+22:47:49  ============================================================
+22:47:49    4c COMPLETE
+22:47:49  ============================================================
+22:47:49    scopus_topics_finetuned.csv      ✅
+22:47:49    governance_papers.csv            ✅
+22:47:49    policy_topic_assignments_v2.csv  ✅
+22:47:49    cross_corpus_alignment_v2.csv    ✅
+22:47:49    policy_document_topics_v2.csv    ✅
+22:47:49    integrity_report.txt             ✅
+22:47:49  
+22:47:49    Next: commit to Git, then build 4d_sentiment_analysis.py
+22:47:49  ============================================================

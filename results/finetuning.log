@@ -1,0 +1,455 @@
+16:12:08  ============================================================
+16:12:08    BERTOPIC FINETUNING PIPELINE
+16:12:08    Run time: 2026-03-31 16:12
+16:12:08  ============================================================
+16:12:08  Loading data...
+16:12:09     Loaded 41,067 papers with topic assignments
+16:12:09     Topic 0 papers: 21,900
+16:12:09  
+16:12:09  ============================================================
+16:12:09    STAGE 1 — TOPIC 0 DECOMPOSITION
+16:12:09  ============================================================
+16:12:09     Topic 0 papers to decompose: 21,900
+16:12:09  Use pytorch device_name: mps
+16:12:09  Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+16:12:09  HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+16:12:09  HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/modules.json "HTTP/1.1 200 OK"
+16:12:09  HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+16:12:09  HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config_sentence_transformers.json "HTTP/1.1 200 OK"
+16:12:09  HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+16:12:09  HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config_sentence_transformers.json "HTTP/1.1 200 OK"
+16:12:09  HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+16:12:09  HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/README.md "HTTP/1.1 200 OK"
+16:12:09  HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+16:12:09  HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/modules.json "HTTP/1.1 200 OK"
+16:12:09  HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+16:12:10  HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/sentence_bert_config.json "HTTP/1.1 200 OK"
+16:12:10  HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+16:12:10  HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+16:12:10  HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config.json "HTTP/1.1 200 OK"
+16:12:10  HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+16:12:10  HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config.json "HTTP/1.1 200 OK"
+16:12:10  HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+16:12:10  HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/tokenizer_config.json "HTTP/1.1 200 OK"
+16:12:10  HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+16:12:10  HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+16:12:10  HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+16:12:10  HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+16:12:10  HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2 "HTTP/1.1 200 OK"
+16:12:10     Fitting decomposition model on Topic 0 papers...
+16:13:28     Sub-topics found:    88
+16:13:28     Unassigned (noise):  1,994
+16:13:28  
+16:13:28    Sub-topics found within Topic 0:
+16:13:28    --------------------------------------------------
+16:13:28    [100] (3,686 papers)
+16:13:28        student, education, teacher, educational, teaching, learning, academic, artificial intelligence, intelligence, artificial
+16:13:28    [101] (1,193 papers)
+16:13:28        patient, disease, covid, clinical, risk, mortality, heart, diabetes, hospital, machine
+16:13:28    [102] (998 papers)
+16:13:28        crop, food, yield, agricultural, plant, agriculture, machine, farmer, production, rice
+16:13:28    [103] (986 papers)
+16:13:28        legal, human, intelligence, law, artificial, artificial intelligence, ethical, right, moral, criminal
+16:13:28    [104] (942 papers)
+16:13:28        stock, market, financial, return, credit, price, fraud, portfolio, machine, machine learning
+16:13:28    [105] (909 papers)
+16:13:28        employee, chain, supply chain, supply, job, organizational, innovation, intelligence, artificial intelligence, organization
+16:13:28    [106] (823 papers)
+16:13:28        green, environmental, energy, esg, sustainable, sustainability, innovation, development, effect, carbon
+16:13:28    [107] (783 papers)
+16:13:28        water, flood, water quality, groundwater, sup, river, quality, rainfall, sup sup, area
+16:13:28    [108] (781 papers)
+16:13:28        medical, healthcare, health, care, patient, medicine, clinical, medical education, artificial intelligence, physician
+16:13:28    [109] (693 papers)
+16:13:28        soil, sup, forest, land, inf, sup sup, vegetation, accuracy, area, index
+16:13:28    [110] (591 papers)
+16:13:28        marketing, consumer, customer, financial, service, banking, accounting, brand, audit, intelligence
+16:13:28    [111] (520 papers)
+16:13:28        traffic, crash, road, vehicle, accident, travel, transportation, driver, safety, driving
+16:13:28    [112] (417 papers)
+16:13:28        energy, power, solar, building, consumption, electricity, grid, energy consumption, renewable, fault
+16:13:28    [113] (368 papers)
+16:13:28        cancer, breast, breast cancer, tumor, patient, gene, survival, cell, prognostic, clinical
+16:13:28    [114] (302 papers)
+16:13:28        art, creative, design, creativity, image, human, artistic, visual, generative, aesthetic
+16:13:28    [115] (288 papers)
+16:13:28        software, machine learning, learning, machine, feature, algorithm, technique, code, selection, explanation
+16:13:28    [116] (266 papers)
+16:13:28        dementia, cognitive, alzheimer, mci, alzheimer disease, disease, impairment, cognitive impairment, brain, mild
+16:13:28    [117] (260 papers)
+16:13:28        inf, air, inf inf, pollution, air quality, air pollution, concentration, pollutant, sup, quality
+16:13:28    [118] (253 papers)
+16:13:28        concrete, strength, compressive, compressive strength, cement, sup, aggregate, mix, material, reinforced
+16:13:28    [119] (242 papers)
+16:13:28        depression, anxiety, disorder, treatment, symptom, mental, health, mental health, depressive, patient
+16:13:28    [120] (213 papers)
+16:13:28        maintenance, fault, manufacturing, production, industrial, process, machine, predictive maintenance, industry, machine learning
+16:13:28    [121] (210 papers)
+16:13:28        process, machining, manufacturing, parameter, laser, printing, welding, material, surface, alloy
+16:13:28    [122] (202 papers)
+16:13:28        customer, churn, marketing, consumer, product, commerce, purchase, online, customer churn, business
+16:13:28    [123] (193 papers)
+16:13:28        birth, maternal, woman, pregnancy, child, infant, health, risk, gestational, neonatal
+16:13:28    [124] (180 papers)
+16:13:28        topic, citation, publication, bibliometric, paper, collaboration, field, author, scientific, science
+16:13:28    [125] (157 papers)
+16:13:28        project, construction, construction project, cost, building, contract, construction industry, delay, risk, overrun
+16:13:28    [126] (152 papers)
+16:13:28        landslide, susceptibility, landslide susceptibility, hazard, area, map, slope, factor, auc, debris
+16:13:28    [127] (136 papers)
+16:13:28        urban, lst, heat, uhi, temperature, urban heat, land, thermal, heat island, island
+16:13:28    [128] (133 papers)
+16:13:28        supply chain, chain, supply, demand, inventory, forecasting, supplier, demand forecasting, product, sale
+16:13:28    [129] (122 papers)
+16:13:28        public, administration, public administration, government, public sector, sector, citizen, service, public service, governance
+16:13:28    [130] (116 papers)
+16:13:28        fracture, osteoporosis, patient, bone, knee, implant, image, osteoarthritis, joint, ray
+16:13:28    [131] (115 papers)
+16:13:28        urban, street, city, space, vitality, land, spatial, neighborhood, environment, built
+16:13:28    [132] (109 papers)
+16:13:28        nursing, nursing student, nurse, nursing education, student, education, artificial intelligence, intelligence, attitude, artificial
+16:13:28    [133] (106 papers)
+16:13:28        emission, carbon, carbon emission, inf, inf emission, inf inf, energy, consumption, reduction, carbon price
+16:13:28    [134] (103 papers)
+16:13:28        wildfire, forest, area, rcp, risk, detection, occurrence, factor, burn, random
+16:13:28    [135] (100 papers)
+16:13:28        regulation, act, european, regulatory, union, european union, protection, right, risk, commission
+16:13:28    [136] (93 papers)
+16:13:28        suicide, suicidal, ideation, suicidal ideation, suicide attempt, attempt, suicide risk, adolescent, risk, depression
+16:13:28    [137] (84 papers)
+16:13:28        seismic, earthquake, slope, damage, motion, building, slope stability, liquefaction, event, ground motion
+16:13:28    [138] (80 papers)
+16:13:28        battery, lithium, vehicle, ion, electric vehicle, electric, cell, voltage, energy, fuel cell
+16:13:28    [139] (78 papers)
+16:13:28        flight, airport, aircraft, airline, delay, air traffic, passenger, air, aviation, traffic
+16:13:28    [140] (75 papers)
+16:13:28        ship, port, vessel, maritime, container, fuel, fuel consumption, shipping, terminal, consumption
+16:13:28    [141] (74 papers)
+16:13:28        gene, cell, immune, expression, infiltration, degs, enrichment, pathway, hub, protein
+16:13:28    [142] (73 papers)
+16:13:28        problem, optimization, algorithm, optimization problem, solution, instance, heuristic, solver, stochastic, convergence
+16:13:28    [143] (72 papers)
+16:13:28        pavement, asphalt, road, maintenance, mix, pavement performance, condition, crack, pavement condition, mixture
+16:13:28    [144] (69 papers)
+16:13:28        adsorption, inf, hydrogen, inf inf, sup, removal, sup sup, gas, storage, removal efficiency
+16:13:28    [145] (68 papers)
+16:13:28        safety, accident, incident, occupational, construction, injury, risk, worker, fatality, fall
+16:13:28    [146] (67 papers)
+16:13:28        employee, turnover, job, attrition, human resource, organization, satisfaction, organizational, job satisfaction, retention
+16:13:28    [147] (64 papers)
+16:13:28        parkinson, parkinson disease, disease, voice, motor, feature, tremor, diagnosis, speech, patient
+16:13:28    [148] (63 papers)
+16:13:28        city, smart city, smart, urban, governance, sustainable, development, urban planning, planning, technology
+16:13:28    [149] (61 papers)
+16:13:28        fatigue, movement, muscle, hand, rehabilitation, motion, emg, exercise, wearable, lifting
+16:13:28    [150] (58 papers)
+16:13:28        waste, waste management, solid waste, solid, management, waste generation, municipal, municipal solid, collection, recycling
+16:13:28    [151] (57 papers)
+16:13:28        covid, pandemic, covid pandemic, crisis, health, public, public health, artificial intelligence, intelligence, coronavirus
+16:13:28    [152] (53 papers)
+16:13:28        insurance, claim, fraud, health insurance, premium, insurance company, insurer, life insurance, fraud detection, pricing
+16:13:28    [153] (52 papers)
+16:13:28        disaster, evacuation, emergency, hurricane, disaster management, natural disaster, hazard, natural, management, disaster risk
+16:13:28    [154] (51 papers)
+16:13:28        mental, mental health, health, psychotherapy, therapy, intervention, treatment, psychotherapist, therapeutic, psychological
+16:13:28    [155] (50 papers)
+16:13:28        fuel, engine, inf, blend, diesel, combustion, inf inf, emission, cylinder, nox
+16:13:28    [156] (47 papers)
+16:13:28        gait, walking, joint, feature, muscle, sarcopenia, speed, fall, gdi, knee
+16:13:28    [157] (45 papers)
+16:13:28        manufacturing, digital twin, twin, industry, digital, robot, industrial, smart, technology, physical
+16:13:28    [158] (42 papers)
+16:13:28        pipe, leak, pipeline, leakage, water, sewer, failure, network, detection, hydraulic
+16:13:28    [159] (40 papers)
+16:13:28        mineral, rock, lithological, exploration, basalt, geological, hyperspectral, mapping, geochemical, deposit
+16:13:28    [160] (39 papers)
+16:13:28        thermal, comfort, thermal comfort, temperature, skin temperature, thermal sensation, skin, sensation, occupant, indoor
+16:13:28    [161] (37 papers)
+16:13:28        wind, wind speed, speed, wind energy, wind power, forecasting, energy, turbine, power, wind turbine
+16:13:28    [162] (35 papers)
+16:13:28        pregnancy, infertility, reproductive, clinical, couple, vitro, fertilization, treatment, auc, cycle
+16:13:28    [163] (35 papers)
+16:13:28        charging, electric, vehicle, electric vehicle, ev, charging station, infrastructure, energy, transportation, adoption
+16:13:28    [164] (35 papers)
+16:13:28        inflation, cpi, forecast, forecasting, inflation rate, economic, horizon, price, rate, term
+16:13:28    [165] (34 papers)
+16:13:28        pain, patient, chronic, exercise, lbp, intensity, neuropathic, feature, eeg, classification
+16:13:28    [166] (33 papers)
+16:13:28        tunnel, settlement, tunneling, shield, tbm, excavation, parameter, construction, uplift, inf
+16:13:28    [167] (32 papers)
+16:13:28        drought, spi, precipitation, index, drought index, standardized precipitation, month, standardized, evapotranspiration, meteorological
+16:13:28    [168] (31 papers)
+16:13:28        digital transformation, transformation, digital, business, company, innovation, digital technology, corporate digital, technology, manufacturing
+16:13:28    [169] (31 papers)
+16:13:28        logistics, chain, supply chain, management, supply, reverse logistics, efficiency, regional, reverse, operational
+16:13:28    [170] (29 papers)
+16:13:28        har, activity, activity recognition, recognition, human activity, sensor, user, phone, gesture, smartphone
+16:13:28    [171] (29 papers)
+16:13:28        schizophrenia, patient, cognitive, functional, bagging ensemble, treatment, feature, psychosis, functional outcome, cognitive function
+16:13:28    [172] (29 papers)
+16:13:28        weather, forecast, nwp, climate, weather prediction, weather forecast, convective, tc, dynamical, global
+16:13:28    [173] (27 papers)
+16:13:28        opioid, overdose, prescription, drug, opioids, medicaid, misuse, beneficiary, pennsylvania, treatment
+16:13:28    [174] (26 papers)
+16:13:28        obesity, bmi, adolescent, obese, fitness, body, health, mass, vat, metabolic
+16:13:28    [175] (25 papers)
+16:13:28        vaccine, vaccination, covid, covid vaccine, covid vaccination, dose, vaccinated, virus, adjuvant, pandemic
+16:13:28    [176] (24 papers)
+16:13:28        gene, ibd, expression, inflammatory bowel, inflammatory, bowel, bowel disease, disease, gse, patient
+16:13:28    [177] (24 papers)
+16:13:28        xai, explanation, user, explainable, explainable artificial, intelligence xai, trust, decision, explainability, human
+16:13:28    [178] (23 papers)
+16:13:28        cigarette, smoking, tobacco, cessation, cannabis, quit, relapse, nicotine, colour, predictor
+16:13:28    [179] (21 papers)
+16:13:28        bike, bike sharing, sharing, bicycle, shared, urban, sharing usage, trip, cycling, travel
+16:13:28    [180] (19 papers)
+16:13:28        plastic, recycling, waste, plastic waste, polymer, recycled, spectroscopic, spectroscopy, sorting, infrared
+16:13:28    [181] (19 papers)
+16:13:28        patent, invention, inventor, inventive, patent law, patentability, protection, european patent, law, european
+16:13:28    [182] (19 papers)
+16:13:28        wind, cfd, building, dynamic cfd, computational, simulation, computational fluid, fluid dynamic, fluid, cfd simulation
+16:13:28    [183] (19 papers)
+16:13:28        uavs, uav, attack, aerial vehicle, unmanned aerial, drone, unmanned, aerial, flight, vehicle
+16:13:28    [184] (17 papers)
+16:13:28        bridge, depth, inf, pier, deck, parameter, inf inf, condition, sup, formula
+16:13:28    [185] (17 papers)
+16:13:28        gene, lung, cancer, lung cancer, nsclc, egfr, cell, prognosis, survival, prognostic
+16:13:28    [186] (17 papers)
+16:13:28        corrosion, pipeline, inspection, loop, lattice, steel, defect, pca, cd, inhibitor
+16:13:28    [187] (16 papers)
+16:13:28        loneliness, adolescent, social, ate, older, predictor, older adult, comorbidity, factor, nssi
+16:13:28  
+16:13:28  ============================================================
+16:13:28    STAGE 2 — MERGING SUB-TOPICS INTO MAIN CORPUS
+16:13:28  ============================================================
+16:13:28     Papers reassigned from Topic 0 → sub-topics: 21,900
+16:13:28     Unique topic IDs now: 134
+16:13:28  
+16:13:28  ============================================================
+16:13:28    STAGE 3 — LABELLING AND SCORING TOPICS
+16:13:28  ============================================================
+16:13:28     Total topics after decomposition: 133
+16:13:28     Governance-relevant topics (score ≥ 0.5): 10
+16:13:28  
+16:13:28    Governance topics identified:
+16:13:28    --------------------------------------------------
+16:13:28    [ 31] score=1.0  n=72  Algorithmic Fairness & Bias
+16:13:28    [  2] score=0.9  n=429  AI Cybersecurity & IoT Threats
+16:13:28    [ 34] score=0.9  n=70  Autonomous Weapons & Military AI
+16:13:28    [ 35] score=0.9  n=68  Gender Bias & AI Representation
+16:13:28    [ 15] score=0.8  n=124  Predictive Policing & Criminal Justice AI
+16:13:28    [ 21] score=0.8  n=98  Trust & Trustworthiness in AI
+16:13:28    [ 24] score=0.8  n=87  AI, Fake News & Disinformation
+16:13:28    [  8] score=0.7  n=163  AI, Journalism & Media
+16:13:28    [ 17] score=0.5  n=120  AI Ethics from Islamic/Religious Perspective
+16:13:28    [ 42] score=0.5  n=52  AI Accessibility & Disability Inclusion
+16:13:28  
+16:13:28  ============================================================
+16:13:28    STAGE 4 — SAVING OUTPUTS
+16:13:28  ============================================================
+16:13:28     ✅ topics_finetuned.csv — 133 topics
+16:13:28     ✅ topic0_subtopics.csv — 88 sub-topics
+16:13:28     ✅ governance_topics.csv — 10 topics
+16:13:28     ✅ scopus_topics_finetuned.csv — 41,067 papers
+16:13:28     ✅ governance_papers.csv — 1,283 papers
+16:13:28     ✅ region_governance_distribution.csv
+16:13:28     ✅ period_governance_distribution.csv
+16:13:28  
+16:13:28    ⚠️  ACTION REQUIRED — Review Sub-Topic Labels:
+16:13:28    Open results/topic0_subtopics.csv
+16:13:28    Read the top_words for each sub-topic
+16:13:28    Open results/topics_finetuned.csv
+16:13:28    Update the topic_label and governance_score columns
+16:13:28    for all rows where source = 'topic0_subtopic'
+16:13:28    Then re-run the save step or update manually in Excel
+16:13:28  
+16:13:28  ============================================================
+16:13:28    FINETUNING SUMMARY
+16:13:28  ============================================================
+16:13:28    Total topics after decomposition: 133
+16:13:28    Papers assigned (non-outlier):    25,868 / 41,067 (63.0%)
+16:13:28    Governance-relevant papers:       1,283 / 41,067 (3.1%)
+16:13:28  
+16:13:28    Topic 0 decomposition result:
+16:13:28      Sub-topic 100: 3,686 papers
+16:13:28        student, education, teacher, educational, teaching, learning, academic
+16:13:28      Sub-topic 101: 1,193 papers
+16:13:28        patient, disease, covid, clinical, risk, mortality, heart, diabetes, h
+16:13:28      Sub-topic 102: 998 papers
+16:13:28        crop, food, yield, agricultural, plant, agriculture, machine, farmer, 
+16:13:28      Sub-topic 103: 986 papers
+16:13:28        legal, human, intelligence, law, artificial, artificial intelligence, 
+16:13:28      Sub-topic 104: 942 papers
+16:13:28        stock, market, financial, return, credit, price, fraud, portfolio, mac
+16:13:28      Sub-topic 105: 909 papers
+16:13:28        employee, chain, supply chain, supply, job, organizational, innovation
+16:13:28      Sub-topic 106: 823 papers
+16:13:28        green, environmental, energy, esg, sustainable, sustainability, innova
+16:13:28      Sub-topic 107: 783 papers
+16:13:28        water, flood, water quality, groundwater, sup, river, quality, rainfal
+16:13:28      Sub-topic 108: 781 papers
+16:13:28        medical, healthcare, health, care, patient, medicine, clinical, medica
+16:13:28      Sub-topic 109: 693 papers
+16:13:28        soil, sup, forest, land, inf, sup sup, vegetation, accuracy, area, ind
+16:13:28      Sub-topic 110: 591 papers
+16:13:28        marketing, consumer, customer, financial, service, banking, accounting
+16:13:28      Sub-topic 111: 520 papers
+16:13:28        traffic, crash, road, vehicle, accident, travel, transportation, drive
+16:13:28      Sub-topic 112: 417 papers
+16:13:28        energy, power, solar, building, consumption, electricity, grid, energy
+16:13:28      Sub-topic 113: 368 papers
+16:13:28        cancer, breast, breast cancer, tumor, patient, gene, survival, cell, p
+16:13:28      Sub-topic 114: 302 papers
+16:13:28        art, creative, design, creativity, image, human, artistic, visual, gen
+16:13:28      Sub-topic 115: 288 papers
+16:13:28        software, machine learning, learning, machine, feature, algorithm, tec
+16:13:28      Sub-topic 116: 266 papers
+16:13:28        dementia, cognitive, alzheimer, mci, alzheimer disease, disease, impai
+16:13:28      Sub-topic 117: 260 papers
+16:13:28        inf, air, inf inf, pollution, air quality, air pollution, concentratio
+16:13:28      Sub-topic 118: 253 papers
+16:13:28        concrete, strength, compressive, compressive strength, cement, sup, ag
+16:13:28      Sub-topic 119: 242 papers
+16:13:28        depression, anxiety, disorder, treatment, symptom, mental, health, men
+16:13:28      Sub-topic 120: 213 papers
+16:13:28        maintenance, fault, manufacturing, production, industrial, process, ma
+16:13:28      Sub-topic 121: 210 papers
+16:13:28        process, machining, manufacturing, parameter, laser, printing, welding
+16:13:28      Sub-topic 122: 202 papers
+16:13:28        customer, churn, marketing, consumer, product, commerce, purchase, onl
+16:13:28      Sub-topic 123: 193 papers
+16:13:28        birth, maternal, woman, pregnancy, child, infant, health, risk, gestat
+16:13:28      Sub-topic 124: 180 papers
+16:13:28        topic, citation, publication, bibliometric, paper, collaboration, fiel
+16:13:28      Sub-topic 125: 157 papers
+16:13:28        project, construction, construction project, cost, building, contract,
+16:13:28      Sub-topic 126: 152 papers
+16:13:28        landslide, susceptibility, landslide susceptibility, hazard, area, map
+16:13:28      Sub-topic 127: 136 papers
+16:13:28        urban, lst, heat, uhi, temperature, urban heat, land, thermal, heat is
+16:13:28      Sub-topic 128: 133 papers
+16:13:28        supply chain, chain, supply, demand, inventory, forecasting, supplier,
+16:13:28      Sub-topic 129: 122 papers
+16:13:28        public, administration, public administration, government, public sect
+16:13:28      Sub-topic 130: 116 papers
+16:13:28        fracture, osteoporosis, patient, bone, knee, implant, image, osteoarth
+16:13:28      Sub-topic 131: 115 papers
+16:13:28        urban, street, city, space, vitality, land, spatial, neighborhood, env
+16:13:28      Sub-topic 132: 109 papers
+16:13:28        nursing, nursing student, nurse, nursing education, student, education
+16:13:28      Sub-topic 133: 106 papers
+16:13:28        emission, carbon, carbon emission, inf, inf emission, inf inf, energy,
+16:13:28      Sub-topic 134: 103 papers
+16:13:28        wildfire, forest, area, rcp, risk, detection, occurrence, factor, burn
+16:13:28      Sub-topic 135: 100 papers
+16:13:28        regulation, act, european, regulatory, union, european union, protecti
+16:13:28      Sub-topic 136: 93 papers
+16:13:28        suicide, suicidal, ideation, suicidal ideation, suicide attempt, attem
+16:13:28      Sub-topic 137: 84 papers
+16:13:28        seismic, earthquake, slope, damage, motion, building, slope stability,
+16:13:28      Sub-topic 138: 80 papers
+16:13:28        battery, lithium, vehicle, ion, electric vehicle, electric, cell, volt
+16:13:28      Sub-topic 139: 78 papers
+16:13:28        flight, airport, aircraft, airline, delay, air traffic, passenger, air
+16:13:28      Sub-topic 140: 75 papers
+16:13:28        ship, port, vessel, maritime, container, fuel, fuel consumption, shipp
+16:13:28      Sub-topic 141: 74 papers
+16:13:28        gene, cell, immune, expression, infiltration, degs, enrichment, pathwa
+16:13:28      Sub-topic 142: 73 papers
+16:13:28        problem, optimization, algorithm, optimization problem, solution, inst
+16:13:28      Sub-topic 143: 72 papers
+16:13:28        pavement, asphalt, road, maintenance, mix, pavement performance, condi
+16:13:28      Sub-topic 144: 69 papers
+16:13:28        adsorption, inf, hydrogen, inf inf, sup, removal, sup sup, gas, storag
+16:13:28      Sub-topic 145: 68 papers
+16:13:28        safety, accident, incident, occupational, construction, injury, risk, 
+16:13:28      Sub-topic 146: 67 papers
+16:13:28        employee, turnover, job, attrition, human resource, organization, sati
+16:13:28      Sub-topic 147: 64 papers
+16:13:28        parkinson, parkinson disease, disease, voice, motor, feature, tremor, 
+16:13:28      Sub-topic 148: 63 papers
+16:13:28        city, smart city, smart, urban, governance, sustainable, development, 
+16:13:28      Sub-topic 149: 61 papers
+16:13:28        fatigue, movement, muscle, hand, rehabilitation, motion, emg, exercise
+16:13:28      Sub-topic 150: 58 papers
+16:13:28        waste, waste management, solid waste, solid, management, waste generat
+16:13:28      Sub-topic 151: 57 papers
+16:13:28        covid, pandemic, covid pandemic, crisis, health, public, public health
+16:13:28      Sub-topic 152: 53 papers
+16:13:28        insurance, claim, fraud, health insurance, premium, insurance company,
+16:13:28      Sub-topic 153: 52 papers
+16:13:28        disaster, evacuation, emergency, hurricane, disaster management, natur
+16:13:28      Sub-topic 154: 51 papers
+16:13:28        mental, mental health, health, psychotherapy, therapy, intervention, t
+16:13:28      Sub-topic 155: 50 papers
+16:13:28        fuel, engine, inf, blend, diesel, combustion, inf inf, emission, cylin
+16:13:28      Sub-topic 156: 47 papers
+16:13:28        gait, walking, joint, feature, muscle, sarcopenia, speed, fall, gdi, k
+16:13:28      Sub-topic 157: 45 papers
+16:13:28        manufacturing, digital twin, twin, industry, digital, robot, industria
+16:13:28      Sub-topic 158: 42 papers
+16:13:28        pipe, leak, pipeline, leakage, water, sewer, failure, network, detecti
+16:13:28      Sub-topic 159: 40 papers
+16:13:28        mineral, rock, lithological, exploration, basalt, geological, hyperspe
+16:13:28      Sub-topic 160: 39 papers
+16:13:28        thermal, comfort, thermal comfort, temperature, skin temperature, ther
+16:13:28      Sub-topic 161: 37 papers
+16:13:28        wind, wind speed, speed, wind energy, wind power, forecasting, energy,
+16:13:28      Sub-topic 162: 35 papers
+16:13:28        pregnancy, infertility, reproductive, clinical, couple, vitro, fertili
+16:13:28      Sub-topic 163: 35 papers
+16:13:28        charging, electric, vehicle, electric vehicle, ev, charging station, i
+16:13:28      Sub-topic 164: 35 papers
+16:13:28        inflation, cpi, forecast, forecasting, inflation rate, economic, horiz
+16:13:28      Sub-topic 165: 34 papers
+16:13:28        pain, patient, chronic, exercise, lbp, intensity, neuropathic, feature
+16:13:28      Sub-topic 166: 33 papers
+16:13:28        tunnel, settlement, tunneling, shield, tbm, excavation, parameter, con
+16:13:28      Sub-topic 167: 32 papers
+16:13:28        drought, spi, precipitation, index, drought index, standardized precip
+16:13:28      Sub-topic 168: 31 papers
+16:13:28        digital transformation, transformation, digital, business, company, in
+16:13:28      Sub-topic 169: 31 papers
+16:13:28        logistics, chain, supply chain, management, supply, reverse logistics,
+16:13:28      Sub-topic 171: 29 papers
+16:13:28        schizophrenia, patient, cognitive, functional, bagging ensemble, treat
+16:13:28      Sub-topic 172: 29 papers
+16:13:28        weather, forecast, nwp, climate, weather prediction, weather forecast,
+16:13:28      Sub-topic 170: 29 papers
+16:13:28        har, activity, activity recognition, recognition, human activity, sens
+16:13:28      Sub-topic 173: 27 papers
+16:13:28        opioid, overdose, prescription, drug, opioids, medicaid, misuse, benef
+16:13:28      Sub-topic 174: 26 papers
+16:13:28        obesity, bmi, adolescent, obese, fitness, body, health, mass, vat, met
+16:13:28      Sub-topic 175: 25 papers
+16:13:28        vaccine, vaccination, covid, covid vaccine, covid vaccination, dose, v
+16:13:28      Sub-topic 177: 24 papers
+16:13:28        xai, explanation, user, explainable, explainable artificial, intellige
+16:13:28      Sub-topic 176: 24 papers
+16:13:28        gene, ibd, expression, inflammatory bowel, inflammatory, bowel, bowel 
+16:13:28      Sub-topic 178: 23 papers
+16:13:28        cigarette, smoking, tobacco, cessation, cannabis, quit, relapse, nicot
+16:13:28      Sub-topic 179: 21 papers
+16:13:28        bike, bike sharing, sharing, bicycle, shared, urban, sharing usage, tr
+16:13:28      Sub-topic 180: 19 papers
+16:13:28        plastic, recycling, waste, plastic waste, polymer, recycled, spectrosc
+16:13:28      Sub-topic 181: 19 papers
+16:13:28        patent, invention, inventor, inventive, patent law, patentability, pro
+16:13:28      Sub-topic 182: 19 papers
+16:13:28        wind, cfd, building, dynamic cfd, computational, simulation, computati
+16:13:28      Sub-topic 183: 19 papers
+16:13:28        uavs, uav, attack, aerial vehicle, unmanned aerial, drone, unmanned, a
+16:13:28      Sub-topic 184: 17 papers
+16:13:28        bridge, depth, inf, pier, deck, parameter, inf inf, condition, sup, fo
+16:13:28      Sub-topic 185: 17 papers
+16:13:28        gene, lung, cancer, lung cancer, nsclc, egfr, cell, prognosis, surviva
+16:13:28      Sub-topic 186: 17 papers
+16:13:28        corrosion, pipeline, inspection, loop, lattice, steel, defect, pca, cd
+16:13:28      Sub-topic 187: 16 papers
+16:13:28        loneliness, adolescent, social, ate, older, predictor, older adult, co
+16:13:28  
+16:13:28    Next steps:
+16:13:28    1. Review topic0_subtopics.csv and update labels manually
+16:13:28    2. Run 5_streamlit_dashboard.py for interactive visualisation
+16:13:28  ============================================================
+16:13:28  🎉 Finetuning complete!

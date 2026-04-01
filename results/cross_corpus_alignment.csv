@@ -1,0 +1,47 @@
+topic_id,topic_size,top_words,label,scopus_count,policy_count,in_scopus,in_policy,alignment
+0,21900,"learning, machine, machine learning, student, artificial, intelligence, artificial intelligence, performance, prediction, algorithm",0_learning_machine_machine learning_student,21900,898,True,True,shared
+1,896,"drug, protein, molecular, compound, inf, molecule, structure, property, chemical, binding",1_drug_protein_molecular_compound,896,0,True,False,academic_only
+2,429,"attack, iot, detection, security, cybersecurity, intrusion, threat, cyber, network, id",2_attack_iot_detection_security,429,6,True,True,shared
+3,308,"tourism, tourist, hospitality, hotel, service, industry, destination, tourism industry, customer, experience",3_tourism_tourist_hospitality_hotel,308,0,True,False,academic_only
+4,253,"sentiment, emotion, facial, review, tweet, opinion, text, machine, expression, learning",4_sentiment_emotion_facial_review,253,1,True,True,shared
+5,238,"speech, hearing, language, voice, recognition, sound, child, acoustic, feature, sign language",5_speech_hearing_language_voice,238,0,True,False,academic_only
+6,206,"sport, player, game, football, team, performance, training, match, physical, injury",6_sport_player_game_football,206,0,True,False,academic_only
+7,172,"adhd, autism, disorder, child, diagnosis, spectrum, symptom, diagnostic, feature, individual",7_adhd_autism_disorder_child,172,0,True,False,academic_only
+8,163,"journalism, news, journalist, medium, journalistic, content, artificial intelligence, artificial, intelligence, news medium",8_journalism_news_journalist_medium,163,0,True,False,academic_only
+9,154,"library, academic library, service, academic, information, technology, li, university, artificial intelligence, intelligence",9_library_academic library_service_academic,154,1,True,True,shared
+10,147,"retinal, eye, image, disease, patient, visual, screening, diagnosis, accuracy, clinical",10_retinal_eye_image_disease,147,0,True,False,academic_only
+11,141,"price, housing, estate, real estate, valuation, real, property, market, house, appraisal",11_price_housing_estate_real estate,141,0,True,False,academic_only
+12,134,"image, video, recognition, object, face, network, deep, feature, learning, neural",12_image_video_recognition_object,134,2,True,True,shared
+13,129,"heritage, cultural, cultural heritage, archaeological, ancient, site, archaeology, bone, preservation, image",13_heritage_cultural_cultural heritage_archaeological,129,0,True,False,academic_only
+14,124,"music, musical, audio, education, teaching, creative, artificial, intelligence, learning, feature",14_music_musical_audio_education,124,0,True,False,academic_only
+15,124,"crime, violence, police, offender, sexual, abuse, criminal, predictive, prediction, risk",15_crime_violence_police_offender,124,3,True,True,shared
+16,122,"text, language, document, word, corpus, classification, semantic, processing, arabic, news",16_text_language_document_word,122,0,True,False,academic_only
+17,120,"religious, islamic, religion, spiritual, intelligence, human, artificial intelligence, artificial, ethical, technology",17_religious_islamic_religion_spiritual,120,0,True,False,academic_only
+18,115,"entrepreneurial, entrepreneurship, entrepreneur, intention, business, ecosystem, digital, innovation, social, student",18_entrepreneurial_entrepreneurship_entrepreneur_intention,115,0,True,False,academic_only
+19,114,"price, market, return, investor, volatility, asset, trading, lstm, forecasting, investment",19_price_market_return_investor,114,0,True,False,academic_only
+20,103,"eeg, seizure, signal, eeg signal, brain, feature, epilepsy, classification, accuracy, electroencephalography",20_eeg_seizure_signal_eeg signal,103,0,True,False,academic_only
+21,98,"trust, trustworthiness, human, user, fear, trustworthy, perceived, intelligence, technology, artificial intelligence",21_trust_trustworthiness_human_user,98,0,True,False,academic_only
+22,97,"poverty, household, conflict, income, migration, estimate, machine learning, machine, wealth, satellite",22_poverty_household_conflict_income,97,0,True,False,academic_only
+23,92,"sequence, bacterial, antibiotic, ca, dna, genome, resistance, gene, protein, bacteria",23_sequence_bacterial_antibiotic_ca,92,0,True,False,academic_only
+24,87,"fake, news, fake news, social, social medium, twitter, medium, bot, tweet, user",24_fake_news_fake news_social,87,0,True,False,academic_only
+25,87,"cell, microscopy, image, tissue, imaging, cellular, raman, phenotype, morphology, single",25_cell_microscopy_image_tissue,87,1,True,True,shared
+26,82,"quantum, quantum computing, classical, computing, machine, learning, machine learning, entanglement, computer, algorithm",26_quantum_quantum computing_classical_computing,82,0,True,False,academic_only
+27,80,"ghz, band, channel, design, frequency, gain, bandwidth, wireless, communication, simulation",27_ghz_band_channel_design,80,0,True,False,academic_only
+28,79,"sex, age, dental, forensic, skeletal, estimation, image, age estimation, teeth, accuracy",28_sex_age_dental_forensic,79,0,True,False,academic_only
+29,74,"sleep, sleep quality, anxiety, wake, patient, symptom, disorder, stage, disturbance, quality",29_sleep_sleep quality_anxiety_wake,74,0,True,False,academic_only
+30,73,"translation, translator, language, machine translation, arabic, translate, text, english, google translate, literary",30_translation_translator_language_machine translation,73,0,True,False,academic_only
+31,72,"fairness, bias, fair, algorithmic, discrimination, decision, metric, algorithm, unfair, perception",31_fairness_bias_fair_algorithmic,72,2,True,True,shared
+32,71,"blockchain, blockchain technology, technology, chain, accounting, supply chain, decentralized, secure, supply, artificial intelligence",32_blockchain_blockchain technology_technology_chain,71,0,True,False,academic_only
+33,71,"customer, chatbots, assistant, user, chatbot, voice, consumer, satisfaction, service, intention",33_customer_chatbots_assistant_user,71,0,True,False,academic_only
+34,70,"military, weapon, war, autonomous, international, warfare, autonomous weapon, state, intelligence, security",34_military_weapon_war_autonomous,70,0,True,False,academic_only
+35,68,"gender, bias, stereotype, woman, gender bias, female, gendered, male, representation, artificial",35_gender_bias_stereotype_woman,68,2,True,True,shared
+36,66,"personality, trait, personality trait, psychological, social, machine learning, machine, agreeableness, conscientiousness, social medium",36_personality_trait_personality trait_psychological,66,0,True,False,academic_only
+37,64,"causal, effect, treatment effect, treatment, estimator, inference, estimate, causal inference, estimation, machine learning",37_causal_effect_treatment effect_treatment,64,0,True,False,academic_only
+38,63,"malaria, disease, outbreak, vector, parasite, public health, machine, specie, control, health",38_malaria_disease_outbreak_vector,63,0,True,False,academic_only
+39,59,"drug, solvent, inf, sup, formulation, pharmaceutical, regression, temperature, inf inf, sup sup",39_drug_solvent_inf_sup,59,0,True,False,academic_only
+40,57,"dental, dentistry, student, education, clinical, diagnostic, oral, intelligence, artificial intelligence, group",40_dental_dentistry_student_education,57,0,True,False,academic_only
+41,56,"patent, technology, convergence, technological, trademark, promising technology, promising, search, firm, citation",41_patent_technology_convergence_technological,56,0,True,False,academic_only
+42,52,"disability, disabled, people, student disability, education, special, student, inclusive, accessibility, teacher",42_disability_disabled_people_student disability,52,0,True,False,academic_only
+43,51,"network, sensor, edge, iot, node, wireless, wireless sensor, computing, device, latency",43_network_sensor_edge_iot,51,0,True,False,academic_only
+44,51,"optical, design, sensor, sup, modulation, device, fiber, graphene, refractive, refractive index",44_optical_design_sensor_sup,51,0,True,False,academic_only
+45,50,"tumor, brain, mri, image, imaging, segmentation, feature, resonance, magnetic resonance, classification",45_tumor_brain_mri_image,50,0,True,False,academic_only

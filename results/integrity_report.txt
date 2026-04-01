@@ -1,0 +1,54 @@
+DATA INTEGRITY FIX REPORT — 4c_data_integrity_fix.py
+Generated: 2026-03-31 22:47
+============================================================
+
+FIX 1 — COUNTRY + COVER_DATE
+  scopus_topics_finetuned papers with real country: 40,753
+  governance_papers with real country:              3,116
+  Source: primary_country, cover_date from scopus_cleaned.csv
+  primary_country = first author affiliation country
+  (standard bibliometric convention, documented in methodology)
+
+FIX 2 — GOVERNANCE SCORES PROPAGATED
+  Papers with governance_score >= 0.5: 3,186
+  Score source: topics_finetuned.csv (updated by 4b)
+
+FIX 3 — POLICY CHUNK RE-ASSIGNMENT
+  Chunks reassigned from Topic 0/-1: 774
+  Governance policy chunks (>=0.5):  787
+  Chunks still unassigned (-1):      765
+  Method: keyword overlap matching (min threshold=2)
+  Limitation: keyword-based approximation, not embedding-based.
+  Remaining -1 chunks reflect genuine vocabulary gap between
+  academic abstracts and policy document language.
+  Documented in methodology as a known limitation.
+
+FIX 4 — CROSS-CORPUS ALIGNMENT REBUILT
+  Total finetuned topics: 133 (vs 46 in Round 1)
+  Shared governance topics:        10
+  Academic-only governance topics: 11
+  Policy-only governance topics:   0
+
+FIX 5 — POLICY DOCUMENT TOPICS REBUILT
+  Saved: policy_document_topics_v2.csv
+
+OUTPUT FILES:
+  scopus_topics_finetuned.csv      — country + cover_date + scores FIXED
+  governance_papers.csv            — country + cover_date FIXED
+  policy_topic_assignments_v2.csv  — finetuned topic IDs
+  policy_document_topics_v2.csv    — per-document finetuned topics
+  cross_corpus_alignment_v2.csv    — rebuilt with 133 topics
+  integrity_report.txt             — this file
+
+FULL PIPELINE EXECUTION ORDER:
+  1_data_collection_scopus.py
+  1_data_collection_policyframeworks.py
+  2_data_cleaning_scopus.py
+  2b_institution_geocoding_scopus.py
+  2c_coauthorship_edges_scopus.py
+  2_policy_text_extraction.py
+  3_modelling.py
+  4_model_finetuning.py
+  4b_update_governance_scores.py
+  4c_data_integrity_fix.py   ← THIS SCRIPT
+  4d_sentiment_analysis.py   ← NEXT

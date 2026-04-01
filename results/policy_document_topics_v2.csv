@@ -1,0 +1,49 @@
+doc_id,country,region,doc_type,topic_id_finetuned,chunk_count,total_chunks,proportion,topic_label_finetuned
+ASEAN_Guide_AI_Governance_Ethics_2024,ASEAN,International,Regional Framework,135,34,34,1.0,EU AI Regulation & Regulatory Frameworks
+ASEAN_Expanded_Guide_AI_Governance_GenAI_2025,ASEAN,International,Regional Framework,135,18,19,0.9474,EU AI Regulation & Regulatory Frameworks
+ASEAN_Expanded_Guide_AI_Governance_GenAI_2025,ASEAN,International,Regional Framework,2,1,19,0.0526,AI Cybersecurity & IoT Threats
+AfricanUnion_Continental_AI_Strategy_2024,African Union,International,Continental Strategy,135,29,29,1.0,EU AI Regulation & Regulatory Frameworks
+Australia_AI_Ethics_Framework_2019,Australia,Asia-Pacific,Framework,103,41,45,0.9111,"AI Law, Ethics & Human Rights"
+Australia_AI_Ethics_Framework_2019,Australia,Asia-Pacific,Framework,15,2,45,0.0444,Predictive Policing & Criminal Justice AI
+Australia_AI_Ethics_Framework_2019,Australia,Asia-Pacific,Framework,31,2,45,0.0444,Algorithmic Fairness & Bias
+Canada_Directive_Automated_Decision_Making_2023,Canada,North America,Regulation,103,4,4,1.0,"AI Law, Ethics & Human Rights"
+Chile_National_AI_Policy_2021,Chile,Latin America,National Strategy,103,25,28,0.8929,"AI Law, Ethics & Human Rights"
+Chile_National_AI_Policy_2021,Chile,Latin America,National Strategy,35,2,28,0.0714,Gender Bias & AI Representation
+Chile_National_AI_Policy_2021,Chile,Latin America,National Strategy,2,1,28,0.0357,AI Cybersecurity & IoT Threats
+China_New_Generation_AI_Development_Plan_2017,China,Asia-Pacific,National Strategy,103,19,19,1.0,"AI Law, Ethics & Human Rights"
+China_Interim_Measures_Generative_AI_2023,China,Asia-Pacific,Binding Regulation,103,3,3,1.0,"AI Law, Ethics & Human Rights"
+Colombia_National_AI_Policy_CONPES4144_2025,Colombia,Latin America,National Policy,148,107,108,0.9907,Smart City & Urban AI Governance
+Colombia_National_AI_Policy_CONPES4144_2025,Colombia,Latin America,National Policy,12,1,108,0.0093,Computer Vision & Face Recognition
+CouncilOfEurope_AI_Framework_Convention_CETS225_2024,Council of Europe,International,Binding International Treaty,103,6,6,1.0,"AI Law, Ethics & Human Rights"
+Egypt_National_AI_Strategy_2021,Egypt,Africa & Middle East,National Strategy,124,29,29,1.0,AI Research Landscape (Bibliometrics)
+EU_AI_Act_Regulation_2024_1689,European Union,Europe,Binding Regulation,135,92,96,0.9583,EU AI Regulation & Regulatory Frameworks
+EU_AI_Act_Regulation_2024_1689,European Union,Europe,Binding Regulation,2,1,96,0.0104,AI Cybersecurity & IoT Threats
+EU_AI_Act_Regulation_2024_1689,European Union,Europe,Binding Regulation,4,1,96,0.0104,Sentiment & Emotion Analysis
+EU_AI_Act_Regulation_2024_1689,European Union,Europe,Binding Regulation,12,1,96,0.0104,Computer Vision & Face Recognition
+EU_AI_Act_Regulation_2024_1689,European Union,Europe,Binding Regulation,15,1,96,0.0104,Predictive Policing & Criminal Justice AI
+France_AI_Strategy_2021,France,Europe,National Strategy,135,22,22,1.0,EU AI Regulation & Regulatory Frameworks
+G7_Hiroshima_AI_Process_Guiding_Principles_2023,G7,International,International Principles,2,1,2,0.5,AI Cybersecurity & IoT Threats
+G7_Hiroshima_AI_Process_Guiding_Principles_2023,G7,International,International Principles,103,1,2,0.5,"AI Law, Ethics & Human Rights"
+Germany_AI_Strategy_Update_2023,Germany,Europe,National Strategy,135,15,15,1.0,EU AI Regulation & Regulatory Frameworks
+India_National_AI_Strategy_2021,India,Asia-Pacific,National Strategy,135,53,53,1.0,EU AI Regulation & Regulatory Frameworks
+Japan_AI_Strategy_2022,Japan,Asia-Pacific,National Strategy,148,16,16,1.0,Smart City & Urban AI Governance
+Kenya_National_AI_Strategy_Draft_2025,Kenya,Africa & Middle East,National Strategy,135,33,34,0.9706,EU AI Regulation & Regulatory Frameworks
+Kenya_National_AI_Strategy_Draft_2025,Kenya,Africa & Middle East,National Strategy,25,1,34,0.0294,AI in Cell Biology & Microscopy
+Nigeria_National_AI_Strategy_2024,Nigeria,Africa & Middle East,National Strategy,103,27,27,1.0,"AI Law, Ethics & Human Rights"
+OECD_AI_Principles_2023,OECD,International,International Principles,103,6,6,1.0,"AI Law, Ethics & Human Rights"
+Rwanda_National_AI_Policy_2023,Rwanda,Africa & Middle East,National Strategy,168,7,7,1.0,Digital Transformation & AI Adoption
+Singapore_Model_AI_Governance_Framework_2020,Singapore,Asia-Pacific,Framework,135,20,20,1.0,EU AI Regulation & Regulatory Frameworks
+Singapore_Model_AI_Governance_GenAI_2024,Singapore,Asia-Pacific,Framework,129,11,12,0.9167,AI in Public Administration & Governance
+Singapore_Model_AI_Governance_GenAI_2024,Singapore,Asia-Pacific,Framework,2,1,12,0.0833,AI Cybersecurity & IoT Threats
+SouthAfrica_National_AI_Policy_Framework_2023,South Africa,Africa & Middle East,Policy Framework,135,5,5,1.0,EU AI Regulation & Regulatory Frameworks
+SouthKorea_AI_Basic_Act_2025,South Korea,Asia-Pacific,National Law,103,9,9,1.0,"AI Law, Ethics & Human Rights"
+UAE_National_AI_Strategy_2031,UAE,Africa & Middle East,National Strategy,135,13,13,1.0,EU AI Regulation & Regulatory Frameworks
+UNESCO_Recommendation_Ethics_AI_2021,UNESCO,International,International Recommendation,103,17,18,0.9444,"AI Law, Ethics & Human Rights"
+UNESCO_Recommendation_Ethics_AI_2021,UNESCO,International,International Recommendation,9,1,18,0.0556,AI in Academic Libraries
+UK_AI_Opportunities_Action_Plan_2025,United Kingdom,Europe,Action Plan,135,11,11,1.0,EU AI Regulation & Regulatory Frameworks
+UK_National_AI_Strategy_2021,United Kingdom,Europe,National Strategy,129,11,11,1.0,AI in Public Administration & Governance
+USA_National_AI_RD_Strategic_Plan_2023,United States,North America,National Strategy,135,32,33,0.9697,EU AI Regulation & Regulatory Frameworks
+USA_NIST_AI_RMF_1_0_2023,United States,North America,Framework,103,16,16,1.0,"AI Law, Ethics & Human Rights"
+USA_OMB_M2521_Federal_AI_Governance_2025,United States,North America,Federal Directive,103,12,12,1.0,"AI Law, Ethics & Human Rights"
+USA_National_AI_RD_Strategic_Plan_2023,United States,North America,National Strategy,2,1,33,0.0303,AI Cybersecurity & IoT Threats
+Zimbabwe_National_AI_Strategy,Zimbabwe,Africa & Middle East,National Strategy,135,30,30,1.0,EU AI Regulation & Regulatory Frameworks

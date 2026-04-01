@@ -1,0 +1,22 @@
+topic_id,topic_label,governance_score,paper_count,source,top_words
+103,"AI Law, Ethics & Human Rights",0.95,986,topic0_subtopic,"legal, human, intelligence, law, artificial, artificial intelligence, ethical, right, moral, criminal"
+2,AI Cybersecurity & IoT Threats,0.9,429,original,
+114,Generative AI & Creative Ethics,0.65,302,topic0_subtopic,"art, creative, design, creativity, image, human, artistic, visual, generative, aesthetic"
+124,AI Research Landscape (Bibliometrics),0.5,180,topic0_subtopic,"topic, citation, publication, bibliometric, paper, collaboration, field, author, scientific, science"
+8,"AI, Journalism & Media",0.7,163,original,
+15,Predictive Policing & Criminal Justice AI,0.8,124,original,
+129,AI in Public Administration & Governance,0.9,122,topic0_subtopic,"public, administration, public administration, government, public sector, sector, citizen, service, public service, governance"
+17,AI Ethics from Islamic/Religious Perspective,0.5,120,original,
+135,EU AI Regulation & Regulatory Frameworks,1.0,100,topic0_subtopic,"regulation, act, european, regulatory, union, european union, protection, right, risk, commission"
+21,Trust & Trustworthiness in AI,0.8,98,original,
+24,"AI, Fake News & Disinformation",0.8,87,original,
+31,Algorithmic Fairness & Bias,1.0,72,original,
+34,Autonomous Weapons & Military AI,0.9,70,original,
+35,Gender Bias & AI Representation,0.9,68,original,
+148,Smart City & Urban AI Governance,0.7,63,topic0_subtopic,"city, smart city, smart, urban, governance, sustainable, development, urban planning, planning, technology"
+151,AI Governance during COVID-19,0.6,57,topic0_subtopic,"covid, pandemic, covid pandemic, crisis, health, public, public health, artificial intelligence, intelligence, coronavirus"
+42,AI Accessibility & Disability Inclusion,0.5,52,original,
+168,Digital Transformation & AI Adoption,0.55,31,topic0_subtopic,"digital transformation, transformation, digital, business, company, innovation, digital technology, corporate digital, technology, manufacturing"
+177,Explainable AI & Transparency,0.8,24,topic0_subtopic,"xai, explanation, user, explainable, explainable artificial, intelligence xai, trust, decision, explainability, human"
+181,AI Patent Law & Intellectual Property,0.55,19,topic0_subtopic,"patent, invention, inventor, inventive, patent law, patentability, protection, european patent, law, european"
+183,UAV & Drone Governance,0.6,19,topic0_subtopic,"uavs, uav, attack, aerial vehicle, unmanned aerial, drone, unmanned, aerial, flight, vehicle"

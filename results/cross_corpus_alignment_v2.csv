@@ -1,0 +1,134 @@
+topic_id,topic_label,governance_score,paper_count,source,top_words,scopus_count,policy_count,in_scopus,in_policy,alignment
+103,"AI Law, Ethics & Human Rights",0.95,986,topic0_subtopic,"legal, human, intelligence, law, artificial, artificial intelligence, ethical, right, moral, criminal",986,186,True,True,shared
+2,AI Cybersecurity & IoT Threats,0.9,429,original,,429,6,True,True,shared
+114,Generative AI & Creative Ethics,0.65,302,topic0_subtopic,"art, creative, design, creativity, image, human, artistic, visual, generative, aesthetic",302,0,True,False,academic_only
+124,AI Research Landscape (Bibliometrics),0.5,180,topic0_subtopic,"topic, citation, publication, bibliometric, paper, collaboration, field, author, scientific, science",180,29,True,True,shared
+8,"AI, Journalism & Media",0.7,163,original,,163,0,True,False,academic_only
+15,Predictive Policing & Criminal Justice AI,0.8,124,original,,124,3,True,True,shared
+129,AI in Public Administration & Governance,0.9,122,topic0_subtopic,"public, administration, public administration, government, public sector, sector, citizen, service, public service, governance",122,22,True,True,shared
+17,AI Ethics from Islamic/Religious Perspective,0.5,120,original,,120,0,True,False,academic_only
+135,EU AI Regulation & Regulatory Frameworks,1.0,100,topic0_subtopic,"regulation, act, european, regulatory, union, european union, protection, right, risk, commission",100,407,True,True,shared
+21,Trust & Trustworthiness in AI,0.8,98,original,,98,0,True,False,academic_only
+24,"AI, Fake News & Disinformation",0.8,87,original,,87,0,True,False,academic_only
+31,Algorithmic Fairness & Bias,1.0,72,original,,72,2,True,True,shared
+34,Autonomous Weapons & Military AI,0.9,70,original,,70,0,True,False,academic_only
+35,Gender Bias & AI Representation,0.9,68,original,,68,2,True,True,shared
+148,Smart City & Urban AI Governance,0.7,63,topic0_subtopic,"city, smart city, smart, urban, governance, sustainable, development, urban planning, planning, technology",63,123,True,True,shared
+151,AI Governance during COVID-19,0.6,57,topic0_subtopic,"covid, pandemic, covid pandemic, crisis, health, public, public health, artificial intelligence, intelligence, coronavirus",57,0,True,False,academic_only
+42,AI Accessibility & Disability Inclusion,0.5,52,original,,52,0,True,False,academic_only
+168,Digital Transformation & AI Adoption,0.55,31,topic0_subtopic,"digital transformation, transformation, digital, business, company, innovation, digital technology, corporate digital, technology, manufacturing",31,7,True,True,shared
+177,Explainable AI & Transparency,0.8,24,topic0_subtopic,"xai, explanation, user, explainable, explainable artificial, intelligence xai, trust, decision, explainability, human",24,0,True,False,academic_only
+183,UAV & Drone Governance,0.6,19,topic0_subtopic,"uavs, uav, attack, aerial vehicle, unmanned aerial, drone, unmanned, aerial, flight, vehicle",19,0,True,False,academic_only
+181,AI Patent Law & Intellectual Property,0.55,19,topic0_subtopic,"patent, invention, inventor, inventive, patent law, patentability, protection, european patent, law, european",19,0,True,False,academic_only
+41,AI Patent & Technology Innovation,0.4,56,original,,0,0,False,False,neither
+154,"Topic0_Sub_154: mental, mental health, health, psychotherapy, therapy, inter",0.1,51,topic0_subtopic,"mental, mental health, health, psychotherapy, therapy, intervention, treatment, psychotherapist, therapeutic, psychological",0,0,False,False,neither
+152,"Topic0_Sub_152: insurance, claim, fraud, health insurance, premium, insuranc",0.1,53,topic0_subtopic,"insurance, claim, fraud, health insurance, premium, insurance company, insurer, life insurance, fraud detection, pricing",0,0,False,False,neither
+153,"Topic0_Sub_153: disaster, evacuation, emergency, hurricane, disaster managem",0.1,52,topic0_subtopic,"disaster, evacuation, emergency, hurricane, disaster management, natural disaster, hazard, natural, management, disaster risk",0,0,False,False,neither
+150,"Topic0_Sub_150: waste, waste management, solid waste, solid, management, was",0.1,58,topic0_subtopic,"waste, waste management, solid waste, solid, management, waste generation, municipal, municipal solid, collection, recycling",0,0,False,False,neither
+40,AI in Dental Education,0.0,57,original,,0,0,False,False,neither
+100,"Topic0_Sub_100: student, education, teacher, educational, teaching, learning",0.1,3686,topic0_subtopic,"student, education, teacher, educational, teaching, learning, academic, artificial intelligence, intelligence, artificial",0,0,False,False,neither
+39,AI in Pharmaceutical Formulation,0.0,59,original,,0,0,False,False,neither
+149,"Topic0_Sub_149: fatigue, movement, muscle, hand, rehabilitation, motion, emg",0.1,61,topic0_subtopic,"fatigue, movement, muscle, hand, rehabilitation, motion, emg, exercise, wearable, lifting",0,0,False,False,neither
+44,AI in Optical & Photonic Devices,0.0,51,original,,0,0,False,False,neither
+147,"Topic0_Sub_147: parkinson, parkinson disease, disease, voice, motor, feature",0.1,64,topic0_subtopic,"parkinson, parkinson disease, disease, voice, motor, feature, tremor, diagnosis, speech, patient",0,0,False,False,neither
+37,Causal Inference with AI,0.4,64,original,,0,0,False,False,neither
+36,AI in Personality & Psychological Profiling,0.2,66,original,,0,0,False,False,neither
+146,"Topic0_Sub_146: employee, turnover, job, attrition, human resource, organiza",0.1,67,topic0_subtopic,"employee, turnover, job, attrition, human resource, organization, satisfaction, organizational, job satisfaction, retention",0,0,False,False,neither
+145,"Topic0_Sub_145: safety, accident, incident, occupational, construction, inju",0.1,68,topic0_subtopic,"safety, accident, incident, occupational, construction, injury, risk, worker, fatality, fall",0,0,False,False,neither
+144,"Topic0_Sub_144: adsorption, inf, hydrogen, inf inf, sup, removal, sup sup, g",0.1,69,topic0_subtopic,"adsorption, inf, hydrogen, inf inf, sup, removal, sup sup, gas, storage, removal efficiency",0,0,False,False,neither
+32,AI & Blockchain Technology,0.3,71,original,,0,0,False,False,neither
+33,Conversational AI & Chatbots,0.3,71,original,,0,0,False,False,neither
+38,AI in Epidemiology & Public Health,0.3,63,original,,0,0,False,False,neither
+157,"Topic0_Sub_157: manufacturing, digital twin, twin, industry, digital, robot,",0.1,45,topic0_subtopic,"manufacturing, digital twin, twin, industry, digital, robot, industrial, smart, technology, physical",0,0,False,False,neither
+43,Edge Computing & IoT Networks,0.3,51,original,,0,0,False,False,neither
+171,"Topic0_Sub_171: schizophrenia, patient, cognitive, functional, bagging ensem",0.1,29,topic0_subtopic,"schizophrenia, patient, cognitive, functional, bagging ensemble, treatment, feature, psychosis, functional outcome, cognitive function",0,0,False,False,neither
+186,"Topic0_Sub_186: corrosion, pipeline, inspection, loop, lattice, steel, defec",0.1,17,topic0_subtopic,"corrosion, pipeline, inspection, loop, lattice, steel, defect, pca, cd, inhibitor",0,0,False,False,neither
+185,"Topic0_Sub_185: gene, lung, cancer, lung cancer, nsclc, egfr, cell, prognosi",0.1,17,topic0_subtopic,"gene, lung, cancer, lung cancer, nsclc, egfr, cell, prognosis, survival, prognostic",0,0,False,False,neither
+184,"Topic0_Sub_184: bridge, depth, inf, pier, deck, parameter, inf inf, conditio",0.1,17,topic0_subtopic,"bridge, depth, inf, pier, deck, parameter, inf inf, condition, sup, formula",0,0,False,False,neither
+182,"Topic0_Sub_182: wind, cfd, building, dynamic cfd, computational, simulation,",0.1,19,topic0_subtopic,"wind, cfd, building, dynamic cfd, computational, simulation, computational fluid, fluid dynamic, fluid, cfd simulation",0,0,False,False,neither
+180,"Topic0_Sub_180: plastic, recycling, waste, plastic waste, polymer, recycled,",0.1,19,topic0_subtopic,"plastic, recycling, waste, plastic waste, polymer, recycled, spectroscopic, spectroscopy, sorting, infrared",0,0,False,False,neither
+179,"Topic0_Sub_179: bike, bike sharing, sharing, bicycle, shared, urban, sharing",0.1,21,topic0_subtopic,"bike, bike sharing, sharing, bicycle, shared, urban, sharing usage, trip, cycling, travel",0,0,False,False,neither
+178,"Topic0_Sub_178: cigarette, smoking, tobacco, cessation, cannabis, quit, rela",0.1,23,topic0_subtopic,"cigarette, smoking, tobacco, cessation, cannabis, quit, relapse, nicotine, colour, predictor",0,0,False,False,neither
+176,"Topic0_Sub_176: gene, ibd, expression, inflammatory bowel, inflammatory, bow",0.1,24,topic0_subtopic,"gene, ibd, expression, inflammatory bowel, inflammatory, bowel, bowel disease, disease, gse, patient",0,0,False,False,neither
+175,"Topic0_Sub_175: vaccine, vaccination, covid, covid vaccine, covid vaccinatio",0.1,25,topic0_subtopic,"vaccine, vaccination, covid, covid vaccine, covid vaccination, dose, vaccinated, virus, adjuvant, pandemic",0,0,False,False,neither
+174,"Topic0_Sub_174: obesity, bmi, adolescent, obese, fitness, body, health, mass",0.1,26,topic0_subtopic,"obesity, bmi, adolescent, obese, fitness, body, health, mass, vat, metabolic",0,0,False,False,neither
+173,"Topic0_Sub_173: opioid, overdose, prescription, drug, opioids, medicaid, mis",0.1,27,topic0_subtopic,"opioid, overdose, prescription, drug, opioids, medicaid, misuse, beneficiary, pennsylvania, treatment",0,0,False,False,neither
+170,"Topic0_Sub_170: har, activity, activity recognition, recognition, human acti",0.1,29,topic0_subtopic,"har, activity, activity recognition, recognition, human activity, sensor, user, phone, gesture, smartphone",0,0,False,False,neither
+172,"Topic0_Sub_172: weather, forecast, nwp, climate, weather prediction, weather",0.1,29,topic0_subtopic,"weather, forecast, nwp, climate, weather prediction, weather forecast, convective, tc, dynamical, global",0,0,False,False,neither
+169,"Topic0_Sub_169: logistics, chain, supply chain, management, supply, reverse ",0.1,31,topic0_subtopic,"logistics, chain, supply chain, management, supply, reverse logistics, efficiency, regional, reverse, operational",0,0,False,False,neither
+45,AI in Brain Tumour Imaging,0.1,50,original,,0,0,False,False,neither
+167,"Topic0_Sub_167: drought, spi, precipitation, index, drought index, standardi",0.1,32,topic0_subtopic,"drought, spi, precipitation, index, drought index, standardized precipitation, month, standardized, evapotranspiration, meteorological",0,0,False,False,neither
+166,"Topic0_Sub_166: tunnel, settlement, tunneling, shield, tbm, excavation, para",0.1,33,topic0_subtopic,"tunnel, settlement, tunneling, shield, tbm, excavation, parameter, construction, uplift, inf",0,0,False,False,neither
+165,"Topic0_Sub_165: pain, patient, chronic, exercise, lbp, intensity, neuropathi",0.1,34,topic0_subtopic,"pain, patient, chronic, exercise, lbp, intensity, neuropathic, feature, eeg, classification",0,0,False,False,neither
+164,"Topic0_Sub_164: inflation, cpi, forecast, forecasting, inflation rate, econo",0.1,35,topic0_subtopic,"inflation, cpi, forecast, forecasting, inflation rate, economic, horizon, price, rate, term",0,0,False,False,neither
+163,"Topic0_Sub_163: charging, electric, vehicle, electric vehicle, ev, charging ",0.1,35,topic0_subtopic,"charging, electric, vehicle, electric vehicle, ev, charging station, infrastructure, energy, transportation, adoption",0,0,False,False,neither
+162,"Topic0_Sub_162: pregnancy, infertility, reproductive, clinical, couple, vitr",0.1,35,topic0_subtopic,"pregnancy, infertility, reproductive, clinical, couple, vitro, fertilization, treatment, auc, cycle",0,0,False,False,neither
+161,"Topic0_Sub_161: wind, wind speed, speed, wind energy, wind power, forecastin",0.1,37,topic0_subtopic,"wind, wind speed, speed, wind energy, wind power, forecasting, energy, turbine, power, wind turbine",0,0,False,False,neither
+160,"Topic0_Sub_160: thermal, comfort, thermal comfort, temperature, skin tempera",0.1,39,topic0_subtopic,"thermal, comfort, thermal comfort, temperature, skin temperature, thermal sensation, skin, sensation, occupant, indoor",0,0,False,False,neither
+159,"Topic0_Sub_159: mineral, rock, lithological, exploration, basalt, geological",0.1,40,topic0_subtopic,"mineral, rock, lithological, exploration, basalt, geological, hyperspectral, mapping, geochemical, deposit",0,0,False,False,neither
+158,"Topic0_Sub_158: pipe, leak, pipeline, leakage, water, sewer, failure, networ",0.1,42,topic0_subtopic,"pipe, leak, pipeline, leakage, water, sewer, failure, network, detection, hydraulic",0,0,False,False,neither
+142,"Topic0_Sub_142: problem, optimization, algorithm, optimization problem, solu",0.1,73,topic0_subtopic,"problem, optimization, algorithm, optimization problem, solution, instance, heuristic, solver, stochastic, convergence",0,0,False,False,neither
+156,"Topic0_Sub_156: gait, walking, joint, feature, muscle, sarcopenia, speed, fa",0.1,47,topic0_subtopic,"gait, walking, joint, feature, muscle, sarcopenia, speed, fall, gdi, knee",0,0,False,False,neither
+155,"Topic0_Sub_155: fuel, engine, inf, blend, diesel, combustion, inf inf, emiss",0.1,50,topic0_subtopic,"fuel, engine, inf, blend, diesel, combustion, inf inf, emission, cylinder, nox",0,0,False,False,neither
+143,"Topic0_Sub_143: pavement, asphalt, road, maintenance, mix, pavement performa",0.1,72,topic0_subtopic,"pavement, asphalt, road, maintenance, mix, pavement performance, condition, crack, pavement condition, mixture",0,0,False,False,neither
+28,AI in Forensic & Dental Analysis,0.0,79,original,,0,0,False,False,neither
+30,Machine Translation & Multilingual AI,0.2,73,original,,0,0,False,False,neither
+29,AI in Sleep & Mental Health,0.1,74,original,,0,0,False,False,neither
+125,"Topic0_Sub_125: project, construction, construction project, cost, building,",0.1,157,topic0_subtopic,"project, construction, construction project, cost, building, contract, construction industry, delay, risk, overrun",0,0,False,False,neither
+7,AI in Neurodevelopmental Diagnosis,0.2,172,original,,0,0,False,False,neither
+123,"Topic0_Sub_123: birth, maternal, woman, pregnancy, child, infant, health, ri",0.1,193,topic0_subtopic,"birth, maternal, woman, pregnancy, child, infant, health, risk, gestational, neonatal",0,0,False,False,neither
+122,"Topic0_Sub_122: customer, churn, marketing, consumer, product, commerce, pur",0.1,202,topic0_subtopic,"customer, churn, marketing, consumer, product, commerce, purchase, online, customer churn, business",0,0,False,False,neither
+6,AI in Sports & Performance,0.0,206,original,,0,0,False,False,neither
+121,"Topic0_Sub_121: process, machining, manufacturing, parameter, laser, printin",0.1,210,topic0_subtopic,"process, machining, manufacturing, parameter, laser, printing, welding, material, surface, alloy",0,0,False,False,neither
+120,"Topic0_Sub_120: maintenance, fault, manufacturing, production, industrial, p",0.1,213,topic0_subtopic,"maintenance, fault, manufacturing, production, industrial, process, machine, predictive maintenance, industry, machine learning",0,0,False,False,neither
+5,Speech & Language Recognition,0.1,238,original,,0,0,False,False,neither
+119,"Topic0_Sub_119: depression, anxiety, disorder, treatment, symptom, mental, h",0.1,242,topic0_subtopic,"depression, anxiety, disorder, treatment, symptom, mental, health, mental health, depressive, patient",0,0,False,False,neither
+4,Sentiment & Emotion Analysis,0.3,253,original,,0,0,False,False,neither
+118,"Topic0_Sub_118: concrete, strength, compressive, compressive strength, cemen",0.1,253,topic0_subtopic,"concrete, strength, compressive, compressive strength, cement, sup, aggregate, mix, material, reinforced",0,0,False,False,neither
+117,"Topic0_Sub_117: inf, air, inf inf, pollution, air quality, air pollution, co",0.1,260,topic0_subtopic,"inf, air, inf inf, pollution, air quality, air pollution, concentration, pollutant, sup, quality",0,0,False,False,neither
+116,"Topic0_Sub_116: dementia, cognitive, alzheimer, mci, alzheimer disease, dise",0.1,266,topic0_subtopic,"dementia, cognitive, alzheimer, mci, alzheimer disease, disease, impairment, cognitive impairment, brain, mild",0,0,False,False,neither
+115,"Topic0_Sub_115: software, machine learning, learning, machine, feature, algo",0.1,288,topic0_subtopic,"software, machine learning, learning, machine, feature, algorithm, technique, code, selection, explanation",0,0,False,False,neither
+3,AI in Tourism & Hospitality,0.1,308,original,,0,0,False,False,neither
+113,"Topic0_Sub_113: cancer, breast, breast cancer, tumor, patient, gene, surviva",0.1,368,topic0_subtopic,"cancer, breast, breast cancer, tumor, patient, gene, survival, cell, prognostic, clinical",0,0,False,False,neither
+112,"Topic0_Sub_112: energy, power, solar, building, consumption, electricity, gr",0.1,417,topic0_subtopic,"energy, power, solar, building, consumption, electricity, grid, energy consumption, renewable, fault",0,0,False,False,neither
+111,"Topic0_Sub_111: traffic, crash, road, vehicle, accident, travel, transportat",0.1,520,topic0_subtopic,"traffic, crash, road, vehicle, accident, travel, transportation, driver, safety, driving",0,0,False,False,neither
+110,"Topic0_Sub_110: marketing, consumer, customer, financial, service, banking, ",0.1,591,topic0_subtopic,"marketing, consumer, customer, financial, service, banking, accounting, brand, audit, intelligence",0,0,False,False,neither
+109,"Topic0_Sub_109: soil, sup, forest, land, inf, sup sup, vegetation, accuracy,",0.1,693,topic0_subtopic,"soil, sup, forest, land, inf, sup sup, vegetation, accuracy, area, index",0,0,False,False,neither
+108,"Topic0_Sub_108: medical, healthcare, health, care, patient, medicine, clinic",0.1,781,topic0_subtopic,"medical, healthcare, health, care, patient, medicine, clinical, medical education, artificial intelligence, physician",0,0,False,False,neither
+107,"Topic0_Sub_107: water, flood, water quality, groundwater, sup, river, qualit",0.1,783,topic0_subtopic,"water, flood, water quality, groundwater, sup, river, quality, rainfall, sup sup, area",0,0,False,False,neither
+106,"Topic0_Sub_106: green, environmental, energy, esg, sustainable, sustainabili",0.1,823,topic0_subtopic,"green, environmental, energy, esg, sustainable, sustainability, innovation, development, effect, carbon",0,0,False,False,neither
+1,Drug Discovery & Molecular AI,0.0,896,original,,0,0,False,False,neither
+105,"Topic0_Sub_105: employee, chain, supply chain, supply, job, organizational, ",0.1,909,topic0_subtopic,"employee, chain, supply chain, supply, job, organizational, innovation, intelligence, artificial intelligence, organization",0,0,False,False,neither
+104,"Topic0_Sub_104: stock, market, financial, return, credit, price, fraud, port",0.1,942,topic0_subtopic,"stock, market, financial, return, credit, price, fraud, portfolio, machine, machine learning",0,0,False,False,neither
+102,"Topic0_Sub_102: crop, food, yield, agricultural, plant, agriculture, machine",0.1,998,topic0_subtopic,"crop, food, yield, agricultural, plant, agriculture, machine, farmer, production, rice",0,0,False,False,neither
+9,AI in Academic Libraries,0.3,154,original,,0,0,False,False,neither
+126,"Topic0_Sub_126: landslide, susceptibility, landslide susceptibility, hazard,",0.1,152,topic0_subtopic,"landslide, susceptibility, landslide susceptibility, hazard, area, map, slope, factor, auc, debris",0,0,False,False,neither
+10,AI in Ophthalmology,0.1,147,original,,0,0,False,False,neither
+20,AI in Neuroimaging & EEG,0.0,103,original,,0,0,False,False,neither
+141,"Topic0_Sub_141: gene, cell, immune, expression, infiltration, degs, enrichme",0.1,74,topic0_subtopic,"gene, cell, immune, expression, infiltration, degs, enrichment, pathway, hub, protein",0,0,False,False,neither
+140,"Topic0_Sub_140: ship, port, vessel, maritime, container, fuel, fuel consumpt",0.1,75,topic0_subtopic,"ship, port, vessel, maritime, container, fuel, fuel consumption, shipping, terminal, consumption",0,0,False,False,neither
+139,"Topic0_Sub_139: flight, airport, aircraft, airline, delay, air traffic, pass",0.1,78,topic0_subtopic,"flight, airport, aircraft, airline, delay, air traffic, passenger, air, aviation, traffic",0,0,False,False,neither
+101,"Topic0_Sub_101: patient, disease, covid, clinical, risk, mortality, heart, d",0.1,1193,topic0_subtopic,"patient, disease, covid, clinical, risk, mortality, heart, diabetes, hospital, machine",0,0,False,False,neither
+138,"Topic0_Sub_138: battery, lithium, vehicle, ion, electric vehicle, electric, ",0.1,80,topic0_subtopic,"battery, lithium, vehicle, ion, electric vehicle, electric, cell, voltage, energy, fuel cell",0,0,False,False,neither
+27,AI in Wireless Communications,0.0,80,original,,0,0,False,False,neither
+26,Quantum Computing & AI,0.2,82,original,,0,0,False,False,neither
+137,"Topic0_Sub_137: seismic, earthquake, slope, damage, motion, building, slope ",0.1,84,topic0_subtopic,"seismic, earthquake, slope, damage, motion, building, slope stability, liquefaction, event, ground motion",0,0,False,False,neither
+25,AI in Cell Biology & Microscopy,0.0,87,original,,0,0,False,False,neither
+23,AI in Genomics & Microbiology,0.0,92,original,,0,0,False,False,neither
+136,"Topic0_Sub_136: suicide, suicidal, ideation, suicidal ideation, suicide atte",0.1,93,topic0_subtopic,"suicide, suicidal, ideation, suicidal ideation, suicide attempt, attempt, suicide risk, adolescent, risk, depression",0,0,False,False,neither
+22,AI for Poverty & Development (Global South),0.4,97,original,,0,0,False,False,neither
+134,"Topic0_Sub_134: wildfire, forest, area, rcp, risk, detection, occurrence, fa",0.1,103,topic0_subtopic,"wildfire, forest, area, rcp, risk, detection, occurrence, factor, burn, random",0,0,False,False,neither
+11,AI in Real Estate Valuation,0.2,141,original,,0,0,False,False,neither
+133,"Topic0_Sub_133: emission, carbon, carbon emission, inf, inf emission, inf in",0.1,106,topic0_subtopic,"emission, carbon, carbon emission, inf, inf emission, inf inf, energy, consumption, reduction, carbon price",0,0,False,False,neither
+132,"Topic0_Sub_132: nursing, nursing student, nurse, nursing education, student,",0.1,109,topic0_subtopic,"nursing, nursing student, nurse, nursing education, student, education, artificial intelligence, intelligence, attitude, artificial",0,0,False,False,neither
+19,AI in Finance & Investment,0.2,114,original,,0,0,False,False,neither
+131,"Topic0_Sub_131: urban, street, city, space, vitality, land, spatial, neighbo",0.1,115,topic0_subtopic,"urban, street, city, space, vitality, land, spatial, neighborhood, environment, built",0,0,False,False,neither
+18,AI in Entrepreneurship & Innovation,0.3,115,original,,0,0,False,False,neither
+130,"Topic0_Sub_130: fracture, osteoporosis, patient, bone, knee, implant, image,",0.1,116,topic0_subtopic,"fracture, osteoporosis, patient, bone, knee, implant, image, osteoarthritis, joint, ray",0,0,False,False,neither
+16,NLP & Text Classification,0.2,122,original,,0,0,False,False,neither
+14,AI in Music & Creative Arts,0.1,124,original,,0,0,False,False,neither
+13,AI in Cultural Heritage,0.1,129,original,,0,0,False,False,neither
+128,"Topic0_Sub_128: supply chain, chain, supply, demand, inventory, forecasting,",0.1,133,topic0_subtopic,"supply chain, chain, supply, demand, inventory, forecasting, supplier, demand forecasting, product, sale",0,0,False,False,neither
+12,Computer Vision & Face Recognition,0.3,134,original,,0,0,False,False,neither
+127,"Topic0_Sub_127: urban, lst, heat, uhi, temperature, urban heat, land, therma",0.1,136,topic0_subtopic,"urban, lst, heat, uhi, temperature, urban heat, land, thermal, heat island, island",0,0,False,False,neither
+187,"Topic0_Sub_187: loneliness, adolescent, social, ate, older, predictor, older",0.1,16,topic0_subtopic,"loneliness, adolescent, social, ate, older, predictor, older adult, comorbidity, factor, nssi",0,0,False,False,neither

@@ -1,0 +1,4 @@
+model,n_topics,outlier_rate,coherence_cv,diversity,policy_outlier_rate,embedding_model,description,best
+M1_Base,131,0.3867,0.7159,0.7466,0.8863,all-MiniLM-L6-v2,Fast English baseline,True
+M2_Quality,42,0.3194,0.6172,0.7548,0.8992,all-mpnet-base-v2,Higher quality English embeddings,False
+M3_Multilingual,18,0.4248,0.5798,0.6556,0.8606,paraphrase-multilingual-MiniLM-L12-v2,Multilingual — handles all 35 policy docs,False

@@ -1,0 +1,118 @@
+region,topic_id_finetuned,topic_label_finetuned,count,total,proportion
+Africa & Middle East,2,AI Cybersecurity & IoT Threats,91,4507,0.0202
+Africa & Middle East,8,"AI, Journalism & Media",17,4507,0.0038
+Africa & Middle East,15,Predictive Policing & Criminal Justice AI,8,4507,0.0018
+Africa & Middle East,17,AI Ethics from Islamic/Religious Perspective,15,4507,0.0033
+Africa & Middle East,21,Trust & Trustworthiness in AI,8,4507,0.0018
+Africa & Middle East,24,"AI, Fake News & Disinformation",13,4507,0.0029
+Africa & Middle East,31,Algorithmic Fairness & Bias,1,4507,0.0002
+Africa & Middle East,34,Autonomous Weapons & Military AI,4,4507,0.0009
+Africa & Middle East,35,Gender Bias & AI Representation,7,4507,0.0016
+Africa & Middle East,42,AI Accessibility & Disability Inclusion,11,4507,0.0024
+Africa & Middle East,103,"AI Law, Ethics & Human Rights",63,4507,0.014
+Africa & Middle East,114,Generative AI & Creative Ethics,12,4507,0.0027
+Africa & Middle East,124,AI Research Landscape (Bibliometrics),9,4507,0.002
+Africa & Middle East,129,AI in Public Administration & Governance,7,4507,0.0016
+Africa & Middle East,135,EU AI Regulation & Regulatory Frameworks,4,4507,0.0009
+Africa & Middle East,148,Smart City & Urban AI Governance,5,4507,0.0011
+Africa & Middle East,151,AI Governance during COVID-19,9,4507,0.002
+Africa & Middle East,168,Digital Transformation & AI Adoption,1,4507,0.0002
+Africa & Middle East,183,UAV & Drone Governance,4,4507,0.0009
+Asia-Pacific,2,AI Cybersecurity & IoT Threats,198,16062,0.0123
+Asia-Pacific,8,"AI, Journalism & Media",22,16062,0.0014
+Asia-Pacific,15,Predictive Policing & Criminal Justice AI,39,16062,0.0024
+Asia-Pacific,17,AI Ethics from Islamic/Religious Perspective,26,16062,0.0016
+Asia-Pacific,21,Trust & Trustworthiness in AI,25,16062,0.0016
+Asia-Pacific,24,"AI, Fake News & Disinformation",48,16062,0.003
+Asia-Pacific,31,Algorithmic Fairness & Bias,9,16062,0.0006
+Asia-Pacific,34,Autonomous Weapons & Military AI,11,16062,0.0007
+Asia-Pacific,35,Gender Bias & AI Representation,11,16062,0.0007
+Asia-Pacific,42,AI Accessibility & Disability Inclusion,7,16062,0.0004
+Asia-Pacific,103,"AI Law, Ethics & Human Rights",214,16062,0.0133
+Asia-Pacific,114,Generative AI & Creative Ethics,105,16062,0.0065
+Asia-Pacific,124,AI Research Landscape (Bibliometrics),73,16062,0.0045
+Asia-Pacific,129,AI in Public Administration & Governance,19,16062,0.0012
+Asia-Pacific,135,EU AI Regulation & Regulatory Frameworks,11,16062,0.0007
+Asia-Pacific,148,Smart City & Urban AI Governance,20,16062,0.0012
+Asia-Pacific,151,AI Governance during COVID-19,19,16062,0.0012
+Asia-Pacific,168,Digital Transformation & AI Adoption,15,16062,0.0009
+Asia-Pacific,177,Explainable AI & Transparency,11,16062,0.0007
+Asia-Pacific,181,AI Patent Law & Intellectual Property,3,16062,0.0002
+Asia-Pacific,183,UAV & Drone Governance,6,16062,0.0004
+Europe,2,AI Cybersecurity & IoT Threats,73,11544,0.0063
+Europe,8,"AI, Journalism & Media",84,11544,0.0073
+Europe,15,Predictive Policing & Criminal Justice AI,21,11544,0.0018
+Europe,17,AI Ethics from Islamic/Religious Perspective,44,11544,0.0038
+Europe,21,Trust & Trustworthiness in AI,41,11544,0.0036
+Europe,24,"AI, Fake News & Disinformation",12,11544,0.001
+Europe,31,Algorithmic Fairness & Bias,28,11544,0.0024
+Europe,34,Autonomous Weapons & Military AI,29,11544,0.0025
+Europe,35,Gender Bias & AI Representation,37,11544,0.0032
+Europe,42,AI Accessibility & Disability Inclusion,9,11544,0.0008
+Europe,103,"AI Law, Ethics & Human Rights",467,11544,0.0405
+Europe,114,Generative AI & Creative Ethics,123,11544,0.0107
+Europe,124,AI Research Landscape (Bibliometrics),52,11544,0.0045
+Europe,129,AI in Public Administration & Governance,66,11544,0.0057
+Europe,135,EU AI Regulation & Regulatory Frameworks,70,11544,0.0061
+Europe,148,Smart City & Urban AI Governance,31,11544,0.0027
+Europe,151,AI Governance during COVID-19,17,11544,0.0015
+Europe,168,Digital Transformation & AI Adoption,10,11544,0.0009
+Europe,177,Explainable AI & Transparency,10,11544,0.0009
+Europe,181,AI Patent Law & Intellectual Property,11,11544,0.001
+Europe,183,UAV & Drone Governance,5,11544,0.0004
+Latin America,2,AI Cybersecurity & IoT Threats,3,1311,0.0023
+Latin America,8,"AI, Journalism & Media",12,1311,0.0092
+Latin America,15,Predictive Policing & Criminal Justice AI,10,1311,0.0076
+Latin America,17,AI Ethics from Islamic/Religious Perspective,1,1311,0.0008
+Latin America,24,"AI, Fake News & Disinformation",4,1311,0.0031
+Latin America,31,Algorithmic Fairness & Bias,2,1311,0.0015
+Latin America,34,Autonomous Weapons & Military AI,3,1311,0.0023
+Latin America,42,AI Accessibility & Disability Inclusion,4,1311,0.0031
+Latin America,103,"AI Law, Ethics & Human Rights",48,1311,0.0366
+Latin America,114,Generative AI & Creative Ethics,9,1311,0.0069
+Latin America,124,AI Research Landscape (Bibliometrics),20,1311,0.0153
+Latin America,129,AI in Public Administration & Governance,11,1311,0.0084
+Latin America,135,EU AI Regulation & Regulatory Frameworks,3,1311,0.0023
+Latin America,148,Smart City & Urban AI Governance,1,1311,0.0008
+Latin America,151,AI Governance during COVID-19,2,1311,0.0015
+Latin America,168,Digital Transformation & AI Adoption,1,1311,0.0008
+Latin America,181,AI Patent Law & Intellectual Property,1,1311,0.0008
+Latin America,183,UAV & Drone Governance,1,1311,0.0008
+North America,2,AI Cybersecurity & IoT Threats,54,6954,0.0078
+North America,8,"AI, Journalism & Media",24,6954,0.0035
+North America,15,Predictive Policing & Criminal Justice AI,46,6954,0.0066
+North America,17,AI Ethics from Islamic/Religious Perspective,25,6954,0.0036
+North America,21,Trust & Trustworthiness in AI,23,6954,0.0033
+North America,24,"AI, Fake News & Disinformation",8,6954,0.0012
+North America,31,Algorithmic Fairness & Bias,30,6954,0.0043
+North America,34,Autonomous Weapons & Military AI,19,6954,0.0027
+North America,35,Gender Bias & AI Representation,13,6954,0.0019
+North America,42,AI Accessibility & Disability Inclusion,17,6954,0.0024
+North America,103,"AI Law, Ethics & Human Rights",145,6954,0.0209
+North America,114,Generative AI & Creative Ethics,41,6954,0.0059
+North America,124,AI Research Landscape (Bibliometrics),20,6954,0.0029
+North America,129,AI in Public Administration & Governance,17,6954,0.0024
+North America,135,EU AI Regulation & Regulatory Frameworks,5,6954,0.0007
+North America,148,Smart City & Urban AI Governance,5,6954,0.0007
+North America,151,AI Governance during COVID-19,7,6954,0.001
+North America,168,Digital Transformation & AI Adoption,3,6954,0.0004
+North America,177,Explainable AI & Transparency,3,6954,0.0004
+North America,181,AI Patent Law & Intellectual Property,2,6954,0.0003
+North America,183,UAV & Drone Governance,3,6954,0.0004
+Other / Unclassified,2,AI Cybersecurity & IoT Threats,10,689,0.0145
+Other / Unclassified,8,"AI, Journalism & Media",4,689,0.0058
+Other / Unclassified,17,AI Ethics from Islamic/Religious Perspective,9,689,0.0131
+Other / Unclassified,21,Trust & Trustworthiness in AI,1,689,0.0015
+Other / Unclassified,24,"AI, Fake News & Disinformation",2,689,0.0029
+Other / Unclassified,31,Algorithmic Fairness & Bias,2,689,0.0029
+Other / Unclassified,34,Autonomous Weapons & Military AI,4,689,0.0058
+Other / Unclassified,42,AI Accessibility & Disability Inclusion,4,689,0.0058
+Other / Unclassified,103,"AI Law, Ethics & Human Rights",49,689,0.0711
+Other / Unclassified,114,Generative AI & Creative Ethics,12,689,0.0174
+Other / Unclassified,124,AI Research Landscape (Bibliometrics),6,689,0.0087
+Other / Unclassified,129,AI in Public Administration & Governance,2,689,0.0029
+Other / Unclassified,135,EU AI Regulation & Regulatory Frameworks,7,689,0.0102
+Other / Unclassified,148,Smart City & Urban AI Governance,1,689,0.0015
+Other / Unclassified,151,AI Governance during COVID-19,3,689,0.0044
+Other / Unclassified,168,Digital Transformation & AI Adoption,1,689,0.0015
+Other / Unclassified,181,AI Patent Law & Intellectual Property,2,689,0.0029
