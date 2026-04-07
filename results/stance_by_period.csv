@@ -1,0 +1,3 @@
+period,balanced,opportunity_focused,risk_focused,avg_risk_score,avg_opportunity_score,paper_count,dominant_stance
+post_chatgpt,0.3067,0.3996,0.2937,0.3633,0.4073,2475,opportunity_focused
+pre_chatgpt,0.3544,0.2968,0.3488,0.3987,0.3589,711,balanced

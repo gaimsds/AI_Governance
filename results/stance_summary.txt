@@ -1,0 +1,46 @@
+STANCE ANALYSIS SUMMARY — 4d_sentiment_analysis.py
+Generated: 2026-04-06 21:43
+============================================================
+
+OVERVIEW
+  Total governance papers classified: 3,186
+  Risk-focused:        975 (30.6%)
+  Opportunity-focused: 1,200 (37.7%)
+  Balanced:            1,011 (31.7%)
+
+METHOD
+  Zero-shot classification using facebook/bart-large-mnli
+  Candidate labels: risk-focused, opportunity-focused, balanced
+  Confidence threshold: 0.45 (below = classified as balanced)
+  No training data used — fully unsupervised NLP
+
+TEMPORAL FINDINGS (PRE vs POST ChatGPT)
+  post_chatgpt        risk=29.4%  opportunity=40.0%  balanced=30.7%
+  pre_chatgpt         risk=34.9%  opportunity=29.7%  balanced=35.4%
+
+REGIONAL FINDINGS
+  Other / Unclassified       risk=34.4%  opportunity=41.2%  dominant=opportunity_focused
+  Europe                     risk=33.3%  opportunity=35.3%  dominant=opportunity_focused
+  North America              risk=31.8%  opportunity=32.6%  dominant=balanced
+  Latin America              risk=29.4%  opportunity=41.9%  dominant=opportunity_focused
+  Africa & Middle East       risk=27.7%  opportunity=45.0%  dominant=opportunity_focused
+  Asia-Pacific               risk=26.8%  opportunity=40.4%  dominant=opportunity_focused
+
+TOPIC FINDINGS
+  Autonomous Weapons & Military AI                    risk=72.9%  opp=12.9%
+  EU AI Regulation & Regulatory Frameworks            risk=51.0%  opp=20.0%
+  Algorithmic Fairness & Bias                         risk=48.6%  opp=11.1%
+  Gender Bias & AI Representation                     risk=39.7%  opp=19.1%
+  AI Law, Ethics & Human Rights                       risk=40.4%  opp=28.4%
+  AI, Fake News & Disinformation                      risk=37.9%  opp=9.2%
+  AI Governance during COVID-19                       risk=38.6%  opp=29.8%
+  AI Ethics from Islamic/Religious Perspective        risk=39.2%  opp=32.5%
+  AI Cybersecurity & IoT Threats                      risk=30.3%  opp=39.2%
+  Predictive Policing & Criminal Justice AI           risk=29.8%  opp=29.8%
+
+OUTPUT FILES:
+  governance_papers_stance.csv    — paper-level stance labels
+  stance_by_topic.csv             — stance per governance topic
+  stance_by_region.csv            — stance per world region
+  stance_by_period.csv            — stance pre/post ChatGPT
+  stance_policy_comparison.csv    — academic vs policy framing

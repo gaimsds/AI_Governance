@@ -1,0 +1,11 @@
+topic_id_finetuned,topic_label_finetuned,academic_papers,academic_risk_score,academic_opportunity_score,academic_dominant_stance,topic_id,policy_count,topic_label_policy,academic_risk_dominant
+103,"AI Law, Ethics & Human Rights",986,0.4356,0.3367,risk_focused,103,186,"AI Law, Ethics & Human Rights",True
+2,AI Cybersecurity & IoT Threats,429,0.3848,0.3987,opportunity_focused,2,6,AI Cybersecurity & IoT Threats,False
+124,AI Research Landscape (Bibliometrics),180,0.214,0.4843,opportunity_focused,124,29,AI Research Landscape (Bibliometrics),False
+15,Predictive Policing & Criminal Justice AI,124,0.3708,0.3762,balanced,15,3,Predictive Policing & Criminal Justice AI,False
+129,AI in Public Administration & Governance,122,0.2662,0.5158,opportunity_focused,129,22,AI in Public Administration & Governance,False
+135,EU AI Regulation & Regulatory Frameworks,100,0.4807,0.3091,risk_focused,135,407,EU AI Regulation & Regulatory Frameworks,True
+31,Algorithmic Fairness & Bias,72,0.4704,0.2634,risk_focused,31,2,Algorithmic Fairness & Bias,True
+35,Gender Bias & AI Representation,68,0.4358,0.312,balanced,35,2,Gender Bias & AI Representation,True
+148,Smart City & Urban AI Governance,63,0.2103,0.5818,opportunity_focused,148,123,Smart City & Urban AI Governance,False
+168,Digital Transformation & AI Adoption,31,0.1616,0.6089,opportunity_focused,168,7,Digital Transformation & AI Adoption,False
