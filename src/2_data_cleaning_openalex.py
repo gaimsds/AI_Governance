@@ -1,3 +1,22 @@
+"""
+========================================================================================================================
+OPENALEX INSTITUTION GEOCODING (EXPLORATORY — NOT USED IN FINAL ANALYSIS)
+Project: Uneven Science–Policy Translation Shapes Global AI Governance
+Authors: Tambudzai G. Charumbira & Joshua Gray
+Institution: George Washington University, CCAS | M.S. Data Science | Spring 2026
+Date: February 2026
+
+DESCRIPTION:
+This script geocoded institutions from the exploratory OpenAlex dataset by querying the OpenAlex Institutions API.
+It was part of the early data evaluation phase and was not used in the final analysis. The final geographic
+attribution used Nominatim geocoding on the Scopus corpus (see 2b_institution_geocoding_scopus.py).
+
+The output (openalex_institution_geo.parquet) was used only for initial comparison of data source quality
+between OpenAlex and Scopus, which informed the decision to proceed with Scopus exclusively.
+
+NOTE: This script is not required to reproduce the final results.
+========================================================================================================================
+"""
 import pandas as pd
 import numpy as np
 import os
@@ -6,13 +25,10 @@ import requests
 import time
 #%%
 load_dotenv()
-
 EMAIL = os.getenv("EMAIL_J")
 
-# Load your dataset
 df = pd.read_parquet("../data_raw/open_alex_abs_data.parquet")
 
-# Build institution counts
 institution_counts = (
     df["institutions"]
     .str.split(";")
@@ -24,7 +40,6 @@ institution_counts = (
 institution_counts.columns = ["institution", "count"]
 print(institution_counts)
 
-# Initialize results dataframe
 institution_df = pd.DataFrame(columns=[
     "institution",
     "count",
@@ -35,7 +50,6 @@ institution_df = pd.DataFrame(columns=[
     "longitude"
 ])
 
-# Query OpenAlex for each unique institution
 rows = []
 for _, row in institution_counts.iterrows():
     institution = row["institution"]
@@ -76,7 +90,6 @@ for _, row in institution_counts.iterrows():
     print(f"{institution} queried. {len(rows)} rows saved out of {len(institution_counts)}.")
     time.sleep(1)
 
-# Populate dataframe and save
 institution_df = pd.DataFrame(rows, columns=institution_df.columns)
 institution_df.to_parquet("../data_raw/openalex_institution_geo.parquet", index=False)
 print(f"Done. {len(institution_df)} unique institutions saved.")

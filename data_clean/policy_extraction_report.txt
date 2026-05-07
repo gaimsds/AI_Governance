@@ -1,0 +1,264 @@
+POLICY FRAMEWORKS — TEXT EXTRACTION REPORT
+Generated: 2026-03-29 17:17
+=================================================================
+
+Total documents processed:  35
+Good extraction:            35
+Partial (low density):      0
+Failed:                     0
+
+DOCUMENT DETAILS:
+-----------------------------------------------------------------
+
+United States — National AI R&D Strategic Plan 2023 Update
+  Language:  en
+  Words:     25,391
+  Pages:     56
+  Quality:   moderate
+  Method:    pdfplumber
+
+United States — AI Risk Management Framework 1.0
+  Language:  en
+  Words:     10,623
+  Pages:     48
+  Quality:   moderate
+  Method:    pdfplumber
+
+United States — OMB M-25-21 Accelerating Federal Use of AI 2025
+  Language:  en
+  Words:     9,711
+  Pages:     25
+  Quality:   moderate
+  Method:    pdfplumber
+
+Canada — Directive on Automated Decision-Making
+  Language:  en
+  Words:     2,602
+  Pages:     15
+  Quality:   moderate
+  Method:    pdfplumber
+
+European Union — EU Artificial Intelligence Act Regulation 2024/1689
+  Language:  en
+  Words:     91,316
+  Pages:     144
+  Quality:   good
+  Method:    pdfplumber
+
+United Kingdom — UK National AI Strategy 2021
+  Language:  en
+  Words:     4,354
+  Pages:     35
+  Quality:   moderate
+  Method:    pdfplumber
+
+United Kingdom — UK AI Opportunities Action Plan 2025
+  Language:  en
+  Words:     8,836
+  Pages:     26
+  Quality:   moderate
+  Method:    pdfplumber
+
+Germany — Germany AI Strategy Update 2023
+  Language:  en
+  Words:     11,624
+  Pages:     36
+  Quality:   moderate
+  Method:    pdfplumber
+
+France — France AI for Humanity Strategy 2021
+  Language:  fr
+  Words:     9,672
+  Pages:     28
+  Quality:   moderate
+  Method:    pdfplumber
+
+Singapore — Model AI Governance Framework Second Edition 2020
+  Language:  en
+  Words:     16,342
+  Pages:     70
+  Quality:   moderate
+  Method:    pdfplumber
+
+Singapore — Model AI Governance Framework for Generative AI 2024
+  Language:  en
+  Words:     8,641
+  Pages:     36
+  Quality:   moderate
+  Method:    pdfplumber
+
+India — National Strategy for Artificial Intelligence 2021
+  Language:  en
+  Words:     43,338
+  Pages:     114
+  Quality:   moderate
+  Method:    pdfplumber
+
+Australia — Australia AI Ethics Framework 2019
+  Language:  en
+  Words:     36,779
+  Pages:     78
+  Quality:   moderate
+  Method:    pdfplumber
+
+Japan — Japan AI Strategy 2022
+  Language:  en
+  Words:     13,346
+  Pages:     46
+  Quality:   moderate
+  Method:    pdfplumber
+
+China — New Generation AI Development Plan 2017
+  Language:  en
+  Words:     12,406
+  Pages:     35
+  Quality:   moderate
+  Method:    pdfplumber
+
+China — China Interim Measures Generative AI Services 2023
+  Language:  en
+  Words:     2,341
+  Pages:     8
+  Quality:   moderate
+  Method:    pdfplumber
+
+South Korea — South Korea AI Basic Act Framework Act 2025
+  Language:  en
+  Words:     8,013
+  Pages:     26
+  Quality:   moderate
+  Method:    pdfplumber
+
+Brazil — Brazilian AI Plan PBIA 2024
+  Language:  pt
+  Words:     10,143
+  Pages:     83
+  Quality:   moderate
+  Method:    pdfplumber
+
+Chile — Chile National AI Policy 2021
+  Language:  en
+  Words:     30,105
+  Pages:     78
+  Quality:   moderate
+  Method:    pdfplumber
+
+Colombia — Colombia National AI Policy CONPES 4144 2025
+  Language:  es
+  Words:     48,209
+  Pages:     126
+  Quality:   moderate
+  Method:    pdfplumber
+
+Mexico — Mexico Towards an AI National Agenda 2018
+  Language:  en
+  Words:     22,055
+  Pages:     143
+  Quality:   moderate
+  Method:    pdfplumber
+
+Rwanda — National AI Policy Rwanda 2023
+  Language:  en
+  Words:     4,684
+  Pages:     23
+  Quality:   moderate
+  Method:    pdfplumber
+
+Kenya — Kenya National AI Strategy Draft 2025
+  Language:  en
+  Words:     24,475
+  Pages:     91
+  Quality:   moderate
+  Method:    pdfplumber
+
+Egypt — Egypt National AI Strategy 2021
+  Language:  en
+  Words:     23,678
+  Pages:     39
+  Quality:   good
+  Method:    pdfplumber
+
+UAE — UAE National AI Strategy 2031
+  Language:  en
+  Words:     10,087
+  Pages:     25
+  Quality:   moderate
+  Method:    pdfplumber
+
+South Africa — South Africa National AI Policy Framework 2023
+  Language:  en
+  Words:     3,807
+  Pages:     20
+  Quality:   moderate
+  Method:    pdfplumber
+
+Zimbabwe — Zimbabwe National AI Strategy
+  Language:  en
+  Words:     20,551
+  Pages:     73
+  Quality:   moderate
+  Method:    pdfplumber
+
+Nigeria — Nigeria National AI Strategy Draft 2024
+  Language:  en
+  Words:     20,118
+  Pages:     73
+  Quality:   moderate
+  Method:    pdfplumber
+
+UNESCO — UNESCO Recommendation on the Ethics of AI 2021
+  Language:  en
+  Words:     14,586
+  Pages:     44
+  Quality:   moderate
+  Method:    pdfplumber
+
+OECD — OECD AI Principles 2023
+  Language:  en
+  Words:     4,603
+  Pages:     12
+  Quality:   moderate
+  Method:    pdfplumber
+
+G7 — G7 Hiroshima AI Process Guiding Principles 2023
+  Language:  en
+  Words:     1,297
+  Pages:     5
+  Quality:   moderate
+  Method:    pdfplumber
+
+Council of Europe — Framework Convention on AI Human Rights Democracy Rule of Law CETS 225
+  Language:  en
+  Words:     4,890
+  Pages:     12
+  Quality:   moderate
+  Method:    pdfplumber
+
+African Union — AU Continental AI Strategy for Africa 2024
+  Language:  en
+  Words:     22,399
+  Pages:     66
+  Quality:   moderate
+  Method:    pdfplumber
+
+ASEAN — ASEAN Guide on AI Governance and Ethics 2024
+  Language:  en
+  Words:     25,703
+  Pages:     87
+  Quality:   moderate
+  Method:    pdfplumber
+
+ASEAN — ASEAN Expanded Guide AI Governance Generative AI 2025
+  Language:  en
+  Words:     14,767
+  Pages:     52
+  Quality:   moderate
+  Method:    pdfplumber
+
+
+METHODOLOGY NOTE:
+Non-English documents (French, Spanish, Portuguese) received
+light cleaning only (lowercase + whitespace normalisation).
+They are included in policy_corpus.csv for multilingual
+BERTopic analysis but excluded from policy_corpus_english_only.csv.
+See 3_modelling.py for both English-only and multilingual runs.

@@ -1,0 +1,3344 @@
+id	label	weight
+1	University of Oxford	26
+2	Universidad Complutense de Madrid	19
+3	Wuhan University	17
+4	Alma Mater Studiorum Università di Bologna	16
+5	University of Cambridge	16
+6	Ludwig-Maximilians-Universität München	15
+7	Queensland University of Technology	15
+8	Chitkara University, Punjab	14
+9	Trinity College Dublin	14
+10	University of Johannesburg	13
+11	Universiteit van Amsterdam	13
+12	KU Leuven	13
+13	Monash University	12
+14	Tsinghua University	12
+15	King Khalid University	11
+16	The University of Edinburgh	11
+17	Applied Science Private University	11
+18	King Saud University	11
+19	Universidade da Beira Interior	10
+20	King's College London	10
+21	University of California, Berkeley	10
+22	Universität Wien	10
+23	Universiti Malaya	10
+24	Universiti Kebangsaan Malaysia	10
+25	Multimedia University	10
+26	Tartu Ülikool	10
+27	Umm Al-Qura University	10
+28	Korea University	9
+29	Beijing Normal University	9
+30	Princess Nourah Bint Abdulrahman University	9
+31	Bucharest University of Economic Studies	9
+32	National University of Singapore	9
+33	Sapienza Università di Roma	9
+34	University College London	9
+35	Universidade de Santiago de Compostela	9
+36	Siksha O Anusandhan (Deemed to be University)	9
+37	University of Chinese Academy of Sciences	9
+38	Universidad del Pais Vasco	9
+39	Nanjing University	9
+40	University of Toronto	9
+41	Western Sydney University	8
+42	Université McGill	8
+43	Università degli Studi di Torino	8
+44	The University of Sydney	8
+45	Università di Trento	8
+46	The University of Jordan	8
+47	National and Kapodistrian University of Athens	8
+48	Guangzhou University	8
+49	Purdue University	8
+50	University of Sharjah	8
+51	Universidad de Valladolid	8
+52	Sungkyunkwan University	8
+53	City University of Hong Kong	8
+54	University of South Africa	8
+55	Turun yliopisto	8
+56	Northeastern University	8
+57	Deakin University	8
+58	Prince Sultan University	8
+59	Universiti Sains Malaysia	8
+60	The Australian National University	8
+61	Tallinna Tehnikaülikool	8
+62	The University of Hong Kong	8
+63	Universidad de Sevilla	8
+64	Griffith University	8
+65	Stanford University	7
+66	Georgia Institute of Technology	7
+67	Macquarie University	7
+68	European University Institute, San Domenico di Fiesole	7
+69	University of Maryland, College Park	7
+70	Consiglio Nazionale delle Ricerche	7
+71	Università Cattolica del Sacro Cuore	7
+72	Noida International University	7
+73	University of California, Irvine	7
+74	O.P. Jindal Global University	7
+75	Presidency University Bangalore	7
+76	Al Farabi Kazakh National University	7
+77	Universidade de São Paulo	7
+78	Indiana University Bloomington	7
+79	HSE University	7
+80	Universidad de Castilla-La Mancha	7
+81	Katolicki Uniwersytet Lubelski Jana Pawła II	7
+82	Københavns Universitet	7
+83	State University of New York Albany	7
+84	Yonsei University	7
+85	United Arab Emirates University	7
+86	Imperial College London	7
+87	Universitat Politècnica de València	7
+88	European Commission Joint Research Centre	7
+89	New York University	7
+90	University of Pretoria	7
+91	K L Deemed to be University	7
+92	Qassim University	7
+93	Universidad de Granada	7
+94	Universität Zürich	7
+95	Saint Petersburg State University	7
+96	Copenhagen Business School	7
+97	Ltd.	7
+98	Universitat Pompeu Fabra Barcelona	7
+99	Universitetet i Agder	7
+100	Shanghai Jiao Tong University	7
+101	Universiteit Utrecht	7
+102	Radboud Universiteit	6
+103	University of Technology Sydney	6
+104	Aalborg University	6
+105	Imam Mohammad Ibn Saud Islamic University	6
+106	Univerza v Ljubljani	6
+107	Universidad Politécnica de Madrid	6
+108	Northern Border University	6
+109	Guru Gobind Singh Indraprastha University	6
+110	Swinburne University of Technology	6
+111	Odesa State University of Internal Affairs	6
+112	Yeungnam University	6
+113	Universidad de Guadalajara	6
+114	Vellore Institute of Technology	6
+115	Taras Shevchenko National University of Kyiv	6
+116	University of California, Davis	6
+117	Charles University	6
+118	Universidad de Navarra	6
+119	Massachusetts Institute of Technology	6
+120	VIT-AP University	6
+121	Delft University of Technology	6
+122	University of Leeds	6
+123	Central China Normal University	6
+124	Hanyang University	6
+125	Middle East University Jordan	6
+126	Tongji University	6
+127	Sichuan University	6
+128	Universitetet i Stavanger	6
+129	Norges Teknisk-Naturvitenskapelige Universitet	6
+130	University of Macau	6
+131	Eberhard Karls Universität Tübingen	6
+132	Oxford Social Sciences Division	6
+133	University of Melbourne	6
+134	London School of Economics and Political Science	6
+135	Chitkara University, Himachal Pradesh	6
+136	Universiti Utara Malaysia	6
+137	Universidad de Salamanca	6
+138	Prince Sattam Bin Abdulaziz University	6
+139	Charles Sturt University	6
+140	University of Florida	6
+141	Imam Abdulrahman Bin Faisal University	6
+142	University of Alberta	6
+143	University of Surrey	6
+144	Universitat Autònoma de Barcelona	6
+145	Department of Computer Science	6
+146	Nanyang Technological University	6
+147	Universidad Nacional de Educacion a Distancia	6
+148	Seoul National University	6
+149	Universiti Malaysia Sarawak	6
+150	UNSW Sydney	6
+151	Universidad Nacional Autónoma de México	5
+152	Manipal Institute of Technology	5
+153	La Trobe University	5
+154	Kennesaw State University	5
+155	The University of North Carolina at Charlotte	5
+156	Jawaharlal Nehru University	5
+157	University of Missouri	5
+158	Universitetet i Bergen	5
+159	Lovely Professional University	5
+160	Aarhus Universitet	5
+161	Universität Duisburg-Essen	5
+162	Sun Yat-Sen University	5
+163	Sumy State University	5
+164	Singapore Management University	5
+165	Karlsruher Institut für Technologie	5
+166	Technische Universität München	5
+167	Arizona State University Downtown Phoenix Campus	5
+168	International Islamic University Malaysia	5
+169	Masaryk University	5
+170	University of Belgrade	5
+171	The Alan Turing Institute	5
+172	Wee Kim Wee School of Communication and Information	5
+173	The University of Queensland	5
+174	Chinese University of Hong Kong	5
+175	Zhejiang University	5
+176	Uniwersytet Jagielloński	5
+177	Queen Mary University of London	5
+178	School of Management	5
+179	Universität Freiburg	5
+180	University of Galway	5
+181	Vilniaus Universitetas	5
+182	Universidad Autónoma del Estado de México	5
+183	Universidad Autónoma de Madrid	5
+184	Amrita School of Business	5
+185	Arizona State University	5
+186	University of Piraeus	5
+187	Western University	5
+188	Universiti Tun Hussein Onn Malaysia	5
+189	Faculty of Engineering	5
+190	International University of La Rioja	5
+191	Missouri University of Science and Technology	5
+192	Syddansk Universitet	5
+193	University of Georgia	5
+194	Tampere University	5
+195	Dalhousie University	5
+196	Wayne State University	5
+197	SRM Institute of Science and Technology	5
+198	Sveučilište Josipa Jurja Strossmayera u Osijeku	5
+199	Université Laval	5
+200	École Polytechnique Fédérale de Lausanne	5
+201	Independent Researcher	5
+202	Interregional Academy of Personnel Management	5
+203	Concordia University	5
+204	Helsingin Yliopisto	5
+205	Taylor's University Malaysia	5
+206	Duke University	5
+207	Universitatea Alexandru Ioan Cuza	5
+208	University of South Australia	5
+209	Virginia Polytechnic Institute and State University	5
+210	Politecnico di Milano	5
+211	Lviv Polytechnic National University	5
+212	King Faisal University	5
+213	University of Nebraska Omaha	5
+214	Arab Open University	5
+215	Korea Advanced Institute of Science and Technology	5
+216	King Abdulaziz University	5
+217	Universiti Teknologi Malaysia	5
+218	University of York	5
+219	Universiti Putra Malaysia	5
+220	Universitatea Babeș-Bolyai	5
+221	L.N. Gumilyov Eurasian National University	5
+222	Oulun Yliopisto	5
+223	Univerzita Komenského v Bratislave	5
+224	ETH Zürich	5
+225	Technische Universität Dortmund	5
+226	Bina Nusantara University	5
+227	University of Sussex	5
+228	University of Glasgow	5
+229	Fu Jen Catholic University	5
+230	Universidade Federal de Santa Catarina	5
+231	Global Catastrophic Risk Institute	5
+232	Texas A&M University	5
+233	National University of Science and Technology POLITEHNICA Bucharest	5
+234	King Fahd University of Petroleum and Minerals	5
+235	The University of Sheffield	5
+236	University of Luxembourg	5
+237	Universiteit Leiden	5
+238	Moscow Aviation Institute (National Research University)	5
+239	Iscte – Instituto Universitário de Lisboa	5
+240	Yaroslav Mudryi National Law University	5
+241	Aristotle University of Thessaloniki	5
+242	Donders Institute for Brain, Cognition and Behaviour	5
+243	Abu Dhabi University	4
+244	Roskilde Universitet	4
+245	National Defense University of Malaysia	4
+246	Wharton School of the University of Pennsylvania	4
+247	Edith Cowan University	4
+248	Universitas Muhammadiyah Malang	4
+249	Loughborough University	4
+250	University of Washington	4
+251	Wuhan University of Technology	4
+252	University of Nottingham	4
+253	Asia University	4
+254	Politechnika Koszalinska	4
+255	The Open University	4
+256	University of Lodz	4
+257	The University of Chicago	4
+258	PES University	4
+259	University of Wolverhampton	4
+260	Universidade Federal Fluminense	4
+261	University of Essex	4
+262	Free University of Bozen-Bolzano	4
+263	Universitat d'Alacant	4
+264	JAIN (Deemed-to-be University)	4
+265	Pontificia Universidad Católica de Chile	4
+266	Lomonosov Moscow State University	4
+267	The Islamia University of Bahawalpur	4
+268	Syracuse University	4
+269	Università degli Studi di Milano	4
+270	College of Law, Qatar University	4
+271	National Taiwan University	4
+272	Rabdan Academy	4
+273	The University of Tokyo	4
+274	Institute of Psychology Chinese Academy of Sciences	4
+275	Shandong University, Weihai	4
+276	University of Baghdad	4
+277	Istanbul Üniversitesi	4
+278	Commonwealth Scientific and Industrial Research Organisation	4
+279	Stockholms universitet	4
+280	Universidad de Málaga	4
+281	The University of Osaka	4
+282	Yale University	4
+283	Universitas Diponegoro	4
+284	University of Liverpool	4
+285	RMIT University	4
+286	University of St. Gallen	4
+287	University of Pennsylvania	4
+288	The Education University of Hong Kong	4
+289	Università degli Studi di Napoli Federico II	4
+290	Université Sultan Moulay Slimane	4
+291	Al-Ahliyya Amman University	4
+292	South China Normal University	4
+293	Vellore Institute of Technology, Chennai	4
+294	Universidad Rey Juan Carlos	4
+295	Universität Hamburg	4
+296	Curtin University	4
+297	University of London	4
+298	COMSATS University Islamabad, Wah Campus	4
+299	University of Illinois Urbana-Champaign	4
+300	University of Southampton	4
+301	Nanjing University of Post and TeleCommunications	4
+302	Zhengzhou University	4
+303	Göteborgs Universitet	4
+304	University of Fribourg	4
+305	Shanghai University	4
+306	Harvard University	4
+307	Universidade de Brasília	4
+308	Carleton University	4
+309	Kazan Federal University	4
+310	İstanbul Teknik Üniversitesi	4
+311	Covenant University	4
+312	University of Southern California	4
+313	University of Warwick	4
+314	DeepMind Technologies Limited	4
+315	Södertörn University	4
+316	Universiteit Gent	4
+317	IRCCS Istituto Auxologico Italiano	4
+318	Rijksuniversiteit Groningen	4
+319	University of Birmingham	4
+320	Xi'an Jiaotong University	4
+321	Carnegie Mellon University	4
+322	University of Colorado Boulder	4
+323	Kyung Hee University	4
+324	Amazon.com, Inc.	4
+325	Santa Clara University	4
+326	National Taiwan University of Science and Technology	4
+327	Federation University Australia	4
+328	Nanjing University of Science and Technology	4
+329	Pennsylvania State University	4
+330	Hunan University	4
+331	Universidad Carlos III de Madrid	4
+332	Universidad Nacional Mayor de San Marcos	4
+333	HCT-Dubai Campuses	4
+334	University of Louisville	4
+335	Università di Pisa	4
+336	College of Engineering	4
+337	Michigan State University	4
+338	Appalachian State University	4
+339	The University of Sydney Business School	4
+340	City University of Macau	4
+341	Shenzhen University	4
+342	Xiamen University	4
+343	University of Kansas	4
+344	Technische Universiteit Eindhoven	4
+345	Uppsala Universitet	4
+346	Universität des Saarlandes	4
+347	Vishwakarma Institute of Technology	4
+348	University of Pittsburgh	4
+349	Jadara University	4
+350	Grenoble Ecole de Management	4
+351	Universiteit Twente	4
+352	Washington State University Pullman	4
+353	Chittagong University of Engineering and Technology	4
+354	Birkbeck, University of London	4
+355	Al Ain University	4
+356	Taibah University	4
+357	University of Notre Dame	4
+358	Silesian University of Technology	4
+359	The University of British Columbia	4
+360	Universidad Pontificia Comillas	4
+361	Faculty of Computing and Information Technology, King Abdulaziz University	4
+362	Manchester Metropolitan University	4
+363	Fordham University	4
+364	Zayed University	4
+365	Temple University	4
+366	Guilin University of Electronic Technology	4
+367	University of Huddersfield	4
+368	Indian Institute of Technology Bombay	4
+369	University of Michigan, Ann Arbor	4
+370	Swansea University	4
+371	College of Sciences	4
+372	Johannes Kepler University Linz	4
+373	Cambridge Judge Business School	4
+374	Russian State Social University	4
+375	Universidad César Vallejo	4
+376	Universidade Federal do Parana	4
+377	Florida International University	4
+378	University of Petroleum and Energy Studies	4
+379	Institut Teknologi Sepuluh Nopember	4
+380	Faculteit Techniek, Bestuur en Management, TU Delft	4
+381	Indian Institute of Technology Kharagpur	4
+382	Taif University	4
+383	Cardinal Stefan Wyszynski University in Warsaw	4
+384	Jouf University	4
+385	De La Salle University	4
+386	Vytautas Magnus University	4
+387	University of Tabuk	4
+388	Universiti Brunei Darussalam	4
+389	Panimalar Engineering College	3
+390	University of Cincinnati	3
+391	Thomson Reuters	3
+392	Mannheimer Zentrum für Europäische Sozialforschung	3
+393	Università di Parma	3
+394	Università degli Studi di Salerno	3
+395	Information Technology University	3
+396	University of Arkansas	3
+397	Singidunum University	3
+398	Tepper School of Business	3
+399	University of Nottingham Ningbo China	3
+400	Robert Morris University	3
+401	Jilin University	3
+402	Universitatea Lucian Blaga din Sibiu	3
+403	AIR Institute, Spain	3
+404	Osaka Institute of Technology	3
+405	Pazmany Peter Katolikus Egyetem	3
+406	Amity University	3
+407	Ecole Nationale d'Administration Publique	3
+408	Ruhr-Universitat Bochum	3
+409	University of Regina	3
+410	Universitas Islam Negeri Maulana Malik Ibrahim Malang	3
+411	Korea Institute of Science and Technology Information	3
+412	Universidad de las Américas Puebla	3
+413	Majandusteaduskond	3
+414	Technische Universität Chemnitz	3
+415	Iqra National University	3
+416	Amrita University, Amritapuri Campus	3
+417	University of Business and Technology	3
+418	Goldsmiths, University of London	3
+419	Universitas Islam Negeri Sunan Kalijaga, Yogyakarta	3
+420	Northwestern University	3
+421	COMSATS University Islamabad	3
+422	Kozminski University	3
+423	Universidad Militar Nueva Granada	3
+424	Wageningen University & Research	3
+425	University of Botswana	3
+426	Politechnika Krakowska	3
+427	The Institute of Legislation and Comparative Law under the Government of the Russian Federation	3
+428	Symbiosis Institute of Business Management, Pune	3
+429	Baylor University	3
+430	Pontifical University of John Paul II	3
+431	Gachon University	3
+432	Southeast University	3
+433	University of the Sunshine Coast	3
+434	University of South Florida, Tampa	3
+435	Universidade de Coimbra	3
+436	Tamkang University	3
+437	Università degli Studi di Firenze	3
+438	Gulf University for Science and Technology Kuwait	3
+439	Saudi Electronic University	3
+440	South China University of Technology	3
+441	European University	3
+442	University College Dublin	3
+443	Universidad Diego Portales	3
+444	University of Ilorin	3
+445	Renmin University of China	3
+446	Daffodil International University	3
+447	Keio University	3
+448	Guangdong University of Foreign Studies	3
+449	Murdoch University	3
+450	Università della Calabria	3
+451	Central University of Finance and Economics	3
+452	Max Planck Institute for Innovation and Competition	3
+453	Universitat Politècnica de Catalunya	3
+454	University of Bern	3
+455	Obafemi Awolowo University	3
+456	Max Planck Institute for Social Anthropology	3
+457	Univerza v Mariboru	3
+458	Northern Illinois University	3
+459	Beihang University	3
+460	Cornell University	3
+461	Karlstads Universitet	3
+462	Università degli Studi di Padova	3
+463	Université du Québec à Montréal	3
+464	Università della Svizzera italiana	3
+465	NOVA School of Law – Faculdade de Direito, Universidade NOVA de Lisboa	3
+466	Noida Institute of Engineering & Technology	3
+467	Curtin University, Malaysia	3
+468	University of Waikato	3
+469	Columbia University	3
+470	Microsoft Research	3
+471	Universidad Técnica Particular de Loja	3
+472	Saveetha School of Engineering	3
+473	Universität Mannheim	3
+474	Julius-Maximilians-Universität Würzburg	3
+475	Faculty of Science, Ibn Tofail University	3
+476	Hanken - Svenska handelshögskolan	3
+477	Xidian University	3
+478	Manipal Academy of Higher Education	3
+479	Dongbei University of Finance and Economics	3
+480	University of Miami	3
+481	Lahore Garrison University	3
+482	Al Baha University	3
+483	Chung-Ang University	3
+484	University of Mauritius	3
+485	University of the Cumberlands	3
+486	S.A. Engineering College	3
+487	Universidade Federal da Bahia	3
+488	"Università degli Studi di Roma ""Tor Vergata"""	3
+489	City, University of London	3
+490	Amman Arab University	3
+491	Qatar University	3
+492	RUDN University	3
+493	SRM Institute of Science and Technology Ramapuram Campus	3
+494	University of Warsaw	3
+495	Annamalai University	3
+496	Texas Tech University	3
+497	Benazir Bhutto Shaheed University Lyari	3
+498	College of Arts and Sciences	3
+499	East China Normal University	3
+500	University of Aberdeen	3
+501	Aligarh Muslim University	3
+502	University of California, San Diego	3
+503	Nanjing Normal University	3
+504	UC Davis School of Medicine	3
+505	Kelley School of Business	3
+506	University of Jyväskylä	3
+507	The Bulgarian Academy of Sciences	3
+508	Security Service of Ukraine	3
+509	University of Guelph	3
+510	University of Engineering and Technology Taxila	3
+511	Bialystok University of Technology	3
+512	Vilniaus Gedimino Technikos Universitetas	3
+513	Trilateral Research Ltd	3
+514	"National University ""Odesa Law Academy"""	3
+515	Vel Tech Rangarajan Dr.Sagunthala R&D Institute of Science and Technology	3
+516	Linköpings Universitet	3
+517	Nanjing Agricultural University	3
+518	National University of Modern Languages	3
+519	Cardiff University	3
+520	Shandong University	3
+521	College of Media and International Culture, Zhejiang University	3
+522	Eller College of Management	3
+523	Universidad Antonio de Nebrija	3
+524	Middle Georgia State University	3
+525	Vrije Universiteit Amsterdam	3
+526	Vaasan Yliopisto	3
+527	Ajman University	3
+528	Surgut State University	3
+529	Zarqa University	3
+530	Erasmus Universiteit Rotterdam	3
+531	Tashkent State University of Law	3
+532	Teesside University	3
+533	Teknologian Tutkimuskeskus VTT	3
+534	Morgan State University	3
+535	Wenzhou University	3
+536	Rennes School of Business	3
+537	Research Center Trustworthy Data Science and Security	3
+538	National Academy of Legal Sciences of Ukraine	3
+539	Kyiv National Economic University named after Vadym Hetman	3
+540	National Chengchi University	3
+541	Chandigarh University	3
+542	Sichuan University of Science & Engineering	3
+543	Iowa State University	3
+544	Indian Institute of Management Raipur	3
+545	Deutsche Universität für Verwaltungswissenschaften	3
+546	Universidade Católica Portuguesa	3
+547	Hong Kong Baptist University	3
+548	Holy Spirit University of Kaslik (USEK)	3
+549	University of Waterloo	3
+550	An-Najah National University	3
+551	Sejong University	3
+552	Karadeniz Technical University	3
+553	Universitat de Barcelona	3
+554	University of Bisha	3
+555	University of Jeddah	3
+556	Tianjin Normal University	3
+557	University of New South Wales at Australian Defence Force Academy	3
+558	Lviv State University of Internal Affairs	3
+559	Dalian University of Technology	3
+560	Banaras Hindu University	3
+561	The George Washington University	3
+562	Mizoram University	3
+563	Department of Psychiatry	3
+564	Toronto Metropolitan University	3
+565	Goethe-Universität Frankfurt am Main	3
+566	Hong Kong University of Science and Technology	3
+567	Hasanuddin University	3
+568	Johannes Gutenberg-Universität Mainz	3
+569	Pontifícia Universidade Católica do Paraná	3
+570	Fudan University	3
+571	University of Derby	3
+572	University of Central Florida	3
+573	The Royal Institute of Technology (KTH)	3
+574	American International University - Bangladesh	3
+575	Universiti Sains Islam Malaysia	3
+576	De Montfort University	3
+577	Simon Fraser University	3
+578	Universitas Negeri Surabaya	3
+579	University of Science and Technology of China	3
+580	King Abdulaziz City for Science and Technology	3
+581	Universidad de Murcia	3
+582	Parul University	3
+583	National Chiao Tung University	3
+584	Technische Universität Dresden	3
+585	The University of North Carolina at Chapel Hill	3
+586	Universitas Airlangga	2
+587	Lapin Yliopisto	2
+588	Henley Business School	2
+589	T.M.C. Asser Instituut	2
+590	University of California, Santa Barbara	2
+591	University of Žilina	2
+592	Antalya Bilim University	2
+593	University North	2
+594	Universität Bamberg	2
+595	University of North Florida	2
+596	King Salman Center for Disability Research	2
+597	Quinnipiac University	2
+598	Faculty of Tourism and Hotels	2
+599	Aditya University	2
+600	SENAI CIMATEC	2
+601	International University of Business Agriculture and Technology	2
+602	Université de Gafsa	2
+603	National Institute of Standards and Technology	2
+604	Prince Mohammad Bin Fahd University	2
+605	Donghua University	2
+606	Fuzhou University	2
+607	Middle East Technical University (METU)	2
+608	San Diego State University	2
+609	McMaster University	2
+610	Aalto University	2
+611	Università del Salento	2
+612	Faculdade de Ciências Sociais e Humanas da Universidade NOVA de Lisboa	2
+613	Università degli studi di Bari Aldo Moro	2
+614	Najran University	2
+615	The Faculty of Business and Law	2
+616	COMSATS University Islamabad, Sahiwal Campus	2
+617	Gandhi Institute of Technology and Management (GITAM)	2
+618	Redeemer‘s University	2
+619	Ministry of Justice, China	2
+620	Sumy National Agrarian University	2
+621	Capital Normal University	2
+622	St. Petersburg Federal Research Center of the Russian Academy of Sciences	2
+623	Umm Al Quwain University	2
+624	Al-Nahrain University	2
+625	Université Côte d'Azur	2
+626	ESSCA School of Management	2
+627	Atilim University	2
+628	Xi'an Jiaotong-Liverpool University	2
+629	Virginia Tech College of Engineering	2
+630	Birmingham City University	2
+631	Federal University, Oye-Ekiti	2
+632	Queen's University Belfast	2
+633	Freie Universität Berlin	2
+634	Academia Româna	2
+635	Tecnológico de Monterrey	2
+636	Faculty of Psychology	2
+637	Debreceni Egyetem	2
+638	Guizhou University of Finance and Economics	2
+639	University of Mosul	2
+640	Veer Bahadur Singh Purvanchal University	2
+641	AGH University of Krakow	2
+642	Universiteit Antwerpen	2
+643	IMI Kolkata	2
+644	Amrita Vishwa Vidyapeetham	2
+645	The University of Oklahoma	2
+646	VIT Business School	2
+647	Marwadi University	2
+648	North-Caucasus Federal University	2
+649	Universidade Estadual de Campinas	2
+650	Ministry of Education of the People's Republic of China	2
+651	U.S. Army War College at Carlisle Barracks	2
+652	Universidad de Ibagué	2
+653	Faculty of Social Sciences & Health	2
+654	United States Air Force Academy	2
+655	University of Montreal	2
+656	Instituto Superior Técnico	2
+657	GW School of Business	2
+658	Islamic University of Madinah	2
+659	University of California, Riverside	2
+660	Universidad de Antioquia	2
+661	Universitas Pasundan	2
+662	Educational Research Institute	2
+663	Universidad Tecnológica Indoamérica	2
+664	National Technical University of Athens (NTUA)	2
+665	Panteion University of Social and Political Sciences	2
+666	Universitat de València	2
+667	University of Technology and Applied Sciences Salalah	2
+668	IDSIA Dalle Molle Institute for Artificial Intelligence	2
+669	Walter Sisulu University	2
+670	West Ukrainian National University	2
+671	Faculty of Commerce	2
+672	National Taipei University of Technology	2
+673	Faculty of Law	2
+674	The University of New Mexico	2
+675	California Firearm Violence Research Center	2
+676	Università Europea di Roma	2
+677	Universitatea Stefan cel Mare din Suceava	2
+678	Aditya Institute of Technology and Management	2
+679	Université de Liège	2
+680	Università degli Studi di Modena e Reggio Emilia	2
+681	DCU Business School	2
+682	Hankuk University of Foreign Studies	2
+683	University of Münster	2
+684	Universitas Indonesia	2
+685	Al Al-Bayt University	2
+686	Ontario Tech University	2
+687	Universidad Francisco de Paula Santander	2
+688	Academician F.H. Burchak Scientific Research Institute of Private Law and Entrepreneurship	2
+689	Sultan Qaboos University	2
+690	USC Gould School of Law	2
+691	University of San Diego	2
+692	Université de Poitiers	2
+693	Open Universiteit	2
+694	Budapesti Corvinus Egyetem	2
+695	Universidade Nova de Lisboa	2
+696	Krirk University	2
+697	Université Hassan 1er	2
+698	Bahria University	2
+699	Clemson University	2
+700	Weizenbaum Institute for the Networked Society	2
+701	VIT Bhopal University	2
+702	Sciences Po Paris	2
+703	Mykolas Romeris University	2
+704	Mahidol University	2
+705	University of Eswatini	2
+706	University of Wisconsin-Madison	2
+707	Indian Institute of Technology Roorkee	2
+708	University of Carthage, Ecole Supérieure des Communications de Tunis	2
+709	Federico Villarreal National University	2
+710	Brawijaya University	2
+711	W3-Research	2
+712	University of Massachusetts Boston	2
+713	MITRE Corporation	2
+714	Cardiff Business School	2
+715	University of Electronic Science and Technology of China	2
+716	Universität Luzern	2
+717	Università degli Studi di Macerata	2
+718	Faculty of law	2
+719	Universitat Oberta de Catalunya	2
+720	National Yang Ming Chiao Tung University	2
+721	University of the National Education Commission	2
+722	Università degli Studi di Udine	2
+723	Firat Üniversitesi	2
+724	Universidade do Porto	2
+725	Ostravská Univerzita v Ostrave	2
+726	The U.S. Military Academy at West Point	2
+727	P.C. Rossin College of Engineering & Applied Science	2
+728	U.S. Army Research Laboratory	2
+729	UNSW Business School	2
+730	Lakireddy Bali Reddy College of Engineering	2
+731	Mepco Schlenk Engineering College	2
+732	Institute of Theoretical and Applied Informatics of the Polish Academy of Sciences	2
+733	Universiti Tunku Abdul Rahman	2
+734	Pontificia Universidad Católica de Valparaíso	2
+735	University of Crete	2
+736	Yale School of Management	2
+737	Academy of Scientific and Innovative Research (AcSIR)	2
+738	Indian National Science Academy	2
+739	NOVA Information Management School, Universidade Nova de Lisboa	2
+740	Universidad del Cauca	2
+741	Universitas Negeri Semarang	2
+742	Universitas Bengkulu	2
+743	Duke University School of Medicine	2
+744	Symbiosis International (Deemed University)	2
+745	Universität Stuttgart	2
+746	Balikesir Üniversitesi	2
+747	Université Catholique de Lyon	2
+748	China Jiliang University	2
+749	Universidad de Zaragoza	2
+750	Prince of Songkla University	2
+751	Iqra University	2
+752	University of Customs and Finance	2
+753	Universidad Simón Bolívar	2
+754	Sri Sri University	2
+755	University of Pristina - Kosovska Mitrovica	2
+756	INSEAD, Europe	2
+757	Alnoor University	2
+758	Kellogg School of Management Northwestern University	2
+759	Zhejiang Normal University	2
+760	Universität Basel	2
+761	Bursa Uludağ Üniversitesi	2
+762	American University of Beirut	2
+763	Indian Institute of Management Ranchi	2
+764	Indian Institute of Technology Delhi	2
+765	Moscow University of the Ministry of Internal Affairs of the Russian Federation named after V.Ya. Kikotya	2
+766	Sir Padampat Singhania University	2
+767	Istanbul Ticaret Üniversitesi	2
+768	Universiti Teknologi PETRONAS	2
+769	Försvarshögskolan	2
+770	Hebrew University of Jerusalem	2
+771	Yuan Ze University	2
+772	Zhejiang Sci-Tech University	2
+773	Universidade Federal de São Carlos	2
+774	Budapest University of Technology and Economics	2
+775	Azarbaijan Shahid Madani University	2
+776	Seattle University	2
+777	Szegedi Tudományegyetem (SZTE)	2
+778	University of Craiova	2
+779	University of Staffordshire	2
+780	University of Wrocław	2
+781	Namibia University of Science and Technology	2
+782	Kyiv National University of Technologies and Design	2
+783	Universidad de Monterrey	2
+784	Yangzhou University	2
+785	Basque Research and Technology Alliance (BRTA)	2
+786	Newcastle University	2
+787	University of Prince Edward Island	2
+788	Villanova University	2
+789	College of Education, Qatar University	2
+790	Umeå Universitet	2
+791	UiT Norges Arktiske Universitet	2
+792	Newcastle University Business School, United Kingdom	2
+793	Itä-Suomen yliopisto	2
+794	National Cheng Kung University	2
+795	Konan Women's University	2
+796	Socialhögskolan	2
+797	Malmö Universitet	2
+798	Saint Louis University	2
+799	OSTİM Technical University	2
+800	London Metropolitan University	2
+801	Georgia State University	2
+802	Uniwersytet Marii Curie-Sklodowskiej w Lublinie	2
+803	Universität Bielefeld	2
+804	"State University ""Kyiv Aviation Institute"""	2
+805	Süleyman Demirel Üniversitesi	2
+806	Shandong University of Art and Design	2
+807	Instituto Nacional de Astrofisica Optica y Electronica	2
+808	Louisiana State University in Shreveport	2
+809	Majmaah University	2
+810	University of Nouakchott (Université de Nouakchott)	2
+811	Al-Zaytoonah University of Jordan	2
+812	Babasaheb Bhimrao Ambedkar University	2
+813	Mohammed V University in Rabat	2
+814	Knowledge Lab,The University of Chicago	2
+815	Pontificia Universidad Católica del Ecuador	2
+816	Åbo Akademi University	2
+817	China Agricultural University	2
+818	College of Health and Human Sciences	2
+819	University of Salford	2
+820	Anglia Ruskin University	2
+821	Universiti Teknologi Malaysia Kuala Lumpur	2
+822	University of Abuja	2
+823	Universität Heidelberg	2
+824	Leibniz-Institut für Wissensmedien	2
+825	University of Canterbury	2
+826	Universität Ulm	2
+827	Università degli Studi di Milano-Bicocca	2
+828	University of Calabar	2
+829	Chongqing University	2
+830	University of Colombo	2
+831	University of Sri Jayewardenepura	2
+832	The University of Texas at Arlington	2
+833	University of Greenwich	2
+834	University of Houston	2
+835	Symbiosis Institute of Technology	2
+836	Università degli Studi di Genova	2
+837	Universitas Muhammadiyah Surakarta	2
+838	Yunnan University	2
+839	Eötvös Loránd Tudományegyetem	2
+840	Towson University	2
+841	Kristiania University College	2
+842	Duy Tan University	2
+843	Károli Gáspár Református Egyetem	2
+844	University of Delaware	2
+845	Carson College of Business	2
+846	Nankai University	2
+847	LLC	2
+848	Hanoi Law University	2
+849	Pavol Jozef Šafárik University in Košice	2
+850	Universidad de la Costa	2
+851	Salahaddin University-Erbil	2
+852	Stellenbosch University	2
+853	Politeknik Negeri Padang	2
+854	Uniwersytet Warminsko-Mazurski w Olsztynie	2
+855	Canadian Institute for Advanced Research	2
+856	Universität Bonn	2
+857	Kuwait University	2
+858	Lebanese American University	2
+859	Hong Kong Metropolitan University	2
+860	Faculty of Arts	2
+861	NYU Abu Dhabi	2
+862	Austrian Institute of Technology	2
+863	Warrington College of Business	2
+864	Sakarya Üniversitesi	2
+865	Millennium Nucleus Futures of Artificial Intelligence Research (FAIR)	2
+866	Northwest University	2
+867	Biju Patnaik University of Technology	2
+868	Indira Gandhi Institute of Technology, Sarang	2
+869	Augusta University	2
+870	Khwaja Fareed University of Engineering & Information Technology	2
+871	Washington University in St. Louis	2
+872	Universidad Autónoma de Occidente	2
+873	University of Massachusetts Amherst	2
+874	University of the West of England	2
+875	Carroll School of Management	2
+876	Minhaj University Lahore	2
+877	Hamad Bin Khalifa University, College of Islamic Studies	2
+878	Tufts University	2
+879	Universidad Nacional José Faustino Sánchez Carrión	2
+880	Chulalongkorn University	2
+881	Christ University	2
+882	Istituto Di Scienze E Tecnologie Della Cognizione, Rome	2
+883	State University of Trade and Economics	2
+884	University of North Bengal	2
+885	Badan Riset dan Inovasi Nasional	2
+886	Universidad de Medellín	2
+887	Universidad Loyola Andalucia	2
+888	Universidad Del Zulia	2
+889	King Danylo University	2
+890	Kogod School of Business	2
+891	M. Narikbayev KAZGUU University	2
+892	National Sun Yat-Sen University	2
+893	Shandong Normal University	2
+894	Al-Balqa Applied University	2
+895	Kaunas University of Technology	2
+896	The University of Tennessee, Knoxville	2
+897	Saint Peter’s University	2
+898	University of Bradford School of Management	2
+899	Uniwersytet Śląski w Katowicach	2
+900	Singapore University of Social Sciences	2
+901	Luddy School of Informatics, Computing, and Engineering	2
+902	The University of Manchester	2
+903	Universidad de León	2
+904	San Francisco State University	2
+905	University of South Carolina	2
+906	Durham University	2
+907	Politecnico di Torino	2
+908	Universidade Federal de Lavras	2
+909	Universität Graz	2
+910	University of Wah	2
+911	University of Oxford Medical Sciences Division	2
+912	University of Exeter	2
+913	University of West Attica	2
+914	Tel Aviv University	2
+915	Burgundy School of Business	2
+916	Wissenschaftszentrum Berlin fur Sozialforschung	2
+917	Boston College	2
+918	Faculdade de Direito do Sul de Minas (FDSM)	2
+919	The West Bengal National University of Juridical Sciences, Kolkata	2
+920	Georg-August-Universität Göttingen	2
+921	University of Leicester	2
+922	Hodeida University	2
+923	Beijing Forestry University	2
+924	Homerton College	2
+925	University of Nevada, Reno	2
+926	Ministry of National Education	2
+927	Istituto Nazionale per l’Analisi delle Politiche Pubbliche	2
+928	Berkeley Law	2
+929	Oxford Uehiro Centre for Practical Ethics	2
+930	Kutafin Moscow State Law University	2
+931	Information Sciences Institute	2
+932	Universidad Católica de Ávila	2
+933	Panjab University	2
+934	Institute for Cognitive Science Studies	2
+935	Air University Islamabad	2
+936	Cumming School of Medicine	2
+937	Australian Federal Police	2
+938	York University	2
+939	College of Arts, Humanities and Social Sciences	2
+940	Institution Universitaria Politecnico Grancolombiano	2
+941	University of Ottawa	2
+942	Maynooth University	2
+943	John F. Kennedy School of Government	2
+944	VSB – Technical University of Ostrava	2
+945	Friedrich-Alexander-Universität Erlangen-Nürnberg	2
+946	School of Computer Science and Engineering	2
+947	Texas A&M University-San Antonio	2
+948	Institute for Ethics and Emerging Technologies	2
+949	Université Libre de Bruxelles	2
+950	Canadian University Dubai	2
+951	Universidade Tecnológica Federal do Paraná	2
+952	Constructor University	2
+953	Uniwersytet Szczecinski	2
+954	Vidyavardhaka College of Engineering, Mysore	2
+955	Vrije Universiteit Brussel	2
+956	The Superior University, Lahore	2
+957	Quaid-i-Azam University	2
+958	Victoria University	2
+959	Texas AandM University	2
+960	International Hellenic University	2
+961	Universität Bremen	2
+962	Kent State University	2
+963	Democritus University of Thrace	2
+964	Fayetteville State University	2
+965	University of South Florida Sarasota-Manatee	2
+966	The University of Texas at San Antonio	2
+967	Dongguk University, Seoul	2
+968	University of Bristol	2
+969	Faculdade de Belas-Artes da Universidade de Lisboa	2
+970	North-West University	2
+971	National Institute of Technology Kurukshetra	2
+972	HØgskolen i Østfold	2
+973	Harvard Business School	2
+974	Forschungszentrum L3S	2
+975	Ss. Cyril and Methodius University in Skopje	2
+976	University of the Free State	2
+977	Universidade Regional do Noroeste do Estado do Rio Grande do Sul	2
+978	European Parliament	2
+979	Alliance Manchester Business School	2
+980	Visvesvaraya Technological University	2
+981	Zhejiang University of Technology	2
+982	Universidad de Chile	2
+983	University of Engineering and Technology, Peshawar	2
+984	The University of Texas at Austin	2
+985	Akdeniz Üniversitesi	2
+986	Université Abdelmalek Essaadi	2
+987	Rutgers School of Criminal Justice	2
+988	Northwestern Pritzker School of Law	2
+989	Norwegian Defence Research Establishment	2
+990	Auburn University	2
+991	Wydział Zarządzania Uniwersytetu Warszawskiego	2
+992	Rutgers University–New Brunswick	2
+993	College of Charleston	2
+994	CSIC - Instituto de Investigación en Inteligencia Artificial (IIIA)	2
+995	Case Western Reserve University	2
+996	University of Tehran	2
+997	Universiti Sultan Zainal Abidin	2
+998	Centro de Investigaciones Filosóficas	2
+999	Washington and Lee University	2
+1000	Dr. B.R. Ambedkar National Institute of Technology	2
+1001	University of Ghana	2
+1002	OsloMet – StorbyUniversitetet	2
+1003	Uniwersytet Pedagogiczny im. Komisji Edukacji Narodowej	2
+1004	Universitetet i Oslo	2
+1005	Indian Institute of Technology Patna	2
+1006	Virginia Commonwealth University	2
+1007	Muğla Sıtkı Koçman Üniversitesi	2
+1008	Ludovika University of Public Service	2
+1009	University of St. Thomas, Minnesota	2
+1010	Conservatoire National des Arts et Metiers	2
+1011	Universidade Federal do Rio de Janeiro	2
+1012	Maxwell School of Citizenship and Public Affairs	2
+1013	Université Ibn Tofail	2
+1014	Europa-Universität Viadrina Frankfurt (Oder)	2
+1015	Rheinisch-Westfälische Technische Hochschule Aachen	2
+1016	Hong Kong Shue Yan University	2
+1017	Libera Università Maria Ss. Assunta	2
+1018	Beijing Institute of Technology	2
+1019	Universidade Federal de Minas Gerais	2
+1020	Stanley and Karen Pigman College of Engineering	2
+1021	Politechnika Lubelska	2
+1022	Universidade Nove de Julho	2
+1023	Aarupadai Veedu Institute of Technology	2
+1024	Biogem S.c.a.r.l.	2
+1025	Arka Jain University	2
+1026	Universidade do Minho	2
+1027	Middle Tennessee State University	2
+1028	NUS Business School	2
+1029	Fundacao Getulio Vargas	2
+1030	Columbia Law School	2
+1031	Macquarie Business School	2
+1032	GLA University, Mathura	2
+1033	Queen’s University	2
+1034	University of Denver	2
+1035	Graduate Theological Union	2
+1036	Memorial University of Newfoundland	2
+1037	Saint Petersburg National Research University of Information Technologies, Mechanics and Optics University ITMO	2
+1038	Rutgers University-Newark	2
+1039	NC State University	2
+1040	Bangladesh University of Business and Technology	2
+1041	University of Saskatchewan	2
+1042	Regis College, University of Toronto	2
+1043	University of Haifa	2
+1044	Khulna University of Engineering and Technology	2
+1045	Universitatea din Bucuresti	2
+1046	Charles Sturt University, Wagga Wagga	2
+1047	Duhok Polytechnic University	2
+1048	University of Rijeka	2
+1049	Örebro Universitet	2
+1050	International Design Institute of Zhejiang University	2
+1051	Vels Institute of Science, Technology & Advanced Studies	2
+1052	TBS Business School	2
+1053	John Cabot University	2
+1054	University of Victoria	2
+1055	Andhra University	2
+1056	Huazhong University of Science and Technology	2
+1057	Humboldt-Universität zu Berlin	2
+1058	CESifo GmbH	2
+1059	University Center of Brasilia	1
+1060	National Association of Sustainable Creative Architecture Researh	1
+1061	Integrated Colleges of the Educational Union of the Central Plateau	1
+1062	Wichita State University	1
+1063	Applied Science University	1
+1064	Universidad de Burgos	1
+1065	Instituto Politécnico de Bragança	1
+1066	Centro de Investigação em Desporto, Saúde e Desenvolvimento Humano	1
+1067	Cyber Mission Force Pacific	1
+1068	Moscow State Institute of International Relations (MGIMO)	1
+1069	The MARCS Institute for Brain, Behaviour and Development	1
+1070	Miskolci Egyetem	1
+1071	Turbulent Magic Limited	1
+1072	Islamic Azad University, Ahvaz branch	1
+1073	Open International University of Human Development Ukraine	1
+1074	Georgia Southern University	1
+1075	Hawai'i Pacific University	1
+1076	Abdullah Gül Üniversitesi	1
+1077	Université Paris-Saclay	1
+1078	Università degli Studi di Pavia	1
+1079	Deloitte Risk Advisory Pty Ltd	1
+1080	ArtCenter College of Design	1
+1081	Vanderbilt Law School	1
+1082	ABXR Engine	1
+1083	Nanning Normal University	1
+1084	Univerzita J. Selyeho	1
+1085	Kocaeli Üniversitesi	1
+1086	Adamas University	1
+1087	St. George’s University	1
+1088	Faculty of Business and Law	1
+1089	National Judicial School	1
+1090	Simon Kuznets Kharkiv National University of Economics	1
+1091	Volodymyr Dahl East Ukrainian National University	1
+1092	St. Stephen's College	1
+1093	Netaji Subhas University of Technology,East Campus	1
+1094	Council of Indian Institutes of Information Technology	1
+1095	Manav Rachna University	1
+1096	Guru Ghasidas Vishwavidyalaya	1
+1097	Universitas Warmadewa	1
+1098	Amrita Vishwa Vidyapeetham, Amaravati Campus	1
+1099	Clemson University School of Nursing	1
+1100	Amrita School of Engineering, Coimbatore	1
+1101	IE Law School	1
+1102	Austrian Ministry of Justice	1
+1103	Centre for Criminology (Kriminologische Zentralstelle - KrimZ)	1
+1104	University of Kentucky	1
+1105	NEOMA Business School	1
+1106	Korea Information Society Development Institute	1
+1107	IPAG Business School	1
+1108	Bartin Üniversitesi	1
+1109	Hainan University	1
+1110	University of Hafr Al-Batin	1
+1111	Université Kasdi Merbah Ouargla	1
+1112	University of Rhode Island	1
+1113	Znanstvenoraziskovalni Center Slovenske Akademije Znanosti in Umetnosti	1
+1114	University of Lagos	1
+1115	National Institute for Research and Development in Tourism	1
+1116	National Institute for Research and Development in Construction	1
+1117	Ion Mincu University of Architecture and Urbanism	1
+1118	Parthenope University of Naples	1
+1119	Technical University of Moldova	1
+1120	Othman Yeop Abdullah Graduate School of Business	1
+1121	Sogang University	1
+1122	Volgograd State University	1
+1123	UNICECAR	1
+1124	Institut de Mathématiques de Toulouse	1
+1125	İstanbul Medipol Üniversitesi	1
+1126	Kings Engineering College, Chennai	1
+1127	Basque Center for Applied Mathematics (BCAM)	1
+1128	Artificial and Natural Intelligence Toulouse Institute (3IA ANITI)	1
+1129	Anna University	1
+1130	Central European University	1
+1131	Dar Al-Hekma University	1
+1132	Oulu Business School	1
+1133	University of Chittagong	1
+1134	Linnaeus University, Kalmar	1
+1135	Faculty of Social Sciences	1
+1136	Research Center for Active Living and Wellbeing (Livewell)	1
+1137	Uniwersytet Mikołaja Kopernika w Toruniu	1
+1138	Graduate School of Convergence Science and Technology	1
+1139	Seth Jai Parkash Mukand Lal Institute of Engineering and Technology	1
+1140	Nantong University	1
+1141	Symbiosis Law School Pune	1
+1142	Dr. Vishwanath Karad MIT World Peace University	1
+1143	University of Central Oklahoma	1
+1144	University of Cuenca	1
+1145	Ministry of Finance	1
+1146	Faculty of Specific Education, Ain Shams University	1
+1147	College of Business	1
+1148	J. Mack Robinson College of Business	1
+1149	Universidad Michoacana de San Nicolás de Hidalgo	1
+1150	KGiSL Institute of Technology	1
+1151	RMK Engineering College	1
+1152	Hue University	1
+1153	Universidad Católica Luis Amigó	1
+1154	SafeXplore	1
+1155	Universidad Nacional de Loja	1
+1156	University of Theatre and Film Arts	1
+1157	Universitas Mulia	1
+1158	College of Medicine and Health Sciences United Arab Emirates University	1
+1159	Toyota Research Institute	1
+1160	University of Amikom Yogyakarta	1
+1161	The Catholic University of America	1
+1162	Faculté des Sciences Rabat	1
+1163	Jadavpur University	1
+1164	Calor Gas Ireland	1
+1165	Alma Mater Europaea University	1
+1166	Comtrade	1
+1167	St. John's University	1
+1168	Corporación Universitaria Minuto de Dios	1
+1169	Moscow Metropolitan Governance Yury Luzhkov University	1
+1170	V. N. Karazin Kharkiv National University	1
+1171	Alagappa University	1
+1172	Kasetsart University	1
+1173	Odesa I.I. Mechnikov National University	1
+1174	Turan University	1
+1175	Institute of Information and Computational Technologies	1
+1176	Almaty University of Power Engineering and Telecommunications	1
+1177	Voivodship Administrative Court in Wroclaw	1
+1178	Szkola Glówna Handlowa w Warszawie	1
+1179	Southwest State University	1
+1180	University of Tyumen	1
+1181	Brunel University London	1
+1182	Université Polytechnique Hauts-de-France	1
+1183	Xi'an Fanyi University	1
+1184	Zhongnan University of Economics and Law	1
+1185	Comparative Sociology Chair	1
+1186	Cherkas Global University	1
+1187	University of Applied Sciences and Arts Ottersberg	1
+1188	Training Centre of Advocates	1
+1189	University of National and World Economy Sofia	1
+1190	Faculty of Engineering, Cairo University	1
+1191	Corporación Universitaria Rafael Núñez	1
+1192	VICESSE Research GmbH - Vienna Centre for Societal Security	1
+1193	Karl Landsteiner University of Health Sciences	1
+1194	The Graduate Center	1
+1195	Thiagarajar College of Engineering	1
+1196	Alagappa Chettiar Government College of Engineering and Technology	1
+1197	Kirikkale Üniversitesi	1
+1198	Christ (Deemeed to be University)	1
+1199	National Institute of Technology Tiruchirappalli	1
+1200	Godfrey Okoye University	1
+1201	Università degli Studi di Bergamo	1
+1202	St. Cloud State University	1
+1203	International Coaching Federation	1
+1204	The Naveen Jindal School of Management	1
+1205	Dnipro State University of Internal Affairs	1
+1206	Fachhochschule Neu-Ulm	1
+1207	Universidad de Lima	1
+1208	Northwestern Polytechnical University	1
+1209	Loughborough University London	1
+1210	Universidad Nacional de Ingenieria, Lima	1
+1211	University of Hertfordshire	1
+1212	Universidad Catolica Boliviana	1
+1213	Metro State University	1
+1214	Barra Mansa University Center	1
+1215	Instituto Piaget	1
+1216	ISG - Instituto Superior de Gestão	1
+1217	Donetsk State University of Internal Affairs	1
+1218	Heinrich-Heine-Universität Düsseldorf	1
+1219	International Humanitarian University	1
+1220	Waikato Management School	1
+1221	Universidade Federal de Jataí	1
+1222	Universidad Católica del Norte	1
+1223	Azerbaijani Bar Association	1
+1224	National Aviation Academy of Azerbaijan	1
+1225	Universidade de Coimbra, Faculdade de Direito	1
+1226	Jiangsu Province Hospital	1
+1227	Universita di Cassino e del Lazio Meridionale	1
+1228	Dipartimento di Economia, Management e Diritto dell'Impresa	1
+1229	Universiti Kuala Lumpur	1
+1230	American University of Science & Technology	1
+1231	Trabzon University	1
+1232	Metropolitan State University	1
+1233	Gümüşhane Üniversitesi	1
+1234	Kastamonu University	1
+1235	Financial University under the Government of the Russian Federation	1
+1236	UCD College of Business	1
+1237	Universidad Pontificia Bolivariana	1
+1238	Uniwersytet Gdański	1
+1239	"""Ismail Qemali"" University of Vlora"	1
+1240	National Cyber and Crypto Agency	1
+1241	National Cyber and Crypto Polytechnic	1
+1242	Politeknik Sultan Salahuddin Abdul Aziz Shah	1
+1243	China Applied Sciences and Technologies Research	1
+1244	Hillsdale College	1
+1245	Cosmic Information Research Science and Technology	1
+1246	Dominican School of Philosophy & Theology	1
+1247	Beijing Institute of Information Technology	1
+1248	Beijing University of Chinese Medicine Third Affiliated Hospital	1
+1249	Universitas Gadjah Mada	1
+1250	Institute of Geology, China Earthquake Administration	1
+1251	Beijing University of Chemical Technology	1
+1252	KPMG Audit	1
+1253	University of Zimbabwe	1
+1254	Xamax Consultancy Pty Ltd	1
+1255	Sage IT Consulting Group	1
+1256	Latvijas Universitāte	1
+1257	Alanya Alaaddin Keykubat University	1
+1258	Institute of State and Law, Russian Academy of Sciences	1
+1259	University: Enrique Guzmán y Valle	1
+1260	Universidad Tecnológica de Lima Sur	1
+1261	Universidad Nacional de Moquegua	1
+1262	Universidad Nacional de Educación Enrique Guzmán y Valle	1
+1263	SCOSAAR – Francisc I. Rainer Institute of Anthropology	1
+1264	Francisc I. Rainer Institute of Anthropology	1
+1265	gfs.bern	1
+1266	University of Tirana	1
+1267	Victorian Institute of Technology	1
+1268	UNITAR International University	1
+1269	ITM SLS Baroda University	1
+1270	The University of Tulsa	1
+1271	KG Reddy College of Engineering & Technology	1
+1272	Connecticut College	1
+1273	Scripps Memorial Hospital	1
+1274	Yale School of Medicine	1
+1275	Harvard Division of Continuing Education	1
+1276	University of Technology	1
+1277	V. M. Koretsky Institute of State and Law of National Academy of Sciences of Ukraine	1
+1278	Emory University	1
+1279	Universitas Wijaya Kusuma Surabaya	1
+1280	University of Health and Rehabilitation Sciences	1
+1281	Center For Drug & Health Studies	1
+1282	Research BTTN	1
+1283	Sunway University	1
+1284	UCSI University	1
+1285	BTTN	1
+1286	University of Southern Punjab Multan	1
+1287	Kyrgyz-Russian Slavic University	1
+1288	University of Minnesota Law School	1
+1289	Ton-Duc-Thang University	1
+1290	The National Institute of Engineering, Mysore	1
+1291	Shri Mata Vaishno Devi University	1
+1292	Central University of Jammu	1
+1293	Indian Institute of Information Technology Design and Manufacturing Jabalpur /Electronics and Communication Engineering	1
+1294	AAB College	1
+1295	PSB Paris School of Business	1
+1296	Fraunhofer Center for International Management and Knowledge Economy IMW	1
+1297	Universitas Lampung	1
+1298	International Balkan University	1
+1299	Debreceni Egyetem Állam- és Jogtudományi Kar	1
+1300	Université de Tunis El Manar	1
+1301	Gdańsk University of Technology	1
+1302	The Biblical Institute	1
+1303	EBS Universität für Wirtschaft und Recht	1
+1304	Guru Nanak Dev University	1
+1305	Namal University	1
+1306	Vladimir State University	1
+1307	Abasyn University	1
+1308	Scientific Center of Innovative Research	1
+1309	Oklahoma City University	1
+1310	Universiteit Maastricht	1
+1311	Ministry of Health of Russian Federation	1
+1312	Handelshøyskolen BI	1
+1313	University of Zululand	1
+1314	Faculty for business economics and law - “Adriatik” University Bar	1
+1315	Academy of Economics and Pedagogy	1
+1316	Mariupol State University	1
+1317	The Government Sadiq College Women University Bahawalpur	1
+1318	Fifth Administrative Court of Appeal	1
+1319	Daugavpils University	1
+1320	Harokopio University of Athens	1
+1321	NASTP Institute of Information Technology	1
+1322	Universitas Sam Ratulangi	1
+1323	Indian Institute of Management Bangalore	1
+1324	Christ Academy Institute of Law	1
+1325	University of Science and Technology Bannu	1
+1326	Al-Fayha College	1
+1327	Handelshögskolan i Stockholm	1
+1328	Gulab Devi Hospital	1
+1329	Universität Regensburg	1
+1330	Federal University Dutse	1
+1331	Huaqiao University	1
+1332	Bahauddin Zakariya University	1
+1333	Sacred Heart University Fairfield	1
+1334	Department of Computer Science at the University of Alabama at Birmingham	1
+1335	Shandong University of Political Science and Law	1
+1336	Fachhochschule Dortmund	1
+1337	NFC IET Multan	1
+1338	Bangladesh University of Professionals	1
+1339	Pontificia Universidade Catolica de Minas Gerais	1
+1340	Gunma University	1
+1341	UIBM University	1
+1342	Ulster University	1
+1343	Policía Nacional de Colombia	1
+1344	International European University	1
+1345	Indiana University-Purdue University Indianapolis	1
+1346	Escuela Politécnica Nacional	1
+1347	Gestión de Tecnologías Para El Mundo (GTM)	1
+1348	The Indian Law Institute, New Delhi	1
+1349	Fundación Universitaria Konrad Lorenz	1
+1350	Gerencia Estratégica de Tecnologías de la Información	1
+1351	Vidya Vihar	1
+1352	CNR	1
+1353	Gottfried Wilhelm Leibniz Universität Hannover	1
+1354	Al-Turath University	1
+1355	Al-Rafidain University College	1
+1356	Al-Mamoun University	1
+1357	Cihan University– Sulaymania	1
+1358	Tilburg Institute for Law, Technology, and Society	1
+1359	Guangzhou Vocational College of Technology & Business	1
+1360	University of Saint Joseph Macao	1
+1361	National Institute of Rural Development and Panchayati Raj	1
+1362	Al-Hussein Bin Talal University	1
+1363	University of Alberta, Faculty of Medicine and Dentistry	1
+1364	Guiding Technologies Corporation	1
+1365	Abubakar Tafawa Balewa University	1
+1366	Machine Intelligence Research Labs (MIR Labs) - Scientific Network for Innovation and Research Excellence	1
+1367	International Christian University	1
+1368	Seoul Metropolitan Police Agency	1
+1369	North Carolina School of Science and Mathematics	1
+1370	Watauga High School	1
+1371	ENET'Com-National School of Electronics and Telecommunications of Sfax	1
+1372	Université de Technologie de Troyes	1
+1373	University of Sfax	1
+1374	Turun Kauppakorkeakoulu	1
+1375	Peter the Great St. Petersburg Polytechnic University	1
+1376	Universidad Politécnica Salesiana	1
+1377	United Nations University	1
+1378	Lviv National Environmental University	1
+1379	National College of Business Administration and Economics	1
+1380	Laboratoire de Technologie de l'Information et Modélisation	1
+1381	Université de Lausanne (UNIL)	1
+1382	Tianjin University of Technology	1
+1383	Chosun University	1
+1384	Parker Hannifin Corp.	1
+1385	Lviv Polytec hnic National University	1
+1386	Universidad Técnica de Ambato	1
+1387	Universidad de Colima	1
+1388	Youngsan University	1
+1389	Universitas Islam Indonesia	1
+1390	CECOS University of IT & Emerging Sciences	1
+1391	Izmir Democracy University	1
+1392	Universidad de las Americas - Ecuador	1
+1393	Pakistan Television Corporation	1
+1394	Universidad de La Habana	1
+1395	Tongji Medical College of Huazhong University of Science and Technology	1
+1396	Air Officer Commanding (AOC)	1
+1397	University of Hull	1
+1398	Martin-Luther-Universität Halle-Wittenberg	1
+1399	Shanxi University of Finance and EcoNomics	1
+1400	Birmingham Business School	1
+1401	Gujarat National Law University	1
+1402	CODE University of Applied Sciences	1
+1403	M&G Research Pty Ltd.	1
+1404	University of Media	1
+1405	Durban University of Technology	1
+1406	Ecole Nationale des Sciences de l'Informatique	1
+1407	Universität Augsburg	1
+1408	Ecuador Ministry of Education	1
+1409	Birla Institute of Technology and Science, Pilani	1
+1410	Green International University	1
+1411	Institute of Communication and Computer Systems	1
+1412	Université Badji Mokhtar - Annaba	1
+1413	Dragomanov Ukrainian State University	1
+1414	Universität Innsbruck	1
+1415	Mendoza College of Business	1
+1416	The University of Arizona	1
+1417	Politechnika Warszawska	1
+1418	Centro Singular de Investigación en Tecnoloxías Intelixentes (CiTIUS)	1
+1419	UPF Barcelona School of Management	1
+1420	Amity University Jharkhand	1
+1421	China Internal Control Research Center	1
+1422	Key Laboratory of Geoscience Big Data and Deep Resource of Zhejiang Province	1
+1423	Australian Lutheran College	1
+1424	Wu Tsai Institute	1
+1425	Università degli studi Magna Graecia di Catanzaro	1
+1426	Cleveland Museum of Natural History	1
+1427	National Key Laboratory of Computer-Aided Design and Graphics Systems	1
+1428	Faculdade de Direito de Vitória	1
+1429	Amity University Dubai	1
+1430	Nanchang Institute of Technology	1
+1431	East China Jiaotong University	1
+1432	INMANTEC Institutions	1
+1433	Utrecht University of Applied Sciences	1
+1434	Copernicus Institute of Sustainable Development	1
+1435	Cornell Law School	1
+1436	LUISS University	1
+1437	Emerson College	1
+1438	Laboratoire en Innovation, Technologies, Economie et Management	1
+1439	Réseaux Innovation Territoires et Mondialisation	1
+1440	Technische Hochschule Nürnberg	1
+1441	Universität Passau	1
+1442	FIU College of Engineering and Computing	1
+1443	University of Technology and Applied Sciences Shinas	1
+1444	Raghu Engineering College	1
+1445	Pro Armament	1
+1446	Farmingdale State College	1
+1447	Center for AI Safety	1
+1448	Juraj Dobrila University of Pula	1
+1449	Saskatchewan Polytechnic	1
+1450	Anna University of Technology, Tiruchirappalli	1
+1451	Glan-Yr-Afon Primary School	1
+1452	University of Niš	1
+1453	Technická Univerzita v Košiciach	1
+1454	VIZJA University	1
+1455	Universidad de la Amazonia	1
+1456	Seton Hall University	1
+1457	Universidad Científica del Sur	1
+1458	Universidad Privada del Norte	1
+1459	Saint Perter’s University	1
+1460	Korean National Police University	1
+1461	Dr. S. P. Mukherjee International Institute of Information Technology - Naya Raipur	1
+1462	Indian Institute of Information Technology Design and Manufacturing Kurnool	1
+1463	South Wales Business School	1
+1464	American University of Malta	1
+1465	Cranfield School of Management	1
+1466	Hangzhou Normal University	1
+1467	University of Ferrara	1
+1468	Accenture	1
+1469	Alabama A and M University	1
+1470	Mahatma Jyotiba Phule Rohilkhand University	1
+1471	FPT University	1
+1472	Leonard N. Stern School of Business	1
+1473	Questrom School of Business	1
+1474	Boston University	1
+1475	University of Art and Design	1
+1476	Pace University	1
+1477	Jorge Amado University Center	1
+1478	Hilma	1
+1479	University of Hartford	1
+1480	Karpagam Academy of Higher Education	1
+1481	SolBridge International School of Business	1
+1482	Universidad Autónoma del Carmen	1
+1483	Campus for Research Excellence And Technological Enterprise	1
+1484	Institut Teknologi Bandung	1
+1485	Institute for Frontier Science	1
+1486	Dongguan University of Technology	1
+1487	Berlin University of Applied Sciences	1
+1488	Nascent Systems Inc.	1
+1489	Einstein Center Digital Future	1
+1490	Henan Polytechnic University	1
+1491	Centre for the Governance of AI	1
+1492	Sonoma State University	1
+1493	University of the Witwatersrand, Johannesburg	1
+1494	Prasanna School of Public Health	1
+1495	Tarleton State University	1
+1496	UW-Madison College of Engineering	1
+1497	TRACLabs	1
+1498	Jingdezhen Ceramic University	1
+1499	Udayanath Autonomous College of Science and Technology	1
+1500	Technical University of Sofia	1
+1501	C. V. Raman Global University	1
+1502	Richard A. Miner School of Computer & Information Sciences	1
+1503	Dibrugarh Bar Association	1
+1504	Faculté des Sciences d’Oujda	1
+1505	Université Moulay Ismaïl	1
+1506	Universität Bayreuth	1
+1507	LightningHolt LLC	1
+1508	Cloudsmiths LLC	1
+1509	Fractals Research LLC	1
+1510	University of Oregon	1
+1511	Formicablu	1
+1512	Shaanxi Normal University	1
+1513	Government College University Faisalabad	1
+1514	Universidad UNIACC	1
+1515	Jiangsu Vocational Institute of Architectural Technology	1
+1516	Legal Priorities Project	1
+1517	Universitatea Politehnica Timisoara	1
+1518	University of Maryland, Baltimore County (UMBC)	1
+1519	Kalasin University	1
+1520	Instituto Tecnológico Metropolitano	1
+1521	Universidad Ricardo Palma	1
+1522	Universidad Señor de Sipán	1
+1523	Geethanjali College of Engineering and Technology	1
+1524	Dayalbagh Educational Institute	1
+1525	Robust Intelligence	1
+1526	Wirtschafts- und Sozialwissenschaftliche Fakultät der Universität zu Köln	1
+1527	Altinbas Universitesi	1
+1528	Thai Nguyen University of Information and Communication Technology (ICTU)	1
+1529	TNU–University of Sciences	1
+1530	TNU-International School	1
+1531	DePaul University	1
+1532	Universitatea Tehnica Gh. Asachi din IasI	1
+1533	Sakon Nakhon Rajabhat University	1
+1534	Univerzitet u Sarajevu	1
+1535	Rangsit University	1
+1536	Universidad Autónoma de Manizales	1
+1537	Universidad Central del Ecuador	1
+1538	Infosys Technologies Limited India	1
+1539	Universidad Nacional de Colombia Manizales	1
+1540	Universitatea din Bacau	1
+1541	Vinayaka Mission's Research Foundation	1
+1542	SSN College of Engineering, Kalavakkam	1
+1543	Study World College of Engineering	1
+1544	Gnanamani College of Technology	1
+1545	Pontifícia Universidade Catlólica de Minas Gerais - PUC MG	1
+1546	Ecole Nationale Supérieure d'Informatique et d'Analyse des Systèmes	1
+1547	Hellas Investment Group	1
+1548	Lead City University	1
+1549	Gebze Teknik Üniversitesi	1
+1550	King Mongkut's Institute of Technology Ladkrabang	1
+1551	Alva’s Institute of Engineering and Technology	1
+1552	Universidade Federal do Rio Grande do Sul	1
+1553	Indian Institute of Science Education and Research Bhopal	1
+1554	Southwest Minzu University	1
+1555	Viet Nam National University Ho Chi Minh City	1
+1556	Bhagwan Parshuram Institute of Technology	1
+1557	Madhav Institute of Technology & Science, Gwalior	1
+1558	Gautam Buddha University	1
+1559	Université Grenoble Alpes	1
+1560	Bodoland State University	1
+1561	Southwest Jiaotong University	1
+1562	Sikkim Central University Gangtok	1
+1563	Hague Academy of International Law	1
+1564	Maseno University	1
+1565	University of Eldoret	1
+1566	St Antony's College University of Oxford	1
+1567	University of Tsukuba	1
+1568	HCMC University of Technology and Engineering	1
+1569	Poznań University of Economics and Business	1
+1570	Kohat University of Science and Technology	1
+1571	Iscte Business School	1
+1572	Nanjing University of Information Science & Technology	1
+1573	Sungshin Women's University	1
+1574	The Constitutional Court of Turkey	1
+1575	Recep Tayyip Erdogan University	1
+1576	Fogelman College of Business and Economics	1
+1577	New York Institute of Technology	1
+1578	Facultad de Ciencias Físicas y Matemáticas de la Universidad de Chile	1
+1579	University of Medicine and Pharmacy at HCMC	1
+1580	Istituto Europeo di Oncologia	1
+1581	Dipartimento di Management	1
+1582	West Virginia University	1
+1583	Wells Fargo	1
+1584	Newcastle Business School	1
+1585	Nuremberg University of Music	1
+1586	SASTRA Deemed University	1
+1587	College of Engineering, Computing and Applied Sciences	1
+1588	Westminster Business School	1
+1589	University of Applied Sciences Upper Austria, School of Management	1
+1590	ENISA	1
+1591	Yıldız Teknik Üniversitesi	1
+1592	Wuxi University	1
+1593	Ministry of Law and Justice	1
+1594	Technische Universität Darmstadt	1
+1595	H.S. Skovoroda Kharkiv National Pedagogical University	1
+1596	HP Inc.	1
+1597	Montimage	1
+1598	Software Development Department	1
+1599	NASA Innovative Advanced Concepts	1
+1600	CARME - Centre of Applied Research in Management and Economics	1
+1601	Spinner Innovation Centre (SIC)	1
+1602	Università degli Studi del Molise	1
+1603	Hewlett-Packard, Brazil	1
+1604	S2GRUPO	1
+1605	CQUniversity Australia	1
+1606	Université de Strasbourg	1
+1607	Posts and Telecommunications Institute of Technology Vietnam	1
+1608	École des hautes études commerciales de Paris	1
+1609	Tilburg University	1
+1610	Manager	1
+1611	Starr King School	1
+1612	Donald Bren School of Information & Computer Sciences	1
+1613	Antonianum University	1
+1614	Banking Academy of Vietnam	1
+1615	Faculty of Computers and Artificial Intelligence	1
+1616	Institute of Information Engineering	1
+1617	SEGi University	1
+1618	QUT Business School	1
+1619	PathCheck Foundation	1
+1620	Liverpool John Moores University	1
+1621	Universität Liechtenstein	1
+1622	IUMS Mental Health Research Center	1
+1623	School of Behavioral Sciences and Mental Health (IUMS)	1
+1624	University of Pennsylvania Perelman School of Medicine	1
+1625	Audencia	1
+1626	Art Eye-D Associates LLC	1
+1627	School of Social and Political Sciences	1
+1628	Instituto de Engenharia Electrónica e Telemática de Aveiro	1
+1629	American University of Ras Al Khaimah	1
+1630	McMaster University, Faculty of Engineering	1
+1631	Rutgers University	1
+1632	Midland Oil Company of The Iraqi Minstry of Oil	1
+1633	North China University of Science and Technology	1
+1634	College of Business and Economics, Qatar University	1
+1635	EM Normandie	1
+1636	Fachbereich Wirtschaftswissenschaften	1
+1637	Groupe d'Analyse et de Théorie Economiques Lyon - St-Etienne	1
+1638	Max Planck Institute for Human Development	1
+1639	Shaheed Bhagat Singh College	1
+1640	Indian Institute of Technology Hyderabad	1
+1641	Adnan Kassar School of Business	1
+1642	Universitas Muhammadiyah Buton	1
+1643	Nankai University Business School	1
+1644	Faculty of Economics and Administration, King Abdulaziz University	1
+1645	CAS Key Laboratory of Crust-Mantle Materials and Environments	1
+1646	University of Aberdeen Business School	1
+1647	School of Business and Management	1
+1648	Faculty of Geo-Information Science and Earth Observation – ITC	1
+1649	Kanazawa University	1
+1650	Universidade Federal de Uberlândia	1
+1651	İstanbul Gelişim Üniversitesi	1
+1652	Johns Hopkins University School of Medicine	1
+1653	National Institute on Drug Abuse (NIDA)	1
+1654	Yanshan University	1
+1655	Sikkim University	1
+1656	Bodoland University	1
+1657	Soul Machines Limited	1
+1658	Colorado State University	1
+1659	Walter Scott, Jr. College of Engineering	1
+1660	Universidade Paulista	1
+1661	Advocates for Animals	1
+1662	Clinic Helsicore	1
+1663	Samsung Electronics Co., Ltd.	1
+1664	Russian Academy of Sciences	1
+1665	Central Saint Martins	1
+1666	Tulane University	1
+1667	Department of Computer Science and Technology	1
+1668	Trinity College of Arts & Sciences	1
+1669	IZA - Institute of Labor Economics	1
+1670	Book Hack Enterprise	1
+1671	Centro Nacional de Supercomputación	1
+1672	Universidad Autónoma de Nuevo León	1
+1673	Institut des Systèmes Intelligents et de Robotique	1
+1674	Laboratoire Interdisciplinaire des Sciences du Numérique	1
+1675	Universitas Muhammadiyah Yogyakarta	1
+1676	Armasuisse, Switzerland	1
+1677	Faculté des HEC	1
+1678	University of Applied Sciences Western Switzerland	1
+1679	Université de Genève	1
+1680	Hrvatska Elektroprivreda	1
+1681	Faculteit Industrieel Ontwerpen, TU Delft	1
+1682	Islamic Azad University, Science and Research Branch	1
+1683	Erasmus School of Health Policy & Management	1
+1684	Erasmus MC	1
+1685	Central University of Rajasthan	1
+1686	Oxford Brookes University	1
+1687	Film University Babelsberg KONRAD WOLF	1
+1688	Allameh Tabataba'i University	1
+1689	The Stephen J. R. Smith School of Business	1
+1690	Artificial Intelligence and Innovation Center of Excellence	1
+1691	Facultad de Ingeniería	1
+1692	Universitas Islam Negeri K.H. Abdurrahman Wahid Pekalongan	1
+1693	Obuda University	1
+1694	Đại học Mở Thành phố Hồ Chí Minh	1
+1695	The Business School at BU	1
+1696	Harbin Institute of Technology Shenzhen	1
+1697	IEEE Standards Association	1
+1698	Design Interactive	1
+1699	Institute of Computer Science	1
+1700	Bowling Green State University	1
+1701	HEC Montréal	1
+1702	İbn Haldun Üniversitesi	1
+1703	School of Computer Science and Technology, Harbin Institute of Technology	1
+1704	Binghamton University State University of New York	1
+1705	Hefei University of Technology	1
+1706	Suzhou University	1
+1707	Faculdade de Direito de Lisboa	1
+1708	German Council on Foreign Relations	1
+1709	Hamburg University of Technology	1
+1710	Whiting School of Engineering	1
+1711	Vishnu Institute of Technology Bhimavaram	1
+1712	Cognitive Insights for Artificial Intelligence	1
+1713	Muhammadiyah University of Magelang	1
+1714	Talan Group	1
+1715	Universitas Negeri Makassar	1
+1716	Universidad de Almería	1
+1717	The Innovation Foundation	1
+1718	Aston Business School	1
+1719	GOTBIT CONSULTING LLC	1
+1720	Scuola IMT Alti Studi Lucca	1
+1721	Kuban State Agrarian University	1
+1722	Responsible AI Collaborative	1
+1723	Kuban State Technological University	1
+1724	Universidad Ana G. Méndez	1
+1725	Universidad Nacional de Piura	1
+1726	Universidad de Puerto Rico, Recinto de Rio Piedras	1
+1727	Yanching Institute of Technology	1
+1728	The New School	1
+1729	SecDev Group	1
+1730	Tribhuvan University	1
+1731	International College of Engineering and Management	1
+1732	Universidade do Estado de Santa Catarina	1
+1733	Indira Gandhi National Tribal University	1
+1734	ISEG Lisbon School of Economics and Management	1
+1735	Universidad Jaume I	1
+1736	VdA	1
+1737	Institute for Social Science Research (ISF)	1
+1738	China Yunnan Power Grid	1
+1739	Technical University of Denmark	1
+1740	Anhui Jianzhu University	1
+1741	Medhavi Skills University	1
+1742	College of Engineering Bhubaneswar	1
+1743	Robert H. Smith School of Business	1
+1744	Centre de Recherche Magellan - iaelyon	1
+1745	Niccolò Cusano University	1
+1746	Universiti Malaysia Terengganu	1
+1747	Faculdade de Farmácia da Universidade de Lisboa	1
+1748	Anhui University	1
+1749	Kaiser Permanente	1
+1750	Centre for Business and Economics Research (CeBER)	1
+1751	Università degli Studi di Palermo	1
+1752	Universitas Slamet Riyadi	1
+1753	College of Science and Engineering	1
+1754	Algoritmi Research Centre	1
+1755	The British Library	1
+1756	The Islamic University of Bahawalpur	1
+1757	TD Bank	1
+1758	Instituto Politécnico do Porto	1
+1759	National Reseach Council of Italy (CNR), Institute of Applied Sciences and Intelligent Systems “Eduardo Caianiello”	1
+1760	Consejo Superior de Investigaciones Científicas	1
+1761	Universitat de Vic - Universitat Central de Catalunya (UVic-UCC)	1
+1762	Escuela Andaluza Salud Publica	1
+1763	Government College Madappally	1
+1764	Government Brennen College	1
+1765	Lindenwood University	1
+1766	The University of Tampa	1
+1767	Sekolah Tinggi Ilmu Administrasi Puangrimaggalatung	1
+1768	St Joseph’s University	1
+1769	Purdue University Northwest	1
+1770	Maine College of Engineering and Computing	1
+1771	Air Force Research Laboratory	1
+1772	Rand	1
+1773	Georgia Tech Research Institute	1
+1774	Trinity Business School	1
+1775	Ronin Institute	1
+1776	MNS-University of Agriculture, Multan	1
+1777	Indian Institute of Management Indore	1
+1778	College of Humanities, Arts, and Social Sciences	1
+1779	IQMen Business Intelligence	1
+1780	Jawaharlal Nehru Technological University, Kakinada	1
+1781	USC Marshall School of Business	1
+1782	Pontificia Universidad Catolica del Peru	1
+1783	University of North Dakota	1
+1784	Ghulam Ishaq Khan Institute of Engineering Sciences and Technology	1
+1785	Naval War College	1
+1786	International Institute of Information Technology, Hyderabad	1
+1787	Faculty of Computers & Information Technology	1
+1788	Riyadh Care Hospital	1
+1789	Limkokwing University of Creative Technology, Cyberjaya	1
+1790	National Defence University	1
+1791	University of Cyberjaya	1
+1792	University of Kerala	1
+1793	Faculdade Metodista Centenário	1
+1794	The State University of New Jersey	1
+1795	Universidade Federal do Pampa	1
+1796	Kasznar Leonardos Intellectual Property	1
+1797	Universidade do Vale do Itajai	1
+1798	Centro Universitário de Lavras (UNILAVRAS)	1
+1799	UCL University College	1
+1800	School of Economics and Political Science	1
+1801	CENTRUM PUCP Escuela de Negocios	1
+1802	CSIC-UAM-UC3M-UCM - Instituto de Ciencias Matematicas (ICMAT)	1
+1803	Instituto de Ciencias Forenses y de la Seguridad	1
+1804	Ottawa Hospital Research Institute	1
+1805	University of South Wales	1
+1806	Universidad Nacional de La Plata	1
+1807	Carleton University, School of Computer Science	1
+1808	Indonesia Defense University	1
+1809	Jenderal Achmad Yani University	1
+1810	Université d'Ottawa, Faculté des Sciences Sociales	1
+1811	Université d'Artois	1
+1812	The Institute for Fiscal Studies	1
+1813	Univeristas Negeri Surabaya	1
+1814	Nueva Granada University	1
+1815	Universitas Surabaya	1
+1816	UFS	1
+1817	Università degli Studi della Campania Luigi Vanvitelli	1
+1818	Universitas Labuhanbatu	1
+1819	KDDI Research, Inc.	1
+1820	Universidad de Buenos Aires	1
+1821	Pontifícia Universidade Católica do Rio de Janeiro	1
+1822	PFH Private University of Applied Sciences	1
+1823	Russian Academy of Natural Sciences	1
+1824	Victoria University of Wellington	1
+1825	Fujitsu Ltd, London	1
+1826	Intesa Sanpaolo S.p.A.	1
+1827	Fujitsu Laboraories Ltd.	1
+1828	Erciyes Üniversitesi	1
+1829	İstanbul Esenyurt Üniversitesi	1
+1830	Istanbul University-Cerrahpasa	1
+1831	National Institute of Child Health and Human Development (NICHD)	1
+1832	Istanbul Nisantasi University	1
+1833	İstanbul Aydın Üniversitesi	1
+1834	Secretaría de Estado de Seguridad	1
+1835	Lee Kong Chian School of Medicine	1
+1836	Høgskolen i Innlandet	1
+1837	Universiti Pendidikan Sultan Idris	1
+1838	Center for Women's Global Leadership	1
+1839	Local Governments for Sustainability (ICLEI) South East Asia	1
+1840	Microsoft Corporation	1
+1841	SOCR-Lab	1
+1842	ESIC Business & Marketing School	1
+1843	Faculty of Engineering Rabigh Branch, King Abdulaziz University	1
+1844	Universidade Federal de São Paulo	1
+1845	Neil Gogte Institute of Technology	1
+1846	Inc	1
+1847	University of the Western Cape	1
+1848	Leeds University Business School	1
+1849	Univerza v Ljubljani Ekonomska Fakulteta	1
+1850	Fraunhofer Institute for Systems and Innovation Research ISI	1
+1851	Pukyong National University	1
+1852	University of West London	1
+1853	University of KwaZulu-Natal	1
+1854	Linnaeus University, Växjö	1
+1855	Jamia Hamdard	1
+1856	National Chin-Yi University of Technology	1
+1857	University of Northampton	1
+1858	Bandırma Onyedi Eylül University	1
+1859	Ashoka University	1
+1860	International Institute for Population Sciences	1
+1861	Department of Computer Science and Engineering	1
+1862	Department of Medicine	1
+1863	University of Central Lancashire, Cyprus	1
+1864	Hebei Institute of Vocation and Technology	1
+1865	Phystech-Lyceum of Natural Sciences and Mathematics Named after P.L. Kapitza	1
+1866	University at Buffalo, The State University of New York	1
+1867	China University of Labor Relations	1
+1868	Xi’an Eurasia University	1
+1869	Hebei University	1
+1870	Indian Institute of Management Bodh Gaya	1
+1871	Bond University	1
+1872	Kyungnam University	1
+1873	University for Continuing Education Krems	1
+1874	Estonian Literary Museum	1
+1875	Sumy State Pedagogical University named after A. S. Makarenko	1
+1876	Concordia Institute for Information Systems Engineering	1
+1877	National Research Council Canada	1
+1878	Embry-Riddle Aeronautical University	1
+1879	Mercer University	1
+1880	Hokuriku University	1
+1881	Radcliffe Institute for Advanced Study	1
+1882	Amirkabir University of Technology	1
+1883	Aliah University	1
+1884	University of Babylon	1
+1885	Heriot-Watt University Malaysia	1
+1886	University of New Haven	1
+1887	Westcliff University	1
+1888	Begum Rokeya University	1
+1889	Kharazmi University	1
+1890	Institute of European Studies	1
+1891	University of Charleston	1
+1892	National Taichung University of Science and Technology	1
+1893	Faculty of Computing and IT	1
+1894	Zhejiang University of Finance and Economics	1
+1895	Hertie School	1
+1896	University of Michigan Law School	1
+1897	Universitat Ramon Llull	1
+1898	Cardiff University School of Medicine	1
+1899	Urbana Theological Seminary	1
+1900	Delhi Skill and Entrepreneurship University	1
+1901	Mustansiriyah University	1
+1902	Università degli Studi di Trieste	1
+1903	Oak Ridge Associ. Universities	1
+1904	Veer Kunwar Singh University, Ara	1
+1905	G. B. College	1
+1906	Fundacion de Estudios de Economia Aplicada	1
+1907	CGI Inc.	1
+1908	Chengdu University	1
+1909	Trident Academy of Technology	1
+1910	Universitaires de Médecine Légale	1
+1911	University of Peradeniya	1
+1912	Jamia Millia Islamia	1
+1913	Institute of Policy Studies Colombo	1
+1914	Faculty of Medicine, University of Peradeniya	1
+1915	Shivaji College	1
+1916	Universidad de la Laguna	1
+1917	Yakın Doğu Üniversitesi	1
+1918	University of Kyrenia	1
+1919	University of Coimbra, Institute of Systems and Robotics	1
+1920	Yarmouk University	1
+1921	Manipal University Jaipur	1
+1922	Center of Cyber Security and Big Data Management and Science University	1
+1923	Presidency University, Kolkata	1
+1924	Southern Arkansas University	1
+1925	The University of Kalba	1
+1926	Symbiosis Law School, Hyderabad	1
+1927	Japan Ministry of Justice	1
+1928	FORE School of Management	1
+1929	People	1
+1930	Adelphi University	1
+1931	CNR - SuPerconducting and other INnovative materials and devices institute	1
+1932	United Health Group	1
+1933	Pontificia Universita Gregoriana	1
+1934	Sony Computer Science Laboratories, Inc.	1
+1935	Universiti Tenaga Nasional	1
+1936	Veritas University, Abuja	1
+1937	Centre for Advancing Journalism	1
+1938	Tansian University	1
+1939	University if Nigeria	1
+1940	Jingdezhen Vocational University of Art	1
+1941	University of Southeastern Philippines	1
+1942	Università degli Studi di Perugia	1
+1943	Institute for Agricultural and Forest Systems in the Mediterranean	1
+1944	Editor of Centre for India West Asia Dialogue	1
+1945	Universidade Estadual de Londrina	1
+1946	Shumen University “Bishop Ep. Konstantin Preslavski“	1
+1947	Arba Minch University	1
+1948	Jacksonville University	1
+1949	University of Bradford	1
+1950	Beijing Engineering Research Center for Cyberspace Data Analysis and Applications	1
+1951	Auckland Bioengineering Institute	1
+1952	Amrita Vishwa Vidyapeetham Chennai Campus	1
+1953	Xinjiang Institute of Engineering	1
+1954	Ethiopian Medical Association	1
+1955	Srinakharinwirot University	1
+1956	Tawal Telecommunications Towers Company	1
+1957	Indira Gandhi Delhi Technical University for Women	1
+1958	Universidad Loyola de Sevilla	1
+1959	General of CIRET	1
+1960	Centre for Science and Thought University of Bonn	1
+1961	University of Science and Technology Beijing	1
+1962	Anna Centenary Library	1
+1963	Kutztown University	1
+1964	Universidad de Los Andes, Colombia	1
+1965	Baskin School of Engineering	1
+1966	U.S. Army Cyber	1
+1967	Deloitte	1
+1968	Photon Technologies	1
+1969	K.Ramakrishnan College of Engineering	1
+1970	University of Sindh	1
+1971	Maharishi University of Information Technology	1
+1972	Universidad de Los Andes, Facultad de Medicina	1
+1973	Seowon University	1
+1974	Faculty of Law, University of Rijeka	1
+1975	Inter-University Centre of Excellence	1
+1976	Business School Berlin	1
+1977	Inner Mongolia University of Technology	1
+1978	Universidad Autónoma de Querétaro	1
+1979	Judiciary Research Institute	1
+1980	The Bohdan Khmelnytsky National University of Cherkasy	1
+1981	CyCraft Technology Corporation	1
+1982	University of Muhammadiyah Jakarta	1
+1983	Arab Academy for Science and Technology and Maritime Transport Heliopolis Campus	1
+1984	Ministry of Defence	1
+1985	Logos University International	1
+1986	Faculdade de Tecnologia de Sao Paulo	1
+1987	Stony Brook University	1
+1988	Suomen Pankki	1
+1989	Wisconsin Department of Corrections	1
+1990	Beijing Academy of Science and Technology	1
+1991	RV University	1
+1992	Universitas Prof. Dr. Hazairin SH. Bengkulu	1
+1993	California State University, Los Angeles	1
+1994	Département de Recherche en Ingénierie des Véhicules pour l'Environnement	1
+1995	Jazan University	1
+1996	Institut Seni Indonesia Yogyakarta	1
+1997	Guangzhou Academy of Fine Arts	1
+1998	Consejo Nacional de Humanidades, Ciencias y Tecnologías	1
+1999	George Mason University	1
+2000	Universidad Argentina de la Empresa	1
+2001	Oakland University	1
+2002	Universitat de Girona	1
+2003	Institut Universitaire de France	1
+2004	Institut Pluridisciplinaire Hubert Curien	1
+2005	Université Catholique de Lille	1
+2006	Collegium Helveticum	1
+2007	Phillips Exeter Academy	1
+2008	Dispositifs d’Information et de Communication à l’Ere Numérique – Paris, Ile-de-France	1
+2009	Yantai Nanshan University	1
+2010	University of Limpopo	1
+2011	The Division for Translation Organization	1
+2012	Bahçeşehir Üniversitesi	1
+2013	Istanbul Bilgi Üniversitesi	1
+2014	Université de la Sorbonne Nouvelle Paris III	1
+2015	Indonesia Institute of the Arts Denpasar	1
+2016	Université Dr Taher Moulay Saida - Algeria	1
+2017	Cherkasy State Technological University	1
+2018	Shandong University of Finance and Economics	1
+2019	University of St Andrews	1
+2020	Universitatea Tehnica din Cluj-Napoca	1
+2021	Philipps-Universität Marburg	1
+2022	University of Buckingham	1
+2023	Northeastern Illinois University	1
+2024	Babu Banarasi Das University	1
+2025	Borys Grinchenko Kyiv Metropolitan University	1
+2026	University of Tasmania	1
+2027	Higher Educational Institution Academician Yuriy Bugay International Scientific & Technical University	1
+2028	University of Modern Knowledge	1
+2029	School of Medicine	1
+2030	IQS School of Management	1
+2031	Federal University, Lafia	1
+2032	Mulungushi University	1
+2033	Empresa de Tecnologias de la Informacion Y Servicios Telematicos Avanzados (CITMATEL)	1
+2034	Federal Research Center “Information and Computing Technologies”	1
+2035	Université Abou Bekr Belkaid Tlemcen	1
+2036	Middlesex University Dubai	1
+2037	Universidad de Valparaiso	1
+2038	Universidad Viña del Mar	1
+2039	King Abdullah University of Science and Technology	1
+2040	Universität Konstanz	1
+2041	FIZ Karlsruhe - Leibniz Institute for Information Infrastructure	1
+2042	Rochester Institute of Technology Dubai	1
+2043	SINTEF Digital	1
+2044	Singapore University of Technology and Design	1
+2045	Indian Institute of Management Nagpur	1
+2046	Novosibirsk State University	1
+2047	DNNae Inc.	1
+2048	DHA Suffa University	1
+2049	Sobolev Institute of Mathematics of the Siberian Branch of the Russian Academy of Sciences	1
+2050	Karachi Institute of Economics and Technology	1
+2051	Underscore	1
+2052	Manav Rachna International Institute of Research and Studies	1
+2053	MIT Sloan School of Management	1
+2054	Bangladesh University of Engineering and Technology	1
+2055	University of Findlay	1
+2056	ST Engineering	1
+2057	RISE Research Institutes of Sweden AB	1
+2058	Université Mohammed Premier Oujda	1
+2059	Gonzaga University	1
+2060	Oregon State University	1
+2061	Chengdu University of Information Technology	1
+2062	Institute of Criminology	1
+2063	Chalmers University of Technology	1
+2064	LUT University	1
+2065	Zakir Husain College of Engineering and Technology	1
+2066	Weizenbaum Institute	1
+2067	NED University of Engineering & Technology	1
+2068	Kwame Nkrumah University of Science & Technology	1
+2069	Guangdong Provincial Center for Urban and Migration Studies	1
+2070	Academy of Athens	1
+2071	Quorum Cyber	1
+2072	Matej Bel University	1
+2073	Rauf Ablyazov East European University	1
+2074	Universiti Malaysia Pahang Al-Sultan Abdullah	1
+2075	Hungarian University of Agriculture and Life Sciences	1
+2076	Beijing Academy of Artificial Intelligence	1
+2077	Organisation for the Prohibition of Chemical Weapons	1
+2078	Universiti Teknologi MARA, Perak Branch	1
+2079	Bruno Kessler Foundation	1
+2080	Faculty of Mathematics	1
+2081	Stanford Engineering	1
+2082	Vasyl Stefanyk Carpathian National University	1
+2083	Vanderbilt University	1
+2084	San Jose State University	1
+2085	University of Texas at Tyler	1
+2086	USC Viterbi School of Engineering	1
+2087	College of Micronesia-FSM	1
+2088	Politechnika Rzeszowska im. Ignacego Łukasiewicza	1
+2089	Systems Research Institute of the Polish Academy of Sciences	1
+2090	Southwest Petroleum University China	1
+2091	IU University of Applied Sciences	1
+2092	Fuller Theological Seminary	1
+2093	Nanjing Audit University	1
+2094	Universidad Anáhuac México	1
+2095	Institute of Comparative Law and Legal Theory	1
+2096	INCIBE (Spanish National Cybersecurity Institute)	1
+2097	Shanghai Jiao Tong University School of Medicine	1
+2098	Niagara University	1
+2099	GanNan Normal University	1
+2100	W. P. Carey School of Business	1
+2101	Nanjing Xiaozhuang College	1
+2102	Graduate Institute	1
+2103	Loyola Marymount University	1
+2104	International Society for Science and Religion	1
+2105	Modern Hire	1
+2106	Lally School of Management	1
+2107	Defence Research and Development Canada	1
+2108	Yorkshire and Humberside Academic Health Sciences Network	1
+2109	Universität Rostock	1
+2110	Debbie and Jerry Ivy College of Business	1
+2111	Leeds Teaching Hospitals NHS Trust	1
+2112	"University College ""cEPS- Center for Business Studies"""	1
+2113	College of finance and accounting FINra Tuzla	1
+2114	University “Vitez”	1
+2115	Psychiatrische Universitätsklinik Zürich	1
+2116	Hankamer School of Business	1
+2117	Ted Rogers School of Management	1
+2118	American University in the Emirates	1
+2119	Joseph M. Katz Graduate School of Business	1
+2120	Università Cattolica del Sacro Cuore, Campus di Roma	1
+2121	BRAC University	1
+2122	Hryhorii Skovoroda University in Pereiaslav	1
+2123	Russian State University of Justice	1
+2124	Morgridge Institute for Research	1
+2125	American University of Kuwait	1
+2126	American Towers (ATC TIPL)	1
+2127	University of Management and Technology Lahore	1
+2128	European Commission	1
+2129	ADM+S	1
+2130	Centre for the Future of the Legal Profession	1
+2131	Kongu Engineering College	1
+2132	Sri Krishna College of Engineering and Technology Coimbatore	1
+2133	Velalar College of Engineering and Technology	1
+2134	KU School of Engineering	1
+2135	CMR University	1
+2136	Termez University of Economics and Service	1
+2137	J.K.K Nataraja College of Arts & Science	1
+2138	Middle Technical University	1
+2139	Nokia Bell Labs	1
+2140	University of Lahore	1
+2141	Azman Hashim International Business School	1
+2142	Bridges for Academic Excellence	1
+2143	International Institute of Technology and Management (IITG)	1
+2144	Adama Science and Technology University	1
+2145	Université de Moncton	1
+2146	Universidade Federal do Estado do Rio de Janeiro	1
+2147	Escola de Magistratura da Justiça do Trabalho no Estado do Rio de Janeiro	1
+2148	Faculty of Computer Science	1
+2149	Bharati Vidyapeeth (Deemed to be University)	1
+2150	University of Kufa	1
+2151	ATLAS SkillTech University	1
+2152	Maturi Venkata Subba Rao Engineering College	1
+2153	Jawahar Education Society's Institute of Technology	1
+2154	Universidad Técnica de Manabí	1
+2155	Universidad Regional Autónoma de los Andes	1
+2156	Universidad Estatal de Milagro	1
+2157	Centro de Estudos Organizacionais e Sociais do Politécnico do Porto	1
+2158	T.C. Istanbul Kültür Üniversitesi	1
+2159	Institute of Graduate Studies and Research	1
+2160	Faculty of Engineering, King Abdulaziz University	1
+2161	Institut Bisnis dan Informatika Kesatuan	1
+2162	Lagos State University	1
+2163	Adekunle Ajasin University	1
+2164	Universidad Internacional Iberoamericana Arecibo	1
+2165	EADA Business School	1
+2166	Kimyo International University in Tashkent	1
+2167	College of Computer Science and Engineering	1
+2168	University of Auckland	1
+2169	Mid Sweden University, Sundsvall	1
+2170	Bath Spa University	1
+2171	FOM Hochschule für Oekonomie & Management gemeinnützige Gesellschaft mbH	1
+2172	Hogeschool INHOLLAND	1
+2173	Studio idiotēs — Design Research	1
+2174	Desautels Faculty of Management	1
+2175	Penn State Great Valley	1
+2176	University of Information Technology and Communications	1
+2177	Alma Mater Studiorum Università di Bologna, Cesena	1
+2178	Brno University of Technology	1
+2179	Sudan Technological University	1
+2180	Instituto de Investigaciones en Innovación y Gobernanza	1
+2181	Universidad de La Romana	1
+2182	Joseph Ayo Babalola University	1
+2183	Universidade Internacional do Cuanza	1
+2184	Caleb University	1
+2185	Bamidele Olumilua University of Education, Science and Technology	1
+2186	Kangwon National University	1
+2187	Changchun University of Science and Technology	1
+2188	Sichuan Provincial Architectural Design and Research Institute Co.	1
+2189	Liceo Scientifico Statale Francesco Severi	1
+2190	Universidad Norbert Wiener	1
+2191	Ivannikov Institute for System Programming of the RAS	1
+2192	Moscow University of Finance and Law	1
+2193	Gallogly College of Engineering	1
+2194	École Nationale Supérieure d'Informatique	1
+2195	Al Yamamah University	1
+2196	Claflin University	1
+2197	Universidad Europea del Atlántico	1
+2198	Universidad Internacional Iberoamericana	1
+2199	UPM	1
+2200	Lloyd Law College	1
+2201	Nashik Cancer Centre	1
+2202	UCP - Católica Lisbon School of Business & Economics	1
+2203	The Allen Institute for Artificial Intelligence	1
+2204	Shanghai International Studies University	1
+2205	Barry University	1
+2206	Community Science	1
+2207	Philadelphia Department of Human Services	1
+2208	European lawyer Registered by Solicitors Regulation Authority	1
+2209	Ikerbasque, Basque Foundation for Science	1
+2210	TECNALIA	1
+2211	Ufa University of Science and Technology	1
+2212	Chapman University	1
+2213	Northern Kentucky University	1
+2214	University of Pennsylvania School of Arts and Sciences	1
+2215	Fast Future	1
+2216	University of Limerick	1
+2217	Ernst & Young Tax Consultants SCCRL/BCVBA	1
+2218	Nelson Marlborough Institute of Technology	1
+2219	Universidad del Rosario	1
+2220	Faraday Institute for Science and Religion	1
+2221	Brooklyn College	1
+2222	Hosei University	1
+2223	College of Science, Ain Shams University	1
+2224	The Egyptian E-Learning University	1
+2225	Southern Methodist University	1
+2226	California State University, Fresno	1
+2227	Uber Technologies Inc	1
+2228	NYU Tandon School of Engineering	1
+2229	Women In Need	1
+2230	Arena.io	1
+2231	School of Engineering	1
+2232	Universidade da Coruña	1
+2233	Complejo Hospitalario Universitario Juan Canalejo	1
+2234	Baikal State University	1
+2235	Association of Russian Lawyers	1
+2236	NSHM College of Management and Technology, Kolkata	1
+2237	Belgian College of Europe	1
+2238	University of Ibadan	1
+2239	Dr. Vithalrao Vikhe Patil Foundation's Medical College and Hospital	1
+2240	Ivan Kozhedub Kharkiv National Air Force University	1
+2241	Mission’s Research Foundation (DU)	1
+2242	Rungta International Skills University	1
+2243	Antiochian House of Studies (AHOS)	1
+2244	Institute for History of Natural Sciences, Chinese Academy of Sciences	1
+2245	China Research Institute for Science Popularization	1
+2246	National Academy of Internal Affairs	1
+2247	Catholic Faculty of Theology, University of Split	1
+2248	University of Ghana Business School	1
+2249	Chhatrapati Shahu Ji Maharaj University	1
+2250	Juhari Devi Girls Degree College	1
+2251	Universitas Syiah Kuala	1
+2252	Vishwakarma University	1
+2253	Symbiosis Institute of Management Studies	1
+2254	Balaji Institute of Management & Human Resources Development (BIMHRD)	1
+2255	Indira University	1
+2256	ATME college of engineering	1
+2257	Universidad Católica de Murcia	1
+2258	Telefonica	1
+2259	Modern Education Society's College of Engineering, Pune	1
+2260	ELIG Gürkaynak Attorneys-at-Law	1
+2261	IBM Türk Limited Sirketi	1
+2262	Hogskolan i Gavle	1
+2263	Xinyang Normal University	1
+2264	California Institute of Technology	1
+2265	Zeppelin University	1
+2266	Center for Theology and the Natural Sciences	1
+2267	Sorbonne Université	1
+2268	Čerka and oPartneriai Advocates Bureau	1
+2269	International Islamic University, Islamabad	1
+2270	College of Engineering, Computing, Technology, and Mathematics	1
+2271	Allama Iqbal Open University	1
+2272	St Mary's Hospital	1
+2273	Azim Premji Philanthropic Initiatives (APPI)	1
+2274	Kavayitri Bahinabai Chaudhari North Maharashtra University	1
+2275	DeGroote School of Business	1
+2276	Guru Jambheshwar University of Science & Technology	1
+2277	Ateneo de Manila University	1
+2278	Hunan Women's University	1
+2279	Pacific National University	1
+2280	National Technical University of Ukraine “Igor Sikorsky Kyiv Polytechnic Institute”	1
+2281	Odessa National Polytechnic University	1
+2282	Universitas Negeri Malang	1
+2283	"Universitas Pembangunan Nasional ""Veteran"" Jawa Timur"	1
+2284	Universitas Islam Malang	1
+2285	XIM University	1
+2286	Xinghai Conservatory of Music	1
+2287	National University of Sciences and Technology	1
+2288	Universidad Distrital Francisco José de Caldas	1
+2289	Al-Quds Open University	1
+2290	Kyrgyz-Turkish Manas University	1
+2291	Hatay Mustafa Kemal University	1
+2292	Akademia Sztuk Pieknych im. Jana Matejki w Krakowie	1
+2293	Ira A. Fulton Schools of Engineering	1
+2294	Jagan Nath University, Bahadurgarh, Haryana	1
+2295	The State University of Management	1
+2296	Kazan National Research Technological University	1
+2297	University of Nevada	1
+2298	The Council on Quality and Leadership	1
+2299	Art-O-Matic AB	1
+2300	School of Computing	1
+2301	Institute of Computing Technology Chinese Academy of Sciences	1
+2302	UIN Fatmawati Sukarno Bengkulu	1
+2303	Faculty of Shariah and Law-Islamic Sciences University of Malaysia (USIM)	1
+2304	Uniwersytet w Bialymstoku	1
+2305	Cardiff Metropolitan University	1
+2306	Universitatea Spiru Haret	1
+2307	The Faculty of Science & Engineering	1
+2308	Defensoría del Pueblo de Ecuador	1
+2309	The Public Authority of Applied Education and Training	1
+2310	Universidade Nacional Autónoma de México (UNAM)	1
+2311	NORCE Center for Modeling Social Systems	1
+2312	CulturePulse	1
+2313	Rush University	1
+2314	Universitat Internacional de Catalunya	1
+2315	OCBC Al-Amin Bank	1
+2316	WSB University, Dabrowa Gornicza	1
+2317	Kalyani Government Engineering College	1
+2318	Kuwait American School of Education	1
+2319	Universitas Bina Darma	1
+2320	University of LabuhanBatu	1
+2321	Academy of Forensic Science	1
+2322	Citicbank Software Development Center	1
+2323	Hunan Agricultural University	1
+2324	Zhanjiang University of Science and Technology	1
+2325	Zhengzhou Tourism College	1
+2326	Harrisburg University of Science and Technology	1
+2327	Cyber Security New South Wales - Digital NSW	1
+2328	Istanbul Medeniyet University	1
+2329	Westlake University	1
+2330	Fujian Agriculture and Forestry University	1
+2331	Bilecik Şeyh Edebali Üniversitesi	1
+2332	Colorado College	1
+2333	Government College of Engineering and Textile Technology, Serampore	1
+2334	Mansoura University	1
+2335	London Academy of Science and Business	1
+2336	DEXAI - Etica Artificiale	1
+2337	Universitas Padjadjaran	1
+2338	Universidade Católica de Brasília	1
+2339	Instituto Federal De Educação, Ciencia E Tecnologia De Brasilia - IFB	1
+2340	Ministério da Gestão e da Inovação em Serviços Públicos	1
+2341	Graphic Era Hill University	1
+2342	Universidad de Tarapacá	1
+2343	Guizhou University	1
+2344	Guizhou Police Officer Vocational College	1
+2345	National University of Water and Environmental Engineering	1
+2346	Memorial Episcopal Church	1
+2347	"Universidade Estadual Paulista ""Júlio de Mesquita Filho"""	1
+2348	Research	1
+2349	World Organisation of Systems and Cybernetics	1
+2350	University of Zagreb, Faculty of Political Science	1
+2351	Fondazione Don Carlo Gnocchi	1
+2352	Högskolan Kristianstad	1
+2353	Institute for Language and Speech Processing	1
+2354	Royal College of Art	1
+2355	Centre de Gestion Scientifique	1
+2356	Anhui Normal University	1
+2357	Almaarefa University	1
+2358	State Key Laboratory of Subtropical Building and Urban Science	1
+2359	Guangdong-Hong Kong-Macau Joint Laboratory for Smart Cities	1
+2360	University Health Network	1
+2361	National Aerospace University “Kharkiv Aviation Institute”	1
+2362	Balsillie School of International Affairs	1
+2363	Architectural Association (AA) School of Architecture	1
+2364	Iran University of Science and Technology	1
+2365	Saveetha Engineering College	1
+2366	Chaitanya Bharathi Institute of Technology	1
+2367	Vignan's Institute of Engineering for Women	1
+2368	Faculty of Computer and Information	1
+2369	New Assiut Technological University (N.A.T.U.)	1
+2370	Faculty of Science	1
+2371	Hohai University	1
+2372	Unité de recherche Écodéveloppement	1
+2373	I-Shou University	1
+2374	PSN College of Engineering & Technology	1
+2375	Peking University	1
+2376	Qingdao University	1
+2377	Recovery Alberta	1
+2378	Benemérita Escuela Normal de Coahuila	1
+2379	University of Design	1
+2380	Digital Enlightenment Forum	1
+2381	The University of Newcastle, Australia	1
+2382	Zhejiang University of Science and Technology	1
+2383	Anhui University of Finance and Economics	1
+2384	BlueCrest University	1
+2385	Leuphana Universität Lüneburg	1
+2386	Berdyansk State Pedagogical University	1
+2387	University of Kerbala	1
+2388	University of Warith Al-Anbiyaa	1
+2389	SRM Institute of Science and Technology, NCR Campus	1
+2390	Faculty of Artificial Intelligence	1
+2391	E-Da Hospital	1
+2392	China Center for Information Industry Development	1
+2393	Princeton University	1
+2394	Melbourne Institute: Applied Economic & Social Research	1
+2395	Ministère de la Sécurité publique du Québec	1
+2396	Zhytomyr Polytechnic State University	1
+2397	College of Education, Psychology and Social Work	1
+2398	Qilu University of Technology	1
+2399	Guangdong University of Technology	1
+2400	Sun Yat-sen Business School	1
+2401	Falmouth University	1
+2402	University of Phayao	1
+2403	Ubon Ratchathani University	1
+2404	L’Università degli Studi di Napoli “L’Orientale”	1
+2405	UCL Institute of Education	1
+2406	Marian University	1
+2407	Catholic Institute of West Africa Port	1
+2408	UniSA Business	1
+2409	Princeton School of Public and International Affairs	1
+2410	Lakehead University	1
+2411	National Taitung University Taiwan	1
+2412	Dalian Minzu University	1
+2413	Southern Cross University	1
+2414	Griffith Health	1
+2415	University of Northumbria	1
+2416	Riphah International University	1
+2417	Horizon University College	1
+2418	Kateb Univesity	1
+2419	Tikrit University	1
+2420	Hainan Normal University	1
+2421	Hainan Tropical Ocean University	1
+2422	Haikou University of Economics	1
+2423	Chennai Institute of Technology	1
+2424	Kebri Dehar University	1
+2425	South Tyrol Cancer Registry	1
+2426	Jiujiang University	1
+2427	Luliang University	1
+2428	Sammy Ofer School of Communications, Reichman University	1
+2429	Centre for Research on Rehabilitation and Protection	1
+2430	Agari	1
+2431	Coventry University	1
+2432	Jiamusi University	1
+2433	Beijing Foreign Studies University	1
+2434	Budapest University of Economics and Business	1
+2435	University of Dunaújváros	1
+2436	Eduroll Consulting	1
+2437	A. B. Freeman School of Business	1
+2438	University of West Georgia	1
+2439	CSIC - Instituto de Políticas y Bienes Públicos (IPP)	1
+2440	The Brookings Institution	1
+2441	Allama Iqbal Medical College	1
+2442	Alfarabi Colleges	1
+2443	FMH College of Medicine and Dentistry	1
+2444	Alfarabi College of Medicine	1
+2445	Faculdade de Ciências e Tecnologia da Universidade Nova de Lisboa	1
+2446	Instituto de Engenharia de Sistemas e Computadores: Investigação e Desenvolvimento em Lisboa	1
+2447	Hellenic Competition Commission	1
+2448	Instituto Superior de Ciências Sociais e Políticas, Universidade de Lisboa	1
+2449	GOVCOPP – Research Unit on Governance, Competitiveness and Public Policies	1
+2450	Instituto Politécnico de Viseu	1
+2451	Dulun Consulting and Investing Group	1
+2452	Lodz University of Technology	1
+2453	Sir Mortimer B. Davis Jewish General Hospital	1
+2454	Dawson College	1
+2455	Adaptech Research Network	1
+2456	Coding Rights	1
+2457	National Institute of Technology Sikkim	1
+2458	JK Lakshmipat University	1
+2459	College of Computing	1
+2460	University of Cape Town	1
+2461	Edo State University Uzairue	1
+2462	Institute of Lawmaking and Scientific-Legal Expertises of the National Academy of Sciences of Ukraine	1
+2463	National University of Science & Technology (MISIS)	1
+2464	Plekhanov Russian University of Economics	1
+2465	National University of Uzbekistan named after Mirzo Ulugbek	1
+2466	Troy University	1
+2467	Solana Networks	1
+2468	National Institute of Technology Jamshedpur	1
+2469	Indian Institute of Information Technology Ranchi	1
+2470	Knowledge University	1
+2471	Kate Steenhauer Limited	1
+2472	Soongsil University	1
+2473	Universidade Federal do Maranhão	1
+2474	Erik Jonsson School of Engineering and Computer Science	1
+2475	Naval Surface Warfare Center Crane Division	1
+2476	Iranian Institute of Philosophy	1
+2477	School of Analytic Philosophy	1
+2478	École Normale Supérieure	1
+2479	Institut Jean Nicod	1
+2480	Centre de Recherches Politiques de Sciences Po	1
+2481	IT-Universitetet i København	1
+2482	ANIMA-EY LTD	1
+2483	Dell Medical School	1
+2484	University of South Florida St. Petersburg	1
+2485	College of Computer Science and Technology, Zhejiang University	1
+2486	Star Refrigeration	1
+2487	Ludwik Hirszfeld Institute of Immunology and Experimental Therapy of the Polish Academy of Sciences	1
+2488	The Grove School of Engineering	1
+2489	Adelaide Medical School	1
+2490	Centro de Desarrollo Urbano Sustentable	1
+2491	Núcleo Milenio para el Estudio del Curso de Vida y la Vulnerabilidad	1
+2492	European Parliament Research Service	1
+2493	University of Kent	1
+2494	School of Public Affairs, Zhejiang University	1
+2495	Harvard Medical School	1
+2496	Boston Children's Hospital	1
+2497	American University	1
+2498	COVID-19 Dispersed Volunteer Research Network	1
+2499	Dublin City University	1
+2500	University of Mysore	1
+2501	Mangalore University	1
+2502	Public Telecommunication Corporation (PTC)	1
+2503	McKelvey School of Engineering	1
+2504	GoodAI	1
+2505	Xavier Zubiri Foundation of North America	1
+2506	College for pure science University of Wasit	1
+2507	Ministry of Higher Education and Scientific Research, Iraq	1
+2508	Qingdao University of Technology	1
+2509	Solearth Architecture Research Center	1
+2510	China Medical University	1
+2511	Hohai University Changzhou	1
+2512	Brandon University	1
+2513	International School of Management (ISM)	1
+2514	INRIA Institut National de Recherche en Informatique et en Automatique	1
+2515	St. Joseph's College of Engineering	1
+2516	Old Dominion University	1
+2517	Administrative Headquarters of the Max Planck Society	1
+2518	Deutsche Bundesbank	1
+2519	Beedie School of Business	1
+2520	Peter B. Gustavson School of Business	1
+2521	University of Virginia	1
+2522	University of Cyprus	1
+2523	University of Nicosia	1
+2524	Indian Institute of Management Mumbai	1
+2525	Аcademician Stashis Scientific Research Institute for the Study of Crime Problems	1
+2526	IES Enrique Flórez	1
+2527	Institute of Retail Economics	1
+2528	Technological Strategy of the Spanish Radio and Television Corporation (RTVE)	1
+2529	Future of Privacy Forum	1
+2530	Robert R. McCormick School of Engineering and Applied Science	1
+2531	Universitas Ahmad Dahlan	1
+2532	CASE School of Medicine	1
+2533	Cleveland Museum of Art	1
+2534	Hathaway Brown School	1
+2535	Dr. D. Y. Patil Institute of Technology	1
+2536	Wellington School of Business and Government	1
+2537	Henan University of Economics and Law	1
+2538	European Centre for Living Technology	1
+2539	Key Laboratory of Computer Network and Information Integration, Ministry of Education	1
+2540	Pandit Deendayal Energy University	1
+2541	Sal Institute of Technology and Engineering Research	1
+2542	Deep Future Analytics LLC	1
+2543	Cyprus Academy of Sciences	1
+2544	Universität Kassel	1
+2545	WASHINGTON	1
+2546	Institute for Research in Economics and Business Administration	1
+2547	Shandong Technology and Business University	1
+2548	Kwantlen Polytechnic University	1
+2549	Capilano University	1
+2550	Harvard T.H. Chan School of Public Health	1
+2551	Jesus College	1
+2552	Naif Arab University for Security Sciences	1
+2553	Tomsk State Pedagogical University - TSPU	1
+2554	Instituto de Ingeniería del Conocimiento	1
+2555	Ingram School of Engineering	1
+2556	Jake Jabs College of Business & Entrepreneurship	1
+2557	Minot State University	1
+2558	Ankara Yildirim Beyazit University	1
+2559	Research Group for Security Institutions Management General Jonas Žemaitis Military Academy of Lithuania	1
+2560	Ministry of Economic Development of the Russian Federation	1
+2561	Archangel Ecosystem Ltd.	1
+2562	S P Jain School of Global Management	1
+2563	NHH Norwegian School of Economics	1
+2564	Mohammed Bin Rashid School of Government	1
+2565	The City University of New York	1
+2566	Department of Educational Research, Lancaster University	1
+2567	Institute of Intelligent Software	1
+2568	Brown University	1
+2569	Suan Dusit University	1
+2570	Sisaket Rajabhat University	1
+2571	Escuela Técnica Superior de Ingeniería de Sistemas Informáticos, Universidad Politécnica de Madrid	1
+2572	Mendelova Univerzita v Brně	1
+2573	The York Management School	1
+2574	Hertfordshire Business School	1
+2575	Symbiosis Centre for Applied Artificial Intelligence, Pune	1
+2576	Palacký University Olomouc	1
+2577	University of the Witwatersrand Faculty of Health Sciences	1
+2578	Netherlands Institute for the Study of Crime and Law Enforcement - NSCR	1
+2579	HMS	1
+2580	Federal Court of Appeals for the 3rd Region	1
+2581	Key Laboratory of Brain Machine Collaborative Intelligence of Zhejiang Province	1
+2582	The Department of Values, Technology and Innovation, TU Delft	1
+2583	National Institute of Technology Karnataka	1
+2584	Universidade Federal do ABC	1
+2585	School of Computing and Information	1
+2586	University of Calgary	1
+2587	Nitte Meenakshi Institute of Technology	1
+2588	Centre for Studies in Social Sciences Calcutta	1
+2589	Center for Applied Mathematical Modelling and Simulation	1
+2590	Centrum Kopernika Badań Interdyscyplinarnych Uniwersytetu Jagiellońskiego	1
+2591	Tarumanagara University	1
+2592	ESlC	1
+2593	PSNA College of Engineering and Technology	1
+2594	SCAD College of Engineering and Technology	1
+2595	Sri Ramachandra Institute of Higher Education and Research	1
+2596	GMX	1
+2597	Tianjin University	1
+2598	Universidad de Oviedo	1
+2599	Alibaba Group Holding Limited	1
+2600	University of Chester	1
+2601	Visvodaya Engineering College	1
+2602	Federal University of Technology, Akure	1
+2603	S.R.K.R.Engineering College	1
+2604	Educational Testing Service	1
+2605	Indian Institute of Technology Madras	1
+2606	Government of India	1
+2607	ESCP Europe Business School, Paris	1
+2608	ESCP Europe Business School, Berlin	1
+2609	Taiwan Institute for Governance and Communication Research	1
+2610	Liaoning Technical University	1
+2611	Complexity Science Hub Vienna	1
+2612	Institute of Philosophy of the Academy of Sciences of the Czech Republic	1
+2613	Beijing University of Technology	1
+2614	Instituto de Telecomunicações	1
+2615	Universidade de Fortaleza	1
+2616	National Institute of Telecommunications (Inatel)	1
+2617	Zagreb School of Economics and Management	1
+2618	Maharishi Markandeshwar (Deemed to be University), Mullana	1
+2619	Al Falah University, Dubai	1
+2620	University of Maiduguri	1
+2621	Technological University Dublin	1
+2622	FIPRA International	1
+2623	University of Wisconsin-Whitewater	1
+2624	Sechenov First Moscow State Medical University	1
+2625	UN Secretary-General's High-Level Panel On Digital Cooperation	1
+2626	Johns Hopkins University Applied Physics Laboratory	1
+2627	L-Università ta' Malta	1
+2628	University of Coimbra, Centre for Informatics and System	1
+2629	German Research Center for Artificial Intelligence (DFKI)	1
+2630	National Quantum Information Center	1
+2631	Sana'a University	1
+2632	University of Modern Sciences	1
+2633	Niigata Seiryo University	1
+2634	Section of Treatment	1
+2635	Kansas State University	1
+2636	Universität Potsdam	1
+2637	Hochschule für Telekommunikation Leipzig	1
+2638	School of Computer, Data & Information Sciences	1
+2639	College of Arts, Social Sciences and Commerce	1
+2640	Federal University of Technology, Minna	1
+2641	School of Computing and Information Systems	1
+2642	Federal College of Education (Technical), Gombe	1
+2643	Luleå University of Technology	1
+2644	Monash University Malaysia	1
+2645	Karunya Institute of Technology and Sciences	1
+2646	Bharati Vidyapeeth's College of Engineering, New Delhi	1
+2647	Govind Ballabh Pant Engineering College	1
+2648	Positive Technologies	1
+2649	Shanghai University of Finance and Economics	1
+2650	National Computer Network Emergency Response Technical Team/Coordination Center of China	1
+2651	Konkuk University	1
+2652	Intellicon Metalab	1
+2653	Hoover Institution	1
+2654	Flinders University	1
+2655	Manhattan College	1
+2656	Centre for the Critical Study of Apocalyptic and Millenarian Movements (CenSAMM)	1
+2657	Terna Engineering College	1
+2658	University College of Bahrain	1
+2659	Technische Universität Berlin	1
+2660	Saint Mary's University	1
+2661	Rheinland-Pfälzische Technische Universität Kaiserslautern-Landau	1
+2662	Cambridge Muslim College	1
+2663	Sarum College	1
+2664	DCision Consult	1
+2665	Rosa Luxemburg Foundation	1
+2666	University of Leicester School of Business	1
+2667	The American University in Cairo	1
+2668	PLA Strategic Support Force Information Engineering University	1
+2669	Sheffield University Management School	1
+2670	The University of Alabama in Huntsville	1
+2671	Lipscomb University	1
+2672	Athens State University	1
+2673	Edinburgh Napier University	1
+2674	Hajim School of Engineering and Applied Sciences	1
+2675	Chongqing Three Gorges University	1
+2676	Bar-Ilan University	1
+2677	University of Toronto, Trinity College	1
+2678	National Institute of Information and Communications Technology	1
+2679	California State University, Fullerton	1
+2680	School of Medical Education	1
+2681	University of St. Michael's College	1
+2682	Aalto University School of Business	1
+2683	Marine Corps University	1
+2684	United States Marine Corps	1
+2685	National Tsing Hua University	1
+2686	Oslo Nye Høyskole	1
+2687	Human Sciences Research Council of South Africa	1
+2688	School of Advanced Study, University of London	1
+2689	Macalester College	1
+2690	VA San Diego Healthcare System	1
+2691	IBM Research - Almaden	1
+2692	Department of Neurosciences	1
+2693	Center for Healthy Aging	1
+2694	Ivan Franko National University of Lviv	1
+2695	College of Electrical & Mechanical Engineering	1
+2696	Institute for Information Industry	1
+2697	Kingdom University	1
+2698	Georgetown Law	1
+2699	PPGD/FDSM	1
+2700	Universidade de Passo Fundo	1
+2701	Centro Universitário IDEAU	1
+2702	College of Computing & Informatics	1
+2703	University of Wisconsin Law School	1
+2704	Donostia-San Sebastián	1
+2705	Griffith Business School	1
+2706	South Asian University	1
+2707	FernUniversität in Hagen	1
+2708	Shanghai Normal University	1
+2709	Sichuan Conservatory of Music	1
+2710	The University of Chicago Harris School of Public Policy	1
+2711	LLM	1
+2712	University of South-Eastern Norway	1
+2713	Khalifa University	1
+2714	Universidade do Vale do Sapucaí	1
+2715	DebateGraph	1
+2716	Botswana Institute for Technology Research	1
+2717	Global Catastrophic Risk Institute (GCRI)	1
+2718	Hangzhou Dianzi University	1
+2719	Harvey Mudd College	1
+2720	Indian Institute of Technology Kanpur	1
+2721	Middlebury Institute of International Studies at Monterey	1
+2722	Elsevier B.V.	1
+2723	B.S.Abdur Rahman University	1
+2724	Academy of Maritime Education and Training	1
+2725	Douglas College	1
+2726	ESSEC Business School	1
+2727	University of Reading	1
+2728	University of Alaska Fairbanks	1
+2729	St Andrews	1
+2730	Alliance to Feed the Earth in Disasters (ALLFED)	1
+2731	Demos	1
+2732	Grindstone Security Norway	1
+2733	California Polytechnic State University, San Luis Obispo	1
+2734	Universidad de Pamplona	1
+2735	Trakia University	1
+2736	Ministério da Defesa	1
+2737	University of Bahrain	1
+2738	University of Dar es Salaam	1
+2739	Guizhou University of Commerce	1
+2740	Pittsburgh Theological Seminary	1
+2741	University of Hyderabad	1
+2742	Tezpur University	1
+2743	Instituto Militar de Engenharia	1
+2744	UNISUAM	1
+2745	University of Dundee	1
+2746	Rajamangala University of Technology Suvarnabhumi	1
+2747	South-East Asia University	1
+2748	King Mongkut's University of Technology	1
+2749	School of Theology and Ministry	1
+2750	Growth Dynamics	1
+2751	Hochschule Weihenstephan-Triesdorf	1
+2752	mk.landschaft	1
+2753	St James's Hospital	1
+2754	Institut Agama Islam Negeri Fattahul Muluk Papua	1
+2755	Universitas PTIQ Jakarta	1
+2756	Desenvolvimento e Pesquisa (IDP)	1
+2757	Kharkiv National University of Internal Affairs	1
+2758	State Tax University	1
+2759	Jiaozuo University	1
+2760	Universidad Tecnológica del Perú	1
+2761	Hunan University of Science and Engineering	1
+2762	Universidade de Aveiro	1
+2763	Chizhou University	1
+2764	College of Creative Design	1
+2765	Demos Helsinki	1
+2766	Universidad de Guayaquil	1
+2767	Faculty of Computers and Informatics	1
+2768	Faculty of Computers and Information	1
+2769	Strategy and Institutional Development Center	1
+2770	Universidade Federal de Mato Grosso	1
+2771	Universidade Federal de Ouro Preto	1
+2772	Janáček Academy of Performing Arts	1
+2773	People's Republic of China	1
+2774	Technical University of Crete	1
+2775	University of G. d'Annunzio Chieti and Pescara	1
+2776	Zhaotong Fire and Rescue Detachment	1
+2777	Sekolah Tinggi Teologi Reformed Indonesia	1
+2778	Fachhochschule Münster - Abteilung Steinfurt	1
+2779	Vignan Institute of Information Technology	1
+2780	TUM School of Management, Munich	1
+2781	Stevens Institute of Technology	1
+2782	QplusAI LLC	1
+2783	Max Planck Institute for the History of Science	1
+2784	Alexander von Humboldt Institute for Internet and Society	1
+2785	Qatar Assistive Technology Center Mada	1
+2786	Friedrich-Schiller-Universität Jena	1
+2787	Gazi Üniversitesi	1
+2788	Universidad Cardenal Herrera-CEU	1
+2789	Universidad Privada Antenor Orrego	1
+2790	Universidad de Piura	1
+2791	Institute for Globally Distributed Open Research and Education (IGDORE)	1
+2792	HCT-Abu Dhabi Baniyas Campus	1
+2793	Hellenic Army Academy	1
+2794	James Cook University	1
+2795	Ternopil Volodymyr Hnatiuk National Pedagogical University	1
+2796	University of the Bundeswehr Munich	1
+2797	Aleph Alpha	1
+2798	Egypt-Japan University of Science and Technology	1
+2799	Chaoyang University of Technology	1
+2800	Satya Wacana Christian University	1
+2801	Electronics and Telecommunications Research Institute	1
+2802	University of Science and Technology (UST)	1
+2803	University Film and Video Association	1
+2804	Escuela Nacional de Experimentación y Realización Cinematográfica	1
+2805	Toyama Prefectural University	1
+2806	Israa University	1
+2807	Institut Agama Islam Negeri Lhokseumawe	1
+2808	Universitas Andalas	1
+2809	Sigli	1
+2810	Undp	1
+2811	Institute of Philosophy and Sociology of the Polish Academy of Sciences	1
+2812	ENCG	1
+2813	Technische Universität Ilmenau	1
+2814	Tiangong University	1
+2815	Jiangxi Science and Technology Normal University	1
+2816	Benemérita Universidad Autónoma de Puebla	1
+2817	University of Zambia	1
+2818	Madan Mohan Malaviya University of Technology	1
+2819	GNIT Group of Institutions	1
+2820	New Jersey Institute of Technology	1
+2821	Universidad Nacional San Antonio Abad del Cusco	1
+2822	Unidad de Investigación	1
+2823	Konya Technical University	1
+2824	Evaluation and Examination Services	1
+2825	ELTE Centre for Social Sciences	1
+2826	University of the Philippines Manila	1
+2827	Chinese Academy of Social Sciences	1
+2828	Alfaisal University	1
+2829	Shandong Vocational College of Science and Technology	1
+2830	Ecole Nationale des Sciences Appliquées de Kénitra	1
+2831	College of Business and Economics	1
+2832	HM Hospitales	1
+2833	Indian Institute of Management Ahmedabad	1
+2834	Deakin Business School	1
+2835	Clarivate Analytics	1
+2836	Universidade de Lisboa	1
+2837	Pontifical Lateran University	1
+2838	Università Nicolò Cusano	1
+2839	Institute of International Politics and Economics	1
+2840	Jinan University	1
+2841	Shantou University Business School	1
+2842	College of Social Sciences	1
+2843	Lingnan University, Hong Kong	1
+2844	Civitas University in Warsaw	1
+2845	University of Nairobi	1
+2846	Universitat de les Illes Balears	1
+2847	Universidad Camilo José Cela	1
+2848	Afe Babalola University	1
+2849	Clarence M. Mitchell, Jr. School of Engineering	1
+2850	Pontificia Universita' Antonianum	1
+2851	University of Wollongong	1
+2852	CEU Democracy Institute	1
+2853	Universidade da Madeira	1
+2854	Escola Superior de Media Artes e Design	1
+2855	Escola Superior de Artes e Design	1
+2856	Rotman Institute of Philosophy	1
+2857	Symbiosis Institute of Media & Communication	1
+2858	"National University ""Yuri Kondratyuk Poltava Polytechnic"""	1
+2859	Naval Undersea Warfare Center Division Newport	1
+2860	Nottingham Trent University	1
+2861	Hefei Normal University	1
+2862	Nanjing University of Aeronautics and Astronautics	1
+2863	Tatung University	1
+2864	Fuzhou University of Foreign Studies and Trade	1
+2865	Universitas Kristen Indonesia	1
+2866	Universitas Siber Asia	1
+2867	Università degli Studi di Foggia	1
+2868	Institut Polytechnique de Paris	1
+2869	National Open University of Nigeria	1
+2870	Università degli Studi di Catania	1
+2871	The Royal Eswatini Police Services	1
+2872	Institute of Management Technology, Nagpur	1
+2873	Wuhan University of Science and Technology	1
+2874	Pécsi Tudományegyetem	1
+2875	Caucasus International University	1
+2876	Hamad Bin Khalifa University	1
+2877	Duquesne University	1
+2878	Miami Dade College	1
+2879	Florida Memorial University	1
+2880	Washington State University	1
+2881	Universidad Isabel I	1
+2882	College of Basic Education	1
+2883	Yazd University	1
+2884	Arabian Gulf University	1
+2885	University of Carthage, Ecole Nationale d'Ingenieurs de Carthage	1
+2886	Escola Superior Agrária de Coimbra	1
+2887	Belgian National Fund for Scientific Research	1
+2888	The Hong Kong Polytechnic University	1
+2889	Dalian University of Science and Technology	1
+2890	Wachemo University	1
+2891	Chinese Academy of Sciences	1
+2892	Institute of Automation Chinese Academy of Sciences	1
+2893	Center for Long-term Artificial Intelligence	1
+2894	Jagannath University, Bangladesh	1
+2895	Yizhou Prison of Sichuan Province	1
+2896	The University of Western Australia	1
+2897	Universiti Teknologi MARA	1
+2898	Universitas Sumatera Utara	1
+2899	Inha University	1
+2900	Universitas Islam Riau	1
+2901	Università degli Studi Suor Orsola Benincasa	1
+2902	Nova Southeastern University	1
+2903	Academic College of Tel-Aviv - Yaffo	1
+2904	Macau University of Science and Technology	1
+2905	Politechnika Wrocławska	1
+2906	Faculty of Informatics & Computer Science	1
+2907	Universidad del Pacífico	1
+2908	Faculté des Sciences de Monastir	1
+2909	Ramakrishna Mission Vidyamandira	1
+2910	Nanjing Vocational University of Industry Technology	1
+2911	Tsinghua University School of Economics and Management	1
+2912	Wenzhou University of Technology	1
+2913	Africa Health Research Institute	1
+2914	Zentrum für Europäische Wirtschaftsforschung GmbH	1
+2915	Medizinischen Fakultät Heidelberg	1
+2916	Harvard Center for Population and Development Studies	1
+2917	Chester Business School	1
+2918	Arab University College of Technology	1
+2919	Beijing Institute of Petrochemical Technology	1
+2920	D'Amore-McKim School of Business	1
+2921	Waseda University	1
+2922	Ministry of Foreign Affairs	1
+2923	EGADE Business School	1
+2924	Zhuhai MUST Science and Technology Research Institute	1
+2925	Universität Klagenfurt	1
+2926	National Taiwan Normal University	1
+2927	National Council of Social Service	1
+2928	Duke-NUS Medical School	1
+2929	Singapore General Hospital	1
+2930	Centro de Investigação em Arquitetura, Urbanismo e Design	1
+2931	Universitas Islam Internasional Indonesia	1
+2932	Kyushu University	1
+2933	Université d'Evry Val d'Essonne	1
+2934	University of Wales Trinity Saint David	1
+2935	Management Development Institute, Gurgaon	1
+2936	KFUPM Business School	1
+2937	Penn State Dickinson Law	1
+2938	Capgemini UK Ltd	1
+2939	Consulting with Governments and Private Agencies	1
+2940	Universidad Austral de Chile	1
+2941	Équipe de Recherche sur l'Utilisation des Données Individuelles en lien avec la Théorie Économique (ERUDITE)	1
+2942	University of Southern Denmark, Sønderborg	1
+2943	University of Economics - Varna	1
+2944	Ministry of Social and Family Development	1
+2945	University of Tabriz	1
+2946	Nationwide Children’s Hospital	1
+2947	Shanghai Theatre Academy	1
+2948	Imam Khomeini Naval Science University of Nowshahr	1
+2949	University of Patras	1
+2950	Sabancı Üniversitesi	1
+2951	Australian Catholic University	1
+2952	Shahjalal University of Science and Technology	1
+2953	Amazon F3	1
+2954	UIN Sunan Gunung Djati	1
+2955	Universitas Pendidikan	1
+2956	Bowdoin College	1
+2957	Haverford College	1
+2958	Brunel Law School	1
+2959	Instituto de Física Universidade do Rio Grande do Sul	1
+2960	Hospital Landshut	1
+2961	The Ohio State University College of Medicine	1
+2962	Umm Al Qura University, College of Engineering and Islamic Architecture	1
+2963	Debreceni Egyetem Informatikai Kar	1
+2964	Kookmin University	1
+2965	Daniel Felix Ritchie School of Engineering & Computer Science	1
+2966	University of the Arts Helsinki	1
+2967	Artist and Performer	1
+2968	Harvard Faculty of Arts and Sciences	1
+2969	Sheridan College	1
+2970	National Forensic Sciences University	1
+2971	V.T. Poddar BCA College	1
+2972	MEF University	1
+2973	Central Michigan University	1
+2974	Shaheed Zulfikar Ali Bhutto Institute of Science and Technology, Karachi	1
+2975	Sindh Madresstual Islam University	1
+2976	Zhejiang Guangsha Vocational and Technical University of Construction	1
+2977	Tshwane University of Technology	1
+2978	University of Namibia	1
+2979	Midlands State University Zimbabwe	1
+2980	University of Mataram	1
+2981	LEADERSHIP Newspaper	1
+2982	Torrens University Australia	1
+2983	Toplica Academy of Applied Studies	1
+2984	Central Michigan University College of Medicine	1
+2985	Beihai University of Art and Design	1
+2986	Centro Regional de Estudos para o Desenvolvimento da Sociedade da Informação (Cetic.br)	1
+2987	University of Finance and Administration	1
+2988	Doshisha University	1
+2989	University of North Texas	1
+2990	Georgetown University	1
+2991	Hofstra University	1
+2992	Lunds Universitet	1
+2993	Raoul Wallenberg Institute of Human Rights and Humanitarian Law	1
+2994	Moi University	1
+2995	The Conversation Africa	1
+2996	Indian Institute of Technology Jammu	1
+2997	Capital University	1
+2998	Health Centre Rijeka	1
+2999	Rowan-Virtua School of Osteopathic Medicine	1
+3000	University of Tetova	1
+3001	Kosovo and Metohija Academy of Applied Studies	1
+3002	Arab Open University Kuwait	1
+3003	Jiangxi Institute of Fashion Technology	1
+3004	Guangdong Province Key Laboratory of Computational Science	1
+3005	Taiyuan University of Technology	1
+3006	Shanxi University	1
+3007	Maharshi Dayanand University	1
+3008	University of Kashmir	1
+3009	BMS Institute of Technology and Management	1
+3010	KNS Institute of Technology	1
+3011	Lunds Tekniska Högskola	1
+3012	Harvard Law School	1
+3013	Universidad Politecnica de Cartagena	1
+3014	Hengxing University	1
+3015	School of Electrical Engineering	1
+3016	ICT College of Vocational Studies	1
+3017	Herbert Wertheim College of Engineering	1
+3018	Gunadarma University	1
+3019	Dongduk Women's University	1
+3020	Computer Science and Artificial Intelligence Center	1
+3021	Al-Mustaqbal University	1
+3022	Wenzhou-Kean University	1
+3023	Northern Technical University	1
+3024	University of Buraimi	1
+3025	The African Observatory on Responsible AI	1
+3026	University of Fort Hare	1
+3027	Hitotsubashi University	1
+3028	Sorbonne University Abu Dhabi	1
+3029	Yozgat Bozok University	1
+3030	SophIA	1
+3031	Sohar University	1
+3032	Islamia College of Science & Commerce	1
+3033	Indonesian Christian University in Molluccas	1
+3034	Memorial University of Newfoundland, Faculty of Medicine	1
+3035	Nile University of Nigeria	1
+3036	Universidad Espíritu Santo	1
+3037	Kean University	1
+3038	Biosphere Research Institute	1
+3039	Universidad Miguel Hernández de Elche	1
+3040	Kostanay Social and Technical University named after academician Z. Aldamzhar	1
+3041	University of Leeds, School of Medicine	1
+3042	Universidad de Alcalá	1
+3043	Institutt for energiteknikk	1
+3044	Adventist University of Africa	1
+3045	Fujitsu Limited	1
+3046	University of the Fraser Valley	1
+3047	Ospedale San Camillo	1
+3048	Instituto Andaluz Interuniversitario en Data Science and Computational Intelligence	1
+3049	Princess Sumaya University	1
+3050	The Max Steren Emek Jezreel Academic College	1
+3051	University of West Florida	1
+3052	Universidad Técnica del Norte	1
+3053	University of Oxford, Wadham College	1
+3054	Uncharted Software Inc.	1
+3055	Karolinska Institutet	1
+3056	Institutionen för Psykologi	1
+3057	International Network for Well-Being	1
+3058	Lanzhou University	1
+3059	Huawei Distributed Scheduling and Data Engine Lab	1
+3060	Polytechnique Montréal	1
+3061	Art x Science School for Transformation	1
+3062	Tecnológico Nacional de México	1
+3063	Universidad Juárez Autónoma de Tabasco	1
+3064	Al-Azhar University	1
+3065	University of Western Macedonia	1
+3066	Neapolis University Pafos	1
+3067	M.kozybayev North Kazakhstan University	1
+3068	Miras University	1
+3069	Melbourne Law School	1
+3070	Lamarr - Institut für Maschinelles Lernen und Künstliche Intelligenz	1
+3071	Dalian Maritime University	1
+3072	Lawrence Livermore National Laboratory	1
+3073	Department of Journalism and Creative Media	1
+3074	Department of Advertising and Public Relations	1
+3075	The Brody School of Medicine	1
+3076	Palm Beach Atlantic University	1
+3077	The Ohio State University	1
+3078	Liaoning Normal University	1
+3079	Key Laboratory of Brain and Cognitive Neuroscience	1
+3080	Rensselaer Polytechnic Institute	1
+3081	Zhejiang International Studies University	1
+3082	CCS Haryana Agricultural University	1
+3083	B.P.S. Mahila Vishwavidyalaya, Khanpur Kalan	1
+3084	CGC Technical Campus	1
+3085	Université de Lyon	1
+3086	Siam University	1
+3087	Institut für Friedensforschung und Sicherheitspolitik an der Universität Hamburg	1
+3088	University of the National Education Commission Krakow	1
+3089	Erzurum Technical University	1
+3090	Zalando SE	1
+3091	Echomotion GmbH	1
+3092	Yunnan University of Finance and Economics	1
+3093	Yango University	1
+3094	Université de Lille	1
+3095	Hochschule Harz, Hochschule für angewandte Wissenschaften (FH)	1
+3096	Shandong Institute of Commerce and Technology	1
+3097	University of Texas Health Science Center at Houston	1
+3098	Tokushima Family Court	1
+3099	Abai Kazakh National Pedagogical University	1
+3100	Universidad de Extremadura	1
+3101	Kampala International University	1
+3102	Ahsanullah University of Science and Technology	1
+3103	Manisa Celâl Bayar Üniversitesi	1
+3104	University of Mary Hardin-Baylor	1
+3105	LCC International University	1
+3106	Universität Hohenheim	1
+3107	Phenikaa University	1
+3108	Vuong & Associates	1
+3109	Office of CPV Central Committee	1
+3110	WSEI University	1
+3111	Columbia Theological Seminary	1
+3112	Helmut Schmidt University - University of the Federal Armed Forces Hamburg	1
+3113	Dhofar University	1
+3114	Bank for International Settlements	1
+3115	Ovidius University of Constanta	1
+3116	Gdynia Maritime University	1
+3117	University of Kelaniya	1
+3118	Jiangnan University	1
+3119	Changshu Institute of Technology	1
+3120	Belarusian National Technical University	1
+3121	Suzhou City University	1
+3122	Univerzita Pardubice	1
+3123	Universidade Federal de Goiás	1
+3124	JusGov Centro de Investigação em Justiça e Governação	1
+3125	Astana Medical University	1
+3126	K. Zhubanov Aktobe Regional University	1
+3127	“Institute of Parliamentarism” of the Department of Material and Technical Support	1
+3128	Universitas Pembangunan Nasional Veteran Jakarta	1
+3129	EMLYON Business School	1
+3130	Banasthali Vidyapith	1
+3131	IMI Delhi	1
+3132	Van Yüzüncü Yıl Üniversitesi	1
+3133	XiaMen NanYang University	1
+3134	Zhejiang Agriculture and Forestry University	1
+3135	Universidad Europea de Valencia	1
+3136	Istanbul Okan University	1
+3137	Graduate School of Informatics	1
+3138	Jagan Nath University, Jaipur	1
+3139	Jagan Institute of Management Studies	1
+3140	IILM University	1
+3141	Munhwa Ilbo	1
+3142	Universiti Teknikal Malaysia Melaka	1
+3143	Siliwangi University	1
+3144	PT Forensika Digital Nusantara	1
+3145	Department of Computer and Information Sciences	1
+3146	British Broadcasting Corporation	1
+3147	MIT Art, Design and Technology University	1
+3148	Eszterházy Károly Catholic University	1
+3149	Durham Law School	1
+3150	University of Montana	1
+3151	University of Montana - Western	1
+3152	VIlniaus Universiteto Verslo Mokykla	1
+3153	Eskisehir Technical University	1
+3154	Fenerbahçe University	1
+3155	Anhui Business College	1
+3156	National Institute of Textile Engineering and Research (NITER), University of Dhaka	1
+3157	International Islamic Academy of Uzbekistan	1
+3158	Journalism and Mass Communications University of Uzbekistan	1
+3159	Oles Honchar Dnipro National University	1
+3160	Kremenchuk Mykhailo Ostrohradskyi National University	1
+3161	Kazakh National Women‘s Teacher Training University	1
+3162	Vinnytsia Mykhailo Kotsiubynskyi State Pedagogical University	1
+3163	Mykhailo Boichuk Kyiv State Academy of Decorative Applied Arts and Design	1
+3164	Universidad CEU San Pablo	1
+3165	International School for Social and Business Studies	1
+3166	IRCCS Istituto Ortopedico Galeazzi	1
+3167	Assoetica	1
+3168	Kadir Has Üniversitesi	1
+3169	University of Zagreb	1
+3170	Federal Reserve Bank of Philadelphia	1
+3171	Final International University	1
+3172	Bangabandhu Sheikh Mujibur Rahman Digital University	1
+3173	Mawlana Bhashani Science and Technology University	1
+3174	National Institute of Technology, Warangal	1
+3175	Scientific Employee of the Laboratory of the Military Academy	1
+3176	Herff College of Engineering	1
+3177	Indian Institute of Information Technology Design and Manufacturing Kancheepuram	1
+3178	School of Public Health	1
+3179	Xinjiang University	1
+3180	Union College, Schenectady	1
+3181	Virtual Reality Medical Center	1
+3182	Interactive Media Institute	1
+3183	Infrastructure Solutions Group	1
+3184	Università Cattolica del Sacro Cuore, Campus di Brescia	1
+3185	University of Engineering and Technology, Lahore	1
+3186	National Yunlin University of Science and Technology	1
+3187	HCT-Fujairah Campuses	1
+3188	Washington University in St. Louis, George Warren Brown School of Social Work	1
+3189	Université de Tunis El Manar, Ecole Nationale d'Ingénieurs de Tunis	1
+3190	Yevhenii Bereznyak Military Academy	1
+3191	Dong A University	1
+3192	Universität Hamburg, Fakultät für Betriebswirtschaft	1
+3193	Ostbayerische Technische Hochschule Regensburg	1
+3194	Vologda State University	1
+3195	Manicaland State University of Applied Sciences	1
+3196	Governance and Public Policy University of Johannesburg	1
+3197	Astana International University	1
+3198	Abay Myrzakhmetov Kokshetau University	1
+3199	Necmettin Erbakan Üniversitesi	1
+3200	Univerza na Primorskem	1
+3201	University of Montenegro	1
+3202	Corporación Unificada Nacional de Educación Superior (CUN)	1
+3203	Instituto de Investigación IDITEK	1
+3204	Russian Presidential Academy of National Economy and Public Administration	1
+3205	Russian State University for the Humanities	1
+3206	Universitas Jember	1
+3207	ANU College of Business & Economics	1
+3208	The University of Alabama	1
+3209	German Jordanian University	1
+3210	Bursa Teknik Üniversitesi	1
+3211	Penn State Lehigh Valley	1
+3212	Universidad Nacional del Altiplano	1
+3213	Penn State Harrisburg	1
+3214	Defence Science and Technology Laboratory	1
+3215	Maritime Systems	1
+3216	A’Sharqiyah University	1
+3217	College of Islamic Sciences	1
+3218	Wake Forest University	1
+3219	Pontificia Universidad Javeriana	1
+3220	Southampton Business School	1
+3221	Dartmouth College	1
+3222	California State University, San Bernardino	1
+3223	Zhongguancun Development Group Co., Ltd.	1
+3224	Centre D'Études et de Recherches sur Le Développement International	1
+3225	Office of the Secretary General of the World Customs Organization (WCO)	1
+3226	Rikkyo University	1
+3227	Webster University Tashkent	1
+3228	Beijing Sport University	1
+3229	Aqaba University of Technology	1
+3230	Investigadora y Consultora Independiente	1
+3231	Handong Global University	1
+3232	Al Akhawayn University	1
+3233	Université de Tunis El Manar, Hôpital Razi	1
+3234	Notre Dame des Secours University Hospital	1
+3235	Bellevue Medical Center	1
+3236	Palestine Technical University–Kadoorie	1
+3237	Universidad UTE	1
+3238	Guizhou University of Engineering Science	1
+3239	Baba Ghulam Shah Badshah University	1
+3240	Florida Gulf Coast University	1
+3241	Jiaxing Nanhu University	1
+3242	Kharisma Theological Seminary	1
+3243	Brigham Young University	1
+3244	University of Northern Colorado	1
+3245	Slovenian Research and Innovation Agency	1
+3246	Central University of Haryana	1
+3247	World Citi Colleges	1
+3248	Faculté de Médecine et de Pharmacie de Fès, Université Sidi Mohamed Ben Abdellah	1
+3249	Badr University in Cairo	1
+3250	Africa Institute of South Africa	1
+3251	Effat University	1
+3252	Science for Africa Foundation	1
+3253	University of Mazandaran	1
+3254	Cadi Ayyad University	1
+3255	Università degli Studi di Teramo	1
+3256	The Second Xiangya Hospital of Central South University	1
+3257	CNRS Centre National de la Recherche Scientifique	1
+3258	University of Westminster	1
+3259	UCL Institute of Cognitive Neuroscience	1
+3260	Montreal Institute for Learning Algorithms	1
+3261	Araya Inc.	1
+3262	Eleos AI	1
+3263	University of SS Cyril and Methodius, Trnava	1
+3264	Faculté de Médecine de Tunis	1
+3265	Gulf Medical University	1
+3266	Lebanese International University	1
+3267	Akdeniz Karpaz Üniversitesi	1
+3268	Florida State University	1
+3269	Fachhochschule Erfurt	1
+3270	Health Ministry of the Republic of Indonesia	1
+3271	Instituto Federal de Educação, Ciência e Tecnologia de São Paulo	1
+3272	Universidad Europea Miguel de Cervantes	1
+3273	UC Merced	1
+3274	Jordan University of Science and Technology	1
+3275	Fujairah University	1
+3276	Université de la Manouba	1
+3277	ISTEC Business School	1
+3278	University of Anbar	1
+3279	Université Paris 2 Panthéon-Assas	1
+3280	Cranfield University	1
+3281	Department of Organisation, Work and Technology, Lancaster University Management School	1
+3282	University of Bath, School of Management	1
+3283	Accademia teatrale di Firenze Centro Culturale di Teatro APS	1
+3284	IU Internationale Hochschule GmbH	1
+3285	Notre Dame University, Lebanon	1
+3286	Erasmus School of Law	1
+3287	Universitas Amikom Yogyakarta	1
+3288	Government Law College	1
+3289	Sefako Makgatho Health Sciences University (SMU)	1
+3290	Johns Hopkins University	1
+3291	Jiangxi Normal University	1
+3292	Faculty of Business	1
+3293	Corporación Talentum	1
+3294	Universidade do Algarve	1
+3295	Minia University	1
+3296	Universidad Pedagógica y Tecnológica de Colombia	1
+3297	Universidad Nacional Abierta y a Distancia	1
+3298	Fundación Centro de Investigación y Desarrollo Tecnológico en Ciencias Aplicadas (CIDTCA)	1
+3299	Leicestershire Partnership NHS Trust	1
+3300	Patient and Public Involvement member	1
+3301	Palestine Technical University - Kadoorie	1
+3302	Akamai Technologies	1
+3303	Nanjing Tech University	1
+3304	İstanbul Sabahattin Zaim University	1
+3305	Tamil Nadu Dr. Ambedkar Law University	1
+3306	The University of Burdwan	1
+3307	Zaporozhzhia National University	1
+3308	Saveetha School of Law	1
+3309	Universidad Técnica Federico Santa María	1
+3310	Universidad Autónoma de Chile	1
+3311	Dipartimento di Informatica, Bioingegneria, Robotica e Ingegneria dei Sistemi	1
+3312	Malaysia's International Islamic University College Selangor (KUIS)	1
+3313	James Madison University	1
+3314	Dance and Theatre	1
+3315	Faculty of Education, King Abdulaziz University	1
+3316	Université Chouaib Doukkali	1
+3317	University Abdelamlek Essaâdi	1
+3318	University of Seoul	1
+3319	Korea Environment Institute	1
+3320	Land & Housing Research Institute	1
+3321	Danylo Halytsky Lviv National Medical University	1
+3322	Pavlo Tychyna Uman State Pedagogical University	1
+3323	Volodymyr Vynnychenko Central Ukrainian State University	1
+3324	Vardhaman College of Engineering	1
+3325	Management & Science University, Malaysia	1
+3326	Central South University	1
+3327	College of Management	1
+3328	Al-Ayen Iraqi University, AUIQ	1
+3329	Southern Technical University, Iraq	1
+3330	College of Computer Sciences and Information Technology, University of Anbar	1
+3331	Bayan University	1
+3332	Anbar Education Directorate	1
+3333	Universiti Islam Sultan Sharif Ali	1
+3334	Tagore Institute of Engineering and Technology	1
+3335	NPA Centenary Polytechnic College	1
+3336	Australian Institute of Criminology	1
+3337	Mimar Sinan Fine Arts University	1
+3338	Universidad Nacional de Colombia Medellin	1
+3339	Woxsen University	1
+3340	Beijing University of Posts and Telecommunications	1
+3341	NYU Law	1
+3342	Reed College	1
+3343	Krakow University of Economics	1

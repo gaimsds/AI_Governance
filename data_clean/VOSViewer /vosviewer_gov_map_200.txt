@@ -1,0 +1,201 @@
+id	label	weight
+1	University of Oxford	26
+2	Universidad Complutense de Madrid	19
+3	Wuhan University	17
+4	Alma Mater Studiorum Università di Bologna	16
+5	University of Cambridge	16
+6	Ludwig-Maximilians-Universität München	15
+7	Queensland University of Technology	15
+8	Chitkara University, Punjab	14
+9	Trinity College Dublin	14
+10	University of Johannesburg	13
+11	Universiteit van Amsterdam	13
+12	KU Leuven	13
+13	Monash University	12
+14	Tsinghua University	12
+15	King Khalid University	11
+16	The University of Edinburgh	11
+17	Applied Science Private University	11
+18	King Saud University	11
+19	Universidade da Beira Interior	10
+20	King's College London	10
+21	University of California, Berkeley	10
+22	Universität Wien	10
+23	Universiti Malaya	10
+24	Universiti Kebangsaan Malaysia	10
+25	Multimedia University	10
+26	Tartu Ülikool	10
+27	Umm Al-Qura University	10
+28	Korea University	9
+29	Beijing Normal University	9
+30	Princess Nourah Bint Abdulrahman University	9
+31	Bucharest University of Economic Studies	9
+32	National University of Singapore	9
+33	Sapienza Università di Roma	9
+34	University College London	9
+35	Universidade de Santiago de Compostela	9
+36	Siksha O Anusandhan (Deemed to be University)	9
+37	University of Chinese Academy of Sciences	9
+38	Universidad del Pais Vasco	9
+39	Nanjing University	9
+40	University of Toronto	9
+41	Western Sydney University	8
+42	Université McGill	8
+43	Università degli Studi di Torino	8
+44	The University of Sydney	8
+45	Università di Trento	8
+46	The University of Jordan	8
+47	National and Kapodistrian University of Athens	8
+48	Guangzhou University	8
+49	Purdue University	8
+50	University of Sharjah	8
+51	Universidad de Valladolid	8
+52	Sungkyunkwan University	8
+53	City University of Hong Kong	8
+54	University of South Africa	8
+55	Turun yliopisto	8
+56	Northeastern University	8
+57	Deakin University	8
+58	Prince Sultan University	8
+59	Universiti Sains Malaysia	8
+60	The Australian National University	8
+61	Tallinna Tehnikaülikool	8
+62	The University of Hong Kong	8
+63	Universidad de Sevilla	8
+64	Griffith University	8
+65	Stanford University	7
+66	Georgia Institute of Technology	7
+67	Macquarie University	7
+68	European University Institute, San Domenico di Fiesole	7
+69	University of Maryland, College Park	7
+70	Consiglio Nazionale delle Ricerche	7
+71	Università Cattolica del Sacro Cuore	7
+72	Noida International University	7
+73	University of California, Irvine	7
+74	O.P. Jindal Global University	7
+75	Presidency University Bangalore	7
+76	Al Farabi Kazakh National University	7
+77	Universidade de São Paulo	7
+78	Indiana University Bloomington	7
+79	HSE University	7
+80	Universidad de Castilla-La Mancha	7
+81	Katolicki Uniwersytet Lubelski Jana Pawła II	7
+82	Københavns Universitet	7
+83	State University of New York Albany	7
+84	Yonsei University	7
+85	United Arab Emirates University	7
+86	Imperial College London	7
+87	Universitat Politècnica de València	7
+88	European Commission Joint Research Centre	7
+89	New York University	7
+90	University of Pretoria	7
+91	K L Deemed to be University	7
+92	Qassim University	7
+93	Universidad de Granada	7
+94	Universität Zürich	7
+95	Saint Petersburg State University	7
+96	Copenhagen Business School	7
+97	Ltd.	7
+98	Universitat Pompeu Fabra Barcelona	7
+99	Universitetet i Agder	7
+100	Shanghai Jiao Tong University	7
+101	Universiteit Utrecht	7
+102	Radboud Universiteit	6
+103	University of Technology Sydney	6
+104	Aalborg University	6
+105	Imam Mohammad Ibn Saud Islamic University	6
+106	Univerza v Ljubljani	6
+107	Universidad Politécnica de Madrid	6
+108	Northern Border University	6
+109	Guru Gobind Singh Indraprastha University	6
+110	Swinburne University of Technology	6
+111	Odesa State University of Internal Affairs	6
+112	Yeungnam University	6
+113	Universidad de Guadalajara	6
+114	Vellore Institute of Technology	6
+115	Taras Shevchenko National University of Kyiv	6
+116	University of California, Davis	6
+117	Charles University	6
+118	Universidad de Navarra	6
+119	Massachusetts Institute of Technology	6
+120	VIT-AP University	6
+121	Delft University of Technology	6
+122	University of Leeds	6
+123	Central China Normal University	6
+124	Hanyang University	6
+125	Middle East University Jordan	6
+126	Tongji University	6
+127	Sichuan University	6
+128	Universitetet i Stavanger	6
+129	Norges Teknisk-Naturvitenskapelige Universitet	6
+130	University of Macau	6
+131	Eberhard Karls Universität Tübingen	6
+132	Oxford Social Sciences Division	6
+133	University of Melbourne	6
+134	London School of Economics and Political Science	6
+135	Chitkara University, Himachal Pradesh	6
+136	Universiti Utara Malaysia	6
+137	Universidad de Salamanca	6
+138	Prince Sattam Bin Abdulaziz University	6
+139	Charles Sturt University	6
+140	University of Florida	6
+141	Imam Abdulrahman Bin Faisal University	6
+142	University of Alberta	6
+143	University of Surrey	6
+144	Universitat Autònoma de Barcelona	6
+145	Department of Computer Science	6
+146	Nanyang Technological University	6
+147	Universidad Nacional de Educacion a Distancia	6
+148	Seoul National University	6
+149	Universiti Malaysia Sarawak	6
+150	UNSW Sydney	6
+151	Universidad Nacional Autónoma de México	5
+152	Manipal Institute of Technology	5
+153	La Trobe University	5
+154	Kennesaw State University	5
+155	The University of North Carolina at Charlotte	5
+156	Jawaharlal Nehru University	5
+157	University of Missouri	5
+158	Universitetet i Bergen	5
+159	Lovely Professional University	5
+160	Aarhus Universitet	5
+161	Universität Duisburg-Essen	5
+162	Sun Yat-Sen University	5
+163	Sumy State University	5
+164	Singapore Management University	5
+165	Karlsruher Institut für Technologie	5
+166	Technische Universität München	5
+167	Arizona State University Downtown Phoenix Campus	5
+168	International Islamic University Malaysia	5
+169	Masaryk University	5
+170	University of Belgrade	5
+171	The Alan Turing Institute	5
+172	Wee Kim Wee School of Communication and Information	5
+173	The University of Queensland	5
+174	Chinese University of Hong Kong	5
+175	Zhejiang University	5
+176	Uniwersytet Jagielloński	5
+177	Queen Mary University of London	5
+178	School of Management	5
+179	Universität Freiburg	5
+180	University of Galway	5
+181	Vilniaus Universitetas	5
+182	Universidad Autónoma del Estado de México	5
+183	Universidad Autónoma de Madrid	5
+184	Amrita School of Business	5
+185	Arizona State University	5
+186	University of Piraeus	5
+187	Western University	5
+188	Universiti Tun Hussein Onn Malaysia	5
+189	Faculty of Engineering	5
+190	International University of La Rioja	5
+191	Missouri University of Science and Technology	5
+192	Syddansk Universitet	5
+193	University of Georgia	5
+194	Tampere University	5
+195	Dalhousie University	5
+196	Wayne State University	5
+197	SRM Institute of Science and Technology	5
+198	Sveučilište Josipa Jurja Strossmayera u Osijeku	5
+199	Université Laval	5
+200	École Polytechnique Fédérale de Lausanne	5

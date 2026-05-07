@@ -1,73 +1,33 @@
-# =============================================================================
-#  4c_data_integrity_fix.py
-#  Project: Mapping Global AI Governance Narratives
-#  Authors: Tambudzai Gundani & Joshua Gray
-#  Date:    March 2026
-# =============================================================================
-#
-#  WHAT THIS SCRIPT DOES:
-#  ----------------------
-#  Fixes data integrity issues identified after running 4_model_finetuning.py
-#  and 4b_update_governance_scores.py. Must be run AFTER both of those.
-#
-#  DEPENDENCIES (must exist before running):
-#  ------------------------------------------
-#  data_clean/scopus_cleaned.csv          — columns include: scopus_id,
-#                                           primary_country, cover_date
-#  data_clean/policy_corpus.csv           — columns include: doc_id, text_clean
-#  results/scopus_topics_finetuned.csv    — from 4_model_finetuning.py
-#  results/governance_papers.csv          — from 4b_update_governance_scores.py
-#  results/topics_finetuned.csv           — from 4b_update_governance_scores.py
-#  results/policy_topic_assignments.csv   — from 3_modelling.py
-#
-#  FIXES APPLIED:
-#  --------------
-#  Fix 1 — primary_country + cover_date merged from scopus_cleaned.csv
-#           The modelling script looked for 'country'/'coverDate' (wrong names)
-#           Correct column names confirmed: primary_country, cover_date
-#
-#  Fix 2 — Governance scores propagated into scopus_topics_finetuned.csv
-#           4b updated governance_papers.csv but not the full scopus file
-#
-#  Fix 3 — Policy chunks re-assigned via keyword overlap matching
-#           898 chunks were stuck in Topic 0 from Round 1
-#           641 were unassigned (-1)
-#           This fix matches each document's text against governance topic
-#           keywords. Threshold: 2 minimum keyword matches.
-#           Non-zero original assignments kept via direct mapping.
-#
-#  Fix 4 — cross_corpus_alignment_v2.csv rebuilt with 133 finetuned topics
-#
-#  Fix 5 — policy_document_topics_v2.csv rebuilt with finetuned topic IDs
-#
-#  OUTPUTS saved to results/:
-#  --------------------------
-#  scopus_topics_finetuned.csv        — country + cover_date + governance scores
-#  governance_papers.csv              — country + cover_date added
-#  policy_topic_assignments_v2.csv    — policy chunks with finetuned topic IDs
-#  policy_document_topics_v2.csv      — per-document topic summary (finetuned)
-#  cross_corpus_alignment_v2.csv      — shared vs academic-only (133 topics)
-#  integrity_report.txt               — summary of all fixes applied
-#
-#  PIPELINE ORDER (for full reproducibility):
-#  -------------------------------------------
-#  1_data_collection_scopus.py
-#  1_data_collection_policyframeworks.py
-#  2_data_cleaning_scopus.py
-#  2b_institution_geocoding_scopus.py
-#  2c_coauthorship_edges_scopus.py
-#  2_policy_text_extraction.py
-#  3_modelling.py
-#  4_model_finetuning.py
-#  4b_update_governance_scores.py
-#  4c_data_integrity_fix.py          ← THIS SCRIPT
-#  4d_sentiment_analysis.py          ← NEXT
-# =============================================================================
+"""
+========================================================================================================================
+DATA INTEGRITY FIX
+Project: Uneven Science–Policy Translation Shapes Global AI Governance
+Authors: Tambudzai G. Charumbira & Joshua Gray
+Institution: George Washington University, CCAS | M.S. Data Science | Spring 2026
+Date: March 2026
 
+DESCRIPTION:
+This script resolved data integrity issues identified after the modelling and finetuning stages. It was run once after
+4_model_finetuning.py and 4b_update_governance_scores.py.
 
-# -----------------------------------------------------------------------------
-#  IMPORTS
-# -----------------------------------------------------------------------------
+Fixes applied:
+  1. Merged primary_country and cover_date from scopus_cleaned.csv into the topic assignment files (the modelling script
+     used incorrect column names 'country'/'coverDate')
+  2. Propagated finalized governance scores into scopus_topics_finetuned.csv
+  3. Re-assigned 898 policy chunks stuck in Topic 0 and 641 unassigned chunks using keyword overlap matching against
+     governance topic vocabulary (minimum 2 keyword matches required)
+  4. Rebuilt cross_corpus_alignment_v2.csv using all 133 finetuned topics
+  5. Rebuilt policy_document_topics_v2.csv with finetuned topic IDs
+
+OUTPUT FILES (saved to results/):
+- scopus_topics_finetuned.csv      → Country + cover_date + governance scores added
+- governance_papers_stance.csv     → Final governance corpus with all metadata
+- policy_topic_assignments_v2.csv  → Policy chunks with finetuned topic assignments
+- policy_document_topics_v2.csv    → Per-document topic summary (finetuned)
+- cross_corpus_alignment_v2.csv    → Academic–policy alignment (133 topics)
+- integrity_report.txt             → Summary of all fixes applied
+========================================================================================================================
+"""
 
 import logging
 import warnings
@@ -76,20 +36,9 @@ from pathlib import Path
 from datetime import datetime
 
 warnings.filterwarnings("ignore")
-
-
-# -----------------------------------------------------------------------------
-#  PATHS
-# -----------------------------------------------------------------------------
-
 BASE_DIR    = Path(__file__).parent.parent
 DATA_CLEAN  = BASE_DIR / "data_clean"
 RESULTS_DIR = BASE_DIR / "results"
-
-
-# -----------------------------------------------------------------------------
-#  LOGGING
-# -----------------------------------------------------------------------------
 
 logging.basicConfig(
     level=logging.INFO,
@@ -102,12 +51,11 @@ logging.basicConfig(
 )
 log = logging.getLogger(__name__)
 
-
-# =============================================================================
-#  FIX 1 + FIX 2
-#  primary_country + cover_date + governance scores
-# =============================================================================
-
+# ======================================================================================================================
+#  FIX 1: MERGE MISSING METADATA
+#  The modelling script referenced 'country' and 'coverDate' columns which did not exist in the output. The correct
+#  column names (primary_country, cover_date) were merged from scopus_cleaned.csv.
+# ======================================================================================================================
 def fix_country_and_scores():
     """
     Fix 1: Merges primary_country and cover_date from scopus_cleaned.csv
@@ -126,7 +74,6 @@ def fix_country_and_scores():
     log.info("  FIX 1 + FIX 2 — COUNTRY + DATE + GOVERNANCE SCORES")
     log.info("=" * 60)
 
-    # Load scopus_cleaned.csv with confirmed column names
     log.info("  Loading scopus_cleaned.csv...")
     cleaned = pd.read_csv(
         DATA_CLEAN / "scopus_cleaned.csv",
@@ -145,19 +92,19 @@ def fix_country_and_scores():
     score_map = dict(zip(topics["topic_id"].astype(str), topics["governance_score"]))
     label_map = dict(zip(topics["topic_id"].astype(str), topics["topic_label"]))
 
-    # ── Update scopus_topics_finetuned.csv ──────────────────────────────────
+    # ── Updating scopus_topics_finetuned.csv ──────────────────────────────────
     log.info("")
     log.info("  Updating scopus_topics_finetuned.csv...")
     ft = pd.read_csv(RESULTS_DIR / "scopus_topics_finetuned.csv", dtype=str)
 
-    # Remove stale country/date columns before merge
+    # Removing stale country/date columns before merge
     for col in ["country", "cover_date", "coverDate"]:
         if col in ft.columns:
             ft.drop(columns=[col], inplace=True)
 
     ft = ft.merge(cleaned, on="scopus_id", how="left")
 
-    # Handle potential _x/_y suffixes from merge
+    # Handling potential _x/_y suffixes from merge
     if "cover_date_y" in ft.columns:
         ft["cover_date"] = ft["cover_date_y"].fillna("Unknown")
         ft.drop(columns=[c for c in ["cover_date_x","cover_date_y"] if c in ft.columns],
@@ -167,13 +114,15 @@ def fix_country_and_scores():
         ft["cover_date"] = ft["cover_date"].fillna("Unknown")
 
     ft["country"] = ft["primary_country"].fillna("Unknown")
-
-    # Clean up merge artefacts
     for col in ["primary_country", "all_countries"]:
         if col in ft.columns:
             ft.drop(columns=[col], inplace=True)
 
-    # Fix 2: Propagate governance scores
+# ======================================================================================================================
+#  FIX 2: PROPAGATE GOVERNANCE SCORES
+#  Finalized governance scores from topics_finetuned.csv were merged into the full Scopus topic assignment file, which
+#  had been left with stale scores from before the 4b update.
+# ======================================================================================================================
     ft["governance_score"]      = ft["topic_id_finetuned"].map(score_map)
     ft["topic_label_finetuned"] = ft["topic_id_finetuned"].map(label_map)
     ft["governance_score"]      = pd.to_numeric(ft["governance_score"], errors="coerce")
@@ -184,9 +133,7 @@ def fix_country_and_scores():
     log.info(f"  Papers with score >= 0.5:    {n_gov:,} (expected: 3,186)")
 
     ft.to_csv(RESULTS_DIR / "scopus_topics_finetuned.csv", index=False, encoding="utf-8")
-    log.info("  ✅ scopus_topics_finetuned.csv saved")
-
-    # ── Update governance_papers.csv ────────────────────────────────────────
+    log.info("   scopus_topics_finetuned.csv saved")
     log.info("")
     log.info("  Updating governance_papers.csv...")
     gov = pd.read_csv(RESULTS_DIR / "governance_papers.csv", dtype=str)
@@ -194,7 +141,6 @@ def fix_country_and_scores():
     for col in ["country", "cover_date", "coverDate"]:
         if col in gov.columns:
             gov.drop(columns=[col], inplace=True)
-
     gov = gov.merge(cleaned, on="scopus_id", how="left")
 
     if "cover_date_y" in gov.columns:
@@ -220,44 +166,38 @@ def fix_country_and_scores():
         log.info(f"    {c:<30} {n:,}")
 
     gov.to_csv(RESULTS_DIR / "governance_papers.csv", index=False, encoding="utf-8")
-    log.info("  ✅ governance_papers.csv saved")
+    log.info("   governance_papers.csv saved")
 
     return ft, gov
 
-
-# =============================================================================
-#  FIX 3
-#  Re-assign policy chunks stuck in Topic 0 and -1
-# =============================================================================
-
+# ======================================================================================================================
+#  FIX 3: POLICY CHUNK RE-ASSIGNMENT
+#  898 policy chunks assigned to the now-decomposed Topic 0 and 641 unassigned chunks were re-matched to finetuned topics
+#  using keyword overlap. Each chunk's text was compared against each governance topic's top keywords, and the topic with
+#  the highest overlap (minimum 2 matches) was assigned. Non-zero original assignments were preserved via direct topic
+#  ID mapping.
+# ======================================================================================================================
 def fix_policy_assignments():
     """
-    898 policy chunks were assigned to Topic 0 (catch-all) in Round 1.
-    641 chunks were unassigned (-1).
+    898 policy chunks were assigned to Topic 0 (catch-all) in Round 1. 641 chunks were unassigned (-1).
 
     This function re-assigns them by:
     1. Loading the full document text from policy_corpus.csv
-    2. For each Topic 0 or -1 chunk, finding which governance topic's
-       keywords overlap most with that document's text
+    2. For each Topic 0 or -1 chunk, finding which governance topic's keywords overlap most with that document's text
     3. Assigning the chunk to that topic if overlap >= 2 keywords
 
-    Doc IDs confirmed format: USA_National_AI_RD_Strategic_Plan_2023
-    (filename without .pdf extension, matching policy_corpus.csv doc_id)
+    Doc IDs confirmed format: USA_National_AI_RD_Strategic_Plan_2023 (filename without .pdf extension,
+    matching policy_corpus.csv doc_id). Non-zero original assignments (T2, T15, T31 etc.) are kept as-is via direct
+    mapping — they were correctly assigned in Round 1.
 
-    Non-zero original assignments (T2, T15, T31 etc.) are kept as-is
-    via direct mapping — they were correctly assigned in Round 1.
-
-    Limitation: This is keyword-based matching, not embedding-based.
-    It is an approximation documented in the methodology section.
-    Chunks remaining as -1 after this fix genuinely do not match any
-    recognised governance theme in the finetuned topic vocabulary.
+    Limitation: This is keyword-based matching, not embedding-based. It is an approximation documented in the methodology
+    section. Chunks remaining as -1 after this fix genuinely do not match any recognised governance theme in the
+    finetuned topic vocabulary.
     """
     log.info("")
     log.info("=" * 60)
     log.info("  FIX 3 — POLICY CHUNK RE-ASSIGNMENT")
     log.info("=" * 60)
-
-    # Load policy corpus
     corpus   = pd.read_csv(DATA_CLEAN / "policy_corpus.csv", dtype=str)
     text_col = next(
         (c for c in ["text_clean", "text_raw", "text"] if c in corpus.columns),
@@ -268,17 +208,13 @@ def fix_policy_assignments():
     log.info(f"  Sample doc_ids: {corpus['doc_id'].head(3).tolist()}")
 
     if text_col is None:
-        log.error("  ❌ No text column in policy_corpus.csv — Fix 3 cannot proceed")
+        log.error("   No text column in policy_corpus.csv — Fix 3 cannot proceed")
         return None
-
-    # Build doc_id → full text lookup
     doc_texts = {
         str(row["doc_id"]).strip(): str(row.get(text_col, ""))
         for _, row in corpus.iterrows()
     }
     log.info(f"  Documents in lookup: {len(doc_texts)}")
-
-    # Load governance topic keywords
     topics    = pd.read_csv(RESULTS_DIR / "topics_finetuned.csv")
     label_map = dict(zip(topics["topic_id"], topics["topic_label"]))
     score_map = dict(zip(topics["topic_id"], topics["governance_score"]))
@@ -292,8 +228,6 @@ def fix_policy_assignments():
         gov_kw[tid] = kw_set
 
     log.info(f"  Governance topics for matching: {len(gov_kw)}")
-
-    # Load Round 1 policy assignments
     policy = pd.read_csv(RESULTS_DIR / "policy_topic_assignments.csv", dtype=str)
     policy["topic_id"] = pd.to_numeric(
         policy["topic_id"], errors="coerce"
@@ -304,7 +238,6 @@ def fix_policy_assignments():
     log.info(f"  Topic -1: {(policy['topic_id']==-1).sum():,}")
     log.info(f"  Other:    {(policy['topic_id']>0).sum():,}")
 
-    # Direct map: non-zero topics from Round 1 are already correct
     direct_map = {
         2: 2,  4: 4,  8: 8,  9: 9,  12: 12, 15: 15,
         17: 17, 21: 21, 24: 24, 25: 25, 31: 31,
@@ -328,8 +261,6 @@ def fix_policy_assignments():
             if overlap > best_score:
                 best_score = overlap
                 best_tid   = tid
-
-        # Require minimum 2 keyword matches
         return best_tid if best_score >= 2 else -1
 
     log.info("  Running keyword-based reassignment...")
@@ -338,23 +269,18 @@ def fix_policy_assignments():
         lambda r: find_best_governance_topic(r["doc_id"], int(r["topic_id"])),
         axis=1
     )
-
     policy["topic_id_finetuned"]    = pd.to_numeric(
         policy["topic_id_finetuned"], errors="coerce"
     ).fillna(-1).astype(int)
     policy["topic_label_finetuned"] = policy["topic_id_finetuned"].map(label_map)
     policy["governance_score"]      = policy["topic_id_finetuned"].map(score_map)
 
-    # Summary
     reassigned_t0  = (
-        (policy["topic_id"] == 0) & (policy["topic_id_finetuned"] != -1)
-    ).sum()
+        (policy["topic_id"] == 0) & (policy["topic_id_finetuned"] != -1)).sum()
     reassigned_neg = (
-        (policy["topic_id"] == -1) & (policy["topic_id_finetuned"] != -1)
-    ).sum()
+        (policy["topic_id"] == -1) & (policy["topic_id_finetuned"] != -1)).sum()
     gov_chunks   = (
-        pd.to_numeric(policy["governance_score"], errors="coerce") >= 0.5
-    ).sum()
+        pd.to_numeric(policy["governance_score"], errors="coerce") >= 0.5).sum()
     still_minus1 = (policy["topic_id_finetuned"] == -1).sum()
 
     log.info(f"  Topic 0 reassigned:        {reassigned_t0:,}")
@@ -381,15 +307,14 @@ def fix_policy_assignments():
         RESULTS_DIR / "policy_topic_assignments_v2.csv",
         index=False, encoding="utf-8"
     )
-    log.info("  ✅ policy_topic_assignments_v2.csv saved")
+    log.info("   policy_topic_assignments_v2.csv saved")
     return policy
 
-
-# =============================================================================
-#  FIX 4
-#  Rebuild cross-corpus alignment with 133 finetuned topics
-# =============================================================================
-
+# ======================================================================================================================
+#  FIX 4: CROSS-CORPUS ALIGNMENT REBUILD
+#  The alignment table was rebuilt using all 133 finetuned topics (the original used only the 46 Stage 1 topics). This
+#  produced the final alignment: 10 shared, 11 academic-only, 0 policy-only.
+# ======================================================================================================================
 def rebuild_cross_corpus_alignment(policy_v2: pd.DataFrame):
     """
     Rebuilds cross_corpus_alignment_v2.csv.
@@ -409,13 +334,10 @@ def rebuild_cross_corpus_alignment(policy_v2: pd.DataFrame):
 
     topics     = pd.read_csv(RESULTS_DIR / "topics_finetuned.csv")
     gov_papers = pd.read_csv(RESULTS_DIR / "governance_papers.csv", dtype=str)
-
     gov_papers["topic_id_finetuned"] = pd.to_numeric(
-        gov_papers["topic_id_finetuned"], errors="coerce"
-    ).fillna(-1).astype(int)
+        gov_papers["topic_id_finetuned"], errors="coerce").fillna(-1).astype(int)
     policy_v2["topic_id_finetuned"]  = pd.to_numeric(
-        policy_v2["topic_id_finetuned"], errors="coerce"
-    ).fillna(-1).astype(int)
+        policy_v2["topic_id_finetuned"], errors="coerce").fillna(-1).astype(int)
 
     scopus_counts = (
         gov_papers[gov_papers["topic_id_finetuned"] != -1]
@@ -471,15 +393,14 @@ def rebuild_cross_corpus_alignment(policy_v2: pd.DataFrame):
         log.info(f"    [{int(r['topic_id']):3d}]  scopus={r['scopus_count']:,}  "
                  f"{r['topic_label'][:50]}")
 
-    log.info("  ✅ cross_corpus_alignment_v2.csv saved")
+    log.info("   cross_corpus_alignment_v2.csv saved")
     return alignment
 
-
-# =============================================================================
-#  FIX 5
-#  Rebuild policy document topics with finetuned IDs
-# =============================================================================
-
+# ======================================================================================================================
+#  FIX 5: POLICY DOCUMENT TOPICS REBUILD
+#  Per-document topic summaries were rebuilt with finetuned topic IDs and labels, including chunk counts and proportions
+#  per document per topic.
+# ======================================================================================================================
 def rebuild_policy_document_topics(policy_v2: pd.DataFrame):
     """
     Rebuilds policy_document_topics_v2.csv.
@@ -496,10 +417,8 @@ def rebuild_policy_document_topics(policy_v2: pd.DataFrame):
 
     topics    = pd.read_csv(RESULTS_DIR / "topics_finetuned.csv")
     label_map = dict(zip(topics["topic_id"], topics["topic_label"]))
-
     policy_v2["topic_id_finetuned"] = pd.to_numeric(
-        policy_v2["topic_id_finetuned"], errors="coerce"
-    ).fillna(-1).astype(int)
+        policy_v2["topic_id_finetuned"], errors="coerce").fillna(-1).astype(int)
 
     assigned   = policy_v2[policy_v2["topic_id_finetuned"] != -1]
     doc_topics = (
@@ -531,14 +450,11 @@ def rebuild_policy_document_topics(policy_v2: pd.DataFrame):
             f"{r['chunk_count']:3d} chunks ({r['proportion']:.0%})  "
             f"{str(r['topic_label_finetuned'])[:40]}"
         )
+    log.info("   policy_document_topics_v2.csv saved")
 
-    log.info("  ✅ policy_document_topics_v2.csv saved")
-
-
-# =============================================================================
-#  WRITE INTEGRITY REPORT
-# =============================================================================
-
+# ======================================================================================================================
+#  WRITING INTEGRITY REPORT
+# ======================================================================================================================
 def write_integrity_report(ft, gov, policy_v2, alignment):
     """Writes results/integrity_report.txt summarising all fixes."""
     log.info("")
@@ -631,12 +547,7 @@ def write_integrity_report(ft, gov, policy_v2, alignment):
     with open(RESULTS_DIR / "integrity_report.txt", "w", encoding="utf-8") as f:
         f.write("\n".join(lines))
 
-    log.info("  ✅ integrity_report.txt saved")
-
-
-# =============================================================================
-#  MAIN
-# =============================================================================
+    log.info("   integrity_report.txt saved")
 
 def main():
     log.info("=" * 60)
@@ -645,25 +556,15 @@ def main():
     log.info("=" * 60)
 
     ft = gov = policy_v2 = alignment = None
-
-    # Fix 1 + 2
     ft, gov = fix_country_and_scores()
-
-    # Fix 3
     policy_v2 = fix_policy_assignments()
     if policy_v2 is None:
         log.error("Fix 3 failed — check data_clean/policy_corpus.csv")
         return
 
-    # Fix 4
     alignment = rebuild_cross_corpus_alignment(policy_v2)
-
-    # Fix 5
     rebuild_policy_document_topics(policy_v2)
-
-    # Report
     write_integrity_report(ft, gov, policy_v2, alignment)
-
     log.info("")
     log.info("=" * 60)
     log.info("  4c COMPLETE")
@@ -677,7 +578,6 @@ def main():
     log.info("")
     log.info("  Next: commit to Git, then build 4d_sentiment_analysis.py")
     log.info("=" * 60)
-
 
 if __name__ == "__main__":
     main()

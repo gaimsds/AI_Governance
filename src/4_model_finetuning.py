@@ -1,47 +1,40 @@
-# =============================================================================
-#  MODEL FINETUNING SCRIPT — TOPIC 0 DECOMPOSITION + LABELLING
-#  Project: Mapping Global AI Governance Narratives
-#  Authors: Tambudzai Gundani & Joshua Gray
-#  Date:    March 2026
-# =============================================================================
-#
-#  WHAT THIS SCRIPT DOES:
-#  ----------------------
-#  Stage 1 — Decomposes the oversized Topic 0 (21,900 papers, 53% of corpus)
-#             into meaningful sub-topics using a second BERTopic pass with
-#             smaller min_cluster_size
-#
-#  Stage 2 — Merges sub-topics back into the main topic list, replacing
-#             Topic 0 with ~8-15 finer-grained sub-topics
-#
-#  Stage 3 — Labels all topics with human-readable governance-relevant names
-#             and scores each for governance relevance (0.0–1.0)
-#
-#  Stage 4 — Produces updated output files ready for visualisation and
-#             statistical analysis in 5_streamlit_dashboard.py
-#
-#  OUTPUT FILES (saved to results/):
-#  -----------------------------------
-#  topics_finetuned.csv           — all topics with labels + governance scores
-#  scopus_topics_finetuned.csv    — all Scopus papers with updated topic IDs
-#  topic0_subtopics.csv           — sub-topics found within Topic 0
-#  governance_topics.csv          — governance-relevant topics only (score >= 0.5)
-#  governance_papers.csv          — papers assigned to governance topics
-#  policy_alignment_finetuned.csv — updated cross-corpus alignment
-# =============================================================================
+"""
+========================================================================================================================
+BERTOPIC FINETUNING — TOPIC 0 DECOMPOSITION AND LABELLING
+Project: Uneven Science–Policy Translation Shapes Global AI Governance
+Authors: Tambudzai G. Charumbira & Joshua Gray
+Institution: George Washington University, CCAS | M.S. Data Science | Spring 2026
+Date: March 2026
 
+DESCRIPTION:
+This script addressed the Topic 0 catch-all problem from Stage 1. The 21,900 papers (53% of the corpus) that
+fell into the generic Topic 0 were extracted and processed through a second BERTopic pass with a lower
+min_cluster_size (15 vs 50), yielding 88 meaningful sub-topics. These were merged back into the main topic
+inventory, producing a final total of 133 topics (45 original + 88 sub-topics).
 
-# -----------------------------------------------------------------------------
+Each topic was then assigned a human-readable label and a governance relevance score (0.0–1.0) based on
+keyword inspection and alignment with OECD AI Principles, EU AI Act risk categories, and UNESCO Ethics
+Recommendation. Topics scoring ≥0.5 were classified as governance-relevant.
+
+Note: Sub-topic governance scores were finalized in 4b_update_governance_scores.py after manual review.
+
+OUTPUT FILES (saved to results/):
+- topics_finetuned.csv             → All 133 topics with labels and governance scores
+- scopus_topics_finetuned.csv      → All papers with updated topic IDs
+- topic0_subtopics.csv             → 88 sub-topics found within Topic 0
+- governance_topics.csv            → Governance-relevant topics only (score ≥ 0.5)
+- governance_papers.csv            → Papers assigned to governance topics
+========================================================================================================================
+"""
+# ======================================================================================================================
 #  SECTION 1: IMPORTS
-# -----------------------------------------------------------------------------
-
+# ======================================================================================================================
 import logging
 import warnings
 import numpy as np
 import pandas as pd
 from pathlib import Path
 from datetime import datetime
-
 from bertopic import BERTopic
 from sentence_transformers import SentenceTransformer
 from umap import UMAP
@@ -50,22 +43,18 @@ from sklearn.feature_extraction.text import CountVectorizer
 
 warnings.filterwarnings("ignore")
 
-
-# -----------------------------------------------------------------------------
+# ======================================================================================================================
 #  SECTION 2: PATHS
-# -----------------------------------------------------------------------------
-
+# ======================================================================================================================
 BASE_DIR    = Path(__file__).parent.parent
 DATA_CLEAN  = BASE_DIR / "data_clean"
 RESULTS_DIR = BASE_DIR / "results"
 MODELS_DIR  = BASE_DIR / "models"
 RESULTS_DIR.mkdir(parents=True, exist_ok=True)
 
-
-# -----------------------------------------------------------------------------
+# ======================================================================================================================
 #  SECTION 3: LOGGING
-# -----------------------------------------------------------------------------
-
+# ======================================================================================================================
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s  %(message)s",
@@ -77,20 +66,18 @@ logging.basicConfig(
 )
 log = logging.getLogger(__name__)
 
-
-# -----------------------------------------------------------------------------
-#  SECTION 4: GOVERNANCE RELEVANCE SCORES
-#  Manual scores (0.0–1.0) assigned to each original topic based on
-#  how directly it relates to AI governance, risk, and policy discourse.
-#  These reflect expert judgement and are documented in methodology.
-#
-#  1.0 = core governance theme
-#  0.7 = significant governance relevance
-#  0.5 = moderate relevance (governance implications discussed)
-#  0.3 = peripheral relevance
-#  0.0 = AI application domain, not governance
-# -----------------------------------------------------------------------------
-
+# ======================================================================================================================
+#  SECTION 4: GOVERNANCE RELEVANCE SCORES AND TOPIC LABELS
+#  Each of the 46 original topics was assigned a governance relevance score (0.0–1.0) based on expert inspection of topic
+#  keywords and alignment with three established governance frameworks: OECD AI Principles (2019), EU AI Act risk
+#  categories (European Parliament, 2024), and UNESCO Ethics Recommendation (2021). Scoring criteria:
+#    1.0 = core governance theme (e.g., Algorithmic Fairness, EU Regulation)
+#    0.7–0.9 = significant governance relevance (e.g., Cybersecurity, Autonomous Weapons)
+#    0.5 = moderate relevance (e.g., Accessibility, Islamic/Religious Ethics)
+#    0.1–0.3 = peripheral or application-domain topics
+#    0.0 = pure AI application with no governance dimension
+#  Topic 0 was excluded from scoring as it was replaced by sub-topics in the decomposition stage.
+# ======================================================================================================================
 TOPIC_GOVERNANCE_SCORES = {
     0:  None,   # Topic 0 — will be replaced by sub-topics
     1:  0.0,    # Drug/molecular — AI application (bioinformatics)
@@ -190,8 +177,6 @@ TOPIC_LABELS = {
     45: "AI in Brain Tumour Imaging",
 }
 
-# Expected sub-topic labels for Topic 0 decomposition
-# (will be overridden by keyword inspection after decomposition)
 TOPIC0_SUBLABELS = {
     "educational_ai":       "Educational AI & Learning Systems",
     "nlp_llm":              "NLP, Large Language Models & Text Generation",
@@ -217,16 +202,15 @@ TOPIC0_GOV_SCORES = {
     "general_ml":           0.1,
 }
 
-
-# -----------------------------------------------------------------------------
-#  SECTION 5: LOAD DATA
-# -----------------------------------------------------------------------------
-
+# ======================================================================================================================
+#  SECTION 5: DATA LOADING
+#  The cleaned Scopus abstracts and Stage 1 topic assignments were loaded and merged on paper ID. Topic 0
+#  papers were identified for decomposition.
+# ======================================================================================================================
 def load_data():
     """Load Scopus abstracts and existing topic assignments."""
     log.info("Loading data...")
 
-    # Scopus abstracts
     scopus_path = DATA_CLEAN / "scopus_abstracts_nlp.csv"
     if not scopus_path.exists():
         scopus_path = DATA_CLEAN / "scopus_cleaned.csv"
@@ -238,14 +222,12 @@ def load_data():
         if col not in scopus_df.columns:
             scopus_df[col] = "Unknown"
 
-    # Topic assignments from previous run
     assignments_path = RESULTS_DIR / "scopus_topic_assignments.csv"
     assignments_df   = pd.read_csv(assignments_path, dtype=str, low_memory=False)
     assignments_df["topic_id"] = pd.to_numeric(
         assignments_df["topic_id"], errors="coerce"
     ).fillna(-1).astype(int)
 
-    # Merge
     id_col = "eid" if "eid" in scopus_df.columns else scopus_df.columns[0]
     merged = scopus_df.merge(
         assignments_df[[id_col, "topic_id"]],
@@ -259,11 +241,13 @@ def load_data():
     log.info(f"   Topic 0 papers: {(merged['topic_id'] == 0).sum():,}")
     return merged
 
-
-# -----------------------------------------------------------------------------
+# ======================================================================================================================
 #  SECTION 6: TOPIC 0 DECOMPOSITION
-# -----------------------------------------------------------------------------
-
+#  A second BERTopic pass was applied to the 21,900 Topic 0 papers using the same embedding model (all-MiniLM-L6-v2) but
+#  with a lower min_cluster_size (15) to allow smaller, more specific clusters. This yielded 88 sub-topics. Sub-topic
+#  IDs were offset by 100 (i.e., 100, 101, 102...) to avoid collision with the original topic IDs (1–45). The
+#  decomposition model was saved separately.
+# ======================================================================================================================
 def decompose_topic_0(scopus_df: pd.DataFrame) -> tuple[pd.DataFrame, int]:
     """
     Run a second BERTopic pass on Topic 0 papers only.
@@ -275,12 +259,9 @@ def decompose_topic_0(scopus_df: pd.DataFrame) -> tuple[pd.DataFrame, int]:
     log.info("  STAGE 1 — TOPIC 0 DECOMPOSITION")
     log.info("=" * 60)
 
-    # Extract Topic 0 papers
     t0_df    = scopus_df[scopus_df["topic_id"] == 0].copy()
     t0_texts = t0_df["text"].tolist()
     log.info(f"   Topic 0 papers to decompose: {len(t0_texts):,}")
-
-    # Use same embedding model as Stage 2 winner (M1 MiniLM)
     embedding_model = SentenceTransformer("all-MiniLM-L6-v2")
 
     umap_model = UMAP(
@@ -290,8 +271,6 @@ def decompose_topic_0(scopus_df: pd.DataFrame) -> tuple[pd.DataFrame, int]:
         metric="cosine",
         random_state=42,
     )
-
-    # Smaller min_cluster_size to find finer-grained topics
     hdbscan_model = HDBSCAN(
         min_cluster_size=15,
         min_samples=5,
@@ -299,13 +278,11 @@ def decompose_topic_0(scopus_df: pd.DataFrame) -> tuple[pd.DataFrame, int]:
         cluster_selection_method="eom",
         prediction_data=True,
     )
-
     vectorizer_model = CountVectorizer(
         stop_words="english",
         min_df=3,
         ngram_range=(1, 2),
     )
-
     sub_model = BERTopic(
         embedding_model=embedding_model,
         umap_model=umap_model,
@@ -318,16 +295,11 @@ def decompose_topic_0(scopus_df: pd.DataFrame) -> tuple[pd.DataFrame, int]:
 
     log.info("   Fitting decomposition model on Topic 0 papers...")
     sub_topics, _ = sub_model.fit_transform(t0_texts)
-
-    # Sub-topic info
     sub_info      = sub_model.get_topic_info()
     n_subtopics   = len(sub_info[sub_info["Topic"] != -1])
     n_unassigned  = sum(1 for t in sub_topics if t == -1)
     log.info(f"   Sub-topics found:    {n_subtopics}")
     log.info(f"   Unassigned (noise):  {n_unassigned:,}")
-
-    # Offset sub-topic IDs so they don't clash with existing topics (0-45)
-    # Use 100, 101, 102... for sub-topics
     ID_OFFSET = 100
     t0_df = t0_df.copy()
     t0_df["sub_topic_id"] = [
@@ -335,7 +307,6 @@ def decompose_topic_0(scopus_df: pd.DataFrame) -> tuple[pd.DataFrame, int]:
         for t in sub_topics
     ]
 
-    # Build sub-topic overview
     subtopic_rows = []
     for _, row in sub_info.iterrows():
         st_id = row["Topic"]
@@ -352,7 +323,6 @@ def decompose_topic_0(scopus_df: pd.DataFrame) -> tuple[pd.DataFrame, int]:
 
     subtopics_df = pd.DataFrame(subtopic_rows)
 
-    # Print sub-topic keywords for manual inspection
     log.info("")
     log.info("  Sub-topics found within Topic 0:")
     log.info("  " + "-" * 50)
@@ -360,21 +330,19 @@ def decompose_topic_0(scopus_df: pd.DataFrame) -> tuple[pd.DataFrame, int]:
         log.info(f"  [{row['sub_topic_id']}] ({row['topic_size']:,} papers)")
         log.info(f"      {row['top_words']}")
 
-    # Save sub-model
     sub_model.save(
         str(MODELS_DIR / "topic0_decomposition_model"),
         serialization="safetensors",
         save_ctfidf=True,
         save_embedding_model="all-MiniLM-L6-v2",
     )
-
     return t0_df, subtopics_df, ID_OFFSET
 
-
-# -----------------------------------------------------------------------------
-#  SECTION 7: MERGE SUB-TOPICS BACK INTO MAIN CORPUS
-# -----------------------------------------------------------------------------
-
+# ======================================================================================================================
+#  SECTION 7: MERGE SUB-TOPICS INTO MAIN CORPUS
+#  Topic 0 assignments in the main dataset were replaced with the sub-topic IDs from the decomposition. Papers that
+#  remained as noise (-1) in the second pass retained their unassigned status.
+# ======================================================================================================================
 def merge_subtopics(scopus_df: pd.DataFrame,
                     t0_df: pd.DataFrame,
                     subtopics_df: pd.DataFrame,
@@ -388,32 +356,28 @@ def merge_subtopics(scopus_df: pd.DataFrame,
     log.info("=" * 60)
     log.info("  STAGE 2 — MERGING SUB-TOPICS INTO MAIN CORPUS")
     log.info("=" * 60)
-
     id_col  = "eid" if "eid" in scopus_df.columns else scopus_df.columns[0]
     updated = scopus_df.copy()
-
-    # Build mapping: paper_id → sub_topic_id
     sub_map = dict(zip(t0_df[id_col], t0_df["sub_topic_id"]))
 
-    # Replace Topic 0 assignments
     def update_topic(row):
         if row["topic_id"] == 0:
             return sub_map.get(row[id_col], -1)
         return row["topic_id"]
 
     updated["topic_id_finetuned"] = updated.apply(update_topic, axis=1)
-
     n_reassigned = (updated["topic_id_finetuned"] != updated["topic_id"]).sum()
     log.info(f"   Papers reassigned from Topic 0 → sub-topics: {n_reassigned:,}")
     log.info(f"   Unique topic IDs now: {updated['topic_id_finetuned'].nunique()}")
 
     return updated
 
-
-# -----------------------------------------------------------------------------
+# ======================================================================================================================
 #  SECTION 8: LABEL AND SCORE ALL TOPICS
-# -----------------------------------------------------------------------------
-
+#  The final enriched topic list was built by combining 45 original topics (with pre-assigned labels and governance scores)
+#  and 88 sub-topics (with default labels derived from keywords). Sub-topic labels and governance scores were finalized
+#  manually after keyword review and updated via 4b_update_governance_scores.py.
+# ======================================================================================================================
 def label_and_score_topics(merged_df: pd.DataFrame,
                             subtopics_df: pd.DataFrame,
                             id_offset: int) -> pd.DataFrame:
@@ -426,10 +390,8 @@ def label_and_score_topics(merged_df: pd.DataFrame,
     log.info("=" * 60)
     log.info("  STAGE 3 — LABELLING AND SCORING TOPICS")
     log.info("=" * 60)
-
     rows = []
 
-    # Original topics (1–45, excluding 0)
     for topic_id, label in TOPIC_LABELS.items():
         if topic_id == 0:
             continue
@@ -444,14 +406,11 @@ def label_and_score_topics(merged_df: pd.DataFrame,
             "top_words":          "",
         })
 
-    # Sub-topics (100+)
     for _, row in subtopics_df.iterrows():
         st_id    = row["sub_topic_id"]
         count    = (merged_df["topic_id_finetuned"] == st_id).sum()
-        # Default label from keywords — user should review and rename in the CSV
         label    = f"Topic0_Sub_{st_id}: {row['top_words'][:60]}"
-        gov_score = 0.3   # Default — user should update after reviewing keywords
-
+        gov_score = 0.3
         rows.append({
             "topic_id":           st_id,
             "topic_label":        label,
@@ -464,8 +423,6 @@ def label_and_score_topics(merged_df: pd.DataFrame,
     topics_finetuned_df = pd.DataFrame(rows)
     topics_finetuned_df.sort_values("paper_count", ascending=False, inplace=True)
     topics_finetuned_df.reset_index(drop=True, inplace=True)
-
-    # Governance topics subset
     gov_df = topics_finetuned_df[topics_finetuned_df["governance_score"] >= 0.5]
 
     log.info(f"   Total topics after decomposition: {len(topics_finetuned_df)}")
@@ -476,19 +433,17 @@ def label_and_score_topics(merged_df: pd.DataFrame,
     for _, r in gov_df.sort_values("governance_score", ascending=False).iterrows():
         log.info(f"  [{r['topic_id']:3d}] score={r['governance_score']}  "
                  f"n={r['paper_count']:,}  {r['topic_label'][:55]}")
-
     return topics_finetuned_df
 
-
-# -----------------------------------------------------------------------------
+# ======================================================================================================================
 #  SECTION 9: SAVE OUTPUTS
-# -----------------------------------------------------------------------------
-
+#  All finetuned outputs were saved including: the complete 133-topic inventory, sub-topic details, governance-relevant
+#  subset, updated paper assignments, and regional/temporal governance distributions.
+# ======================================================================================================================
 def save_outputs(merged_df: pd.DataFrame,
                  topics_finetuned_df: pd.DataFrame,
                  subtopics_df: pd.DataFrame):
     """Save all finetuned outputs to results/."""
-
     log.info("")
     log.info("=" * 60)
     log.info("  STAGE 4 — SAVING OUTPUTS")
@@ -497,18 +452,18 @@ def save_outputs(merged_df: pd.DataFrame,
     # 1. Full finetuned topic list
     out = RESULTS_DIR / "topics_finetuned.csv"
     topics_finetuned_df.to_csv(out, index=False, encoding="utf-8")
-    log.info(f"   ✅ topics_finetuned.csv — {len(topics_finetuned_df)} topics")
+    log.info(f"    topics_finetuned.csv — {len(topics_finetuned_df)} topics")
 
     # 2. Sub-topic detail
     out = RESULTS_DIR / "topic0_subtopics.csv"
     subtopics_df.to_csv(out, index=False, encoding="utf-8")
-    log.info(f"   ✅ topic0_subtopics.csv — {len(subtopics_df)} sub-topics")
+    log.info(f"    topic0_subtopics.csv — {len(subtopics_df)} sub-topics")
 
     # 3. Governance topics only
     gov_df = topics_finetuned_df[topics_finetuned_df["governance_score"] >= 0.5]
     out    = RESULTS_DIR / "governance_topics.csv"
     gov_df.to_csv(out, index=False, encoding="utf-8")
-    log.info(f"   ✅ governance_topics.csv — {len(gov_df)} topics")
+    log.info(f"    governance_topics.csv — {len(gov_df)} topics")
 
     # 4. Full Scopus assignments with finetuned topic IDs
     id_col     = "eid" if "eid" in merged_df.columns else merged_df.columns[0]
@@ -525,13 +480,13 @@ def save_outputs(merged_df: pd.DataFrame,
     cols = [c for c in cols if c in merged_df.columns]
     out  = RESULTS_DIR / "scopus_topics_finetuned.csv"
     merged_df[cols].to_csv(out, index=False, encoding="utf-8")
-    log.info(f"   ✅ scopus_topics_finetuned.csv — {len(merged_df):,} papers")
+    log.info(f"    scopus_topics_finetuned.csv — {len(merged_df):,} papers")
 
     # 5. Governance papers only
     gov_papers = merged_df[merged_df["governance_score"] >= 0.5]
     out        = RESULTS_DIR / "governance_papers.csv"
     gov_papers[cols].to_csv(out, index=False, encoding="utf-8")
-    log.info(f"   ✅ governance_papers.csv — {len(gov_papers):,} papers")
+    log.info(f"    governance_papers.csv — {len(gov_papers):,} papers")
 
     # 6. Updated region × governance topic distribution
     region_gov = (
@@ -545,7 +500,7 @@ def save_outputs(merged_df: pd.DataFrame,
     region_gov["proportion"] = (region_gov["count"] / region_gov["total"]).round(4)
     out = RESULTS_DIR / "region_governance_distribution.csv"
     region_gov.to_csv(out, index=False, encoding="utf-8")
-    log.info(f"   ✅ region_governance_distribution.csv")
+    log.info(f"    region_governance_distribution.csv")
 
     # 7. Updated period × governance topic distribution
     period_gov = (
@@ -559,10 +514,10 @@ def save_outputs(merged_df: pd.DataFrame,
     period_gov["proportion"] = (period_gov["count"] / period_gov["total"]).round(4)
     out = RESULTS_DIR / "period_governance_distribution.csv"
     period_gov.to_csv(out, index=False, encoding="utf-8")
-    log.info(f"   ✅ period_governance_distribution.csv")
+    log.info(f"    period_governance_distribution.csv")
 
     log.info("")
-    log.info("  ⚠️  ACTION REQUIRED — Review Sub-Topic Labels:")
+    log.info("    ACTION REQUIRED — Review Sub-Topic Labels:")
     log.info("  Open results/topic0_subtopics.csv")
     log.info("  Read the top_words for each sub-topic")
     log.info("  Open results/topics_finetuned.csv")
@@ -572,11 +527,9 @@ def save_outputs(merged_df: pd.DataFrame,
 
     return merged_df
 
-
-# -----------------------------------------------------------------------------
+# ======================================================================================================================
 #  SECTION 10: SUMMARY
-# -----------------------------------------------------------------------------
-
+# ======================================================================================================================
 def print_summary(merged_df: pd.DataFrame,
                   topics_finetuned_df: pd.DataFrame):
 
@@ -605,13 +558,11 @@ def print_summary(merged_df: pd.DataFrame,
     log.info("  1. Review topic0_subtopics.csv and update labels manually")
     log.info("  2. Run 5_streamlit_dashboard.py for interactive visualisation")
     log.info("=" * 60)
-    log.info("🎉 Finetuning complete!")
+    log.info(" Finetuning complete!")
 
-
-# -----------------------------------------------------------------------------
-#  SECTION 11: MAIN
-# -----------------------------------------------------------------------------
-
+# ======================================================================================================================
+#  SECTION 11: MAIN PIPELINE
+# ======================================================================================================================
 def main():
 
     log.info("=" * 60)
@@ -619,28 +570,15 @@ def main():
     log.info(f"  Run time: {datetime.now().strftime('%Y-%m-%d %H:%M')}")
     log.info("=" * 60)
 
-    # Load data
     scopus_df = load_data()
-
-    # Stage 1: Decompose Topic 0
     t0_df, subtopics_df, id_offset = decompose_topic_0(scopus_df)
-
-    # Stage 2: Merge sub-topics back
     merged_df = merge_subtopics(scopus_df, t0_df, subtopics_df, id_offset)
-
-    # Stage 3: Label and score all topics
     topics_finetuned_df = label_and_score_topics(merged_df, subtopics_df, id_offset)
-
-    # Stage 4: Save outputs
     merged_df = save_outputs(merged_df, topics_finetuned_df, subtopics_df)
-
-    # Summary
     print_summary(merged_df, topics_finetuned_df)
 
-
-# -----------------------------------------------------------------------------
-#  ENTRY POINT
-# -----------------------------------------------------------------------------
-
+# ======================================================================================================================
+#  SECTION 11: MAIN PIPELINE
+# ======================================================================================================================
 if __name__ == "__main__":
     main()

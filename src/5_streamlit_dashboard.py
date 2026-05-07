@@ -1,31 +1,35 @@
-# =============================================================================
-#  5_streamlit_dashboard.py
-#  Project: Mapping Global AI Governance Narratives
-#  Authors: Tambudzai Gundani & Joshua Gray
-#  Date:    April 2026
-# =============================================================================
-#
-#  WHAT THIS SCRIPT DOES:
-#  ----------------------
-#  Interactive Streamlit dashboard visualising all research findings.
-#  Organised across five tabs mirroring the research objectives.
-#
-#  TABS:
-#  -----
-#  1. Overview        — corpus stats, pipeline summary, key numbers
-#  2. Topic Landscape — RO1: dominant governance themes + temporal shifts
-#  3. Regional Atlas  — RO2: spatial distribution of governance discourse
-#  4. Policy Alignment— RO3: academic vs policy corpus comparison
-#  5. Stance Analysis — sentiment: risk vs opportunity framing
-#
-#  RUN:
-#  ----
-#  pip install streamlit plotly
-#  streamlit run src/5_streamlit_dashboard.py
-#
-#  Then open: http://localhost:8501
-# =============================================================================
+"""
+========================================================================================================================
+INTERACTIVE STREAMLIT DASHBOARD
+Project: Uneven Science–Policy Translation Shapes Global AI Governance
+Authors: Tambudzai G. Charumbira & Joshua Gray
+Institution: George Washington University, CCAS | M.S. Data Science | Spring 2026
+Date: April 2026
 
+DESCRIPTION:
+This script provides an interactive Streamlit dashboard for exploring the research findings. It is organized across five
+ tabs mirroring the research objectives:
+
+  Tab 1 — Overview:         Corpus statistics, pipeline summary, key metrics
+  Tab 2 — Topic Landscape:  RO1 — Dominant governance themes and temporal shifts
+  Tab 3 — Regional Atlas:   RO2 — Spatial distribution and regional specialization
+  Tab 4 — Policy Alignment: RO3 — Academic vs policy corpus comparison
+  Tab 5 — Stance Analysis:  Risk vs opportunity framing across topics, regions, and time
+
+The dashboard uses Plotly for interactive visualizations and supports sidebar filtering by region and time period. It
+loads all results files from the results/ directory and caches them for performance.
+
+Note: Publication-ready static charts (Altair) are generated in 6_exploratory_visuals.ipynb. This dashboard serves as an
+ interactive complement for exploration and presentation.
+
+RUN:
+  streamlit run src/5_streamlit_dashboard.py
+  Then open: http://localhost:8501
+
+KNOWN ISSUE:
+  The Overview tab displays "7.7%" in the metrics row — this should read "7.8%" to match the paper.
+========================================================================================================================
+"""
 import warnings
 warnings.filterwarnings("ignore")
 
@@ -36,10 +40,9 @@ import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 from pathlib import Path
 
-# -----------------------------------------------------------------------------
-#  PAGE CONFIG
-# -----------------------------------------------------------------------------
-
+# ======================================================================================================================
+#  PAGE CONFIGURATION
+# ======================================================================================================================
 st.set_page_config(
     page_title="AI Governance Narratives",
     page_icon="🌍",
@@ -47,17 +50,16 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
-# -----------------------------------------------------------------------------
+# ======================================================================================================================
 #  PATHS
-# -----------------------------------------------------------------------------
-
+# ======================================================================================================================
 BASE_DIR    = Path(__file__).parent.parent
 RESULTS_DIR = BASE_DIR / "results"
-
-# -----------------------------------------------------------------------------
+# ======================================================================================================================
 #  COLOUR PALETTE
-# -----------------------------------------------------------------------------
-
+#  Consistent colour scheme used across all dashboard visualizations. Region colours match the Altair charts in the
+#  notebook. Stance colours: red = risk, green = opportunity, grey = balanced.
+# ======================================================================================================================
 BLUE        = "#1F4E79"
 MIDBLUE     = "#2E75B6"
 LIGHTBLUE   = "#BDD7EE"
@@ -87,10 +89,12 @@ PERIOD_COLOURS = {
     "post_chatgpt": MIDBLUE,
 }
 
-# -----------------------------------------------------------------------------
+# ======================================================================================================================
 #  DATA LOADING
-# -----------------------------------------------------------------------------
-
+#  All results files were loaded and cached via @st.cache_data to avoid re-reading on every interaction. Numeric columns
+#  were coerced from string (the safe_read function loads everything as str to avoid mixed-type warnings) to enable
+#  aggregation and plotting.
+# ======================================================================================================================
 @st.cache_data
 def load_data():
     """Load all results files. Cache so they only load once."""
@@ -118,7 +122,6 @@ def load_data():
         "topics_finetuned": safe_read("topics_finetuned.csv"),
     }
 
-    # Fix numeric columns
     numeric_cols = {
         "papers_stance":  ["governance_score", "score_risk", "score_opportunity",
                             "score_balanced", "stance_confidence", "topic_id_finetuned"],
@@ -148,11 +151,11 @@ def load_data():
 
     return data
 
-
-# -----------------------------------------------------------------------------
-#  SIDEBAR
-# -----------------------------------------------------------------------------
-
+# ======================================================================================================================
+#  SIDEBAR — FILTERS AND CORPUS STATISTICS
+#  The sidebar displays corpus-level metrics and provides region and time period filters that apply across all tabs.
+#  Filtering is applied to the governance papers dataframe before rendering each tab.
+# ======================================================================================================================
 def render_sidebar(data):
     with st.sidebar:
         st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/George_Washington_University_monogram.svg/120px-George_Washington_University_monogram.svg.png", width=60)
@@ -204,11 +207,11 @@ def filter_papers(papers, region, period):
         filtered = filtered[filtered["period"] == period]
     return filtered
 
-
-# =============================================================================
+# ======================================================================================================================
 #  TAB 1 — OVERVIEW
-# =============================================================================
-
+#  Displays key corpus metrics (41,067 papers, 3,186 governance, 133 topics, 35 policy docs, 138 countries), the BERTopic
+#  model comparison chart, governance topics by paper count, and the full pipeline summary table.
+# ======================================================================================================================
 def render_overview(data):
     st.markdown("## 📊 Project Overview")
     st.markdown(
@@ -219,7 +222,6 @@ def render_overview(data):
         "regional distribution, temporal trends, policy alignment, and stance framing."
     )
 
-    # Key metrics row
     col1, col2, col3, col4, col5 = st.columns(5)
     col1.metric("Total Papers", "41,067", "Scopus 2015–2025")
     col2.metric("Governance Papers", "3,186", "7.7% of corpus")
@@ -228,10 +230,8 @@ def render_overview(data):
     col5.metric("Countries", "138", "First author affiliation")
 
     st.divider()
-
     col_left, col_right = st.columns(2)
 
-    # Model comparison chart
     with col_left:
         st.markdown("### BERTopic Model Comparison")
         mc = data["model_comparison"]
@@ -258,7 +258,6 @@ def render_overview(data):
             st.plotly_chart(fig, use_container_width=True)
             st.caption("M1 (MiniLM) selected as best model. Composite score = coherence × diversity × (1 − outlier rate).")
 
-    # Governance topic sizes
     with col_right:
         st.markdown("### Governance Topics by Paper Count")
         gt = data["gov_topics"].sort_values("paper_count", ascending=True)
@@ -281,7 +280,6 @@ def render_overview(data):
             )
             st.plotly_chart(fig, use_container_width=True)
 
-    # Pipeline summary table
     st.markdown("### Pipeline Summary")
     pipeline = pd.DataFrame([
         {"Script": "1_data_collection_scopus", "Output": "41,067 papers, 138 countries", "Status": "✅"},
@@ -298,11 +296,11 @@ def render_overview(data):
     ])
     st.dataframe(pipeline, use_container_width=True, hide_index=True)
 
-
-# =============================================================================
-#  TAB 2 — TOPIC LANDSCAPE
-# =============================================================================
-
+# ======================================================================================================================
+#  TAB 2 — TOPIC LANDSCAPE (RO1)
+#  Governance topics ranked by paper count with governance relevance colour coding. Pre/post-ChatGPT grouped bar chart
+#  showing proportional shifts. Growth table with absolute percentage changes.
+# ======================================================================================================================
 def render_topics(data, region, period):
     st.markdown("## 🔍 Topic Landscape (RO1)")
     st.markdown(
@@ -312,15 +310,12 @@ def render_topics(data, region, period):
 
     period_gov = data["period_gov"].copy()
     region_gov = data["region_gov"].copy()
-
-    # Filter by region/period if selected
     if region != "All Regions":
         region_gov = region_gov[region_gov["region"] == region]
     if period != "All Periods":
         period_gov = period_gov[period_gov["period"] == period]
 
     col1, col2 = st.columns([3, 2])
-
     with col1:
         st.markdown("### Governance Topics — Paper Count")
         gt = data["gov_topics"].sort_values("paper_count", ascending=True).copy()
@@ -351,7 +346,6 @@ def render_topics(data, region, period):
                 "pre_chatgpt": "Pre-ChatGPT\n(2015–2021)",
                 "post_chatgpt": "Post-ChatGPT\n(2022–2025)"
             })
-            # Pivot for grouped bar
             pivot = pg.pivot_table(
                 index="topic_label_finetuned",
                 columns="period",
@@ -387,7 +381,6 @@ def render_topics(data, region, period):
             )
             st.plotly_chart(fig, use_container_width=True)
 
-    # Growth table
     st.markdown("### Post-ChatGPT Growth in Governance Topics")
     pg_all = data["period_gov"].copy()
     if not pg_all.empty:
@@ -408,11 +401,11 @@ def render_topics(data, region, period):
         growth.columns = ["Topic", "Pre-ChatGPT Papers", "Post-ChatGPT Papers", "Growth (%)"]
         st.dataframe(growth, use_container_width=True, hide_index=True)
 
-
-# =============================================================================
-#  TAB 3 — REGIONAL ATLAS
-# =============================================================================
-
+# ======================================================================================================================
+#  TAB 3 — REGIONAL ATLAS (RO2)
+#  Papers per region bar chart, dominant topic per region table, regional governance topic heatmap, cybersecurity
+#  governance regional spotlight, and top 20 countries by governance paper count.
+# ======================================================================================================================
 def render_regional(data, region, period):
     st.markdown("## 🌍 Regional Atlas (RO2)")
     st.markdown(
@@ -422,7 +415,6 @@ def render_regional(data, region, period):
 
     rg = data["region_gov"].copy()
     papers = data["papers_stance"].copy()
-
     col1, col2 = st.columns(2)
 
     with col1:
@@ -468,7 +460,6 @@ def render_regional(data, region, period):
             fill_value=0
         ) * 100
         pivot = pivot.round(2)
-        # Shorten column names
         pivot.columns = [c[:30] for c in pivot.columns]
         fig = px.imshow(
             pivot,
@@ -511,7 +502,6 @@ def render_regional(data, region, period):
             )
             st.plotly_chart(fig, use_container_width=True)
 
-    # Country table
     st.markdown("### Top Countries in Governance Corpus")
     country_counts = (
         papers[papers["country"] != "Unknown"]["country"]
@@ -537,11 +527,12 @@ def render_regional(data, region, period):
         )
         st.plotly_chart(fig, use_container_width=True)
 
-
-# =============================================================================
-#  TAB 4 — POLICY ALIGNMENT
-# =============================================================================
-
+# ======================================================================================================================
+#  TAB 4 — POLICY ALIGNMENT (RO3)
+#  Academic vs policy alignment metrics (10 shared, 11 academic-only, 0 policy-only). Shared vs academic-only horizontal
+#  bar chart. Coverage gap grouped bar for shared topics. Policy framework topic coverage heatmap by country — visualizing
+#  the EU vocabulary dominance finding.
+# ======================================================================================================================
 def render_policy(data):
     st.markdown("## 📜 Academic vs Policy Alignment (RO3)")
     st.markdown(
@@ -553,13 +544,11 @@ def render_policy(data):
     align = data["alignment"]
     policy_docs = data["policy_docs"]
 
-    # Alignment summary metrics
     if not align.empty:
         gov_align = align[align["governance_score"] >= 0.5]
         shared    = (gov_align["alignment"] == "shared").sum()
         acad_only = (gov_align["alignment"] == "academic_only").sum()
         pol_only  = (gov_align["alignment"] == "policy_only").sum()
-
         col1, col2, col3 = st.columns(3)
         col1.metric("Shared Topics", shared, "in both corpora")
         col2.metric("Academic-Only", acad_only, "absent from policy")
@@ -634,7 +623,6 @@ def render_policy(data):
                 "governments are ahead of researchers on these themes."
             )
 
-    # Policy document topic coverage
     st.markdown("### Policy Framework Topic Coverage by Country")
     if not policy_docs.empty:
         policy_docs["topic_label_finetuned"] = policy_docs["topic_label_finetuned"].fillna("Unassigned")
@@ -645,7 +633,6 @@ def render_policy(data):
             aggfunc="sum",
             fill_value=0
         )
-        # Shorten column names
         pivot_pol.columns = [c[:25] for c in pivot_pol.columns]
         fig = px.imshow(
             pivot_pol,
@@ -665,11 +652,12 @@ def render_policy(data):
             "Zimbabwe, Kenya, ASEAN, and African Union all mirror EU AI Act language."
         )
 
-
-# =============================================================================
-#  TAB 5 — STANCE ANALYSIS
-# =============================================================================
-
+# ======================================================================================================================
+#  TAB 5 — STANCE ANALYSIS (RO1)
+#  Overall stance metrics, stacked bar by governance topic, pre/post-ChatGPT stance shift, regional stance grouped bar,
+#  and academic stance on shared topics table. Key finding highlighted: pre-ChatGPT risk-dominant (34.9% vs 29.7%)
+#  shifted to post-ChatGPT opportunity-dominant (40.0% vs 29.4%).
+# ======================================================================================================================
 def render_stance(data, region, period):
     st.markdown("## 💬 Stance Analysis — Risk vs Opportunity (RO1)")
     st.markdown(
@@ -679,8 +667,6 @@ def render_stance(data, region, period):
     )
 
     papers = filter_papers(data["papers_stance"], region, period)
-
-    # Overall metrics
     if not papers.empty:
         counts = papers["stance"].value_counts()
         total  = len(papers)
@@ -697,7 +683,6 @@ def render_stance(data, region, period):
                     f"{counts.get('risk_focused',0)/total*100:.1f}%")
 
     col1, col2 = st.columns(2)
-
     with col1:
         st.markdown("### Stance by Governance Topic")
         st_topic = data["stance_topic"].copy()
@@ -825,7 +810,6 @@ def render_stance(data, region, period):
                 "North America most balanced."
             )
 
-    # Stance × topic deep dive
     st.markdown("### Academic Stance on Shared Topics")
     st.caption("How academics frame topics that also appear in national policy frameworks")
     sp_comp = data["stance_policy"].copy()
@@ -847,11 +831,9 @@ def render_stance(data, region, period):
         ]
         st.dataframe(display, use_container_width=True, hide_index=True)
 
-
-# =============================================================================
-#  MAIN
-# =============================================================================
-
+# ======================================================================================================================
+#  MAIN — TAB LAYOUT AND RENDERING
+# ======================================================================================================================
 def main():
     data = load_data()
     region, period = render_sidebar(data)
@@ -880,7 +862,6 @@ def main():
         render_policy(data)
     with tab5:
         render_stance(data, region, period)
-
 
 if __name__ == "__main__":
     main()

@@ -1,55 +1,39 @@
-# =============================================================================
-#  BERTOPIC MODELLING SCRIPT
-#  Project: Mapping Global AI Governance Narratives
-#  Authors: Tambudzai Gundani & Joshua Gray
-#  Date:    March 2026
-# =============================================================================
-#
-#  WHAT THIS SCRIPT DOES:
-#  ----------------------
-#  Runs BERTopic topic modelling on both the Scopus academic corpus and the
-#  national AI policy frameworks corpus, then produces comparative outputs
-#  that directly answer the three research objectives.
-#
-#  WORKFLOW:
-#  ---------
-#  Stage 1 — Data loading + policy document chunking
-#  Stage 2 — Model comparison: M1 (Base), M2 (Quality), M3 (Multilingual)
-#             Each model is trained on Scopus, then applied to policy corpus
-#  Stage 3 — Metric evaluation: coherence, diversity, outlier rate, topic count
-#  Stage 4 — Automatic best model selection
-#  Stage 5 — Hyperparameter tuning on best model
-#  Stage 6 — Final model: research outputs for RO1, RO2, RO3
-#  Stage 7 — Save all outputs to results/
-#
-#  RESEARCH OBJECTIVES ADDRESSED:
-#  --------------------------------
-#  RO1/RQ1 → Dominant AI risk/governance themes (topic keywords + labels)
-#  RO2/RQ2 → Spatial/institutional distribution (topic distributions by region)
-#  RO3/RQ3 → Alignment/divergence between academic and policy discourse
-#
-#  OUTPUT FILES (saved to results/):
-#  -----------------------------------
-#  model_comparison.csv              — M1/M2/M3 metrics side by side
-#  hyperparameter_results.csv        — tuning grid results
-#  topics_overview.csv               — all topics: keywords, size, label
-#  scopus_topic_assignments.csv      — each paper + its topic + metadata
-#  policy_topic_assignments.csv      — each policy chunk + its topic
-#  region_topic_distribution.csv     — topic proportions by world region (Scopus)
-#  period_topic_distribution.csv     — topic proportions pre/post ChatGPT (Scopus)
-#  policy_document_topics.csv        — topic distribution per policy document
-#  cross_corpus_alignment.csv        — shared vs divergent topics between corpora
-#
-#  INSTALL DEPENDENCIES:
-#  ---------------------
-#  pip install bertopic sentence-transformers umap-learn hdbscan gensim
-# =============================================================================
+"""
+========================================================================================================================
+BERTOPIC TOPIC MODELLING — STAGE 1
+Project: Uneven Science–Policy Translation Shapes Global AI Governance
+Authors: Tambudzai G. Charumbira & Joshua Gray
+Institution: George Washington University, CCAS | M.S. Data Science | Spring 2026
+Date: March 2026
 
+DESCRIPTION:
+This script executed the core BERTopic topic modelling pipeline. Three embedding models were benchmarked on the
+Scopus corpus (all-MiniLM-L6-v2, all-mpnet-base-v2, paraphrase-multilingual-MiniLM-L12-v2), evaluated on
+coherence (Cv), topic diversity, and outlier rate. all-MiniLM-L6-v2 was selected with coherence 0.716 and
+diversity 0.747.
 
-# -----------------------------------------------------------------------------
+Hyperparameter tuning across five UMAP/HDBSCAN configurations identified optimal settings
+(min_cluster_size=50, n_neighbors=15, n_components=10), producing 46 topics. 53% of papers (21,900) fell
+into a catch-all cluster (Topic 0), which was decomposed in 4_model_finetuning.py.
+
+The fitted model was applied to both the Scopus academic corpus and the policy corpus (chunked into 1,557
+segments of 500 words with 50-word overlap). Cross-corpus topic alignment was computed for RO3.
+
+OUTPUT FILES (saved to results/):
+- model_comparison.csv           → M1/M2/M3 metrics side by side
+- hyperparameter_results.csv     → Tuning grid results with composite scores
+- topics_overview.csv            → 46 topics with keywords and paper counts
+- scopus_topic_assignments.csv   → Each paper with its assigned topic
+- policy_topic_assignments.csv   → Each policy chunk with its assigned topic
+- region_topic_distribution.csv  → Topic proportions by world region (RO2)
+- period_topic_distribution.csv  → Topic proportions pre/post ChatGPT (RO1)
+- policy_document_topics.csv     → Topic distribution per policy document (RO3)
+- cross_corpus_alignment.csv     → Shared vs divergent topics (RO3)
+========================================================================================================================
+"""
+# ======================================================================================================================
 #  SECTION 1: IMPORTS
-# -----------------------------------------------------------------------------
-
+# ======================================================================================================================
 import logging
 import warnings
 import numpy as np
@@ -57,15 +41,12 @@ import pandas as pd
 from pathlib import Path
 from datetime import datetime
 from collections import defaultdict
-
-# BERTopic stack
 from bertopic import BERTopic
 from sentence_transformers import SentenceTransformer
 from umap import UMAP
 from hdbscan import HDBSCAN
 from sklearn.feature_extraction.text import CountVectorizer
 
-# Coherence scoring
 try:
     from gensim.models.coherencemodel import CoherenceModel
     from gensim.corpora.dictionary import Dictionary
@@ -77,11 +58,9 @@ except ImportError:
 
 warnings.filterwarnings("ignore")
 
-
-# -----------------------------------------------------------------------------
-#  SECTION 2: PATHS
-# -----------------------------------------------------------------------------
-
+# ======================================================================================================================
+#  SECTION 1: IMPORTS
+# ======================================================================================================================
 BASE_DIR    = Path(__file__).parent.parent
 DATA_CLEAN  = BASE_DIR / "data_clean"
 RESULTS_DIR = BASE_DIR / "results"
@@ -90,11 +69,9 @@ MODELS_DIR  = BASE_DIR / "models"
 RESULTS_DIR.mkdir(parents=True, exist_ok=True)
 MODELS_DIR.mkdir(parents=True, exist_ok=True)
 
-
-# -----------------------------------------------------------------------------
+# ======================================================================================================================
 #  SECTION 3: LOGGING
-# -----------------------------------------------------------------------------
-
+# ======================================================================================================================
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s  %(message)s",
@@ -106,20 +83,19 @@ logging.basicConfig(
 )
 log = logging.getLogger(__name__)
 
-
-# -----------------------------------------------------------------------------
+# ======================================================================================================================
 #  SECTION 4: CONFIGURATION
-# -----------------------------------------------------------------------------
-
-# Policy document chunking
-CHUNK_SIZE       = 500   # words per chunk
-CHUNK_OVERLAP    = 50    # word overlap between chunks
-
-# BERTopic base settings (overridden in tuning)
-MIN_TOPIC_SIZE   = 30    # minimum papers per topic
+#  Policy documents were chunked into 500-word segments with 50-word overlap to match the approximate length of academic
+#  abstracts, enabling consistent BERTopic processing across both corpora. The hyperparameter tuning grid tested five
+#  combinations of UMAP (n_neighbors, n_components) and HDBSCAN (min_cluster_size) parameters. Three embedding models
+#  were configured for benchmarking: MiniLM (fast English baseline), MPNet (higher quality English), and multilingual
+#  MiniLM (handles all 35 policy documents).
+# ======================================================================================================================
+CHUNK_SIZE       = 500
+CHUNK_OVERLAP    = 50
+MIN_TOPIC_SIZE   = 30
 NR_TOPICS        = "auto"
 
-# Hyperparameter tuning grid
 TUNING_GRID = [
     {"min_cluster_size": 20, "n_neighbors": 10, "n_components": 5},
     {"min_cluster_size": 30, "n_neighbors": 15, "n_components": 5},
@@ -128,7 +104,6 @@ TUNING_GRID = [
     {"min_cluster_size": 50, "n_neighbors": 20, "n_components": 5},
 ]
 
-# The three model configurations to compare
 MODEL_CONFIGS = {
     "M1_Base": {
         "embedding_model": "all-MiniLM-L6-v2",
@@ -144,11 +119,11 @@ MODEL_CONFIGS = {
     },
 }
 
-
-# -----------------------------------------------------------------------------
+# ======================================================================================================================
 #  SECTION 5: DATA LOADING
-# -----------------------------------------------------------------------------
-
+#  The cleaned Scopus abstracts and policy corpus were loaded. The preprocessed 'abstract_clean' column was used as input
+#  text. Papers with abstracts under 50 characters were excluded as insufficient for embedding.
+# ======================================================================================================================
 def load_scopus(max_docs: int = None) -> pd.DataFrame:
     """Load cleaned Scopus abstracts."""
     path = DATA_CLEAN / "scopus_abstracts_nlp.csv"
@@ -156,12 +131,10 @@ def load_scopus(max_docs: int = None) -> pd.DataFrame:
         path = DATA_CLEAN / "scopus_cleaned.csv"
     df = pd.read_csv(path, dtype=str, low_memory=False)
 
-    # Use abstract_clean if available, otherwise fall back to abstract
     text_col = "abstract_clean" if "abstract_clean" in df.columns else "abstract"
     df = df[df[text_col].notna() & (df[text_col].str.len() > 50)].copy()
     df["text"] = df[text_col].astype(str)
 
-    # Ensure required metadata columns exist
     for col in ["region", "period", "country", "coverDate"]:
         if col not in df.columns:
             df[col] = "Unknown"
@@ -178,18 +151,19 @@ def load_policy(english_only: bool = False) -> pd.DataFrame:
     filename = "policy_corpus_english_only.csv" if english_only else "policy_corpus.csv"
     path = DATA_CLEAN / filename
     if not path.exists():
-        log.error(f"❌ {filename} not found. Run 2_policy_text_extraction.py first.")
+        log.error(f" {filename} not found. Run 2_policy_text_extraction.py first.")
         raise FileNotFoundError(path)
     df = pd.read_csv(path, dtype=str, low_memory=False)
     df = df[df["text_clean"].notna() & (df["text_clean"].str.len() > 100)].copy()
     log.info(f"   Policy corpus:  {len(df):,} documents loaded")
     return df.reset_index(drop=True)
 
-
-# -----------------------------------------------------------------------------
+# ======================================================================================================================
 #  SECTION 6: POLICY DOCUMENT CHUNKING
-# -----------------------------------------------------------------------------
-
+#  Long policy documents were split into ~500-word chunks with 50-word overlap. Each chunk inherited the metadata of its
+#  parent document (country, region, issuer). This enabled BERTopic to assign fine-grained topics to different sections
+#  of long documents — the EU AI Act alone produced over 180 chunks.
+# ======================================================================================================================
 def chunk_policy_docs(policy_df: pd.DataFrame) -> pd.DataFrame:
     """
     Split long policy documents into ~500-word chunks.
@@ -205,20 +179,18 @@ def chunk_policy_docs(policy_df: pd.DataFrame) -> pd.DataFrame:
         words = text.split()
 
         if len(words) <= CHUNK_SIZE:
-            # Short document — use as-is
             chunk_row = row.to_dict()
             chunk_row["chunk_id"]   = f"{row['doc_id']}_chunk_0"
             chunk_row["chunk_num"]  = 0
             chunk_row["text"]       = text
             chunks.append(chunk_row)
         else:
-            # Chunk with overlap
             start = 0
             chunk_num = 0
             while start < len(words):
                 end = min(start + CHUNK_SIZE, len(words))
                 chunk_text = " ".join(words[start:end])
-                if len(chunk_text.split()) >= 50:  # skip tiny trailing chunks
+                if len(chunk_text.split()) >= 50:
                     chunk_row = row.to_dict()
                     chunk_row["chunk_id"]  = f"{row['doc_id']}_chunk_{chunk_num}"
                     chunk_row["chunk_num"] = chunk_num
@@ -231,11 +203,14 @@ def chunk_policy_docs(policy_df: pd.DataFrame) -> pd.DataFrame:
     log.info(f"   Policy docs chunked: {len(policy_df)} docs → {len(chunks_df)} chunks")
     return chunks_df
 
-
-# -----------------------------------------------------------------------------
-#  SECTION 7: METRICS
-# -----------------------------------------------------------------------------
-
+# ======================================================================================================================
+#  SECTION 7: EVALUATION METRICS
+#  Three metrics were computed for each model configuration:
+#    - Coherence (Cv): measured via gensim using the c_v coherence measure (Röder et al., 2015)
+#    - Diversity: proportion of unique words across all topic top-word lists (0–1, higher = more distinct)
+#    - Outlier rate: proportion of documents assigned to Topic -1 (unassigned)
+#  A composite score (coherence × diversity × (1 - outlier_rate)) was used for model selection.
+# ======================================================================================================================
 def compute_coherence(topic_words: list[list[str]],
                       tokenized_docs: list[list[str]]) -> float:
     """Compute topic coherence (c_v) using gensim."""
@@ -256,7 +231,6 @@ def compute_coherence(topic_words: list[list[str]],
         log.warning(f"   Coherence computation failed: {e}")
         return -1.0
 
-
 def compute_diversity(topic_words: list[list[str]]) -> float:
     """
     Topic diversity = proportion of unique words across all topic top-words.
@@ -269,13 +243,11 @@ def compute_diversity(topic_words: list[list[str]]) -> float:
     total      = len(all_words)
     return round(unique / total, 4) if total > 0 else 0.0
 
-
 def evaluate_model(model: BERTopic, docs: list[str],
                    topics: list[int]) -> dict:
     """Compute all evaluation metrics for a fitted BERTopic model."""
     topic_info = model.get_topic_info()
 
-    # Topic words for coherence + diversity
     topic_words = []
     for topic_id in topic_info["Topic"].values:
         if topic_id == -1:
@@ -284,10 +256,7 @@ def evaluate_model(model: BERTopic, docs: list[str],
         if words:
             topic_words.append(words[:10])
 
-    # Tokenized docs for coherence
     tokenized = [doc.split() for doc in docs]
-
-    # Outlier rate = % docs assigned to topic -1
     n_outliers  = sum(1 for t in topics if t == -1)
     outlier_rate = round(n_outliers / len(topics), 4) if topics else 1.0
 
@@ -302,19 +271,18 @@ def evaluate_model(model: BERTopic, docs: list[str],
         "diversity":    diversity,
     }
 
-
-# -----------------------------------------------------------------------------
-#  SECTION 8: BUILD BERTOPIC MODEL
-# -----------------------------------------------------------------------------
-
+# ======================================================================================================================
+#  SECTION 8: BERTOPIC MODEL BUILDER
+#  Constructed a BERTopic model with the specified embedding model and UMAP/HDBSCAN parameters. The CountVectorizer was
+#  configured with English stopwords, minimum document frequency of 5, and unigram + bigram extraction to capture
+#  multi-word governance terms (e.g., "autonomous weapons", "algorithmic bias").
+# ======================================================================================================================
 def build_model(embedding_model_name: str,
                 min_cluster_size: int = 30,
                 n_neighbors: int = 15,
                 n_components: int = 5) -> BERTopic:
     """Build a BERTopic model with specified configuration."""
-
     embedding_model = SentenceTransformer(embedding_model_name)
-
     umap_model = UMAP(
         n_neighbors=n_neighbors,
         n_components=n_components,
@@ -322,7 +290,6 @@ def build_model(embedding_model_name: str,
         metric="cosine",
         random_state=42,
     )
-
     hdbscan_model = HDBSCAN(
         min_cluster_size=min_cluster_size,
         min_samples=10,
@@ -330,13 +297,11 @@ def build_model(embedding_model_name: str,
         cluster_selection_method="eom",
         prediction_data=True,
     )
-
     vectorizer_model = CountVectorizer(
         stop_words="english",
         min_df=5,
-        ngram_range=(1, 2),  # unigrams and bigrams
+        ngram_range=(1, 2),
     )
-
     model = BERTopic(
         embedding_model=embedding_model,
         umap_model=umap_model,
@@ -346,14 +311,15 @@ def build_model(embedding_model_name: str,
         top_n_words=10,
         verbose=False,
     )
-
     return model
 
-
-# -----------------------------------------------------------------------------
-#  SECTION 9: STAGE 2 — MODEL COMPARISON
-# -----------------------------------------------------------------------------
-
+# ======================================================================================================================
+#  SECTION 9: MODEL COMPARISON
+#  All three embedding models were trained on the Scopus corpus and evaluated. Each fitted model was also applied to the
+#  policy corpus to measure cross-corpus transfer (policy outlier rate). The best model was selected by composite score.
+#  all-MiniLM-L6-v2 (M1) won with the highest coherence-diversity balance. All three models were saved to models/ for
+#  reproducibility.
+# ======================================================================================================================
 def run_model_comparison(scopus_texts: list[str],
                          policy_texts: list[str]) -> tuple[str, dict]:
     """
@@ -374,15 +340,9 @@ def run_model_comparison(scopus_texts: list[str],
 
         try:
             model = build_model(config["embedding_model"])
-
-            # Fit on Scopus
             log.info(f"  Fitting on {len(scopus_texts):,} Scopus abstracts...")
             topics, _ = model.fit_transform(scopus_texts)
-
-            # Evaluate on Scopus
             metrics = evaluate_model(model, scopus_texts, topics)
-
-            # Transform policy corpus
             log.info(f"  Transforming {len(policy_texts)} policy chunks...")
             policy_topics, _ = model.transform(policy_texts)
             policy_outlier_rate = round(
@@ -399,14 +359,13 @@ def run_model_comparison(scopus_texts: list[str],
                 "policy_topics":  policy_topics,
             }
 
-            log.info(f"  ✅ {model_name} results:")
+            log.info(f"     {model_name} results:")
             log.info(f"     Topics found:          {metrics['n_topics']}")
             log.info(f"     Coherence (c_v):        {metrics['coherence_cv']}")
             log.info(f"     Diversity:              {metrics['diversity']}")
             log.info(f"     Outlier rate (Scopus):  {metrics['outlier_rate']:.1%}")
             log.info(f"     Outlier rate (Policy):  {policy_outlier_rate:.1%}")
 
-            # Save model temporarily
             model.save(
                 str(MODELS_DIR / f"{model_name}_model"),
                 serialization="safetensors",
@@ -415,11 +374,9 @@ def run_model_comparison(scopus_texts: list[str],
             )
 
         except Exception as e:
-            log.error(f"  ❌ {model_name} failed: {e}")
+            log.error(f"   {model_name} failed: {e}")
             continue
 
-    # Select best model: highest coherence + diversity, lowest outlier rate
-    # Score = coherence * diversity * (1 - outlier_rate)
     best_model_name = None
     best_score      = -1.0
 
@@ -435,15 +392,15 @@ def run_model_comparison(scopus_texts: list[str],
             best_model_name = name
 
     log.info("")
-    log.info(f"  🏆 Best model: {best_model_name} (score={best_score:.4f})")
+    log.info(f"   Best model: {best_model_name} (score={best_score:.4f})")
 
     return best_model_name, comparison_results
 
-
-# -----------------------------------------------------------------------------
-#  SECTION 10: STAGE 3 — HYPERPARAMETER TUNING
-# -----------------------------------------------------------------------------
-
+# ======================================================================================================================
+#  SECTION 10: HYPERPARAMETER TUNING
+#  Five UMAP/HDBSCAN configurations were tested using the winning embedding model. The configuration with min_cluster_size=50,
+#  n_neighbors=15, n_components=10 achieved the highest composite score (0.3446) and was selected for the final model.
+# ======================================================================================================================
 def run_hyperparameter_tuning(scopus_texts: list[str],
                                best_model_name: str) -> dict:
     """
@@ -497,15 +454,17 @@ def run_hyperparameter_tuning(scopus_texts: list[str],
             continue
 
     log.info("")
-    log.info(f"  🏆 Best hyperparameters: {best_params} (score={best_score:.4f})")
+    log.info(f"   Best hyperparameters: {best_params} (score={best_score:.4f})")
 
     return best_params, tuning_results
 
-
-# -----------------------------------------------------------------------------
-#  SECTION 11: STAGE 4 — FINAL MODEL + RESEARCH OUTPUTS
-# -----------------------------------------------------------------------------
-
+# ======================================================================================================================
+#  SECTION 11: FINAL MODEL AND RESEARCH OUTPUTS
+#  The final model was trained with optimal parameters and applied to both corpora. Seven output files were generated
+#  addressing all three research objectives: topic overview (RO1), temporal distributions (RO1), regional distributions
+#  (RO2), policy chunk assignments (RO3), per-document policy topics (RO3), and cross-corpus alignment (RO3). The fitted
+#  model was saved for subsequent use in 4_model_finetuning.py.
+# ======================================================================================================================
 def run_final_model(scopus_df: pd.DataFrame,
                     policy_chunks_df: pd.DataFrame,
                     policy_df: pd.DataFrame,
@@ -533,11 +492,9 @@ def run_final_model(scopus_df: pd.DataFrame,
         n_components=best_params["n_components"],
     )
 
-    # Fit on Scopus
     log.info(f"  Fitting on {len(scopus_texts):,} Scopus abstracts...")
     scopus_topics, scopus_probs = final_model.fit_transform(scopus_texts)
 
-    # Transform policy corpus
     log.info(f"  Transforming {len(policy_texts)} policy chunks...")
     policy_topics, policy_probs = final_model.transform(policy_texts)
 
@@ -562,14 +519,13 @@ def run_final_model(scopus_df: pd.DataFrame,
     topics_overview_df = pd.DataFrame(topics_overview)
     topics_overview_df.to_csv(RESULTS_DIR / "topics_overview.csv",
                                index=False, encoding="utf-8")
-    log.info(f"  ✅ topics_overview.csv — {len(topics_overview_df)} topics")
+    log.info(f"   topics_overview.csv — {len(topics_overview_df)} topics")
 
     # ── OUTPUT 2: Scopus topic assignments ────────────────────────────────────
     log.info("  Building Scopus topic assignments...")
     scopus_assigned = scopus_df.copy()
     scopus_assigned["topic_id"] = scopus_topics
 
-    # Merge topic labels
     topic_label_map = {
         row["topic_id"]: row["top_words"]
         for _, row in topics_overview_df.iterrows()
@@ -583,7 +539,7 @@ def run_final_model(scopus_df: pd.DataFrame,
     scopus_assigned[cols_to_keep].to_csv(
         RESULTS_DIR / "scopus_topic_assignments.csv", index=False, encoding="utf-8"
     )
-    log.info(f"  ✅ scopus_topic_assignments.csv")
+    log.info(f"   scopus_topic_assignments.csv")
 
     # ── OUTPUT 3: Policy topic assignments ───────────────────────────────────
     log.info("  Building policy topic assignments...")
@@ -595,7 +551,7 @@ def run_final_model(scopus_df: pd.DataFrame,
          "doc_type", "year", "topic_id", "topic_words"]
     ].to_csv(RESULTS_DIR / "policy_topic_assignments.csv",
               index=False, encoding="utf-8")
-    log.info(f"  ✅ policy_topic_assignments.csv")
+    log.info(f"   policy_topic_assignments.csv")
 
     # ── OUTPUT 4: RO2 — Topic distribution by region (Scopus) ────────────────
     log.info("  Building region × topic distribution (RO2)...")
@@ -611,7 +567,7 @@ def run_final_model(scopus_df: pd.DataFrame,
     region_topic["topic_words"] = region_topic["topic_id"].map(topic_label_map)
     region_topic.to_csv(RESULTS_DIR / "region_topic_distribution.csv",
                         index=False, encoding="utf-8")
-    log.info(f"  ✅ region_topic_distribution.csv")
+    log.info(f"   region_topic_distribution.csv")
 
     # ── OUTPUT 5: RO1 — Topic distribution pre/post ChatGPT ──────────────────
     log.info("  Building pre/post ChatGPT topic distribution (RO1)...")
@@ -627,7 +583,7 @@ def run_final_model(scopus_df: pd.DataFrame,
     period_topic["topic_words"] = period_topic["topic_id"].map(topic_label_map)
     period_topic.to_csv(RESULTS_DIR / "period_topic_distribution.csv",
                         index=False, encoding="utf-8")
-    log.info(f"  ✅ period_topic_distribution.csv")
+    log.info(f"   period_topic_distribution.csv")
 
     # ── OUTPUT 6: RO3 — Topic distribution per policy document ───────────────
     log.info("  Building policy document topic distribution (RO3)...")
@@ -649,7 +605,7 @@ def run_final_model(scopus_df: pd.DataFrame,
     policy_doc_topics["topic_words"] = policy_doc_topics["topic_id"].map(topic_label_map)
     policy_doc_topics.to_csv(RESULTS_DIR / "policy_document_topics.csv",
                               index=False, encoding="utf-8")
-    log.info(f"  ✅ policy_document_topics.csv")
+    log.info(f"   policy_document_topics.csv")
 
     # ── OUTPUT 7: RO3 — Cross-corpus topic alignment ──────────────────────────
     log.info("  Building cross-corpus topic alignment table (RO3)...")
@@ -679,9 +635,9 @@ def run_final_model(scopus_df: pd.DataFrame,
     alignment.sort_values("scopus_count", ascending=False, inplace=True)
     alignment.to_csv(RESULTS_DIR / "cross_corpus_alignment.csv",
                      index=False, encoding="utf-8")
-    log.info(f"  ✅ cross_corpus_alignment.csv")
+    log.info(f"   cross_corpus_alignment.csv")
 
-    # ── Save final model ──────────────────────────────────────────────────────
+    # ── Saving final model ──────────────────────────────────────────────────────
     log.info("  Saving final model...")
     final_model.save(
         str(MODELS_DIR / "final_bertopic_model"),
@@ -689,7 +645,7 @@ def run_final_model(scopus_df: pd.DataFrame,
         save_ctfidf=True,
         save_embedding_model=embedding_model_name,
     )
-    log.info("  ✅ Final model saved to models/final_bertopic_model/")
+    log.info("   Final model saved to models/final_bertopic_model/")
 
     # ── Final summary ──────────────────────────────────────────────────────────
     n_topics      = len(topics_overview_df)
@@ -708,18 +664,15 @@ def run_final_model(scopus_df: pd.DataFrame,
 
     return final_model, topics_overview_df, alignment
 
-
-# -----------------------------------------------------------------------------
-#  SECTION 12: SAVE COMPARISON + TUNING RESULTS
-# -----------------------------------------------------------------------------
-
+# ======================================================================================================================
+#  SECTION 12: SAVING COMPARISON AND TUNING RESULTS
+# ======================================================================================================================
 def save_comparison_results(comparison_results: dict,
                              tuning_results: list,
                              best_model_name: str,
                              best_params: dict):
     """Save model comparison and tuning results to CSV."""
 
-    # Model comparison
     rows = []
     for model_name, result in comparison_results.items():
         row = {"model": model_name, **result["metrics"]}
@@ -728,9 +681,8 @@ def save_comparison_results(comparison_results: dict,
     comparison_df = pd.DataFrame(rows)
     comparison_df.to_csv(RESULTS_DIR / "model_comparison.csv",
                           index=False, encoding="utf-8")
-    log.info(f"\n✅ model_comparison.csv saved")
+    log.info(f"\n model_comparison.csv saved")
 
-    # Hyperparameter tuning
     if tuning_results:
         tuning_df = pd.DataFrame(tuning_results)
         tuning_df["best"] = tuning_df.apply(
@@ -739,13 +691,13 @@ def save_comparison_results(comparison_results: dict,
         tuning_df.sort_values("score", ascending=False, inplace=True)
         tuning_df.to_csv(RESULTS_DIR / "hyperparameter_results.csv",
                           index=False, encoding="utf-8")
-        log.info(f"✅ hyperparameter_results.csv saved")
+        log.info(f" hyperparameter_results.csv saved")
 
-
-# -----------------------------------------------------------------------------
-#  SECTION 13: MAIN
-# -----------------------------------------------------------------------------
-
+# ======================================================================================================================
+#  SECTION 13: MAIN PIPELINE
+#  Executed all stages sequentially: data loading → model comparison → hyperparameter tuning → final model training →
+#  research output generation. The full pipeline took approximately 4 hours on Apple Silicon MPS.
+# ======================================================================================================================
 def main():
 
     log.info("=" * 60)
@@ -753,17 +705,13 @@ def main():
     log.info(f"  Run time: {datetime.now().strftime('%Y-%m-%d %H:%M')}")
     log.info("=" * 60)
 
-    # ── Stage 1: Load data ────────────────────────────────────────────────────
+    # ── Stage 1: Loading data ────────────────────────────────────────────────────
     log.info("")
     log.info("STAGE 1 — LOADING DATA")
     log.info("-" * 40)
-
     scopus_df  = load_scopus()
     policy_df  = load_policy(english_only=False)
-
-    # Chunk policy documents
     policy_chunks_df = chunk_policy_docs(policy_df)
-
     scopus_texts = scopus_df["text"].tolist()
     policy_texts = policy_chunks_df["text"].tolist()
 
@@ -779,7 +727,7 @@ def main():
         scopus_texts, best_model_name
     )
 
-    # ── Save comparison + tuning results ──────────────────────────────────────
+    # ── Saving comparison + tuning results ──────────────────────────────────────
     save_comparison_results(
         comparison_results, tuning_results, best_model_name, best_params
     )
@@ -804,12 +752,10 @@ def main():
     log.info("  Next step: run 4_model_finetuning.py for topic labelling")
     log.info("  Then:      run 5_streamlit_dashboard.py to visualise results")
     log.info("=" * 60)
-    log.info("🎉 BERTopic modelling complete!")
+    log.info(" BERTopic modelling complete!")
 
-
-# -----------------------------------------------------------------------------
+# ======================================================================================================================
 #  ENTRY POINT
-# -----------------------------------------------------------------------------
-
+# ======================================================================================================================
 if __name__ == "__main__":
     main()

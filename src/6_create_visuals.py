@@ -1,25 +1,34 @@
 """
-6_create_visuals.py
-Project: Mapping Global AI Governance Narratives
-Authors: Tambudzai Gundani & Joshua Gray
+========================================================================================================================
+NOTEBOOK GENERATOR — EXPLORATORY VISUALS
+Project: Uneven Science–Policy Translation Shapes Global AI Governance
+Authors: Tambudzai G. Charumbira & Joshua Gray
+Institution: George Washington University, CCAS | M.S. Data Science | Spring 2026
+Date: April 2026
 
-Run this script ONCE to generate 6_exploratory_visuals.ipynb
-Then open that notebook in PyCharm and run cells interactively.
+DESCRIPTION:
+This script programmatically generated the 6_exploratory_visuals.ipynb Jupyter notebook containing 20 Altair visualizations
+organized across four sections (RO1, RO2, RO3, Stance Analysis). The notebook was generated once and then executed
+interactively in PyCharm/Jupyter to produce the publication-ready charts used in the paper and poster.
 
-Usage:
-    python src/6_create_visuals.py
+The generator approach was used to ensure reproducibility — the notebook's cell structure is defined in code rather than
+ manually assembled, making it easy to regenerate if the visualization logic changes.
 
-Requirements:
-    pip install altair vega_datasets pycountry networkx nbformat
+This script does not need to be re-run unless the notebook structure needs to be rebuilt from scratch. The generated
+notebook (6_exploratory_visuals.ipynb) is the working artifact.
+
+OUTPUT:
+- src/6_exploratory_visuals.ipynb → 63-cell notebook with 20 Altair visualizations
+
+USAGE:
+  python src/6_create_visuals.py    (generates the notebook)
+  Then open 6_exploratory_visuals.ipynb in PyCharm/Jupyter and run cells interactively
+========================================================================================================================
 """
-
 import json
 from pathlib import Path
 
 OUT_PATH = Path(__file__).parent / "6_exploratory_visuals.ipynb"
-
-
-# ── helpers ──────────────────────────────────────────────────────────────────
 
 def code(src: str) -> dict:
     return {
@@ -29,8 +38,6 @@ def code(src: str) -> dict:
         "outputs": [],
         "source": src.strip()
     }
-
-
 def md(src: str) -> dict:
     return {
         "cell_type": "markdown",
@@ -38,14 +45,12 @@ def md(src: str) -> dict:
         "source": src.strip()
     }
 
-
-# =============================================================================
+# ======================================================================================================================
 #  CELLS
-# =============================================================================
+# ======================================================================================================================
 
 cells = []
 
-# ── TITLE ────────────────────────────────────────────────────────────────────
 cells.append(md("""# Mapping Global AI Governance Narratives — Exploratory Visuals
 **Authors:** Tambudzai Gundani & Joshua Gray | GWU Masters Capstone | 2026
 
@@ -59,7 +64,6 @@ exploring AI governance discourse across 41,067 academic papers and 35 national 
 4. 💬 Stance Analysis — Risk vs Opportunity
 """))
 
-# ── SETUP ────────────────────────────────────────────────────────────────────
 cells.append(md("## ⚙️ Setup & Data Loading"))
 
 cells.append(code("""
@@ -204,9 +208,9 @@ ISO_COUNTRY = {v: k for k, v in COUNTRY_ISO.items()}
 print(f'✅ Country ISO map: {len(COUNTRY_ISO)} entries')
 """))
 
-# =============================================================================
+# ======================================================================================================================
 #  SECTION 1 — RO1: TOPIC LANDSCAPE
-# =============================================================================
+# ======================================================================================================================
 
 cells.append(md("""---
 ## 🔍 RO1 — Dominant Governance Themes
@@ -221,7 +225,8 @@ cells.append(md("""---
 5. Topic Governance Score vs Paper Count
 """))
 
-cells.append(md("### Visual 1.1 — Governance Topic Bubble Chart\nEach bubble = one governance topic. Position = framing (x=risk, y=opportunity), size = paper count, colour = governance relevance score."))
+cells.append(md("### Visual 1.1 — Governance Topic Bubble Chart\nEach bubble = one governance topic. Position = framing "
+                "(x=risk, y=opportunity), size = paper count, colour = governance relevance score."))
 cells.append(code("""
 bubble_data = s_topic.copy()
 bubble_data['short_label'] = bubble_data['topic_label_finetuned'].str.replace('AI ', '').str[:30]
@@ -474,9 +479,9 @@ ref_v = alt.Chart(pd.DataFrame({'x': [100]})).mark_rule(
 ).configure_view(strokeWidth=1).configure_axis(labelFontSize=10)
 """))
 
-# =============================================================================
+# ======================================================================================================================
 #  SECTION 2 — RO2: REGIONAL ATLAS
-# =============================================================================
+# ======================================================================================================================
 
 cells.append(md("""---
 ## 🌍 RO2 — Regional & Spatial Distribution
@@ -491,7 +496,8 @@ cells.append(md("""---
 5. Radar Chart — regional governance profiles
 """))
 
-cells.append(md("### Visual 2.1 — World Choropleth Map\n**Countries coloured by number of governance papers.** This requires `vega_datasets` with the world_110m topojson."))
+cells.append(md("### Visual 2.1 — World Choropleth Map\n**Countries coloured by number of governance papers.** This requires"
+                " `vega_datasets` with the world_110m topojson."))
 cells.append(code("""
 # Country paper counts
 country_counts = papers[papers['country'] != 'Unknown'].groupby('country').size().reset_index(name='papers')
@@ -540,7 +546,8 @@ v6 = (background + choropleth).project(
 v6
 """))
 
-cells.append(md("### Visual 2.2 — Country Co-authorship Network\nCountry nodes sized by paper count, connected by international collaboration edges. Colour = world region."))
+cells.append(md("### Visual 2.2 — Country Co-authorship Network\nCountry nodes sized by paper count, connected by "
+                "international collaboration edges. Colour = world region."))
 cells.append(code("""
 # Filter to top N edges for visual clarity
 TOP_EDGES = 80
@@ -682,7 +689,8 @@ text_v8 = alt.Chart(rg[rg['proportion_pct'] > 0.3]).mark_text(
 (v8 + text_v8).configure_view(step=24).configure_axis(labelFontSize=10)
 """))
 
-cells.append(md("### Visual 2.4 — Dot Map: Countries Positioned by Coordinates\nEach country at its geographic centroid, sized by governance paper count."))
+cells.append(md("### Visual 2.4 — Dot Map: Countries Positioned by Coordinates\nEach country at its geographic centroid,"
+                " sized by governance paper count."))
 cells.append(code("""
 # Use country nodes file which has centroids
 if not nodes.empty and 'latitude' in nodes.columns:
@@ -783,9 +791,9 @@ v10 = alt.Chart(sr2_melted).mark_bar(cornerRadiusTopLeft=3, cornerRadiusTopRight
 v10
 """))
 
-# =============================================================================
+# ======================================================================================================================
 #  SECTION 3 — RO3: POLICY ALIGNMENT
-# =============================================================================
+# ======================================================================================================================
 
 cells.append(md("""---
 ## 📜 RO3 — Academic vs Policy Alignment
@@ -800,7 +808,8 @@ cells.append(md("""---
 5. Topic Gap Bar — academic-only topics (absent from policy)
 """))
 
-cells.append(md("### Visual 3.1 — Policy Alignment Bubble Chart\nx = academic papers, y = policy chunks, size = governance score. Shows where each corpus is stronger."))
+cells.append(md("### Visual 3.1 — Policy Alignment Bubble Chart\nx = academic papers, y = policy chunks, size = governance"
+                " score. Shows where each corpus is stronger."))
 cells.append(code("""
 al = align[align['governance_score'] >= 0.5].copy()
 al['short_label'] = al['topic_label'].str[:32]
@@ -969,7 +978,8 @@ else:
     print('policy_document_topics_v2.csv not found — skipping visual 3.3')
 """))
 
-cells.append(md("### Visual 3.4 — EU Vocabulary Dominance in Global South\nWhich countries mirror EU AI Act language in their policy frameworks?"))
+cells.append(md("### Visual 3.4 — EU Vocabulary Dominance in Global South\nWhich countries mirror EU AI Act language in"
+                " their policy frameworks?"))
 cells.append(code("""
 if not pol_docs.empty:
     eu_topic = pol_docs[
@@ -1008,7 +1018,8 @@ if not pol_docs.empty:
     (v14 + ref).configure_view(strokeWidth=1).configure_axis(labelFontSize=10)
 """))
 
-cells.append(md("### Visual 3.5 — Academic-Only Topics (Policy Gaps)\nGovernance themes well-studied in academia but completely absent from national AI policy frameworks."))
+cells.append(md("### Visual 3.5 — Academic-Only Topics (Policy Gaps)\nGovernance themes well-studied in academia but "
+                "completely absent from national AI policy frameworks."))
 cells.append(code("""
 acad_only = align[
     (align['alignment'] == 'academic_only') & (align['governance_score'] >= 0.5)
@@ -1052,9 +1063,9 @@ text_v15 = alt.Chart(acad_only).mark_text(
 ).configure_view(strokeWidth=1).configure_axis(labelFontSize=10)
 """))
 
-# =============================================================================
+# ======================================================================================================================
 #  SECTION 4 — STANCE ANALYSIS
-# =============================================================================
+# ======================================================================================================================
 
 cells.append(md("""---
 ## 💬 Stance Analysis — Risk vs Opportunity Framing
@@ -1069,7 +1080,8 @@ cells.append(md("""---
 5. Topic × Region Stance Heatmap
 """))
 
-cells.append(md("### Visual 4.1 — Diverging Bar: Risk vs Opportunity per Topic\nTopics sorted by risk score. Red = risk-dominated, green = opportunity-dominated."))
+cells.append(md("### Visual 4.1 — Diverging Bar: Risk vs Opportunity per Topic\nTopics sorted by risk score. Red = "
+                "risk-dominated, green = opportunity-dominated."))
 cells.append(code("""
 st2 = s_topic.copy().sort_values('avg_risk_score', ascending=False)
 st2['short'] = st2['topic_label_finetuned'].str[:40]
@@ -1177,7 +1189,8 @@ v17 = (lines_v17 + labels_v17).properties(
 v17
 """))
 
-cells.append(md("### Visual 4.3 — Scatter: Individual Paper Stance Scores\nEach dot = one governance paper. Position = (risk score, opportunity score). Colour = classified stance."))
+cells.append(md("### Visual 4.3 — Scatter: Individual Paper Stance Scores\nEach dot = one governance paper. Position = "
+                "(risk score, opportunity score). Colour = classified stance."))
 cells.append(code("""
 # Sample for performance if needed
 sample = papers.sample(min(2000, len(papers)), random_state=42).copy()
@@ -1321,7 +1334,6 @@ text_v20 = alt.Chart(topic_region[topic_region['avg_risk'] > 0.50]).mark_text(
 (v20 + text_v20).configure_view(step=22).configure_axis(labelFontSize=10)
 """))
 
-# ── EXPORT ────────────────────────────────────────────────────────────────────
 cells.append(md("""---
 ## 💾 Export Charts for Paper
 
@@ -1348,10 +1360,9 @@ print('Use: chart.save(str(FIG_DIR / \"filename.svg\"))')
 print('Or:  chart.save(str(FIG_DIR / \"filename.png\"), scale_factor=2.0)')
 """))
 
-# =============================================================================
-#  WRITE NOTEBOOK
-# =============================================================================
-
+# ======================================================================================================================
+#  WRITING NOTEBOOK
+# ======================================================================================================================
 notebook = {
     "nbformat": 4,
     "nbformat_minor": 5,

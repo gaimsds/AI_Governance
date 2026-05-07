@@ -1,91 +1,61 @@
-# =============================================================================
-#  POLICY FRAMEWORKS TEXT EXTRACTION SCRIPT
-#  Project: Mapping Global AI Governance Narratives
-#  Authors: Tambudzai Gundani & Joshua Gray
-#  Date:    March 2026
-# =============================================================================
-#
-#  WHAT THIS SCRIPT DOES:
-#  ----------------------
-#  Extracts and cleans text from all collected policy framework PDFs and
-#  outputs a single CSV that mirrors the format of scopus_abstracts_nlp.csv
-#  so that BERTopic can process both corpora consistently.
-#
-#  EXTRACTION STRATEGY:
-#  --------------------
-#  Uses pdfplumber as the primary extractor (best layout handling).
-#  Falls back to pypdf if pdfplumber yields no text (some scanned/image PDFs).
-#  Records extraction quality for every document so you know what worked.
-#
-#  LANGUAGE HANDLING:
-#  ------------------
-#  English documents → full NLP cleaning (lowercase, stopwords, lemmatize)
-#  Non-English documents (French, Spanish, Portuguese) → light cleaning only
-#    (lowercase, whitespace normalisation, no stopword removal)
-#  Language is detected automatically and flagged in the output.
-#
-#  OUTPUT FILE (saved to data_clean/):
-#  ------------------------------------
-#  policy_corpus.csv — one row per document with columns:
-#    doc_id, filename, country, region, doc_type, year, language,
-#    issuer, doc_name, text_raw, text_clean, word_count, page_count,
-#    extraction_method, extraction_quality, notes
-#
-#  METHODOLOGY NOTE:
-#  -----------------
-#  Non-English documents (France, Brazil, Chile, Colombia) are included
-#  for geographic completeness. They will be processed separately using
-#  multilingual BERTopic (paraphrase-multilingual-MiniLM-L12-v2) or
-#  excluded from English-only BERTopic runs. Both approaches are
-#  implemented in 3_modelling.py.
-# =============================================================================
+"""
+========================================================================================================================
+POLICY CORPUS TEXT EXTRACTION
+Project: Uneven Science–Policy Translation Shapes Global AI Governance
+Authors: Tambudzai G. Charumbira & Joshua Gray
+Institution: George Washington University, CCAS | M.S. Data Science | Spring 2026
+Date: March 2026
 
+DESCRIPTION:
+This script extracted and cleaned text from the 35 policy framework PDFs collected in
+1_data_collection_policyframeworks.py. The output was a structured CSV mirroring the format of the academic
+corpus to enable consistent BERTopic processing across both corpora.
 
-# -----------------------------------------------------------------------------
-#  SECTION 1: IMPORTS
-# -----------------------------------------------------------------------------
+Extraction used pdfplumber as the primary method, with pypdf as fallback for documents where pdfplumber yielded
+insufficient text. Language was detected automatically (langdetect) with manual overrides for known non-English
+documents. English documents received full NLP cleaning (stopwords, lemmatization); non-English documents
+(French, Spanish, Portuguese) received light cleaning only to preserve accented characters for multilingual
+processing.
 
+Extraction quality was assessed per document using a words-per-page metric: ≥500 wpp = good, 100–500 = moderate,
+<100 = poor (likely scanned). The EU AI Act was the largest document at 91,316 words.
+
+OUTPUT FILES (saved to data_clean/):
+- policy_corpus.csv              → All 35 documents with raw and cleaned text
+- policy_corpus_english_only.csv → English-language subset for primary BERTopic run
+- policy_extraction_report.txt   → Per-document extraction quality report
+========================================================================================================================
+"""
 import re
 import logging
 import pandas as pd
 import pdfplumber
 from pathlib import Path
 from datetime import datetime
-
-# NLP
 import nltk
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 from nltk.tokenize import word_tokenize
 
-# Language detection
 try:
     from langdetect import detect as langdetect_detect
     HAS_LANGDETECT = True
 except ImportError:
     HAS_LANGDETECT = False
 
-# Fallback PDF extractor
 try:
     from pypdf import PdfReader
     HAS_PYPDF = True
 except ImportError:
     HAS_PYPDF = False
 
-
-# -----------------------------------------------------------------------------
-#  SECTION 2: FOLDER SETUP
-# -----------------------------------------------------------------------------
-
+# ======================================================================================================================
+#  SECTION 2: FOLDER SETUP & LOGGING
+# ======================================================================================================================
 BASE_DIR    = Path(__file__).parent.parent
 POLICY_DIR  = BASE_DIR / "data_raw"  / "policy_frameworks"
 DATA_CLEAN  = BASE_DIR / "data_clean"
 DATA_CLEAN.mkdir(parents=True, exist_ok=True)
-
-
-# -----------------------------------------------------------------------------
-#  SECTION 3: LOGGING
-# -----------------------------------------------------------------------------
 
 logging.basicConfig(
     level=logging.INFO,
@@ -98,11 +68,12 @@ logging.basicConfig(
 )
 log = logging.getLogger(__name__)
 
-
-# -----------------------------------------------------------------------------
-#  SECTION 4: NLTK SETUP
-# -----------------------------------------------------------------------------
-
+# ======================================================================================================================
+#  SECTION 3: NLTK SETUP
+#  NLTK resources were downloaded for tokenization, stopword removal, and lemmatization. Domain-specific stopwords common
+#  in policy documents (e.g., "shall", "pursuant", "accordance", "annex") were added to the standard English stopword list
+#  to reduce noise without removing substantive governance vocabulary.
+# ======================================================================================================================
 def setup_nltk():
     for resource in ["punkt", "stopwords", "wordnet", "omw-1.4",
                      "punkt_tab", "averaged_perceptron_tagger"]:
@@ -114,7 +85,7 @@ def setup_nltk():
 setup_nltk()
 
 ENGLISH_STOPWORDS = set(stopwords.words("english"))
-# Add domain-specific stopwords that add noise but no signal for BERTopic
+
 DOMAIN_STOPWORDS  = {
     "shall", "may", "must", "article", "section", "paragraph",
     "member", "state", "states", "government", "national",
@@ -126,27 +97,26 @@ DOMAIN_STOPWORDS  = {
 ENGLISH_STOPWORDS.update(DOMAIN_STOPWORDS)
 LEMMATIZER = WordNetLemmatizer()
 
-
-# -----------------------------------------------------------------------------
-#  SECTION 5: KNOWN LANGUAGE MAP
-#  Pre-assign languages for documents where autodetect may struggle
-#  due to short or mixed-language content
-# -----------------------------------------------------------------------------
-
+# ======================================================================================================================
+#  SECTION 4: KNOWN LANGUAGE MAP
+#  Non-English documents were pre-assigned language codes to avoid misdetection on short or mixed-language content. Four
+#  documents were flagged: France (French), Brazil (Portuguese), Colombia (Spanish), and Mexico (English version available).
+# ======================================================================================================================
 KNOWN_LANGUAGES = {
     "France_AI_Strategy_2021.pdf":                   "fr",
     "Brazil_National_AI_Plan_PBIA_2024.pdf":         "pt",
     "Colombia_National_AI_Policy_CONPES4144_2025.pdf": "es",
-    "Mexico_AI_National_Agenda_2018.pdf":            "en",  # English version
+    "Mexico_AI_National_Agenda_2018.pdf":            "en",
 }
 
 NON_ENGLISH = {"fr", "es", "pt"}
 
-
-# -----------------------------------------------------------------------------
-#  SECTION 6: TEXT EXTRACTION
-# -----------------------------------------------------------------------------
-
+# ======================================================================================================================
+#  SECTION 5: TEXT EXTRACTION
+#  A two-tier extraction strategy was implemented. pdfplumber was used first for its superior layout handling. If
+#  pdfplumber yielded fewer than 200 characters, pypdf was attempted as fallback. The extraction method used was recorded
+#  for each document to support quality auditing.
+# ======================================================================================================================
 def extract_text_pdfplumber(pdf_path: Path) -> tuple[str, int]:
     """Extract text using pdfplumber. Returns (text, page_count)."""
     try:
@@ -160,7 +130,6 @@ def extract_text_pdfplumber(pdf_path: Path) -> tuple[str, int]:
     except Exception as e:
         log.warning(f"   pdfplumber failed: {e}")
         return "", 0
-
 
 def extract_text_pypdf(pdf_path: Path) -> tuple[str, int]:
     """Fallback extraction using pypdf. Returns (text, page_count)."""
@@ -177,7 +146,6 @@ def extract_text_pypdf(pdf_path: Path) -> tuple[str, int]:
     except Exception as e:
         log.warning(f"   pypdf fallback failed: {e}")
         return "", 0
-
 
 def extract_text(pdf_path: Path) -> tuple[str, int, str]:
     """
@@ -197,24 +165,21 @@ def extract_text(pdf_path: Path) -> tuple[str, int, str]:
 
     return text, pages, "pdfplumber_limited"
 
-
-# -----------------------------------------------------------------------------
-#  SECTION 7: TEXT CLEANING
-# -----------------------------------------------------------------------------
-
+# ======================================================================================================================
+#  SECTION 6: TEXT CLEANING
+#  Three cleaning levels were applied depending on document language:
+#    - Basic (all documents): page number removal, URL stripping, whitespace normalization
+#    - Full NLP (English): stopword removal and lemmatization, matching the academic corpus pipeline
+#    - Light multilingual (non-English): lowercase and whitespace only, preserving accented characters
+# ======================================================================================================================
 def clean_raw_text(text: str) -> str:
     """Basic cleaning applied to ALL documents regardless of language."""
-    # Remove page numbers (standalone digits on a line)
     text = re.sub(r"^\s*\d+\s*$", "", text, flags=re.MULTILINE)
-    # Remove URLs
     text = re.sub(r"https?://\S+", " ", text)
-    # Remove excessive whitespace and newlines
     text = re.sub(r"\n{3,}", "\n\n", text)
     text = re.sub(r"[ \t]+", " ", text)
-    # Remove non-printable characters
     text = re.sub(r"[^\x20-\x7E\n\u00C0-\u024F\u0400-\u04FF]", " ", text)
     return text.strip()
-
 
 def clean_english_nlp(text: str) -> str:
     """
@@ -223,21 +188,17 @@ def clean_english_nlp(text: str) -> str:
     Mirrors the cleaning in 2_data_cleaning_scopus.py.
     """
     text = text.lower()
-    # Remove punctuation
     text = re.sub(r"[^a-z\s]", " ", text)
-    # Tokenise
     try:
         tokens = word_tokenize(text)
     except Exception:
         tokens = text.split()
-    # Remove stopwords and short tokens
     tokens = [
         LEMMATIZER.lemmatize(t)
         for t in tokens
         if t not in ENGLISH_STOPWORDS and len(t) > 2
     ]
     return " ".join(tokens)
-
 
 def clean_multilingual_light(text: str) -> str:
     """
@@ -249,7 +210,6 @@ def clean_multilingual_light(text: str) -> str:
     text = re.sub(r"\s+", " ", text)
     return text.strip()
 
-
 def detect_language(text: str, filename: str) -> str:
     """Detect document language. Uses known map first, then langdetect."""
     if filename in KNOWN_LANGUAGES:
@@ -257,11 +217,10 @@ def detect_language(text: str, filename: str) -> str:
     if not HAS_LANGDETECT:
         return "en"
     try:
-        sample = text[:3000]  # Use first 3000 chars for detection
+        sample = text[:3000]
         return langdetect_detect(sample)
     except Exception:
         return "en"
-
 
 def assess_quality(text: str, page_count: int) -> str:
     """
@@ -281,26 +240,32 @@ def assess_quality(text: str, page_count: int) -> str:
     else:
         return "poor_likely_scanned"
 
-
-# -----------------------------------------------------------------------------
-#  SECTION 8: LOAD MANIFEST
-# -----------------------------------------------------------------------------
-
+# ======================================================================================================================
+#  SECTION 7: MANIFEST LOADING
+#  The policy manifest generated by 1_data_collection_policy frameworks.py was loaded to identify which documents were
+#  successfully downloaded and ready for extraction. Documents with status "downloaded" or "already_exists" were
+#  processed; others were skipped.
+# ======================================================================================================================
 def load_manifest() -> pd.DataFrame:
     manifest_path = POLICY_DIR / "policy_manifest.csv"
     if not manifest_path.exists():
-        log.error(f"❌ policy_manifest.csv not found at {manifest_path}")
+        log.error(f" policy_manifest.csv not found at {manifest_path}")
         log.error("   Run 1_data_collection_policyframeworks.py first.")
         raise FileNotFoundError(manifest_path)
     df = pd.read_csv(manifest_path, dtype=str)
     log.info(f"   Loaded manifest: {len(df)} documents")
     return df
 
-
-# -----------------------------------------------------------------------------
-#  SECTION 9: MAIN PIPELINE
-# -----------------------------------------------------------------------------
-
+# ======================================================================================================================
+#  SECTION 8: MAIN PIPELINE
+#  The pipeline iterated through all downloaded policy documents and for each:
+#    1. Extracted raw text via pdfplumber (with pypdf fallback)
+#    2. Applied basic cleaning to all documents
+#    3. Detected language (automatic + manual overrides)
+#    4. Applied full NLP or light cleaning based on language
+#    5. Assessed extraction quality via words-per-page metric
+#    6. Saved the full corpus CSV, English-only subset, and extraction quality report
+# ======================================================================================================================
 def run_extraction_pipeline():
 
     log.info("=" * 65)
@@ -309,8 +274,6 @@ def run_extraction_pipeline():
     log.info("=" * 65)
 
     manifest = load_manifest()
-
-    # Only process documents that were actually downloaded
     downloaded = manifest[manifest["status"].isin(["downloaded", "already_exists"])]
     log.info(f"   Documents to extract: {len(downloaded)} / {len(manifest)} total")
     log.info(f"   Skipping:             {len(manifest) - len(downloaded)} (not downloaded)")
@@ -321,26 +284,23 @@ def run_extraction_pipeline():
     failed  = 0
 
     for i, (_, row) in enumerate(downloaded.iterrows(), 1):
-
         filename = str(row.get("filename", "")).strip()
         filepath = POLICY_DIR / filename
-
         log.info("")
         log.info(f"[{i:02d}/{len(downloaded):02d}] {row.get('country')} — {row.get('doc_name')}")
 
         if not filepath.exists():
-            log.warning(f"   ⚠️  File not found: {filename} — skipping")
+            log.warning(f"     File not found: {filename} — skipping")
             failed += 1
             continue
 
         if filepath.stat().st_size < 1000:
-            log.warning(f"   ⚠️  File too small ({filepath.stat().st_size} bytes) — skipping")
+            log.warning(f"     File too small ({filepath.stat().st_size} bytes) — skipping")
             failed += 1
             continue
 
-        # ── Extract raw text ──────────────────────────────────────────────────
+        # ── ExtractING raw text ──────────────────────────────────────────────────
         text_raw, page_count, method = extract_text(filepath)
-
         if not text_raw.strip():
             log.warning(f"   ❌ No text extracted — file may be image-only PDF")
             failed += 1
@@ -359,17 +319,17 @@ def run_extraction_pipeline():
         # ── NLP cleaning ──────────────────────────────────────────────────────
         if is_english:
             text_clean = clean_english_nlp(text_raw)
-            log.info(f"   ✅ Extracted {word_count:,} words | {page_count} pages | "
+            log.info(f"    Extracted {word_count:,} words | {page_count} pages | "
                      f"lang={language} | {method}")
         else:
             text_clean = clean_multilingual_light(text_raw)
-            log.info(f"   ✅ Extracted {word_count:,} words | {page_count} pages | "
+            log.info(f"    Extracted {word_count:,} words | {page_count} pages | "
                      f"lang={language} (non-English — light cleaning) | {method}")
 
         # ── Quality assessment ────────────────────────────────────────────────
         quality = assess_quality(text_raw, page_count)
         if quality == "poor_likely_scanned":
-            log.warning(f"   ⚠️  Low word density — may be partially scanned")
+            log.warning(f"     Low word density — may be partially scanned")
             partial += 1
         else:
             success += 1
@@ -385,15 +345,12 @@ def run_extraction_pipeline():
     # ── Save outputs ──────────────────────────────────────────────────────────
     corpus_path = DATA_CLEAN / "policy_corpus.csv"
     corpus_df.to_csv(corpus_path, index=False, encoding="utf-8")
-    log.info(f"\n✅ Corpus saved: {corpus_path.name}  ({len(corpus_df)} documents)")
+    log.info(f"\n Corpus saved: {corpus_path.name}  ({len(corpus_df)} documents)")
 
-    # Also save English-only subset for main BERTopic run
     english_df = corpus_df[corpus_df["language"] == "en"]
     english_path = DATA_CLEAN / "policy_corpus_english_only.csv"
     english_df.to_csv(english_path, index=False, encoding="utf-8")
-    log.info(f"✅ English-only corpus saved: {english_path.name}  ({len(english_df)} documents)")
-
-    # Save extraction report
+    log.info(f" English-only corpus saved: {english_path.name}  ({len(english_df)} documents)")
     _save_report(corpus_df, success, partial, failed)
 
     # ── Summary ───────────────────────────────────────────────────────────────
@@ -432,11 +389,10 @@ def run_extraction_pipeline():
     log.info("🎉 Policy text extraction complete!")
     log.info("")
 
-
-# -----------------------------------------------------------------------------
-#  SECTION 10: HELPERS
-# -----------------------------------------------------------------------------
-
+# ======================================================================================================================
+#  SECTION 9: HELPER FUNCTIONS
+#  Utility functions for building output rows and generating the extraction quality report.
+# ======================================================================================================================
 def _build_row(row, filename, text_raw, text_clean,
                word_count, page_count, language, quality, method):
     return {
@@ -457,7 +413,6 @@ def _build_row(row, filename, text_raw, text_clean,
         "text_clean":         text_clean,
         "notes":              row.get("notes", ""),
     }
-
 
 def _save_report(df: pd.DataFrame, success: int, partial: int, failed: int):
     report_path = DATA_CLEAN / "policy_extraction_report.txt"
@@ -487,12 +442,11 @@ def _save_report(df: pd.DataFrame, success: int, partial: int, failed: int):
         f.write("BERTopic analysis but excluded from policy_corpus_english_only.csv.\n")
         f.write("See 3_modelling.py for both English-only and multilingual runs.\n")
 
-    log.info(f"✅ Report saved:  policy_extraction_report.txt")
+    log.info(f" Report saved:  policy_extraction_report.txt")
 
-
-# -----------------------------------------------------------------------------
+# ======================================================================================================================
 #  ENTRY POINT
-# -----------------------------------------------------------------------------
+# ======================================================================================================================
 
 if __name__ == "__main__":
     run_extraction_pipeline()

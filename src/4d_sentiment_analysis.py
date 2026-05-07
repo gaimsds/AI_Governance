@@ -1,64 +1,38 @@
-# =============================================================================
-#  4d_sentiment_analysis.py
-#  Project: Mapping Global AI Governance Narratives
-#  Authors: Tambudzai Gundani & Joshua Gray
-#  Date:    March 2026
-# =============================================================================
-#
-#  WHAT THIS SCRIPT DOES:
-#  ----------------------
-#  Performs zero-shot stance classification on the 3,186 governance papers
-#  identified in governance_papers.csv.
-#
-#  For each paper abstract, classifies whether the framing is:
-#    - risk_focused    : emphasises danger, threat, harm, risk, concern
-#    - opportunity_focused : emphasises benefit, potential, innovation, growth
-#    - balanced        : discusses both or neither clearly
-#
-#  This directly addresses the abstract promise:
-#  "Sentiment and stance analysis further distinguishes risk-focused from
-#   opportunity-focused AI narratives within each topic."
-#
-#  METHOD — Zero-Shot Classification:
-#  ------------------------------------
-#  Uses facebook/bart-large-mnli via HuggingFace transformers pipeline.
-#  Zero-shot means no training data is needed — the model is given the
-#  abstract text and a set of candidate labels, and scores each label
-#  based on how well it matches the text semantically.
-#  This is proper NLP (transformer-based), not keyword counting.
-#
-#  WHY ZERO-SHOT:
-#  --------------
-#  - No labelled training data exists for this classification task
-#  - Zero-shot MNLI models achieve strong performance on stance detection
-#  - Reproducible and well-documented in NLP literature
-#  - Appropriate for academic research contexts
-#
-#  OUTPUTS saved to results/:
-#  --------------------------
-#  governance_papers_stance.csv         — 3,186 papers with stance labels + scores
-#  stance_by_topic.csv                  — stance distribution per governance topic
-#  stance_by_region.csv                 — stance distribution per world region
-#  stance_by_period.csv                 — stance distribution pre/post ChatGPT
-#  stance_policy_comparison.csv         — academic vs policy stance comparison
-#  stance_summary.txt                   — plain-text summary of key findings
-#
-#  RUNTIME:
-#  ---------
-#  ~30-60 minutes on Apple Silicon MPS for 3,186 abstracts.
-#  Run with: caffeinate -i python src/4d_sentiment_analysis.py
-#
-#  INSTALL:
-#  ---------
-#  pip install transformers torch
-#  (sentence-transformers already installed from modelling step)
-# =============================================================================
+"""
+========================================================================================================================
+ZERO-SHOT STANCE CLASSIFICATION
+Project: Uneven Science–Policy Translation Shapes Global AI Governance
+Authors: Tambudzai G. Charumbira & Joshua Gray
+Institution: George Washington University, CCAS | M.S. Data Science | Spring 2026
+Date: April 2026
 
+DESCRIPTION:
+This script applied zero-shot stance classification to the 3,186 governance papers using facebook/bart-large-mnli. Each
+abstract was classified against three candidate labels — risk-focused, opportunity-focused, and balanced — using natural
+ language inference (NLI). The highest-scoring label was assigned as the paper's stance.
 
-# -----------------------------------------------------------------------------
+A confidence threshold of 0.45 was applied: papers where the model's top confidence score fell below this threshold were
+conservatively reassigned to balanced rather than propagating uncertain predictions. This affected 808 papers (25.4%),
+which is reported as a limitation (Section 5.5).
+
+Zero-shot classification was selected over supervised approaches because no labelled training dataset exists for AI
+governance stance classification. The approach is fully reproducible — anyone with access to the same model and labels
+can replicate the results.
+
+Classification completed in approximately 7 minutes on Apple Silicon MPS.
+
+OUTPUT FILES (saved to results/):
+- governance_papers_stance.csv   → Governance papers with stance labels and confidence scores
+- stance_by_topic.csv            → Stance distribution per governance topic
+- stance_by_region.csv           → Stance distribution per world region
+- stance_by_period.csv           → Pre/post-ChatGPT stance shift
+- stance_policy_comparison.csv   → Stance comparison with policy corpus
+- stance_summary.txt             → Human-readable stance analysis summary
+========================================================================================================================
+"""
+# ======================================================================================================================
 #  SECTION 1: IMPORTS
-# -----------------------------------------------------------------------------
-
+# ======================================================================================================================
 import logging
 import warnings
 import numpy as np
@@ -69,19 +43,17 @@ from datetime import datetime
 warnings.filterwarnings("ignore")
 
 
-# -----------------------------------------------------------------------------
+# ======================================================================================================================
 #  SECTION 2: PATHS
-# -----------------------------------------------------------------------------
-
+# ======================================================================================================================
 BASE_DIR    = Path(__file__).parent.parent
 DATA_CLEAN  = BASE_DIR / "data_clean"
 RESULTS_DIR = BASE_DIR / "results"
 
 
-# -----------------------------------------------------------------------------
+# ======================================================================================================================
 #  SECTION 3: LOGGING
-# -----------------------------------------------------------------------------
-
+# ======================================================================================================================
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s  %(message)s",
@@ -94,10 +66,14 @@ logging.basicConfig(
 log = logging.getLogger(__name__)
 
 
-# -----------------------------------------------------------------------------
+# ======================================================================================================================
 #  SECTION 4: CONFIGURATION
-# -----------------------------------------------------------------------------
-
+#  Three candidate labels were defined for the NLI classifier, each phrased as a natural language hypothesis:
+#    - risk_focused: "This text discusses risks, dangers, or negative impacts of artificial intelligence"
+#    - opportunity_focused: "This text discusses benefits, opportunities, or positive potential of AI"
+#    - balanced: "This text takes a balanced view, discussing both risks and benefits of AI"
+#  The confidence threshold (0.45) and batch size were also configured here.
+# ======================================================================================================================
 # Zero-shot model — BART trained on MNLI (Multi-Genre Natural Language Inference)
 # This is the standard model for zero-shot text classification in NLP research
 ZS_MODEL = "facebook/bart-large-mnli"
@@ -128,10 +104,12 @@ BATCH_SIZE = 8
 CONFIDENCE_THRESHOLD = 0.45
 
 
-# -----------------------------------------------------------------------------
+# ======================================================================================================================
 #  SECTION 5: LOAD DATA
-# -----------------------------------------------------------------------------
-
+#  The governance papers (from 4c_data_integrity_fix.py) were loaded with topic assignments and metadata.
+#  The raw abstract — not the preprocessed version — was used for classification, as BART-large-MNLI
+#  performs better on natural language than on lemmatized/stopword-removed text.
+# ======================================================================================================================
 def load_governance_papers() -> pd.DataFrame:
     """Load governance papers and their abstracts."""
     log.info("Loading governance_papers.csv...")
@@ -169,10 +147,13 @@ def load_governance_papers() -> pd.DataFrame:
     return gov.reset_index(drop=True)
 
 
-# -----------------------------------------------------------------------------
-#  SECTION 6: ZERO-SHOT CLASSIFIER
-# -----------------------------------------------------------------------------
-
+# ======================================================================================================================
+#  SECTION 6: ZERO-SHOT CLASSIFIER SETUP
+#  facebook/bart-large-mnli was loaded via the HuggingFace transformers zero-shot-classification pipeline.
+#  The model was trained on the MultiNLI dataset (433K sentence pairs) and is the standard zero-shot
+#  classifier in the HuggingFace ecosystem (Lewis et al., 2020; Yin et al., 2019). Device was set to
+#  Apple Silicon MPS where available, falling back to CPU.
+# ======================================================================================================================
 def load_classifier():
     """Load the zero-shot classification pipeline."""
     log.info(f"Loading zero-shot classifier: {ZS_MODEL}")
@@ -201,10 +182,13 @@ def load_classifier():
     return classifier
 
 
-# -----------------------------------------------------------------------------
+# ======================================================================================================================
 #  SECTION 7: RUN CLASSIFICATION
-# -----------------------------------------------------------------------------
-
+#  Each abstract was classified individually. The model returned confidence scores for all three labels;
+#  the highest-scoring label was assigned. Where the top score fell below 0.45, the paper was reassigned
+#  to balanced — a conservative design choice to avoid propagating uncertain predictions. 808 papers
+#  (25.4%) were affected. Progress was logged every 100 papers.
+# ======================================================================================================================
 def classify_stance(papers_df: pd.DataFrame, classifier) -> pd.DataFrame:
     """
     Run zero-shot stance classification on all governance paper abstracts.
@@ -298,12 +282,14 @@ def classify_stance(papers_df: pd.DataFrame, classifier) -> pd.DataFrame:
         log.info(f"    {label:<22} {count:,} ({count/total*100:.1f}%)")
 
     return papers_df
-
-
-# -----------------------------------------------------------------------------
+# ======================================================================================================================
 #  SECTION 8: BUILD ANALYTICAL OUTPUTS
-# -----------------------------------------------------------------------------
-
+#  Stance distributions were aggregated at four levels:
+#    - By topic: dominant stance per governance topic (e.g., Autonomous Weapons 72.9% risk)
+#    - By region: stance proportions per world region (e.g., Africa & Middle East 45.0% opportunity)
+#    - By period: pre- vs post-ChatGPT stance shift (risk 34.9% → 29.4%, opportunity 29.7% → 40.0%)
+#    - Policy comparison: academic stance compared with policy corpus framing
+# ======================================================================================================================
 def build_stance_by_topic(papers_df: pd.DataFrame) -> pd.DataFrame:
     """Stance distribution per governance topic."""
     log.info("  Building stance_by_topic.csv...")
@@ -560,11 +546,11 @@ def build_stance_policy_comparison(papers_df: pd.DataFrame) -> pd.DataFrame:
 
     return comparison
 
-
-# -----------------------------------------------------------------------------
+# ======================================================================================================================
 #  SECTION 9: WRITE SUMMARY REPORT
-# -----------------------------------------------------------------------------
-
+#  A human-readable text report (stance_summary.txt) was generated summarizing key findings: overall stance
+#  distribution, temporal shift, most risk-dominated and opportunity-dominated topics, and regional variation.
+# ======================================================================================================================
 def write_stance_summary(papers_df: pd.DataFrame,
                           by_topic: pd.DataFrame,
                           by_region: pd.DataFrame,
@@ -647,11 +633,9 @@ def write_stance_summary(papers_df: pd.DataFrame,
 
     log.info("  ✅ stance_summary.txt saved")
 
-
-# -----------------------------------------------------------------------------
-#  SECTION 10: MAIN
-# -----------------------------------------------------------------------------
-
+# ======================================================================================================================
+#  SECTION 10: MAIN PIPELINE
+# ======================================================================================================================
 def main():
     log.info("=" * 60)
     log.info("  STANCE ANALYSIS PIPELINE — 4d")
@@ -714,10 +698,8 @@ def main():
     log.info("  2. Build 5_streamlit_dashboard.py")
     log.info("=" * 60)
 
-
-# -----------------------------------------------------------------------------
+# ======================================================================================================================
 #  ENTRY POINT
-# -----------------------------------------------------------------------------
-
+# ======================================================================================================================
 if __name__ == "__main__":
     main()

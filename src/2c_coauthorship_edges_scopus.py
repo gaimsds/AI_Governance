@@ -1,54 +1,29 @@
-# =============================================================================
-#  COAUTHORSHIP EDGES SCRIPT
-#  Project: Mapping Global AI Governance Narratives
-#  Authors: Tambudzai Gundani & Joshua Gray
-#  Date:    March 2026
-# =============================================================================
-#
-#  WHAT THIS SCRIPT DOES:
-#  ----------------------
-#  Takes the geocoded institution data and builds an EDGE LIST —
-#  a file that records every pair of institutions that appear together
-#  on the same paper. This edge list is what powers the network map
-#  showing collaboration connections between countries and institutions.
-#
-#  HOW EDGES WORK:
-#  ---------------
-#  If a paper has 3 institutions: MIT, Oxford, University of Nairobi
-#  That creates 3 edges:
-#    MIT ←→ Oxford
-#    MIT ←→ University of Nairobi
-#    Oxford ←→ University of Nairobi
-#
-#  OUTPUTS (saved to data_clean/):
-#  ---------------------------------
-#  1. scopus_institution_edges.csv
-#     One row per institution PAIR per paper.
-#     institution_a, country_a, lat_a, lon_a,
-#     institution_b, country_b, lat_b, lon_b,
-#     paper_count (how many papers share this pair)
-#
-#  2. scopus_country_edges.csv
-#     Aggregated to COUNTRY level — one row per country pair.
-#     country_a, country_b, paper_count, region_a, region_b
-#     This is what you feed directly into your network map.
-#
-#  3. scopus_country_nodes.csv
-#     One row per country with total paper count and coordinates.
-#     Used as the node layer in your network map.
-#
-#  WHY TWO LEVELS:
-#  ---------------
-#  Institution edges → detailed academic network analysis
-#  Country edges     → spatial network map (lines between countries)
-#  Both are needed for your RO2 analysis.
-# =============================================================================
+"""
+========================================================================================================================
+CO-AUTHORSHIP NETWORK CONSTRUCTION
+Project: Uneven Science–Policy Translation Shapes Global AI Governance
+Authors: Tambudzai G. Charumbira & Joshua Gray
+Institution: George Washington University, CCAS | M.S. Data Science | Spring 2026
+Date: March 2026
 
+DESCRIPTION:
+This script constructed co-authorship edge lists at both the institution and country levels from the geocoded
+Scopus corpus. For each multi-institution paper, all pairwise combinations of institutions were generated as
+edges. These were then aggregated to country-level international collaboration pairs.
 
-# -----------------------------------------------------------------------------
+To manage combinatorial growth, institution lists were capped at 10 per paper (some papers list 50+ affiliations).
+Same-institution self-loops were excluded. Edges were undirected and deduplicated so (A,B) and (B,A) counted
+as one pair.
+
+OUTPUT FILES (saved to data_clean/):
+- scopus_institution_edges.csv  → 116,351 institution-pair edges with coordinates
+- scopus_country_edges.csv      → 2,410 international country-pair edges
+- scopus_country_nodes.csv      → 138 country nodes with paper counts and centroid coordinates
+========================================================================================================================
+"""
+# ======================================================================================================================
 #  SECTION 1: IMPORTS
-# -----------------------------------------------------------------------------
-
+# ======================================================================================================================
 import logging
 import pandas as pd
 import itertools
@@ -56,19 +31,15 @@ from pathlib import Path
 from datetime import datetime
 from collections import defaultdict
 
-
-# -----------------------------------------------------------------------------
+# ======================================================================================================================
 #  SECTION 2: FOLDER SETUP
-# -----------------------------------------------------------------------------
-
+# ======================================================================================================================
 DATA_CLEAN = Path(__file__).parent.parent / "data_clean"
 DATA_CLEAN.mkdir(parents=True, exist_ok=True)
 
-
-# -----------------------------------------------------------------------------
+# ======================================================================================================================
 #  SECTION 3: LOGGING
-# -----------------------------------------------------------------------------
-
+# ======================================================================================================================
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s  %(message)s",
@@ -80,12 +51,10 @@ logging.basicConfig(
 )
 log = logging.getLogger(__name__)
 
-
-# -----------------------------------------------------------------------------
+# ======================================================================================================================
 #  SECTION 4: REGION MAP
-#  Same map used in cleaning and geocoding — kept consistent
-# -----------------------------------------------------------------------------
-
+#  Consistent with the region assignments used in 2_data_cleaning_scopus.py and 2b_institution_geocoding_scopus.py.
+# ======================================================================================================================
 REGION_MAP = {
     "United States": "North America", "Canada": "North America",
     "United Kingdom": "Europe", "Germany": "Europe", "France": "Europe",
@@ -146,11 +115,20 @@ REGION_MAP = {
     "Senegal": "Africa & Middle East",
 }
 
-
-# -----------------------------------------------------------------------------
+# ======================================================================================================================
 #  SECTION 5: MAIN PIPELINE
-# -----------------------------------------------------------------------------
-
+#  The pipeline constructed co-authorship networks at two levels:
+#
+#  Institution-level edges: For each paper with multiple institutions, all pairwise combinations were generated.
+#  Institution lists were capped at 10 per paper to prevent combinatorial explosion on papers with very large author
+#  lists. Each edge recorded the paper count, pre/post-ChatGPT period breakdown, and cross-country/cross-region flags.
+#  Result: 116,351 edges.
+#
+#  Country-level edges: Institution edges were aggregated to country level, excluding domestic collaborations (same-
+#  country pairs). Country centroid coordinates were computed as the mean latitude/longitude of all institutions in each
+#  country. Result: 2,410 international country pairs. A country nodes file was also generated with total paper counts
+#  and centroid coordinates for each of the 138 countries, serving as the node layer for network visualizations.
+# ======================================================================================================================
 def run_coauthorship_pipeline():
 
     log.info("=" * 60)
@@ -158,38 +136,31 @@ def run_coauthorship_pipeline():
     log.info(f"  Run time: {datetime.now().strftime('%Y-%m-%d %H:%M')}")
     log.info("=" * 60)
 
-    # ── Load geocoded institution data ─────────────────────────────────────────
-    # We use the geocoded institutions file as our lookup
-    # and the cleaned Scopus data for the paper-institution relationships
+    # ── Loading geocoded institution data ─────────────────────────────────────────
     inst_file   = DATA_CLEAN / "scopus_institutions.csv"
     papers_file = DATA_CLEAN / "scopus_cleaned.csv"
 
     if not inst_file.exists():
-        log.error("❌ scopus_institutions.csv not found. Run 2b_institution_geocoding_scopus.py first.")
+        log.error(" scopus_institutions.csv not found. Run 2b_institution_geocoding_scopus.py first.")
         return
     if not papers_file.exists():
-        log.error("❌ scopus_cleaned.csv not found. Run 2_data_cleaning_scopus.py first.")
+        log.error(" scopus_cleaned.csv not found. Run 2_data_cleaning_scopus.py first.")
         return
-
-    log.info("📂 Loading institution data...")
+    log.info(" Loading institution data...")
     inst_df = pd.read_csv(inst_file, dtype=str, low_memory=False)
 
-    # Convert numeric columns back to float
     inst_df["latitude"]    = pd.to_numeric(inst_df["latitude"],    errors="coerce")
     inst_df["longitude"]   = pd.to_numeric(inst_df["longitude"],   errors="coerce")
     inst_df["paper_count"] = pd.to_numeric(inst_df["paper_count"], errors="coerce")
 
     log.info(f"   Loaded {len(inst_df):,} institutions")
-
-    log.info("📂 Loading cleaned papers...")
+    log.info(" Loading cleaned papers...")
     papers_df = pd.read_csv(papers_file, dtype=str, low_memory=False)
     log.info(f"   Loaded {len(papers_df):,} papers")
 
-    # ── Build institution lookup dictionary ────────────────────────────────────
-    # Key: institution name (lowercased for matching)
-    # Value: {country, lat, lon}
+    # ── Building institution lookup dictionary ────────────────────────────────────
     log.info("")
-    log.info("🔧 Building institution lookup...")
+    log.info(" Building institution lookup...")
 
     inst_lookup = {}
     for _, row in inst_df.iterrows():
@@ -205,17 +176,13 @@ def run_coauthorship_pipeline():
                 "lat":         float(lat),
                 "lon":         float(lon),
             }
-
     log.info(f"   {len(inst_lookup):,} institutions with coordinates in lookup")
 
-    # ── Build institution edges ────────────────────────────────────────────────
+    # ── Building institution edges ────────────────────────────────────────────────
     log.info("")
-    log.info("🔗 Building institution-level coauthorship edges...")
+    log.info(" Building institution-level coauthorship edges...")
     log.info("   (Creating pairs of institutions per paper — this may take a few minutes)")
-
-    # institution_edge_counts maps (inst_a, inst_b) → {paper_count, period info}
     institution_edges = defaultdict(lambda: {"paper_count": 0, "pre": 0, "post": 0})
-
     papers_with_multiple = 0
     papers_single        = 0
     papers_no_affil      = 0
@@ -229,46 +196,30 @@ def run_coauthorship_pipeline():
             papers_no_affil += 1
             continue
 
-        # Split affiliations into list of institution names
         institutions = [a.strip() for a in affiliations_str.split(";") if a.strip()]
-
-        # Deduplicate — same institution appearing twice on one paper = one node
         institutions = list(dict.fromkeys(institutions))
-
         if len(institutions) < 2:
             papers_single += 1
             continue
-
         papers_with_multiple += 1
-
-        # Limit to first 10 institutions per paper to avoid combinatorial explosion
-        # on papers with very large author lists (some have 50+ institutions)
         institutions = institutions[:10]
 
-        # Generate all pairs
         for inst_a, inst_b in itertools.combinations(institutions, 2):
-
-            # Look up both institutions — skip if either has no coordinates
             info_a = inst_lookup.get(inst_a.lower())
             info_b = inst_lookup.get(inst_b.lower())
 
             if not info_a or not info_b:
                 continue
-
-            # Skip self-loops (same institution appearing under two names)
             if info_a["country"] == info_b["country"] and inst_a.lower() == inst_b.lower():
                 continue
 
-            # Normalise key so (A,B) and (B,A) are the same edge
             key = tuple(sorted([inst_a, inst_b]))
-
             institution_edges[key]["paper_count"] += 1
             if "pre" in period:
                 institution_edges[key]["pre"] += 1
             else:
                 institution_edges[key]["post"] += 1
 
-        # Progress update every 5000 papers
         if (i + 1) % 5000 == 0:
             log.info(f"   ... processed {i + 1:,} / {len(papers_df):,} papers")
 
@@ -277,9 +228,9 @@ def run_coauthorship_pipeline():
     log.info(f"   Papers with no affiliation data:    {papers_no_affil:,}")
     log.info(f"   Unique institution edges found:     {len(institution_edges):,}")
 
-    # ── Build institution edge dataframe ──────────────────────────────────────
+    # ── Building institution edge dataframe ──────────────────────────────────────
     log.info("")
-    log.info("📊 Building institution edge dataframe...")
+    log.info(" Building institution edge dataframe...")
 
     inst_edge_rows = []
     for (inst_a, inst_b), counts in institution_edges.items():
@@ -310,43 +261,31 @@ def run_coauthorship_pipeline():
 
     inst_edges_df = pd.DataFrame(inst_edge_rows)
     inst_edges_df = inst_edges_df.sort_values("paper_count", ascending=False).reset_index(drop=True)
-
     log.info(f"   Total institution edges:            {len(inst_edges_df):,}")
     log.info(f"   Cross-country edges:                {inst_edges_df['cross_country'].sum():,}")
     log.info(f"   Cross-region edges:                 {inst_edges_df['cross_region'].sum():,}")
 
-    # Save institution edges
+    # Saving institution edges
     inst_edge_path = DATA_CLEAN / "scopus_institution_edges.csv"
     inst_edges_df.to_csv(inst_edge_path, index=False, encoding="utf-8")
-    log.info(f"   ✅ Saved: {inst_edge_path.name}")
+    log.info(f"    Saved: {inst_edge_path.name}")
 
-    # ── Build COUNTRY-level edges ──────────────────────────────────────────────
-    # Aggregate institution edges up to country level
-    # This is the file that directly feeds your network map
+    # ── Building COUNTRY-level edges ──────────────────────────────────────────────
     log.info("")
-    log.info("🌍 Aggregating to country-level edges...")
-
+    log.info(" Aggregating to country-level edges...")
     country_edges = defaultdict(lambda: {"paper_count": 0, "pre": 0, "post": 0})
 
     for _, row in inst_edges_df.iterrows():
         country_a = row["country_a"]
         country_b = row["country_b"]
-
-        # Skip same-country edges — only keep international collaborations
         if country_a == country_b:
             continue
-
-        # Normalise so (A,B) and (B,A) are the same edge
         key = tuple(sorted([country_a, country_b]))
         country_edges[key]["paper_count"] += int(row["paper_count"])
         country_edges[key]["pre"]         += int(row["pre_chatgpt"])
         country_edges[key]["post"]        += int(row["post_chatgpt"])
 
-    # Build country edge dataframe
-    # For coordinates we use the centroid of each country
-    # (average lat/lon of all institutions in that country)
     log.info("   Computing country centroids from institution coordinates...")
-
     country_coords = (
         inst_df[inst_df["latitude"].notna()]
         .assign(
@@ -382,23 +321,19 @@ def run_coauthorship_pipeline():
             "paper_count":  counts["paper_count"],
             "pre_chatgpt":  counts["pre"],
             "post_chatgpt": counts["post"],
-            # Cross-region flag for your RO2 analysis
             "cross_region": REGION_MAP.get(country_a, "Other") != REGION_MAP.get(country_b, "Other"),
         })
 
     country_edges_df = pd.DataFrame(country_edge_rows)
     country_edges_df = country_edges_df.sort_values("paper_count", ascending=False).reset_index(drop=True)
 
-    # Save country edges
     country_edge_path = DATA_CLEAN / "scopus_country_edges.csv"
     country_edges_df.to_csv(country_edge_path, index=False, encoding="utf-8")
-    log.info(f"   ✅ Saved: {country_edge_path.name}")
+    log.info(f"    Saved: {country_edge_path.name}")
 
-    # ── Build COUNTRY nodes file ───────────────────────────────────────────────
+    # ── Building COUNTRY nodes file ───────────────────────────────────────────────
     log.info("")
-    log.info("📍 Building country nodes file...")
-
-    # Total papers per country (from institutions file)
+    log.info(" Building country nodes file...")
     country_papers = (
         inst_df
         .assign(paper_count = lambda d: pd.to_numeric(d["paper_count"], errors="coerce").fillna(0))
@@ -413,7 +348,7 @@ def run_coauthorship_pipeline():
 
     node_path = DATA_CLEAN / "scopus_country_nodes.csv"
     country_nodes_df.to_csv(node_path, index=False, encoding="utf-8")
-    log.info(f"   ✅ Saved: {node_path.name}")
+    log.info(f"    Saved: {node_path.name}")
 
     # ── Final summary ──────────────────────────────────────────────────────────
     log.info("")
@@ -447,10 +382,8 @@ def run_coauthorship_pipeline():
 
     return inst_edges_df, country_edges_df, country_nodes_df
 
-
-# -----------------------------------------------------------------------------
+# ======================================================================================================================
 #  ENTRY POINT
-# -----------------------------------------------------------------------------
-
+# ======================================================================================================================
 if __name__ == "__main__":
     run_coauthorship_pipeline()

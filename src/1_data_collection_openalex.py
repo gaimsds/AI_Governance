@@ -1,11 +1,30 @@
 """
-AI Research Data Collection Script
-====================================
-Collects AI research papers from OpenAlex, filters to US-based corresponding authors,
-retrieves full text, cleans it, validates the dataset, and prepares it for NLP analysis.
+========================================================================================================================
+OPENALEX DATA COLLECTION (EXPLORATORY — NOT USED IN FINAL ANALYSIS)
+Project: Uneven Science–Policy Translation Shapes Global AI Governance
+Authors: Tambudzai G. Charumbira & Joshua Gray
+Institution: George Washington University, CCAS | M.S. Data Science | Spring 2026
+Date: January 2026
 
-Requirements:
-    pip install requests pandas pymupdf tqdm
+DESCRIPTION:
+This script was developed during the early exploratory phase to collect AI research papers from the OpenAlex API. It was
+ultimately not used in the final analysis for three reasons:
+
+  1. The search was restricted to US-based corresponding authors, which conflicted with the project's global spatial
+     analysis goals requiring coverage across 138 countries
+  2. OpenAlex's institution metadata was less structured than Scopus's affiliation fields, making reliable geocoding at
+     the institution level more difficult
+  3. Scopus provided more consistent abstract quality and richer bibliometric metadata (citation counts, subject area
+     codes, funding information)
+
+The script is retained in the repository for transparency and reproducibility of the research process. It demonstrates
+the data source evaluation that informed the decision to use Scopus as the primary academic corpus. The pipeline collected
+open-access AI papers (2020–2025), filtered to US-based corresponding authors, extracted metadata and abstracts, attempted
+PDF full-text retrieval, and performed text cleaning and validation.
+
+NOTE: This script is not required to reproduce the final results. All final analysis used data from
+1_data_collection_scopus.py.
+========================================================================================================================
 """
 
 import os
@@ -13,7 +32,7 @@ import json
 import requests
 import pandas as pd
 import numpy as np
-import fitz  # PyMuPDF
+import fitz
 import time
 import re
 import logging
@@ -23,8 +42,6 @@ from io import BytesIO
 
 load_dotenv()
 
-
-# Configure logging
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s [%(levelname)s] %(message)s",
@@ -35,30 +52,28 @@ logging.basicConfig(
 )
 log = logging.getLogger(__name__)
 
-# ─────────────────────────────────────────────
-# CONFIGURATION
-# ─────────────────────────────────────────────
+# ======================================================================================================================
+#  CONFIGURATION
+#  OpenAlex was queried using concept-based filtering (Artificial Intelligence concept ID: C154945302) with
+#  additional filters for US-based institutions, open access, and English language. Cursor-based pagination
+#  with checkpointing was implemented to allow resumption after API interruptions.
+# ======================================================================================================================
 
-EMAIL = os.getenv("EMAIL_J")          # Required by OpenAlex for polite pool access
-
-# AI-related subject categories on OpenAlex
+EMAIL = os.getenv("EMAIL_J")
 AI_CONCEPTS = {
     "Artificial Intelligence": "C154945302"
-    #"Machine Learning":        "C119857082",
-    #"Natural Language Processing": "C2522767166",
-    #"Computer Vision":         "C31972630",
 }
 
 YEAR_START = 2020
 YEAR_END = 2025
-PER_PAGE = 200                            # Max allowed by OpenAlex per page is 200
-MAX_FILES = 200000                        # Max number of files
-REQUEST_DELAY = 1                         # Seconds between API calls (polite crawling)
-PDF_TIMEOUT = 30                          # Seconds before PDF download times out
+PER_PAGE = 200                                                    # Max allowed by OpenAlex per page is 200
+MAX_FILES = 200000                                                # Max number of files
+REQUEST_DELAY = 1                                                 # Seconds between API calls
+PDF_TIMEOUT = 30                                                  # Seconds before PDF download times out
 MEATDATA_FILE = "data_raw/open_alex_metadata.json"
 OUTPUT_FILE = "data_raw/open_alex_abs_data.parquet"
 CHECKPOINT_FILE = "oa_checkpoint.json"
-FALLBACK_ABSTRACT_COUNT = 0              # Tracker for fallback to abstract
+FALLBACK_ABSTRACT_COUNT = 0                                       # Tracker for fallback to abstract
 
 def save_checkpoint(all_works: list, concept_progress: dict):
     """Save current progress to checkpoint file."""
@@ -80,12 +95,12 @@ def load_checkpoint() -> tuple[list, dict]:
         return checkpoint["all_works"], checkpoint["concept_progress"]
     return [], {}
 
-# ─────────────────────────────────────────────
-# STEP 1: QUERY OPENALEX API
-# Retrieve all open access AI research works from the past 5 years
-# where at least one author is US-based.
-# ─────────────────────────────────────────────
-
+# ======================================================================================================================
+#  STEP 1: OPENALEX API QUERY
+#  Paginated through all OpenAlex results matching the AI concept filter. A checkpoint file was saved after each page to
+#  enable resumption if the connection dropped — necessary given the large result set and OpenAlex's rate limiting.
+#  Deduplication was performed on OpenAlex work IDs during collection.
+# ======================================================================================================================
 def build_query_url(concept_id: str, cursor: str = "*") -> str:
     """Construct a paginated OpenAlex API query URL for a given concept."""
     filters = ",".join([
@@ -114,15 +129,10 @@ def fetch_all_works() -> list[dict]:
     """Page through all OpenAlex results with checkpointing to allow resume on failure."""
     all_works, concept_progress = load_checkpoint()
     seen_ids = set(work["id"] for work in all_works)
-
     for concept_name, concept_id in AI_CONCEPTS.items():
-
-        # Skip concepts that were fully completed in a previous run
         if concept_progress.get(concept_name) == "complete":
             log.info(f"Skipping {concept_name} — already completed in previous run.")
             continue
-
-        # Resume from saved cursor if available, otherwise start fresh
         cursor = concept_progress.get(concept_name, "*")
         log.info(f"Querying concept: {concept_name} | Resuming from cursor: {cursor}")
         page = 1
@@ -161,7 +171,6 @@ def fetch_all_works() -> list[dict]:
                 log.info(f"Max number of works retrieved: {len(all_works)}")
                 return all_works
 
-            # Save checkpoint after every page
             concept_progress[concept_name] = cursor
             save_checkpoint(all_works, concept_progress)
 
@@ -176,15 +185,12 @@ def fetch_all_works() -> list[dict]:
     log.info(f"Step 1 complete. Total unique works retrieved: {len(all_works)}")
     return all_works
 
-
-
-# ─────────────────────────────────────────────
-# STEP 2: FILTER TO US-BASED CORRESPONDING AUTHOR
-# Keep only works where the corresponding author's institution
-# is US-based. Fall back to majority-US-author rule if the
-# corresponding author field is missing.
-# ─────────────────────────────────────────────
-
+# ======================================================================================================================
+#  STEP 2: US CORRESPONDING AUTHOR FILTER
+#  Filtered results to papers where the corresponding author's institution was US-based. A majority-US-authors fallback
+#  rule was applied when the corresponding author field was missing. This US-only restriction was the primary reason this
+#  data source was not used in the final analysis — the project required global coverage.
+# ======================================================================================================================
 def is_us_institution(affiliations: list[dict]) -> bool:
     """Return True if any affiliation in the list is US-based."""
     for affil in affiliations:
@@ -194,7 +200,6 @@ def is_us_institution(affiliations: list[dict]) -> bool:
                 return True
     return False
 
-
 def majority_us_authors(authorships: list[dict]) -> bool:
     """Return True if more than half of authors have a US affiliation."""
     us_count = 0
@@ -203,7 +208,6 @@ def majority_us_authors(authorships: list[dict]) -> bool:
         if is_us_institution(institutions):
             us_count += 1
     return us_count > len(authorships) / 2
-
 
 def filter_to_us_corresponding(works: list[dict]) -> list[dict]:
     """Filter works to those with a US-based corresponding author."""
@@ -220,7 +224,6 @@ def filter_to_us_corresponding(works: list[dict]) -> list[dict]:
         corresponding_authors = [a for a in authorships if a.get("is_corresponding")]
 
         if corresponding_authors:
-            # Check if any corresponding author is US-based
             for author in corresponding_authors:
                 institutions = author.get("institutions", [])
                 if is_us_institution(institutions):
@@ -231,7 +234,6 @@ def filter_to_us_corresponding(works: list[dict]) -> list[dict]:
             if not us_found:
                 foreign_corr_count += 1
         else:
-            # Fallback: use majority US authors rule
             no_corresponding_count += 1
             if majority_us_authors(authorships):
                 work["_used_fallback"] = True
@@ -245,14 +247,12 @@ def filter_to_us_corresponding(works: list[dict]) -> list[dict]:
     log.info(f"  Works kept via majority-US fallback: {fallback_count}")
     return filtered
 
-
-
-# ─────────────────────────────────────────────
-# STEP 3: EXTRACT AND STORE METADATA
-# Pull structured metadata from OpenAlex results before
-# attempting any PDF downloads.
-# ─────────────────────────────────────────────
-
+# ======================================================================================================================
+#  STEP 3: METADATA EXTRACTION
+#  Structured metadata was extracted from raw OpenAlex work objects into a flat DataFrame. Abstracts were reconstructed
+#  from OpenAlex's inverted index format (where words are stored with their position indices rather than as continuous
+#  text). Institution names and country codes were aggregated across all authorships.
+# ======================================================================================================================
 def reconstruct_abstract(inverted_index: dict) -> str:
     """Reconstruct abstract text from OpenAlex inverted index format."""
     if not inverted_index:
@@ -264,7 +264,6 @@ def reconstruct_abstract(inverted_index: dict) -> str:
     word_positions.sort(key=lambda x: x[0])
     return " ".join(word for _, word in word_positions)
 
-
 def extract_metadata(works: list[dict]) -> pd.DataFrame:
     """Extract relevant metadata fields from OpenAlex work objects into a DataFrame."""
     records = []
@@ -272,7 +271,6 @@ def extract_metadata(works: list[dict]) -> pd.DataFrame:
     for work in works:
         authorships = work.get("authorships", [])
 
-        # Collect all unique institutions and countries across all authors
         institutions = []
         countries = []
         for authorship in authorships:
@@ -284,11 +282,9 @@ def extract_metadata(works: list[dict]) -> pd.DataFrame:
                 if country:
                     countries.append(country)
 
-        # Get best open access URL
         oa_info = work.get("open_access", {})
         oa_url = oa_info.get("oa_url", "")
 
-        # Fallback URL from locations if oa_url is missing
         if not oa_url:
             for loc in work.get("locations", []):
                 if loc.get("pdf_url"):
@@ -314,14 +310,12 @@ def extract_metadata(works: list[dict]) -> pd.DataFrame:
     log.info(f"Step 3 complete. Metadata extracted for {len(df)} works.")
     return df
 
-
-
-# ─────────────────────────────────────────────
-# STEP 4: RETRIEVE AND EXTRACT FULL TEXT
-# Download PDFs using the OA URL and extract text with PyMuPDF.
-# Fall back to the abstract if the download fails.
-# ─────────────────────────────────────────────
-
+# ======================================================================================================================
+#  STEP 4: FULL TEXT RETRIEVAL (DISABLED IN FINAL RUN)
+#  This step attempted to download open-access PDFs and extract full text using PyMuPDF. It was commented out in the
+#  final execution because: (a) the project ultimately used abstract-level analysis only, and (b) PDF extraction success
+#  rates were inconsistent across publishers. Papers without successful PDF downloads fell back to abstract text.
+# ======================================================================================================================
 def download_and_extract_pdf(url: str) -> str | None:
     """Download a PDF from a URL and extract its plain text."""
     try:
@@ -341,7 +335,6 @@ def download_and_extract_pdf(url: str) -> str | None:
         log.debug(f"PDF extraction failed for {url}: {e}")
         return None
 
-
 def retrieve_full_texts(df: pd.DataFrame) -> pd.DataFrame:
     """Iterate through works and attempt to retrieve full text from PDF URLs."""
     pdf_success = 0
@@ -358,19 +351,17 @@ def retrieve_full_texts(df: pd.DataFrame) -> pd.DataFrame:
                 df.at[idx, "full_text_source"] = "pdf"
                 pdf_success += 1
             else:
-                # Fallback to abstract
                 df.at[idx, "full_text"] = row["abstract"]
                 df.at[idx, "full_text_source"] = "abstract_fallback"
                 abstract_fallback += 1
                 log.debug(f"PDF failed, using abstract for: {row['title']}")
         else:
-            # No URL available at all
             df.at[idx, "full_text"] = row["abstract"]
             df.at[idx, "full_text_source"] = "abstract_fallback_no_url"
             abstract_fallback += 1
             total_failed += 1
 
-        time.sleep(0.5)  # Be polite to host servers
+        time.sleep(0.5)
 
     log.info(f"Step 4 complete.")
     log.info(f"  Successful PDF extractions: {pdf_success}")
@@ -378,45 +369,27 @@ def retrieve_full_texts(df: pd.DataFrame) -> pd.DataFrame:
     log.info(f"  No URL available: {total_failed}")
     return df
 
-
-
-# ─────────────────────────────────────────────
-# STEP 5: CLEAN THE TEXT
-# Remove formatting artifacts, excessive whitespace,
-# garbled characters, and citation noise from extracted text.
-# ─────────────────────────────────────────────
-
+# ======================================================================================================================
+#  STEP 5: TEXT CLEANING
+#  Abstracts were cleaned by removing URLs, email addresses, citation markers (e.g., [1], Smith et al. 2020), LaTeX
+#  expressions, page numbers, and non-ASCII artifacts from PDF extraction. Whitespace was normalized.
+# ======================================================================================================================
 def clean_text(text: str) -> str:
     """Clean extracted PDF or abstract text for NLP analysis."""
     if not text:
         return ""
 
-    # Remove URLs
     text = re.sub(r"http\S+|www\.\S+", "", text)
-
-    # Remove email addresses
     text = re.sub(r"\S+@\S+", "", text)
-
-    # Remove citation markers like [1], [2,3], (Smith et al., 2020)
     text = re.sub(r"\[\d+(?:,\s*\d+)*\]", "", text)
     text = re.sub(r"\([A-Z][a-z]+ et al\.,?\s*\d{4}\)", "", text)
-
-    # Remove LaTeX-style math expressions
     text = re.sub(r"\$.*?\$", "", text)
     text = re.sub(r"\\[a-zA-Z]+\{.*?\}", "", text)
-
-    # Remove lines that are just numbers (page numbers, table data)
     text = re.sub(r"^\s*\d+\s*$", "", text, flags=re.MULTILINE)
-
-    # Remove excessive whitespace and normalize newlines
     text = re.sub(r"\n{3,}", "\n\n", text)
     text = re.sub(r"[ \t]{2,}", " ", text)
-
-    # Remove non-ASCII characters (garbled PDF artifacts)
     text = text.encode("ascii", errors="ignore").decode("ascii")
-
     return text.strip()
-
 
 def clean_all_texts(df: pd.DataFrame) -> pd.DataFrame:
     """Apply text cleaning to all abstract entries in the DataFrame."""
@@ -426,33 +399,23 @@ def clean_all_texts(df: pd.DataFrame) -> pd.DataFrame:
     log.info(f"  Works with empty text after cleaning: {empty_after_clean}")
     return df
 
-
-
-# ─────────────────────────────────────────────
-# STEP 6: VALIDATE THE DATASET
-# Check for duplicates, empty text, missing metadata,
-# and summarize how many records passed each filtering step.
-# ─────────────────────────────────────────────
-
+# ======================================================================================================================
+#  STEP 6: DATASET VALIDATION
+#  Quality checks were performed: duplicate removal by OpenAlex ID, flagging records with empty text or missing metadata
+#  (date, institution, title). The validated dataset was saved as a Parquet file for efficient loading.
+# ======================================================================================================================
 def validate_dataset(df: pd.DataFrame) -> pd.DataFrame:
     """Run quality checks and report on dataset integrity."""
     log.info("Step 6: Validating dataset...")
 
     initial_count = len(df)
-
-    # Remove duplicates by OpenAlex ID
     df = df.drop_duplicates(subset="openalex_id")
     duplicates_removed = initial_count - len(df)
-
-    # Flag records with no usable text
     no_text = df["abstract_cleaned"].str.strip().eq("").sum()
-
-    # Flag records missing key metadata
     missing_date = df["publication_date"].eq("").sum()
     missing_institution = df["institutions"].eq("").sum()
     missing_title = df["title"].eq("").sum()
 
-    # Summary report
     log.info(f"  Total records: {len(df)}")
     log.info(f"  Duplicates removed: {duplicates_removed}")
     log.info(f"  Records with no usable text: {no_text}")
@@ -466,24 +429,17 @@ def validate_dataset(df: pd.DataFrame) -> pd.DataFrame:
     log.info("Step 6 complete. Dataset is ready for NLP analysis.")
     return df
 
-# ─────────────────────────────────────────────
-# STEP 7: SAVE DATASET FOR NLP ANALYSIS
-# Export the cleaned, validated dataset to CSV.
-# The full_text_cleaned column is ready for NLP input.
-# ─────────────────────────────────────────────
-
 def save_data_json(works: list):
     with open(MEATDATA_FILE, "w") as f:
         json.dump(works, f, indent=2)
     log.info(f"Results saved to '{MEATDATA_FILE}'.")
 
-
-
-# ─────────────────────────────────────────────
-# MAIN EXECUTION
-# ─────────────────────────────────────────────
-
-
+# ======================================================================================================================
+#  MAIN EXECUTION
+#  The pipeline was executed sequentially. Step 4 (PDF full-text retrieval) was disabled in the final run.The output
+#  Parquet file was used for initial exploratory analysis but was not carried forward into the final BERTopic pipeline,
+#  which used the Scopus corpus exclusively.
+# ======================================================================================================================
 log.info("Starting AI research data collection pipeline.")
 
 #%% Step 1

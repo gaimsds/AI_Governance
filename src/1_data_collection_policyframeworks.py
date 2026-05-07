@@ -1,42 +1,27 @@
-# =============================================================================
-#  NATIONAL AI FRAMEWORKS COLLECTION SCRIPT — VERSION 2
-#  Project: Mapping Global AI Governance Narratives
-#  Authors: Tambudzai Gundani & Joshua Gray
-#  Date:    March 2026
-# =============================================================================
-#
-#  WHAT THIS SCRIPT DOES:
-#  ----------------------
-#  Collects national AI strategy documents and international governance
-#  frameworks from official government and intergovernmental sources.
-#
-#  PRIMARY REFERENCE SOURCE:
-#  --------------------------
-#  OECD AI Policy Observatory (https://oecd.ai/en/dashboards/policy-initiatives)
-#  A live database maintained by OECD tracking 70+ national AI policies with
-#  direct PDF links. Used to verify currency of all documents in this registry.
-#  Cite in methodology as:
-#  "OECD AI Policy Observatory (oecd.ai) was used to identify and verify
-#  national AI policy documents as of March 2026."
-#
-#  DOCUMENT COUNT: 29 documents across 6 regions + international bodies
-#
-#  CHANGES FROM VERSION 1:
-#  ------------------------
-#  + Council of Europe AI Treaty CETS 225 (2024) — first binding AI treaty
-#  + UK AI Opportunities Action Plan (2025) — replaces 2021 strategy
-#  + China Generative AI Interim Measures (2023) — more current than 2017
-#  + South Korea AI Basic Act (2025) — second comprehensive AI law globally
-#  + ASEAN AI Governance and Ethics Guide (2024) — covers SE Asia
-#  + ASEAN Expanded Guide on Generative AI (2025)
-#  + US OMB M-25-21 (2025) — current US federal AI governance directive
-#
-#  OUTPUT FILES (saved to data_raw/policy_frameworks/):
-#  -----------------------------------------------------
-#  - [country]_[doc_name].pdf   — downloaded PDF files
-#  - policy_manifest.csv        — metadata for all documents
-#  - download_report.txt        — what succeeded / what needs manual download
-# =============================================================================
+"""
+========================================================================================================================
+POLICY CORPUS COLLECTION
+Project: Uneven Science–Policy Translation Shapes Global AI Governance
+Authors: Tambudzai G. Charumbira & Joshua Gray
+Institution: George Washington University, CCAS | M.S. Data Science | Spring 2026
+Date: March 2026
+
+DESCRIPTION:
+This script collected 35 national AI strategy documents and international governance frameworks from official
+government and intergovernmental sources. The OECD AI Policy Observatory (oecd.ai) served as the primary reference
+for identifying and verifying document currency. Documents span five world regions plus international bodies
+(OECD, UNESCO, G7, Council of Europe, African Union, ASEAN), covering the period 2017–2025.
+
+The resulting policy corpus was subsequently chunked into 1,557 segments (500 words, 50-word overlap) in
+2_policy_text_extraction.py for topic modeling and cross-corpus alignment with the academic corpus.
+
+OUTPUT FILES (saved to data_raw/policy_frameworks/):
+- [country]_[doc_name].pdf    → Downloaded policy document PDFs
+- policy_manifest.csv         → Structured metadata for all 35 documents
+- download_report.txt         → Download status and manual download instructions
+- collection.log              → Full execution log
+========================================================================================================================
+"""
 
 import os
 import time
@@ -48,7 +33,6 @@ from datetime import datetime
 
 POLICY_DIR = Path(__file__).parent.parent / "data_raw" / "policy_frameworks"
 POLICY_DIR.mkdir(parents=True, exist_ok=True)
-
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s  %(message)s",
@@ -60,17 +44,25 @@ logging.basicConfig(
 )
 log = logging.getLogger(__name__)
 
-
-# =============================================================================
+# ======================================================================================================================
 #  DOCUMENT REGISTRY
-#  All URLs verified against official sources March 2026.
-#  OECD AI Policy Observatory (oecd.ai) used as primary reference.
-# =============================================================================
+#  A curated registry of 35 AI governance documents was assembled from official government portals and the OECD AI Policy
+#  Observatory. Each entry recorded the issuing body, document type, year, source URL, and regional classification. The
+#  registry was designed to ensure balanced regional coverage:
+#    - North America (4 documents): US, Canada
+#    - Europe (5 documents): EU AI Act, UK, Germany, France
+#    - Asia-Pacific (8 documents): Singapore, India, Australia, Japan, China, South Korea
+#    - Latin America (4 documents): Brazil, Chile, Colombia, Mexico
+#    - Africa & Middle East (7 documents): Rwanda, Kenya, Egypt, UAE, South Africa, Zimbabwe, Nigeria
+#    - International bodies (7 documents): UNESCO, OECD, G7, Council of Europe, African Union, ASEAN (×2)
+#
+#  Documents marked with manual=True required browser-based download due to HTML rendering or access restrictions.
+#  All URLs were verified as of March 2026.
+# ======================================================================================================================
 
 DOCUMENTS = [
 
     # ── NORTH AMERICA ─────────────────────────────────────────────────────────
-
     {
         "region": "North America", "country": "United States",
         "issuer": "National Science and Technology Council",
@@ -90,7 +82,7 @@ DOCUMENTS = [
         "notes": "Voluntary risk framework; widely referenced internationally",
     },
     {
-        # NEW — most current US federal AI governance directive as of 2025
+        # Most current US federal AI governance directive as of 2025
         "region": "North America", "country": "United States",
         "issuer": "Office of Management and Budget",
         "doc_name": "OMB M-25-21 Accelerating Federal Use of AI 2025",
@@ -114,7 +106,6 @@ DOCUMENTS = [
     },
 
     # ── EUROPE ────────────────────────────────────────────────────────────────
-
     {
         "region": "Europe", "country": "European Union",
         "issuer": "European Parliament and Council",
@@ -134,7 +125,7 @@ DOCUMENTS = [
         "notes": "10-year plan for UK AI leadership; baseline document",
     },
     {
-        # NEW — most current UK AI policy document January 2025
+        # Most current UK AI policy document January 2025
         "region": "Europe", "country": "United Kingdom",
         "issuer": "UK Department for Science Innovation and Technology",
         "doc_name": "UK AI Opportunities Action Plan 2025",
@@ -163,7 +154,6 @@ DOCUMENTS = [
     },
 
     # ── ASIA-PACIFIC ──────────────────────────────────────────────────────────
-
     {
         "region": "Asia-Pacific", "country": "Singapore",
         "issuer": "IMDA / PDPC",
@@ -219,7 +209,7 @@ DOCUMENTS = [
         "notes": "Foundational Chinese AI strategy translated by CSET Georgetown; sets 2030 vision",
     },
     {
-        # NEW — China's first binding generative AI regulation
+        # China's first binding generative AI regulation
         "region": "Asia-Pacific", "country": "China",
         "issuer": "Cyberspace Administration of China",
         "doc_name": "China Interim Measures Generative AI Services 2023",
@@ -229,7 +219,7 @@ DOCUMENTS = [
         "notes": "First binding Chinese regulation on generative AI; effective August 2023; translated by US Air Force CASI",
     },
     {
-        # NEW — South Korea's comprehensive AI law
+        # South Korea's comprehensive AI law
         "region": "Asia-Pacific", "country": "South Korea",
         "issuer": "National Assembly of Korea",
         "doc_name": "South Korea AI Basic Act Framework Act 2025",
@@ -240,14 +230,13 @@ DOCUMENTS = [
     },
 
     # ── LATIN AMERICA ─────────────────────────────────────────────────────────
-
     {
         "region": "Latin America", "country": "Brazil",
         "issuer": "Ministry of Science Technology and Innovation",
-        "doc_name": "Brazilian AI Plan PBIA 2024",  # ← updated
-        "doc_type": "National Strategy", "year": 2024,  # ← updated
+        "doc_name": "Brazilian AI Plan PBIA 2024",
+        "doc_type": "National Strategy", "year": 2024,
         "url": "https://www.gov.br/mcti/pt-br/acompanhe-o-mcti/noticias/2024/07/plano-brasileiro-de-ia-tera-supercomputador-e-investimento-de-r-23-bilhoes-em-quatro-anos/ia_para_o_bem_de_todos.pdf/@@download/file",
-        "filename": "Brazil_National_AI_Plan_PBIA_2024.pdf",  # ← must match your actual filename
+        "filename": "Brazil_National_AI_Plan_PBIA_2024.pdf",
         "notes": "AI for the Good of All; R$23bn investment plan 2024-2028; Portuguese",
     },
     {
@@ -279,7 +268,6 @@ DOCUMENTS = [
     },
 
     # ── AFRICA & MIDDLE EAST ──────────────────────────────────────────────────
-
     {
         "region": "Africa & Middle East", "country": "Rwanda",
         "issuer": "Ministry of ICT and Innovation",
@@ -345,7 +333,6 @@ DOCUMENTS = [
     },
 
     # ── INTERNATIONAL BODIES ──────────────────────────────────────────────────
-
     {
         "region": "International", "country": "UNESCO",
         "issuer": "UNESCO",
@@ -376,7 +363,7 @@ DOCUMENTS = [
         "notes": "11 principles for advanced AI developers; G7 Hiroshima Summit October 2023",
     },
     {
-        # NEW — first legally binding international AI treaty; entered force November 2025
+        # First legally binding international AI treaty; entered force November 2025
         "region": "International", "country": "Council of Europe",
         "issuer": "Council of Europe",
         "doc_name": "Framework Convention on AI Human Rights Democracy Rule of Law CETS 225",
@@ -395,7 +382,7 @@ DOCUMENTS = [
         "notes": "First continental AI strategy for Africa; covers all 55 AU member states",
     },
     {
-        # NEW — ASEAN regional AI governance guide covering 10 SE Asian nations
+        # ASEAN regional AI governance guide covering 10 SE Asian nations
         "region": "International", "country": "ASEAN",
         "issuer": "ASEAN Secretariat",
         "doc_name": "ASEAN Guide on AI Governance and Ethics 2024",
@@ -405,7 +392,7 @@ DOCUMENTS = [
         "notes": "Covers all 10 ASEAN member states; voluntary; 7 core principles; released February 2024",
     },
     {
-        # NEW — ASEAN expanded guide for generative AI January 2025
+        # ASEAN expanded guide for generative AI January 2025
         "region": "International", "country": "ASEAN",
         "issuer": "ASEAN Secretariat",
         "doc_name": "ASEAN Expanded Guide AI Governance Generative AI 2025",
@@ -416,11 +403,12 @@ DOCUMENTS = [
     },
 ]
 
-
-# =============================================================================
+# ======================================================================================================================
 #  DOWNLOAD FUNCTION
-# =============================================================================
-
+#  Each document was downloaded via HTTP GET with a descriptive User-Agent header. Downloads were validated by checking
+#  file size (files under 1KB were rejected as failed downloads). Documents requiring authentication or browser rendering
+#  were flagged for manual download and documented in the download report.
+# ======================================================================================================================
 def download_pdf(url: str, filepath: Path, doc_name: str) -> bool:
     headers = {
         "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
@@ -442,11 +430,19 @@ def download_pdf(url: str, filepath: Path, doc_name: str) -> bool:
         log.warning(f"   Download error for {doc_name}: {e}")
         return False
 
-
-# =============================================================================
-#  MAIN PIPELINE
-# =============================================================================
-
+# ======================================================================================================================
+#  MAIN COLLECTION PIPELINE
+#  The pipeline iterated through all 35 registry entries, attempting automated download for each. Previously downloaded
+#  files were detected and skipped to support idempotent re-runs. For each document, the pipeline:
+#    1. Checked whether the file already existed locally
+#    2. Attempted automated PDF download (or flagged for manual download)
+#    3. Logged the outcome (success, manual required, or failed)
+#    4. Saved a structured manifest (policy_manifest.csv) with metadata for all documents
+#    5. Generated a human-readable download report listing any documents requiring manual intervention
+#
+#  A 2-second delay between downloads was applied to avoid rate limiting from government servers.The final manifest served
+#  as the input for the policy text extraction stage (2_policy_text_extraction.py).
+# ======================================================================================================================
 def run_collection_pipeline():
 
     log.info("=" * 65)
@@ -469,13 +465,13 @@ def run_collection_pipeline():
         log.info(f"[{i:02d}/{len(DOCUMENTS):02d}] {doc['country']} — {doc['doc_name']}")
 
         if filepath.exists() and filepath.stat().st_size > 1000:
-            log.info(f"   ✅ Already downloaded — skipping")
+            log.info(f"    Already downloaded — skipping")
             results.append({**doc, "status": "already_exists", "filepath": str(filepath)})
             successful += 1
             continue
 
         if is_manual:
-            log.info(f"   📋 MANUAL DOWNLOAD REQUIRED")
+            log.info(f"    MANUAL DOWNLOAD REQUIRED")
             log.info(f"   URL: {doc['url']}")
             log.info(f"   Save as: {doc['filename']}")
             if doc.get("manual_note"):
@@ -484,23 +480,23 @@ def run_collection_pipeline():
             manual_needed += 1
             continue
 
-        log.info(f"   ⬇️  Downloading...")
+        log.info(f"     Downloading...")
         success = download_pdf(doc["url"], filepath, doc["doc_name"])
 
         if success:
             size_kb = filepath.stat().st_size // 1024
-            log.info(f"   ✅ Downloaded ({size_kb:,} KB) → {doc['filename']}")
+            log.info(f"    Downloaded ({size_kb:,} KB) → {doc['filename']}")
             results.append({**doc, "status": "downloaded", "filepath": str(filepath)})
             successful += 1
         else:
-            log.warning(f"   ❌ Auto-download failed — manual download required")
+            log.warning(f"    Auto-download failed — manual download required")
             log.warning(f"   URL: {doc['url']}")
             results.append({**doc, "status": "failed_try_manual", "filepath": str(filepath)})
             failed += 1
 
         time.sleep(2)
 
-    # ── Save manifest ──────────────────────────────────────────────────────────
+    # ── Saving manifest ──────────────────────────────────────────────────────────
     manifest_df = pd.DataFrame(results)
     manifest_df = manifest_df[[
         "region", "country", "issuer", "doc_name", "doc_type",
@@ -508,9 +504,9 @@ def run_collection_pipeline():
     ]]
     manifest_path = POLICY_DIR / "policy_manifest.csv"
     manifest_df.to_csv(manifest_path, index=False, encoding="utf-8")
-    log.info(f"\n✅ Manifest saved: {manifest_path.name}")
+    log.info(f"\n Manifest saved: {manifest_path.name}")
 
-    # ── Save download report ───────────────────────────────────────────────────
+    # ── Saving download report ───────────────────────────────────────────────────
     report_path = POLICY_DIR / "download_report.txt"
     with open(report_path, "w") as f:
         f.write("NATIONAL AI FRAMEWORKS — DOWNLOAD REPORT v2\n")
@@ -538,7 +534,7 @@ def run_collection_pipeline():
         f.write("(https://oecd.ai/en/dashboards/policy-initiatives) as primary reference\n")
         f.write("source in March 2026. Currency was confirmed for each document.\n")
 
-    log.info(f"✅ Report saved:   {report_path.name}")
+    log.info(f" Report saved:   {report_path.name}")
 
     # ── Final summary ──────────────────────────────────────────────────────────
     log.info("")
@@ -558,9 +554,9 @@ def run_collection_pipeline():
         log.info(f"    {region:<25} {count} documents")
 
     log.info("")
-    log.info(f"  📁 Files saved to: {POLICY_DIR}")
-    log.info(f"  📋 Check download_report.txt for manual download instructions")
-    log.info(f"  🌐 Additional documents: https://oecd.ai/en/dashboards/policy-initiatives")
+    log.info(f"   Files saved to: {POLICY_DIR}")
+    log.info(f"   Check download_report.txt for manual download instructions")
+    log.info(f"   Additional documents: https://oecd.ai/en/dashboards/policy-initiatives")
     log.info("=" * 65)
     log.info("")
 
