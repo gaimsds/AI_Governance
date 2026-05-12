@@ -1,0 +1,3 @@
+period,n_chunks,n_docs,risk_focused_n,opportunity_focused_n,balanced_n,risk_focused_pct,opportunity_focused_pct,balanced_pct,avg_confidence,low_conf_pct
+Pre-ChatGPT (≤2021),477,10,114,231,132,23.9,48.4,27.7,0.581,24.9
+Post-ChatGPT (≥2022),922,25,324,371,227,35.1,40.2,24.6,0.604,20.5
