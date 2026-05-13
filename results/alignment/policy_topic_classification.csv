@@ -1,0 +1,21 @@
+topic_id,top_words,classification,n_contributing_documents,dominant_doc_share,dominant_doc_name,total_chunks
+0,"shall, article, regulation, risk, high risk, ai, systems, risk ai, high, union",document_specific,13,0.833,EU_AI_Act_Regulation_2024_1689,215
+1,"ai, model, governance, risk, data, consider, organisations, deployers, risks, systems",thematic,7,0.443,ASEAN_Guide_AI_Governance_Ethics_2024,70
+2,"india, ai, research, data, national, intelligence, artificial, sector, national strategy, artificial intelligence",document_specific,8,0.742,India_National_AI_Strategy_2021,66
+3,"australia, ai, ethical, ethics, human, principles, data, artificial, artificial intelligence, intelligence",document_specific,10,0.694,Australia_AI_Ethics_Framework_2019,62
+4,"kenya, ai, strategy, development, kenya ai, ai strategy, innovation, digital, data, local",document_specific,2,0.974,Kenya_National_AI_Strategy_Draft_2025,38
+5,"egypt, ai, egyptian, research, university, total, strategy, companies, impact, programs",document_specific,6,0.757,Egypt_National_AI_Strategy_2021,37
+6,"zimbabwe, national, ai, pillar, strategy, national ai, development, strategic, governance, ministry",document_specific,3,0.943,Zimbabwe_National_AI_Strategy,35
+7,"intelligent, new, development, ai, research, smart, technology, generation, new generation, intelligence",document_specific,5,0.735,China_New_Generation_AI_Development_Plan_2017,34
+8,"ai, policy, development, international, oecd, national, research, governance, systems, ai systems",thematic,11,0.188,USA_National_AI_RD_Strategic_Plan_2023,32
+9,"data, ai, marketplace, systems, learning, human, model, research, annotation, intelligence",thematic,7,0.462,India_National_AI_Strategy_2021,26
+10,"africa, ai, african, au, development, strategy, regional, continental, economic, continent",document_specific,3,0.88,AfricanUnion_Continental_AI_Strategy_2024,25
+11,"al, gen, gen al, asean, al governance, guide al, generative al, al systems, guide, expanded",artifact,2,0.958,ASEAN_Expanded_Guide_AI_Governance_GenAI_2025,24
+12,"uae, 2031, ai, intelligence, artificial, objective, national strategy, strategy artificial, artificial intelligence, government",document_specific,2,0.958,UAE_National_AI_Strategy_2031,24
+13,"nigeria, ai, 2024, national, strategy, jun, cited 2024, 2024 jun, cited, development",document_specific,1,1.0,Nigeria_National_AI_Strategy_2024,24
+14,"agencies, agency, ai, memorandum, use, 0mb, federal, use ai, ai use, high impact",document_specific,2,0.933,USA_OMB_M2521_Federal_AI_Governance_2025,15
+15,"content, generative ai, generative, model, provenance, ai, safety, models, generated, content provenance",thematic,6,0.6,Singapore_Model_AI_Governance_GenAI_2024,15
+16,"data, privacy, protection, data protection, ai, personal, personal data, development, model, use",thematic,8,0.267,India_National_AI_Strategy_2021,15
+17,"japan, ai, climate, resilience, disasters, environmental, change, climate change, social, contribute",document_specific,6,0.6,Japan_AI_Strategy_2022,15
+18,"uk, compute, ai, government, frontier, opportunities, plan, action plan, action, ai opportunities",document_specific,3,0.846,UK_AI_Opportunities_Action_Plan_2025,13
+19,"vehicles, avs, australia, recognition, facial, facial recognition, automated, vehicle, safety, australian",document_specific,1,1.0,Australia_AI_Ethics_Framework_2019,13

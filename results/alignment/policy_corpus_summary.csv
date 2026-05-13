@@ -1,0 +1,44 @@
+doc_id,country,region,doc_type,pub_year,chunk_count,group_by
+EU_AI_Act_Regulation_2024_1689,European Union,Europe,Binding Regulation,2024,197,document
+India_National_AI_Strategy_2021,India,Asia-Pacific,National Strategy,2021,94,document
+Australia_AI_Ethics_Framework_2019,Australia,Asia-Pacific,Framework,2019,81,document
+ASEAN_Guide_AI_Governance_Ethics_2024,ASEAN,International,Regional Framework,2024,58,document
+USA_National_AI_RD_Strategic_Plan_2023,United States,North America,National Strategy,2023,55,document
+Egypt_National_AI_Strategy_2021,Egypt,Africa & Middle East,National Strategy,2021,51,document
+AfricanUnion_Continental_AI_Strategy_2024,African Union,International,Continental Strategy,2024,49,document
+Kenya_National_AI_Strategy_Draft_2025,Kenya,Africa & Middle East,National Strategy,2025,47,document
+Zimbabwe_National_AI_Strategy,Zimbabwe,Africa & Middle East,National Strategy,2024,47,document
+Nigeria_National_AI_Strategy_2024,Nigeria,Africa & Middle East,National Strategy,2024,45,document
+Singapore_Model_AI_Governance_Framework_2020,Singapore,Asia-Pacific,Framework,2020,35,document
+UNESCO_Recommendation_Ethics_AI_2021,UNESCO,International,International Recommendation,2021,33,document
+Japan_AI_Strategy_2022,Japan,Asia-Pacific,National Strategy,2022,30,document
+China_New_Generation_AI_Development_Plan_2017,China,Asia-Pacific,National Strategy,2017,28,document
+ASEAN_Expanded_Guide_AI_Governance_GenAI_2025,ASEAN,International,Regional Framework,2025,27,document
+Germany_AI_Strategy_Update_2023,Germany,Europe,National Strategy,2023,26,document
+USA_NIST_AI_RMF_1_0_2023,United States,North America,Framework,2023,24,document
+UAE_National_AI_Strategy_2031,UAE,Africa & Middle East,National Strategy,2022,23,document
+USA_OMB_M2521_Federal_AI_Governance_2025,United States,North America,Federal Directive,2025,22,document
+Singapore_Model_AI_Governance_GenAI_2024,Singapore,Asia-Pacific,Framework,2024,20,document
+UK_AI_Opportunities_Action_Plan_2025,United Kingdom,Europe,Action Plan,2025,19,document
+SouthKorea_AI_Basic_Act_2025,South Korea,Asia-Pacific,National Law,2025,18,document
+OECD_AI_Principles_2023,OECD,International,International Principles,2023,11,document
+Rwanda_National_AI_Policy_2023,Rwanda,Africa & Middle East,National Strategy,2023,11,document
+CouncilOfEurope_AI_Framework_Convention_CETS225_2024,Council of Europe,International,Binding International Treaty,2024,11,document
+SouthAfrica_National_AI_Policy_Framework_2023,South Africa,Africa & Middle East,Policy Framework,2023,8,document
+Canada_Directive_Automated_Decision_Making_2023,Canada,North America,Regulation,2023,6,document
+China_Interim_Measures_Generative_AI_2023,China,Asia-Pacific,Binding Regulation,2023,6,document
+G7_Hiroshima_AI_Process_Guiding_Principles_2023,G7,International,International Principles,2023,3,document
+UK_National_AI_Strategy_2021,United Kingdom,Europe,National Strategy,2021,1,document
+Africa & Middle East,,,,,232,region
+Asia-Pacific,,,,,312,region
+Europe,,,,,243,region
+International,,,,,192,region
+North America,,,,,107,region
+2017,,,,,28,year
+2019,,,,,81,year
+2020,,,,,35,year
+2021,,,,,179,year
+2022,,,,,53,year
+2023,,,,,150,year
+2024,,,,,427,year
+2025,,,,,133,year

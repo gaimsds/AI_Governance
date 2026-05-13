@@ -1,0 +1,36 @@
+record_type,section,rank,term,ctfidf_score,eu_specific_flag,rank_abs,scopus_id,title,pub_year,country,abstract_snippet
+keyword,academic_eu_regulation_keywords,1.0,regulation,0.061858,False,,,,,,
+keyword,academic_eu_regulation_keywords,2.0,act,0.052205,False,,,,,,
+keyword,academic_eu_regulation_keywords,3.0,european,0.047409,False,,,,,,
+keyword,academic_eu_regulation_keywords,4.0,regulatory,0.045457,False,,,,,,
+keyword,academic_eu_regulation_keywords,5.0,union,0.028322,False,,,,,,
+keyword,academic_eu_regulation_keywords,6.0,european union,0.027936,False,,,,,,
+keyword,academic_eu_regulation_keywords,7.0,protection,0.02447,False,,,,,,
+keyword,academic_eu_regulation_keywords,8.0,right,0.021284,False,,,,,,
+keyword,academic_eu_regulation_keywords,9.0,risk,0.01958,False,,,,,,
+keyword,academic_eu_regulation_keywords,10.0,commission,0.01838,False,,,,,,
+keyword,academic_eu_regulation_keywords,11.0,intelligence act,0.01767,False,,,,,,
+keyword,academic_eu_regulation_keywords,12.0,legal,0.017428,False,,,,,,
+keyword,academic_eu_regulation_keywords,13.0,governance,0.01625,False,,,,,,
+keyword,academic_eu_regulation_keywords,14.0,artificial intelligence,0.015233,False,,,,,,
+keyword,academic_eu_regulation_keywords,15.0,law,0.014871,False,,,,,,
+keyword,policy_T08_keywords,1.0,intelligent,0.036452,False,,,,,,
+keyword,policy_T08_keywords,2.0,new,0.033554,False,,,,,,
+keyword,policy_T08_keywords,3.0,development,0.032207,False,,,,,,
+keyword,policy_T08_keywords,4.0,ai,0.028715,False,,,,,,
+keyword,policy_T08_keywords,5.0,research,0.027064,False,,,,,,
+keyword,policy_T08_keywords,6.0,smart,0.026434,False,,,,,,
+keyword,policy_T08_keywords,7.0,technology,0.026391,False,,,,,,
+keyword,policy_T08_keywords,8.0,generation,0.023403,False,,,,,,
+keyword,policy_T08_keywords,9.0,new generation,0.022274,False,,,,,,
+keyword,policy_T08_keywords,10.0,intelligence,0.022217,False,,,,,,
+keyword,policy_T08_keywords,11.0,strengthen,0.019137,False,,,,,,
+keyword,policy_T08_keywords,12.0,innovation,0.018314,False,,,,,,
+keyword,policy_T08_keywords,13.0,computing,0.017545,False,,,,,,
+keyword,policy_T08_keywords,14.0,china,0.017339,False,,,,,,
+keyword,policy_T08_keywords,15.0,platforms,0.016737,False,,,,,,
+abstract,representative_abstracts,,,,,1.0,2-s2.0-85122062775,Simplification of administrative procedures through fully automated decision-making: The case of norway,2021.0,Norway,"Norway has a high degree of digitalisation. In the public sector, there is a long tradition of automation of parts of case management. This includes automation of cases where a public sector body makes a so-called individual administrative decision, that is, a decision made in the exercise of public authority through which the rights or duties of one or more specified private persons are determined. In the last five years, various amendments to public sector legislation were proposed by a number"
+abstract,representative_abstracts,,,,,2.0,2-s2.0-85207265573,ARTIFICIAL INTELLIGENCE AND SYNTHETIC DATA: WHEN TECHNOLOGY CAN EMPOWER THE PROTECTION OF RIGHTS,2024.0,Italy,"Synthetic data is an innovative technology in the field of personal data protection and the development of artificial intelligence systems. Starting from a brief overview of the main technical elements of synthetic data, the article delves into its role within the new European digital regulatory framework. Although it is already possible to identify some of the undeniable advantages derived from this technology and the increasing consideration by legislators, there is still a need for further pr"
+abstract,representative_abstracts,,,,,3.0,2-s2.0-85192822742,The Bundestag Parliamentary Committees On Digitalization And Artificial Intelligence: Two Forms Of Technical Advice To The Legislature,2023.0,Spain,"Through the Standing Committee on Digitalisation and the AI Commission of Inquiry in the Bundestag, the importance of the work of these bodies to ensure the balance between executive and legislative powers and the rights of parliamentary minorities is highlighted. The AI Commission’s final report, delivered to the European Commission, is a sign of effective cooperation between national and EU legislative bodies. These technical committees are not detrimental to the political role of parliaments."
+abstract,representative_abstracts,,,,,4.0,2-s2.0-85143273235,A ‘biased’ emerging governance regime for artificial intelligence? How AI ethics get skewed moving from principles to practices,2023.0,Ireland,"Over the past few years, the awareness that the full potential of artificial intelligence (AI) could be attained only through the establishment of a trustworthy and human-centric framework has expanded, thereby prompting demand for regulatory frameworks as well as engendering a flourish of initiatives that set ethical codes and good governance principles for AI development. This study investigates whether the convergence of many of the proposed ethical frameworks around a narrow set of values an"
+abstract,representative_abstracts,,,,,5.0,2-s2.0-85123490849,Embedding artificial intelligence in society: looking beyond the EU AI master plan using the culture cycle,2023.0,United Kingdom,"The European Union (EU) Commission’s whitepaper on Artificial Intelligence (AI) proposes shaping the emerging AI market so that it better reflects common European values. It is a master plan that builds upon the EU AI High-Level Expert Group guidelines. This article reviews the masterplan, from a culture cycle perspective, to reflect on its potential clashes with current societal, technical, and methodological constraints. We identify two main obstacles in the implementation of this plan: (i) th"

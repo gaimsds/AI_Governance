@@ -1,0 +1,22 @@
+academic_topic_id,academic_topic_label,best_match_policy_topic_id,best_match_policy_label,best_similarity,second_best_policy_topic_id,second_best_policy_label,second_best_similarity
+135,EU AI Regulation & Regulatory Frameworks,8,International AI Policy Principles (OECD/Multi-country),0.7458,1,AI Governance Frameworks (ASEAN/Singapore/NIST),0.6833
+177,Explainable AI & Transparency,1,AI Governance Frameworks (ASEAN/Singapore/NIST),0.6695,9,"AI Data, Learning & Infrastructure",0.5904
+34,Autonomous Weapons & Military AI,8,International AI Policy Principles (OECD/Multi-country),0.6442,1,AI Governance Frameworks (ASEAN/Singapore/NIST),0.6249
+103,"AI Law, Ethics & Human Rights",8,International AI Policy Principles (OECD/Multi-country),0.6375,1,AI Governance Frameworks (ASEAN/Singapore/NIST),0.6193
+129,AI in Public Administration & Governance,1,AI Governance Frameworks (ASEAN/Singapore/NIST),0.6177,8,International AI Policy Principles (OECD/Multi-country),0.6007
+21,Trust & Trustworthiness in AI,1,AI Governance Frameworks (ASEAN/Singapore/NIST),0.6154,8,International AI Policy Principles (OECD/Multi-country),0.5604
+181,AI Patent Law & Intellectual Property,8,International AI Policy Principles (OECD/Multi-country),0.5735,1,AI Governance Frameworks (ASEAN/Singapore/NIST),0.5228
+151,AI Governance during COVID-19,1,AI Governance Frameworks (ASEAN/Singapore/NIST),0.5689,8,International AI Policy Principles (OECD/Multi-country),0.5487
+148,Smart City & Urban AI Governance,8,International AI Policy Principles (OECD/Multi-country),0.5475,1,AI Governance Frameworks (ASEAN/Singapore/NIST),0.5049
+31,Algorithmic Fairness & Bias,1,AI Governance Frameworks (ASEAN/Singapore/NIST),0.5396,8,International AI Policy Principles (OECD/Multi-country),0.4753
+2,AI Cybersecurity & IoT Threats,1,AI Governance Frameworks (ASEAN/Singapore/NIST),0.5373,15,Generative AI Content Safety & Provenance,0.5256
+24,"AI, Fake News & Disinformation",15,Generative AI Content Safety & Provenance,0.5187,9,"AI Data, Learning & Infrastructure",0.4559
+35,Gender Bias & AI Representation,8,International AI Policy Principles (OECD/Multi-country),0.4978,1,AI Governance Frameworks (ASEAN/Singapore/NIST),0.4945
+15,Predictive Policing & Criminal Justice AI,1,AI Governance Frameworks (ASEAN/Singapore/NIST),0.4919,15,Generative AI Content Safety & Provenance,0.4374
+17,AI Ethics from Islamic/Religious Perspective,8,International AI Policy Principles (OECD/Multi-country),0.4883,15,Generative AI Content Safety & Provenance,0.4496
+114,Generative AI & Creative Ethics,15,Generative AI Content Safety & Provenance,0.4747,9,"AI Data, Learning & Infrastructure",0.4517
+168,Digital Transformation & AI Adoption,1,AI Governance Frameworks (ASEAN/Singapore/NIST),0.4721,8,International AI Policy Principles (OECD/Multi-country),0.4466
+124,AI Research Landscape (Bibliometrics),8,International AI Policy Principles (OECD/Multi-country),0.4597,9,"AI Data, Learning & Infrastructure",0.4584
+8,"AI, Journalism & Media",15,Generative AI Content Safety & Provenance,0.4522,1,AI Governance Frameworks (ASEAN/Singapore/NIST),0.4345
+42,AI Accessibility & Disability Inclusion,1,AI Governance Frameworks (ASEAN/Singapore/NIST),0.4296,8,International AI Policy Principles (OECD/Multi-country),0.4281
+183,UAV & Drone Governance,1,AI Governance Frameworks (ASEAN/Singapore/NIST),0.4195,9,"AI Data, Learning & Infrastructure",0.4043

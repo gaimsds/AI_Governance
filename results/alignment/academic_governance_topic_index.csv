@@ -1,0 +1,22 @@
+row_index,topic_id,topic_label,source_model,emb_index_in_model
+0,103,"AI Law, Ethics & Human Rights",topic0_decomposition_model,4
+1,2,AI Cybersecurity & IoT Threats,academic_topic_model,3
+2,114,Generative AI & Creative Ethics,topic0_decomposition_model,15
+3,124,AI Research Landscape (Bibliometrics),topic0_decomposition_model,25
+4,8,"AI, Journalism & Media",academic_topic_model,9
+5,15,Predictive Policing & Criminal Justice AI,academic_topic_model,16
+6,129,AI in Public Administration & Governance,topic0_decomposition_model,30
+7,17,AI Ethics from Islamic/Religious Perspective,academic_topic_model,18
+8,135,EU AI Regulation & Regulatory Frameworks,topic0_decomposition_model,36
+9,21,Trust & Trustworthiness in AI,academic_topic_model,22
+10,24,"AI, Fake News & Disinformation",academic_topic_model,25
+11,31,Algorithmic Fairness & Bias,academic_topic_model,32
+12,34,Autonomous Weapons & Military AI,academic_topic_model,35
+13,35,Gender Bias & AI Representation,academic_topic_model,36
+14,148,Smart City & Urban AI Governance,topic0_decomposition_model,49
+15,151,AI Governance during COVID-19,topic0_decomposition_model,52
+16,42,AI Accessibility & Disability Inclusion,academic_topic_model,43
+17,168,Digital Transformation & AI Adoption,topic0_decomposition_model,69
+18,177,Explainable AI & Transparency,topic0_decomposition_model,78
+19,181,AI Patent Law & Intellectual Property,topic0_decomposition_model,82
+20,183,UAV & Drone Governance,topic0_decomposition_model,84

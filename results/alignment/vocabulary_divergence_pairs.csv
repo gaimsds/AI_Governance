@@ -1,0 +1,9 @@
+policy_topic_id,policy_label,academic_topic_id,academic_topic_label,actual_similarity,flagged_low,rationale
+1,AI Governance Frameworks (ASEAN/Singapore/NIST),103,"AI Law, Ethics & Human Rights",0.6193,False,Governance frameworks ground themselves in rights-based principles
+1,AI Governance Frameworks (ASEAN/Singapore/NIST),129,AI in Public Administration & Governance,0.6177,False,T01 operational frameworks align with public-sector governance research
+8,International AI Policy Principles (OECD/Multi-country),135,EU AI Regulation & Regulatory Frameworks,0.7458,False,T08 international principles most directly parallel EU regulatory literature
+9,"AI Data, Learning & Infrastructure",177,Explainable AI & Transparency,0.5904,False,T09 data and learning systems also reference explainability requirements
+9,"AI Data, Learning & Infrastructure",168,Digital Transformation & AI Adoption,0.4071,True,T09 data/infrastructure aligns with broader AI adoption and systems research
+15,Generative AI Content Safety & Provenance,114,Generative AI & Creative Ethics,0.4747,True,Strongest label overlap: both concern generative AI governance and ethics
+16,Data Privacy & Protection,103,"AI Law, Ethics & Human Rights",0.5373,True,Data privacy is a core legal/rights-based governance concern
+16,Data Privacy & Protection,31,Algorithmic Fairness & Bias,0.4666,True,Privacy and fairness co-occur in data governance literature

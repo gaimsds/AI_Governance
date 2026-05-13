@@ -18,4 +18,11 @@ data_raw/*.xlsx
 data_clean/*.csv
 data_clean/*.xlsx
 data_clean/*.log
-data_clean/*.txtdata_raw/policy_frameworks/*.pdf
+data_clean/*.txt
+data_raw/policy_frameworks/*.pdf
+
+# Generated data files
+data/
+models/
+results/alignment/*.npy
+requirements_alignment.txt
